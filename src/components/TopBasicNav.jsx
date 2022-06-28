@@ -1,6 +1,4 @@
 import "./TopBasicNav.css";
-import prevBtn from "../assets/icon/icon-arrow-left.png";
-import moreBtn from "../assets/icon/icon-more-vertical.png";
 
 export default function TopBasicNav() {
   return (
