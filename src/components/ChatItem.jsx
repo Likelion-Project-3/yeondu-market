@@ -2,13 +2,13 @@ import "./ChatItem.css";
 
 export default function ChatItem(props) {
     return (
-      <li className="chatItem">
-        <div className="chatItemImg"></div>
-        <div className="chatContent">
-          <strong>{props.writer}</strong>
-          <p>{props.content}</p>
-        </div>
-        <span className="chatDate">{props.date}</span>
-      </li>
+        <li className="chatItem">
+            <div className="chatItemImg"></div>
+            <div className="chatContent">
+                <strong>{props.writer}</strong>
+                <p>{props.content}</p>
+            </div>
+            <span className="chatDate">{props.date}</span>
+        </li>
     );
-  }
+}
