@@ -1,0 +1,30 @@
+.topSearchNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    padding: 0 16px;
+    border-bottom: 1px solid #DBDBDB;
+    box-sizing: border-box;
+}
+
+.topSearchNav > button {
+    width: 22px; height: 22px;
+    background: url("../../assets/icon/icon-arrow-left.png");
+}
+
+.topSearchNav > input {
+    background: #F2F2F2;
+    width: 100%;
+    padding: 7px 16px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 32px;
+}
+
+.topSearchNav > input::placeholder {
+    color: #C4C4C4;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
