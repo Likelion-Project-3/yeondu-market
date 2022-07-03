@@ -115,3 +115,12 @@ button {
     border: none;
     cursor: pointer;
 }
+
+input {
+    border: none;
+    background-color: inherit;
+}
+
+input:focus {
+    outline: none;
+}

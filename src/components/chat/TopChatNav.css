@@ -1,0 +1,27 @@
+.topChatNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    padding: 0 20px;
+}
+
+.topChatNav .prevBtn {
+    width: 22px;
+    height: 22px;
+    background: url("../../assets/icon/icon-arrow-left.png");
+    margin-right: 10px;
+}
+
+.topChatNav .chatSender {
+    text-align: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.topChatNav .moreBtn {
+    width: 22px;
+    height: 22px;
+    background: url("../../assets/icon/icon-more-vertical.png");
+}

@@ -1,0 +1,55 @@
+.chatCommentForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: 10;
+    background-color: #fff;
+}
+
+.chatCommentForm label {
+    cursor: pointer;
+    border-radius: 50%;
+    background: #c4c4c4 url("../../assets/icon/icon-upload.png") no-repeat
+        center;
+    width: 36px;
+    height: 36px;
+    margin-right: 13px;
+    flex-shrink: 0;
+}
+
+.chatCommentForm input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.chatCommentForm .textInput {
+    font-size: 14px;
+    width: 100%;
+}
+
+.chatCommentForm .textInput::placeholder {
+    color: #c4c4c4;
+}
+
+.chatCommentForm .sendBtn {
+    cursor: pointer;
+    padding: 10px;
+    flex-shrink: 0;
+    color: #1bb908;
+}
+
+.chatCommentForm .sendBtn.disabled {
+    pointer-events: none;
+    color: #c4c4c4;
+}
