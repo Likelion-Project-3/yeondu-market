@@ -5,7 +5,7 @@ export default function ChatItem(props) {
         <li className="chatItem">
             <div className="chatItemImg"></div>
             <div className="chatContent">
-                <strong>{props.writer}</strong>
+                <strong>{props.sender}</strong>
                 <p>{props.content}</p>
             </div>
             <span className="chatDate">{props.date}</span>
