@@ -1,4 +1,4 @@
-import TopBasicNav from "../TopBasicNav";
+import TopBasicNav from "../../components/TopBasicNav";
 import basicProfile from "../../assets/basic-profile-img.svg";
 import messageImg from "../../assets/icon/icon-message-circle2.svg";
 import shareIcon from "../../assets/icon/icon-share.svg";

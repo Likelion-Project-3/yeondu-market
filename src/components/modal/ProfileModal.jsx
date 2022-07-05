@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import Logout from "./Logout";
 import "./profileModal.css";
 
 export default function ProfileModal() {
