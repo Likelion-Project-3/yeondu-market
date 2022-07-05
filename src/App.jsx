@@ -6,6 +6,7 @@ import ProductAlert from "./components/modal/ProductAlert";
 import ProductModal from "./components/modal/ProductModal";
 import ProfileModal from "./components/modal/ProfileModal";
 import MyProfile from "./components/profile/MyProfile";
+import ProductUpload from "./components/uploads/ProductUpload";
 import "./reset.css";
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route exact path="/productmodal" component={ProductModal} />
                 <Route exact path="/productdelete" component={ProductAlert} />
                 <Route exact path="/myprofile" component={MyProfile} />
+                <Route exact path="/productupload" component={ProductUpload} />
             </BrowserRouter>
         </div>
     );
