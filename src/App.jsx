@@ -1,12 +1,12 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import Logout from "./components/modal/Logout";
+import Logout from "./components/modal/LogoutModal";
 import PostAlert from "./components/modal/PostAlert";
 import PostModal from "./components/modal/PostModal";
 import ProductAlert from "./components/modal/ProductAlert";
 import ProductModal from "./components/modal/ProductModal";
 import ProfileModal from "./components/modal/ProfileModal";
-import MyProfile from "./components/profile/MyProfile";
-import ProductUpload from "./components/uploads/ProductUpload";
+import MyProfile from "./pages/feed/MyProfile";
+import ProductUpload from "./pages/feed/ProductUpload";
 import "./reset.css";
 function App() {
     return (
