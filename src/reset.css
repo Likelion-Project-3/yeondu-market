@@ -1,3 +1,11 @@
+:root {
+    --main-color: #83bd75;
+    --main-bg-color: #b5d9ac;
+    --main-font-color: #1bb908;
+    --sub-font-color: #767676;
+    --main-border-color: #DBDBDB; 
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

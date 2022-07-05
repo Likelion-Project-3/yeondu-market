@@ -1,6 +1,6 @@
 .tapMenu > ul {
     display: flex;
-    border-top: 1px solid #DBDBDB;
+    border-top: 1px solid var(--main-border-color);
     justify-content: space-evenly;
 }
 
@@ -9,7 +9,7 @@
     height: 60px;
     padding-top: 36px;
     padding-bottom: 4px;
-    color: #767676;
+    color: var(--sub-font-color);
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
@@ -17,18 +17,18 @@
 }
 
 .homeBtn {
-    background: url(../assets/icon/icon-home.png) no-repeat 50% 24px/24px;
+    background: url(../assets/icon/icon-home.svg) no-repeat 50% 24px/24px;
     background-position-y: 11px;
 }
 .chatBtn {
-    background: url(../assets/icon/icon-message-circle.png) no-repeat 50% 24px/24px;
+    background: url(../assets/icon/icon-message-circle.svg) no-repeat 50% 24px/24px;
     background-position-y: 11px;
 }
 .postBtn {
-    background: url(../assets/icon/icon-edit.png) no-repeat 50% 24px/24px;
+    background: url(../assets/icon/icon-edit.svg) no-repeat 50% 24px/24px;
     background-position-y: 11px;
 }
 .profileBtn {
-    background: url(../assets/icon/icon-user.png) no-repeat 50% 24px/24px;
+    background: url(../assets/icon/icon-user.svg) no-repeat 50% 24px/24px;
     background-position-y: 11px;
 }
