@@ -4,7 +4,7 @@
     align-items: center;
     height: 48px;
     padding: 0 20px;
-    border-bottom: 1px solid #dbdbdb;
+    border-bottom: 1px solid var(--main-border-color);
 }
 
 .uploadPostHeader .prevBtn {
@@ -16,14 +16,14 @@
 .uploadPostHeader .uploadBtn {
     padding: 7px 25px;
     border-radius: 32px;
-    background-color: #83bd75;
+    background-color: var(--main-color);
     color: #fff;
     font-size: 14px;
 }
 
 .uploadPostHeader .uploadBtn.disabled {
     pointer-events: none;
-    background-color: #b5d9ac;
+    background-color: var(--main-bg-color);
 }
 
 .uploadPostMain {
@@ -52,8 +52,8 @@
     display: block;
     cursor: pointer;
     border-radius: 50%;
-    background: #83bd75 url("../../assets/icon/icon-upload-image.svg") no-repeat
-        center;
+    background: var(--main-color) url("../../assets/icon/icon-upload-image.svg")
+        no-repeat center;
     width: 30px;
     height: 30px;
     padding: 8px;
