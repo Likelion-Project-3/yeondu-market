@@ -22,7 +22,7 @@
 .chatRoomMain .chat.left::after {
     content: "";
     font-size: 10px;
-    color: #767676;
+    color: var(--sub-font-color);
     position: absolute;
     bottom: 0;
     right: -30px;
@@ -39,7 +39,7 @@
 .chatRoomMain .chat:nth-child(3)::before {
     content: "12:50";
     font-size: 10px;
-    color: #767676;
+    color: var(--sub-font-color);
     position: absolute;
     bottom: 0;
     left: -30px;
@@ -64,7 +64,7 @@
 }
 
 .chatRoomMain .chat.right {
-    background-color: #83bd75;
+    background-color: var(--main-color);
     color: #fff;
     border-radius: 8px 0 8px 8px;
     margin-right: 16px;
@@ -82,7 +82,7 @@
 }
 
 .chatRoomMain .chat.img:before {
-    color: #767676;
+    color: var(--sub-font-color);
     content: "12:51";
     position: absolute;
     font-size: 10px;

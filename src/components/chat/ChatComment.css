@@ -46,7 +46,7 @@
     cursor: pointer;
     padding: 10px;
     flex-shrink: 0;
-    color: #1bb908;
+    color: var(--main-font-color);
 }
 
 .chatCommentForm .sendBtn.disabled {

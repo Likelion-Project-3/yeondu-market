@@ -17,7 +17,7 @@
 }
 
 .temp-wrap .followName {
-    color: #767676;
+    color: var(--sub-font-color);
 }
 
 .temp-wrap .userImage {
@@ -30,19 +30,19 @@
 }
 
 .profileWrap .userID {
-    color: #767676;
+    color: var(--sub-font-color);
     padding-bottom: 16px;
 }
 
 .profileWrap .userIntro {
-    color: #767676;
+    color: var(--sub-font-color);
     padding-bottom: 24px;
 }
 
 .profileWrap .profileCircleBtn {
     background-color: transparent;
     border-radius: 50%;
-    border: 1px solid #dbdbdb;
+    border: 1px solid var(--main-border-color);
     padding: 6px;
     vertical-align: -4px;
     box-sizing: border-box;
@@ -58,7 +58,7 @@
 
 .profileWrap .profileFollowBtn {
     color: white;
-    background-color: #83bd75;
+    background-color: var(--main-color);
     width: 120px;
     border-radius: 30px;
     padding: 8px 0px;

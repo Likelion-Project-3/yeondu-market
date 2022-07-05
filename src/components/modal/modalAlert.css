@@ -25,10 +25,10 @@
     /* display: inline-block; */
     border: none;
     padding: 14px 0;
-    border-top: 1px solid #dbdbdb;
+    border-top: 1px solid var(--main-border-color);
 }
 
 .modalAlertBtn.delete {
     color: #1bb908;
-    border-left: 1px solid #dbdbdb;
+    border-left: 1px solid var(--main-border-color);
 }

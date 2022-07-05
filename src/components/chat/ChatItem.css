@@ -11,7 +11,7 @@
     height: 42px;
     background: url(../assets/basic-profile-img.png) no-repeat center;
     background-size: cover;
-    border: 0.5px solid #dbdbdb;
+    border: 0.5px solid var(--main-border-color);
     border-radius: 50%;
     flex-shrink: 0;
     margin-right: 12px;
@@ -22,7 +22,7 @@
     content: "";
     width: 12px;
     height: 12px;
-    background-color: #83bd75;
+    background-color: var(--main-color);
     position: absolute;
     border-radius: 50%;
 }
@@ -39,13 +39,13 @@
 
 .chatContent p {
     font-size: 12px;
-    color: #767676;
+    color: var(--sub-font-color);
     margin-top: 4px;
     text-align: left;
 }
 
 .chatItem .chatDate {
-    color: #dbdbdb;
+    color: var(--main-border-color);
     font-size: 10px;
     align-self: flex-end;
     flex-shrink: 0;
