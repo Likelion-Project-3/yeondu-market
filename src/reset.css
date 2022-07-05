@@ -125,3 +125,13 @@ input {
 input:focus {
     outline: none;
 }
+
+textarea {
+    border: none;
+    font-family: inherit;
+}
+
+textarea:focus {
+    outline: none;
+    resize: none;
+}

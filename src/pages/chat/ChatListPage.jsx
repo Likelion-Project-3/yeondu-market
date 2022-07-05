@@ -1,4 +1,4 @@
-import ChatItem from "../../components/ChatItem";
+import ChatItem from "../../components/chat/ChatItem";
 
 export default function ChatListPage() {
     return (
