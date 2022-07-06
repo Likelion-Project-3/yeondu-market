@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
-        h1{
+        .headTitle{
             text-indent: -9999px;
         }
         .colorPea{
-            background-image: url(../../../pea-color.png);
+            background-image: url(../assets/pea-color.png);
             background-repeat: no-repeat;
             background-size: contain;
             text-indent: -9999px;
@@ -11,7 +11,7 @@
             height: 200px;
             margin: 30% auto;
         }
-        h2{
+        .mainMarket{
             text-align: center;
             color: #83BD75;
             font-family: 'Gamja Flower', cursive;
