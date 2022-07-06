@@ -10,11 +10,11 @@
 .prevBtn {
     width: 22px;
     height: 22px;
-    background: url("../assets/icon/icon-arrow-left.png");
+    background: url("../assets/icon/icon-arrow-left.svg");
 }
 
 .moreBtn {
     width: 22px;
     height: 22px;
-    background: url("../assets/icon/icon-more-vertical.png");
+    background: url("../assets/icon/icon-\ more-vertical.svg");
 }
