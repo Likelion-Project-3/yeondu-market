@@ -9,7 +9,7 @@ export default function MyProfile() {
         <div className="profileWrap">
             <TopBasicNav />
             <div className="temp-wrap">
-                <a href="/">
+                <a href="/followerlist">
                     <p className="followCount followers">2950</p>
                     <p className="followName followers">followers</p>
                 </a>
