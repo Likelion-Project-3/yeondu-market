@@ -1,7 +1,7 @@
 import React from "react";
-import './Join.css';
+import './idPwFrom.css';
 
-function Join(){
+function idPwFrom(){
     return(
         <>
             <div>
@@ -15,4 +15,4 @@ function Join(){
         </>
         );
 }
-export default Join;
+export default idPwFrom;
