@@ -1,0 +1,14 @@
+.mainLogin{
+    padding: 50px;
+}
+.singupTitle{
+    text-align: center;
+    font-size: 28px;
+    padding-bottom: 60px;
+    color: var(--main-font-color);
+}
+.nextPage{
+    color: var(--sub-font-color);
+    text-align: center;
+    text-decoration: none;
+}
