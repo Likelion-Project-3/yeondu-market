@@ -9,6 +9,7 @@ import FollowerList from "./pages/feed/FollowerList";
 import FollowingList from "./pages/feed/FollowingList";
 import MyProfile from "./pages/feed/MyProfile";
 import ProductUpload from "./pages/feed/ProductUpload";
+import Profile from "./pages/feed/Profile";
 import "./reset.css";
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route exact path="/postdelete" component={PostAlert} />
                 <Route exact path="/productmodal" component={ProductModal} />
                 <Route exact path="/productdelete" component={ProductAlert} />
+                <Route exact path="/profile" component={Profile} />
                 <Route exact path="/myprofile" component={MyProfile} />
                 <Route exact path="/followerlist" component={FollowerList} />
                 <Route exact path="/followinglist" component={FollowingList} />

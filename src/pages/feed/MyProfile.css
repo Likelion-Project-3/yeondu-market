@@ -1,66 +1,36 @@
-.profileWrap {
+/* .profileWrap {
     overflow: hidden;
     text-align: center;
+} */
+
+.profileWrap .InfoBtn {
+    display: flex;
+    justify-content: center;
 }
 
-.temp-wrap {
+.InfoBtn .profileEdit {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 30px 0px 15px 0px;
-}
-
-.temp-wrap .followCount {
-    font-weight: 700;
-    font-size: 18px;
-}
-
-.temp-wrap .followName {
-    color: var(--sub-font-color);
-}
-
-.temp-wrap .userImage {
-    margin: 0 40px;
-}
-
-.profileWrap .userName {
-    font-weight: 700;
-    padding-bottom: 6px;
-}
-
-.profileWrap .userID {
-    color: var(--sub-font-color);
-    padding-bottom: 16px;
-}
-
-.profileWrap .userIntro {
-    color: var(--sub-font-color);
-    padding-bottom: 24px;
-}
-
-.profileWrap .profileCircleBtn {
-    background-color: transparent;
-    border-radius: 50%;
+    width: 120px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 30px;
     border: 1px solid var(--main-border-color);
-    padding: 6px;
-    vertical-align: -4px;
     box-sizing: border-box;
 }
 
-.profileWrap .profileCircleBtn .messageImg {
-    display: block;
-}
-
-.profileWrap .profileCircleBtn .shareIcon {
-    display: block;
-}
-
-.profileWrap .profileFollowBtn {
-    color: white;
-    background-color: var(--main-color);
-    width: 120px;
+.InfoBtn .productUpload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 18px;
     border-radius: 30px;
-    padding: 8px 0px;
-    margin: 0px 10px;
+    border: 1px solid var(--main-border-color);
+    box-sizing: border-box;
+    margin-left: 12px;
 }

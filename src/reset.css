@@ -3,7 +3,7 @@
     --main-bg-color: #b5d9ac;
     --main-font-color: #1bb908;
     --sub-font-color: #767676;
-    --main-border-color: #DBDBDB; 
+    --main-border-color: #dbdbdb;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -78,7 +78,8 @@ summary,
 time,
 mark,
 audio,
-video {
+video,
+button {
     margin: 0;
     padding: 0;
     border: 0;
