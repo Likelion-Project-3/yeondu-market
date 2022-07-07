@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./TapMenu.css";
 // import { Link } from "react-router-dom";
 
@@ -6,16 +7,24 @@ export default function TapMenu() {
         <nav className="tapMenu">
             <ul>
                 <li>
-                    <button className="homeBtn">홈</button>
+                    <Link to="/home" className="linkbtn homeBtn">
+                        홈
+                    </Link>
                 </li>
                 <li>
-                    <button className="chatBtn">채팅</button>
+                    <Link to="/chat" className="linkbtn chatBtn">
+                        채팅
+                    </Link>
                 </li>
                 <li>
-                    <button className="postBtn">게시물 작성</button>
+                    <Link to="/post/upload" className="linkbtn postBtn">
+                        게시물 작성
+                    </Link>
                 </li>
                 <li>
-                    <button className="profileBtn">프로필</button>
+                    <Link to="/myprofile" className="linkbtn profileBtn">
+                        프로필
+                    </Link>
                 </li>
             </ul>
         </nav>
