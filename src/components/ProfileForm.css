@@ -1,0 +1,69 @@
+.profileImgSetting {
+    width: 110px;
+    height: 170px;
+    position: relative;
+    margin: auto;
+}
+
+.profileImgSetting > label::after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    bottom: 28px;
+    width: 36px; height: 36px;
+    background: url(../assets/icon/icon-upload-image.svg)no-repeat center/22px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profileImgSetting > input[type=file] {
+    display: none;
+}
+
+.profileForm {
+    margin-bottom: 30px;
+}
+
+/* .uploadFileBtn1 > img { */
+.profileImgSetting .profileImg {
+    display: block;
+    padding: 30px 0;
+    margin: 0 auto;
+    /* position: relative; */
+}
+
+.wrapInput:not(:last-child) {
+    margin-bottom: 16px;
+} 
+
+.wrapInput > label {
+    color: var(--sub-font-color);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.wrapInput > input {
+    width: 100%;
+    padding: 10px 0 8px;
+    border-bottom: 1px solid var(--main-border-color);
+}
+.wrapInput > input:focus {
+    border-bottom: 1px solid var(--main-font-color);
+}
+.wrapInput > input::placeholder {
+    color: var(--main-border-color);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.wrapInput .cautionText {
+    display: block;
+    padding-top: 6px;
+    color: var(--main-font-color);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
