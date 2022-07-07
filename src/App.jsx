@@ -6,6 +6,7 @@ import ProductAlert from "./components/modal/ProductAlert";
 import ProductModal from "./components/modal/ProductModal";
 import ProfileModal from "./components/modal/ProfileModal";
 import FollowerList from "./pages/feed/FollowerList";
+import FollowingList from "./pages/feed/FollowingList";
 import MyProfile from "./pages/feed/MyProfile";
 import ProductUpload from "./pages/feed/ProductUpload";
 import Profile from "./pages/feed/Profile";
@@ -23,6 +24,7 @@ function App() {
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/myprofile" component={MyProfile} />
                 <Route exact path="/followerlist" component={FollowerList} />
+                <Route exact path="/followinglist" component={FollowingList} />
                 <Route exact path="/productupload" component={ProductUpload} />
             </BrowserRouter>
         </div>
