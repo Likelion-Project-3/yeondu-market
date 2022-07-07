@@ -78,6 +78,7 @@
 .cancelBtn {
     width: 56px;
     height: 28px;
+    margin: 11px 0px;
     font-size: 12px;
     line-height: 15px;
     color: var(--sub-font-color);

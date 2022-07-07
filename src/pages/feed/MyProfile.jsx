@@ -14,7 +14,7 @@ export default function MyProfile() {
                     <p className="followName followers">followers</p>
                 </a>
                 <img className="userImage" src={basicProfile} alt="" />
-                <a href="/">
+                <a href="/followinglist">
                     <p className="followCount following">128</p>
                     <p className="followName following">followings</p>
                 </a>

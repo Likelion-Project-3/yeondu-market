@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-function FollowHeader() {
+function FollowingHeader() {
     let history = useHistory();
     return (
         <header className="topMainNav">
@@ -11,9 +11,9 @@ function FollowHeader() {
                     history.goBack();
                 }}
             ></button>
-            <p>Followers</p>
+            <p>Following</p>
         </header>
     );
 }
 
-export default FollowHeader;
+export default FollowingHeader;
