@@ -4,12 +4,13 @@
     align-items: center;
     height: 48px;
     padding: 0 20px;
+    border-bottom: 1px solid var(--main-border-color);
 }
 
 .topChatNav .prevBtn {
     width: 22px;
     height: 22px;
-    background: url("../../assets/icon/icon-arrow-left.png");
+    background: url("../../assets/icon/icon-arrow-left.svg");
     margin-right: 10px;
 }
 
@@ -23,5 +24,5 @@
 .topChatNav .moreBtn {
     width: 22px;
     height: 22px;
-    background: url("../../assets/icon/icon-more-vertical.png");
+    background: url("../../assets/icon/icon-\ more-vertical.svg");
 }
