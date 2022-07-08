@@ -1,7 +1,7 @@
 .tapMenu {
     width: 100%;
     position: absolute;
-    bottom: 0mm;
+    bottom: 0;
 }
 
 .tapMenu > ul {
