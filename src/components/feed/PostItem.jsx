@@ -1,4 +1,4 @@
-import "./Post.css";
+import "./PostItem.css";
 import Like from "../Like";
 
 export default function Post() {
