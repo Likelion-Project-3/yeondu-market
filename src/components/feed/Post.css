@@ -14,19 +14,11 @@
     align-items: center;
 }
 
-.postWriter .postWriterImg {
-    background: url(../../assets/basic-profile-img.svg) no-repeat center/contain;
-    width: 42px;
-    height: 42px;
-    margin-right: 12px;
-    flex-shrink: 0;
-    display: inline-block;
-}
-
 .postWriter .postWriterName {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-left: 12px;
 }
 
 .postWriterName strong {

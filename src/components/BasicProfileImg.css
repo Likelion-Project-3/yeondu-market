@@ -1,0 +1,20 @@
+.basicProfileImg {
+    border-radius: 50%;
+}
+
+.basicProfileImg.lg {
+    width: 110px;
+    height: 110px;
+}
+.basicProfileImg.md {
+    width: 50px;
+    height: 50px;
+}
+.basicProfileImg.sm {
+    width: 42px;
+    height: 42px;
+}
+.basicProfileImg.xs {
+    width: 36px;
+    height: 36px;
+}

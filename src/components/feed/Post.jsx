@@ -1,12 +1,13 @@
 import "./Post.css";
 import Like from "../Like";
+import BasicProfileImg from "../BasicProfileImg";
 
 export default function Post() {
     return (
         <article className="postCard">
             <div className="postHeaderWrap">
                 <div className="postWriter">
-                    <div className="postWriterImg"></div>
+                    <BasicProfileImg size="sm" />
                     <div className="postWriterName">
                         <strong>애월읍 위니브 감귤농장</strong>
                         <small>@ weniv_Mandarin</small>
