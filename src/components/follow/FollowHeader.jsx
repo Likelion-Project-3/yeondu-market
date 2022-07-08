@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 function FollowHeader() {
     let history = useHistory();
     return (
-        <header className="topMainNav">
+        <header className="topMainNavFollow">
             <button
                 className="prevBtn"
                 onClick={() => {

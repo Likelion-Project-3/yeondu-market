@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.followerWrap .topMainNav {
+.followerWrap .topMainNavFollow {
     display: flex;
     align-items: center;
     height: 48px;
@@ -10,13 +10,13 @@
     border-bottom: 1px solid var(--main-border-color);
 }
 
-.topMainNav .prevBtn {
+.topMainNavFollow .prevBtn {
     width: 22px;
     height: 22px;
     background: url("../../assets/icon/icon-arrow-left.svg");
 }
 
-.topMainNav p {
+.topMainNavFollow p {
     margin-left: 8px;
     font-size: 14px;
 }
