@@ -1,12 +1,12 @@
 import ChatItem from "../../components/chat/ChatItem";
-import TopChatNav from "../../components/chat/TopChatNav";
+import TopBasicNav from "../../components/TopBasicNav";
 import TapMenu from "../../components/TapMenu";
 import "./ChatListPage.css";
 
 export default function ChatListPage() {
     return (
         <div className="chatListPage">
-            <TopChatNav />
+            <TopBasicNav />
             <div className="chatWrap">
                 <ChatItem
                     sender="애월읍 위니브 유기농 마켓"
