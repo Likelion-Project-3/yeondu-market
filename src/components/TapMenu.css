@@ -1,3 +1,9 @@
+.tapMenu {
+    width: 100%;
+    position: absolute;
+    bottom: 0mm;
+}
+
 .tapMenu > ul {
     display: flex;
     border-top: 1px solid var(--main-border-color);
