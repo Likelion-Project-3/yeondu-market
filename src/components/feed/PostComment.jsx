@@ -1,9 +1,10 @@
 import "./PostComment.css";
+import BasicProfileImg from "../BasicProfileImg";
 
 export default function PostComment() {
     return (
         <div className="postCommentWrap">
-            <button className="writerImg"></button>
+            <BasicProfileImg size="xs" />
             <div className="comment">
                 <strong>서귀포시 무슨 농장</strong>
                 <span>5분 전</span>

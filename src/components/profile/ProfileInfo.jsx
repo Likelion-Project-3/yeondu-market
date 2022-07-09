@@ -1,7 +1,7 @@
 import React from "react";
-import basicProfile from "../../assets/basic-profile-img.svg";
 import ProfileBtn from "./ProfileBtn";
 import "./ProfileInfo.css";
+import BasicProfileImg from "../BasicProfileImg";
 function ProfileInfo() {
     return (
         <div className="infoWrap">
@@ -10,7 +10,7 @@ function ProfileInfo() {
                     <p className="followCount followers">2950</p>
                     <p className="followName followers">followers</p>
                 </a>
-                <img className="userImage" src={basicProfile} alt="" />
+                <BasicProfileImg size="lg" />
                 <a href="/">
                     <p className="followCount following">128</p>
                     <p className="followName following">followings</p>

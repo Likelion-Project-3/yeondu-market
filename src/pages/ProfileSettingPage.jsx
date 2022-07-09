@@ -1,5 +1,5 @@
 import "./ProfileSettingPage.css";
-import ProfileForm from "./ProfileForm";
+import ProfileForm from "../components/ProfileForm";
 
 export default function ProfileSetting() {
     return (

@@ -9,6 +9,7 @@
 
 .tempWrap {
     display: flex;
+    gap: 40px;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -22,10 +23,6 @@
 
 .tempWrap .followName {
     color: var(--sub-font-color);
-}
-
-.tempWrap .userImage {
-    margin: 0 40px;
 }
 
 .profileWrap .userName {
