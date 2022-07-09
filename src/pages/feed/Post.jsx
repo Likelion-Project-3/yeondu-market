@@ -10,11 +10,11 @@ export default function Post() {
             <TopBasicNav />
             <div className="postWrap">
                 <PostItem />
-                {/* 주석 처리된 부분은 말풍선 아이콘 클릭시 나오는 부분 */}
-                {/* <hr />
-                <PostComment /> */}
+                {/* 이하 부분은 말풍선 아이콘 클릭시 나오는 부분 */}
+                <hr />
+                <PostComment />
             </div>
-            {/* <PostCommentInput /> */}
+            <PostCommentInput />
         </>
     );
 }

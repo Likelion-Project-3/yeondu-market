@@ -2,7 +2,7 @@ import "./PostItem.css";
 import Like from "../Like";
 import BasicProfileImg from "../BasicProfileImg";
 
-export default function Post() {
+export default function PostItem() {
     return (
         <article className="postCard">
             <div className="postHeaderWrap">

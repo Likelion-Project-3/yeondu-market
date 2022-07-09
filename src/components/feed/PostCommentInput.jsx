@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./PostCommentInput.css";
-// import BasicProfileImg from "../BasicProfileImg";
+import BasicProfileImg from "../BasicProfileImg";
 
 export default function PostCommentInput() {
     const [text, setText] = useState("");
@@ -14,7 +14,7 @@ export default function PostCommentInput() {
 
     return (
         <form className="PostCommentForm">
-            {/* <BasicProfileImg size="xs" /> */}
+            <BasicProfileImg size="xs" />
             <input
                 type="text"
                 placeholder="댓글 입력하기..."

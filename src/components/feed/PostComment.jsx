@@ -1,10 +1,10 @@
 import "./PostComment.css";
-import BasicProfileImg from "../BasicProfileImg";
+import writerImg from "../../assets/icon/Ellipse 4.svg";
 
 export default function PostComment() {
     return (
         <div className="postCommentWrap">
-            <BasicProfileImg size="xs" />
+            <img src={writerImg} alt="" />
             <div className="comment">
                 <strong>서귀포시 무슨 농장</strong>
                 <span>5분 전</span>
