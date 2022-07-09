@@ -1,0 +1,31 @@
+.InfoBtn {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0px 26px 0px;
+}
+
+.profileCircleBtn {
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid var(--main-border-color);
+    padding: 6px;
+    vertical-align: -4px;
+    box-sizing: border-box;
+}
+
+.profileCircleBtn .messageImg {
+    display: block;
+}
+
+.profileCircleBtn .shareIcon {
+    display: block;
+}
+
+.profileFollowBtn {
+    color: white;
+    background-color: var(--main-color);
+    width: 120px;
+    border-radius: 30px;
+    padding: 8px 0px;
+    margin: 0px 10px;
+}
