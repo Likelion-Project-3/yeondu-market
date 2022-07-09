@@ -4,16 +4,9 @@
     justify-content: space-between;
 }
 
-.postCommentWrap .writerImg {
-    background: url(../../assets/icon/Ellipse\ 4.svg);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    margin-right: 12px;
-    flex-shrink: 0;
-}
 .comment {
     width: 100%;
+    margin-left: 12px;
 }
 
 .comment strong {

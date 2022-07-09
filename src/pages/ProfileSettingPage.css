@@ -10,7 +10,7 @@
 }
 
 .profileSettingPage > p {
-    margin-top: 12px;
+    margin: 12px 0 30px;
     color: var(--sub-font-color);
     font-weight: 400;
     font-size: 14px;
@@ -22,7 +22,7 @@
     background-color: var(--main-bg-color);
     width: 100%;
     padding: 13px 0;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
