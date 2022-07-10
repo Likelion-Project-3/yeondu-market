@@ -1,10 +1,10 @@
 import React from "react";
-import './intro.css'
+import './Intro.css'
 
 function Intro() {
     return (
         <div className="loginMain">
-            <h1 className="headTitle">화면 로딩중</h1>
+            <h1 className="headTitle">로그인</h1>
             <section className="loginSection">
                 <div className="pea">완두콩</div>
                 <article className="centerWebLogin">
