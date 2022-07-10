@@ -1,8 +1,8 @@
-import "./Post.css";
+import "./PostItem.css";
 import Like from "../Like";
 import BasicProfileImg from "../BasicProfileImg";
 
-export default function Post() {
+export default function PostItem() {
     return (
         <article className="postCard">
             <div className="postHeaderWrap">
@@ -22,7 +22,6 @@ export default function Post() {
                     못할 넣는 풍부하게 뛰노는 인생의 힘있다.
                 </p>
                 <div className="postContentImg"></div>
-
                 <div className="btnWrap">
                     <Like />
                     <button type="button" className="commentBtn"></button>

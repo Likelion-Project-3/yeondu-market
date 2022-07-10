@@ -1,0 +1,11 @@
+.postWrap {
+    max-width: 390px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.postWrap hr {
+    height: 1px;
+    background-color: var(--main-border-color);
+    border: none;
+}
