@@ -1,0 +1,32 @@
+.InfoBtn {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0px 26px 0px;
+}
+
+.InfoBtn .profileEdit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 30px;
+    border: 1px solid var(--main-border-color);
+    box-sizing: border-box;
+}
+
+.InfoBtn .productUpload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 30px;
+    border: 1px solid var(--main-border-color);
+    box-sizing: border-box;
+    margin-left: 12px;
+}

@@ -1,10 +1,11 @@
 .infoWrap {
     display: flex;
     flex-direction: column;
-    max-width: 390px;
+    /* max-width: 390px; */
     align-items: center;
     width: 100%;
     margin: 0 auto;
+    border-bottom: 1px solid #c4c4c4;
 }
 
 .tempWrap {
@@ -13,12 +14,13 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 30px 0px 15px 0px;
+    padding: 30px 0px 20px 0px;
 }
 
 .tempWrap .followCount {
     font-weight: 700;
     font-size: 18px;
+    text-align: center;
 }
 
 .tempWrap .followName {
@@ -28,14 +30,20 @@
 .profileWrap .userName {
     font-weight: 700;
     padding-bottom: 6px;
+    text-align: center;
+    line-height: 20px;
 }
 
 .profileWrap .userID {
     color: var(--sub-font-color);
     padding-bottom: 16px;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
 }
 
 .profileWrap .userIntro {
     color: var(--sub-font-color);
-    padding-bottom: 24px;
+    font-size: 14px;
+    line-height: 18px;
 }

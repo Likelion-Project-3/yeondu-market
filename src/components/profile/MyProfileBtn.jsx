@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./MyProfileBtn.css";
 function MyProfileBtn() {
     return (
         <div className="InfoBtn">

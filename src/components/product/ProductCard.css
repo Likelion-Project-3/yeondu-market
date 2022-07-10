@@ -1,0 +1,24 @@
+.productItem {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.productImg {
+    width: 140px;
+    height: 90px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    box-sizing: border-box;
+}
+
+.productName {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 4px;
+}
+
+.productPrice {
+    color: var(--main-font-color);
+    font-size: 12px;
+}

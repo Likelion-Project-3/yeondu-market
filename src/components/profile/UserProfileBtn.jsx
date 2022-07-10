@@ -1,7 +1,7 @@
 import React from "react";
 import messageImg from "../../assets/icon/icon-message-circle2.svg";
 import shareIcon from "../../assets/icon/icon-share.svg";
-
+import "./UserProfileBtn.css";
 function UserProfileBtn() {
     return (
         <div className="InfoBtn">

@@ -1,30 +1,4 @@
 .profileWrap {
     overflow: hidden;
-    text-align: center;
-}
-
-.profileWrap .profileCircleBtn {
-    background-color: transparent;
-    border-radius: 50%;
-    border: 1px solid var(--main-border-color);
-    padding: 6px;
-    vertical-align: -4px;
-    box-sizing: border-box;
-}
-
-.profileWrap .profileCircleBtn .messageImg {
-    display: block;
-}
-
-.profileWrap .profileCircleBtn .shareIcon {
-    display: block;
-}
-
-.profileWrap .profileFollowBtn {
-    color: white;
-    background-color: var(--main-color);
-    width: 120px;
-    border-radius: 30px;
-    padding: 8px 0px;
-    margin: 0px 10px;
+    /* text-align: center; */
 }
