@@ -9,15 +9,10 @@
     box-sizing: border-box;
     z-index: 10;
     background-color: #fff;
+    border-top: 1px solid var(--main-border-color);
 }
 
 .chatCommentForm label {
-    cursor: pointer;
-    border-radius: 50%;
-    background: #c4c4c4 url("../../assets/icon/icon-upload.png") no-repeat
-        center;
-    width: 36px;
-    height: 36px;
     margin-right: 13px;
     flex-shrink: 0;
 }
