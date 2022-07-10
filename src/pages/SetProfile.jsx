@@ -1,9 +1,9 @@
-import "./ProfileSettingPage.css";
-import ProfileForm from "../components/ProfileForm";
+import "./SetProfile.css";
+import ProfileForm from "../components/profile/ProfileForm";
 
-export default function ProfileSetting() {
+export default function SetProfile() {
     return (
-        <main className="profileSettingPage">
+        <main className="setProfileWrap">
             <h1>프로필 설정</h1>
             <p>나중에 언제든지 변경할 수 있습니다.</p>
             <ProfileForm />

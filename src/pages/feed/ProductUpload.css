@@ -48,20 +48,6 @@
     background-color: #f2f2f2;
 }
 
-.productImgRegister label::after {
-    content: "";
-    /* display: block; */
-    position: absolute;
-    width: 36px;
-    height: 36px;
-    background: url(../../assets/icon/icon-upload-image.svg) no-repeat center /
-        22px 22px;
-    background-color: #c4c4c4;
-    border-radius: 50px;
-    bottom: 12px;
-    right: 12px;
-}
-
 .inputContainer {
     width: 100%;
     margin-bottom: 16px;

@@ -5,32 +5,12 @@
     margin: auto;
 }
 
-.profileImgSetting > label::after {
-    content: "";
-    position: absolute;
-    right: 5px;
-    bottom: 28px;
-    width: 36px; height: 36px;
-    background: url(../assets/icon/icon-upload-image.svg)no-repeat center/22px;
-    background-color: var(--main-color);
-    border-radius: 50%;
-    cursor: pointer;
-}
-
 .profileImgSetting > input[type=file] {
     display: none;
 }
 
 .profileForm {
     margin-bottom: 30px;
-}
-
-/* .uploadFileBtn1 > img { */
-.profileImgSetting .profileImg {
-    display: block;
-    padding: 30px 0;
-    margin: 0 auto;
-    /* position: relative; */
 }
 
 .wrapInput:not(:last-child) {

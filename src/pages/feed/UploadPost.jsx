@@ -1,4 +1,5 @@
 import { useState } from "react";
+import UploadFileBtn from "../../components/UploadFileBtn";
 import "./UploadPost.css";
 
 export default function UploadPost() {
@@ -26,8 +27,15 @@ export default function UploadPost() {
                         rows="30"
                         onChange={onChange}
                     />
-                    <label htmlFor="file"></label>
-                    <input type="file" id="file" className="fileInput" />
+                    {/* <label htmlFor="file"></label>
+                    <input type="file" id="file" className="fileInput" /> */}
+                    <UploadFileBtn
+                    forAndId="file"
+                    type="green50"
+                    position="fixed"
+                    right="1rem"
+                    bottom="1rem"
+                     />
                 </form>
             </main>
         </>

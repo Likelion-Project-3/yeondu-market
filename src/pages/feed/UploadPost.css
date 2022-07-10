@@ -48,20 +48,6 @@
     padding: 10px;
 }
 
-.uploadPostMain label {
-    display: block;
-    cursor: pointer;
-    border-radius: 50%;
-    background: var(--main-color) url("../../assets/icon/icon-upload-image.svg")
-        no-repeat center;
-    width: 30px;
-    height: 30px;
-    padding: 8px;
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-}
-
 .uploadPostMain input[type="file"] {
     position: absolute;
     width: 1px;
