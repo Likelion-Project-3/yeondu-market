@@ -1,11 +1,15 @@
 .chatRoomMain {
     background-color: #eae9e9;
     padding: 20px 16px;
-    height: 80vh;
+    height: calc(100vh - 108px);
+    position: relative;
 }
 
 .chatWrapper {
-    padding-top: 100px;
+    position: absolute;
+    left: 1rem;
+    right: 0;
+    bottom: 3rem;
 }
 
 .chatRoomMain .chat:not(:last-child) {

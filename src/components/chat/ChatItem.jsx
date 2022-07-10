@@ -2,7 +2,7 @@ import "./ChatItem.css";
 
 export default function ChatItem(props) {
     return (
-        <li className="chatItem">
+        <li className={`chatItem ${props.read}`}>
             <div className="chatItemImg"></div>
             <div className="chatContent">
                 <strong>{props.sender}</strong>
