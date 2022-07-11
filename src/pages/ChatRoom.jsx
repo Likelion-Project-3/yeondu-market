@@ -1,7 +1,7 @@
 import ChatComment from "../../components/chat/ChatComment";
 import TopChatNav from "../../components/chat/TopChatNav";
 import "./ChatRoom.css";
-export default function ChatRoomPage() {
+export default function ChatRoom() {
     return (
         <>
             <TopChatNav />

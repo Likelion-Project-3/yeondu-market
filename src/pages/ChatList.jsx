@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ChatRoom from "./ChatRoom";
 import "./ChatList.css";
 
-export default function ChatListPage() {
+export default function ChatList() {
     return (
         <div className="chatListPage">
             <TopBasicNav />

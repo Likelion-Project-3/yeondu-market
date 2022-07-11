@@ -1,8 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import prevBtn from "../../assets/icon/icon-arrow-left.svg";
-import UploadFileBtn from "../../components/UploadFileBtn";
-import "./ProductUpload.css";
+import UploadFileBtn from "../../components/button/UploadFileBtn";
+import "./UploadProduct.css";
 function ProductUpload() {
     let history = useHistory();
     return (
@@ -25,13 +25,13 @@ function ProductUpload() {
                         <div className="productImgRegister">
                             <h3 className="">이미지 등록</h3>
                             <div className="imagePriview" />
-                            <UploadFileBtn 
-                            type="gray36"
-                            position="absolute"
-                            forAndId="productImg"
-                            right="12px"
-                            bottom="12px"
-                             />
+                            <UploadFileBtn
+                                type="gray36"
+                                position="absolute"
+                                forAndId="productImg"
+                                right="12px"
+                                bottom="12px"
+                            />
                         </div>
                         <div className="inputContainer">
                             <label for="productName">상품명</label>

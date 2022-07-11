@@ -30,12 +30,12 @@ export default function UploadPost() {
                     {/* <label htmlFor="file"></label>
                     <input type="file" id="file" className="fileInput" /> */}
                     <UploadFileBtn
-                    forAndId="file"
-                    type="green50"
-                    position="fixed"
-                    right="1rem"
-                    bottom="1rem"
-                     />
+                        forAndId="file"
+                        type="green50"
+                        position="fixed"
+                        right="1rem"
+                        bottom="1rem"
+                    />
                 </form>
             </main>
         </>
