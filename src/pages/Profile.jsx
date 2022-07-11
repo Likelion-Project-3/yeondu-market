@@ -1,6 +1,6 @@
 import React from "react";
 import TopBasicNav from "../../components/TopBasicNav";
-import "./Profile.css";
+import "../pages/style/Profile.css";
 import ProfileInfo from "../../components/profile/ProfileInfo";
 function Profile() {
     return (

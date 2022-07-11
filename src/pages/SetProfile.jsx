@@ -1,4 +1,4 @@
-import "./SetProfile.css";
+import "../pages/style/SetProfile.css";
 import ProfileForm from "../components/profile/ProfileForm";
 
 export default function SetProfile() {

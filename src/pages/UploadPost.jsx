@@ -1,6 +1,6 @@
 import { useState } from "react";
-import UploadFileBtn from "../../components/UploadFileBtn";
-import "./UploadPost.css";
+import UploadFileBtn from "../components/button/UploadFileBtn";
+import "../pages/style/UploadPost.css";
 
 export default function UploadPost() {
     const [text, setText] = useState("");

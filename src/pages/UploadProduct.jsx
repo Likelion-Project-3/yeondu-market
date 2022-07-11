@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import prevBtn from "../../assets/icon/icon-arrow-left.svg";
 import UploadFileBtn from "../../components/button/UploadFileBtn";
-import "./UploadProduct.css";
+import "../pages/style/UploadProduct.css";
 function ProductUpload() {
     let history = useHistory();
     return (

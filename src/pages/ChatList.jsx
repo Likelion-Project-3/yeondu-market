@@ -1,9 +1,9 @@
-import ChatItem from "../../components/chat/ChatItem";
-import TopBasicNav from "../../components/TopBasicNav";
-import TapMenu from "../../components/TapMenu";
 import { Link } from "react-router-dom";
 import ChatRoom from "./ChatRoom";
-import "./ChatList.css";
+import "../pages/style/ChatList.css";
+import TopBasicNav from "../components/common/TopBasicNav";
+import ChatItem from "../components/chat/ChatItem";
+import TapMenu from "../components/common/TapMenu";
 
 export default function ChatList() {
     return (

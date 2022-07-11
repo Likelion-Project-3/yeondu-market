@@ -1,5 +1,5 @@
-import TapMenu from "../components/TapMenu";
-import "./Home.css";
+import TapMenu from "../components/common/TapMenu";
+import "../pages/style/Home.css";
 
 export default function Home() {
     return (

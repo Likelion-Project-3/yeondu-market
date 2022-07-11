@@ -1,4 +1,4 @@
-input[type=file] {
+input[type="file"] {
     display: none;
 }
 
@@ -9,22 +9,26 @@ input[type=file] {
 }
 
 .UploadFileLabel.green36 {
-    width: 36px; 
+    width: 36px;
     height: 36px;
-    background: url(../assets/icon/icon-upload-image.svg)no-repeat center/22px;
+    background: url(../../assets/icon/icon-upload-image.svg) no-repeat
+        center/22px;
     background-color: var(--main-color);
 }
 
 .UploadFileLabel.green50 {
-    width: 50px; 
+    width: 50px;
     height: 50px;
-    background: url(../assets/icon/icon-upload-image.svg)no-repeat center/28px;
+    background: url(../../assets/icon/icon-upload-image.svg) no-repeat
+        center/28px;
     background-color: var(--main-color);
     box-sizing: border-box;
 }
 
 .UploadFileLabel.gray36 {
-    width: 36px; height: 36px;
-    background: url(../assets/icon/icon-upload-image.svg)no-repeat center/22px;
-    background-color: #C4C4C4;
+    width: 36px;
+    height: 36px;
+    background: url(../../assets/icon/icon-upload-image.svg) no-repeat
+        center/22px;
+    background-color: #c4c4c4;
 }

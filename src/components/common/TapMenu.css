@@ -24,18 +24,19 @@
 }
 
 .homeBtn {
-    background: url(../assets/icon/icon-home.svg) no-repeat 50% 24px/24px;
+    background: url(../../assets/icon/icon-home.svg) no-repeat 50% 24px/24px;
     background-position-y: 11px;
 }
 .chatBtn {
-    background: url(../assets/icon/icon-message-circle.svg) no-repeat 50% 24px/24px;
+    background: url(../../assets/icon/icon-message-circle.svg) no-repeat 50%
+        24px/24px;
     background-position-y: 11px;
 }
 .postBtn {
-    background: url(../assets/icon/icon-edit.svg) no-repeat 50% 24px/24px;
+    background: url(../../assets/icon/icon-edit.svg) no-repeat 50% 24px/24px;
     background-position-y: 11px;
 }
 .profileBtn {
-    background: url(../assets/icon/icon-user.svg) no-repeat 50% 24px/24px;
+    background: url(../../assets/icon/icon-user.svg) no-repeat 50% 24px/24px;
     background-position-y: 11px;
 }

@@ -1,6 +1,6 @@
-import "./Search.css"
-import TapMenu from "../components/TapMenu";
+import "../pages/style/Search.css";
 import TopSearchNav from "../components/feed/TopSearchNav";
+import TapMenu from "../components/common/TapMenu";
 
 export default function Search() {
     return (

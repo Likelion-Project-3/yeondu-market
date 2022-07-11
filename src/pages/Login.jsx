@@ -1,8 +1,9 @@
 import React from "react";
-import "./Login.css";
-import IdPwForm from "../components/IdPwForm";
-import LoginButton from "../components/LoginButton";
+import "../pages/style/Login.css";
+
 import { Link } from "react-router-dom";
+import IdPwForm from "../components/loginjoin/IdPwForm";
+import LoginButton from "../components/loginjoin/LoginButton";
 
 function Login() {
     return (

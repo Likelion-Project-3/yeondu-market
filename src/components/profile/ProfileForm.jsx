@@ -1,18 +1,18 @@
 import "./ProfileForm.css";
-import BasicProfileImg from "../BasicProfileImg";
-import UploadFileBtn from "../UploadFileBtn";
+import BasicProfileImg from "../common/BasicProfileImg";
+import UploadFileBtn from "../button/UploadFileBtn";
 export default function ProfileForm() {
     return (
         <form className="profileForm">
             <div className="profileImgSetting">
                 <BasicProfileImg size="lg" />
-                <UploadFileBtn 
-                forAndId="uploadProfile" 
-                type="green36" 
-                position="absolute" 
-                bottom="58px"
-                right="5px"
-                 />
+                <UploadFileBtn
+                    forAndId="uploadProfile"
+                    type="green36"
+                    position="absolute"
+                    bottom="58px"
+                    right="5px"
+                />
             </div>
             <div className="wrapInput">
                 <label for="">사용자 이름</label>
