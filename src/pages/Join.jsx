@@ -1,5 +1,5 @@
 import React from "react";
-import IdPwForm from "./IdPwForm";
+import IdPwForm from "../components/IdPwForm";
 import LoginButton from "../components/LoginButton";
 
 function Join(props){

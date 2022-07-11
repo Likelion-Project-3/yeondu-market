@@ -1,6 +1,6 @@
 import React from "react";
 import  './Login.css';
-import IdPwForm from "./IdPwForm";
+import IdPwForm from "../components/IdPwForm";
 import LoginButton from "../components/LoginButton";
 
 function Login() {
@@ -10,7 +10,7 @@ function Login() {
         <IdPwForm/>
         <LoginButton value="로그인"/>
         <div className="nextPage">
-            <a href="/joinmembership" className="nextPage">이메일로 회원가입</a>
+            <a href="/join" className="nextPage">이메일로 회원가입</a>
         </div>
         </div>
     );
