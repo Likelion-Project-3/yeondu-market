@@ -1,11 +1,11 @@
 import React from "react";
 import "./IdPwForm.css";
 
-function Join() {
+function IdPwForm() {
     return (
         <>
             <div>
-                <label for="loginEmail" id="checkEmail">
+                <label htmlFor="loginEmail" id="checkEmail">
                     이메일
                 </label>
                 <input
@@ -16,7 +16,7 @@ function Join() {
                 />
             </div>
             <div>
-                <label for="passwordEmail" id="checkPassword">
+                <label htmlFor="passwordEmail" id="checkPassword">
                     비밀번호
                 </label>
                 <input
@@ -29,4 +29,4 @@ function Join() {
         </>
     );
 }
-export default Join;
+export default IdPwForm;
