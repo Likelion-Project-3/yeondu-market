@@ -1,7 +1,7 @@
 import React from "react";
-import './idPwForm.css';
+import './IdPwForm.css';
 
-function idPwForm(){
+function IdPwForm(){
     return(
         <>
             <div>
@@ -15,4 +15,4 @@ function idPwForm(){
         </>
         );
 }
-export default idPwForm;
+export default IdPwForm;
