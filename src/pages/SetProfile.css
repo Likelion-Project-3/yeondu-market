@@ -1,15 +1,15 @@
-.profileSettingPage {
+.setProfileWrap {
     padding: 30px 34px 0;
 }
 
-.profileSettingPage > h1 {
+.setProfileWrap > h1 {
     font-weight: 500;
     font-size: 24px;
     line-height: 30px;
     text-align: center;
 }
 
-.profileSettingPage > p {
+.setProfileWrap > p {
     margin: 12px 0 30px;
     color: var(--sub-font-color);
     font-weight: 400;
@@ -18,7 +18,7 @@
     text-align: center;
 }
 
-.profileSettingPage .goFeedBtn {
+.setProfileWrap .goFeedBtn {
     background-color: var(--main-bg-color);
     width: 100%;
     padding: 13px 0;
@@ -28,6 +28,6 @@
     line-height: 18px;
     border-radius: 44px;
 }
-.profileSettingPage .on {
+.setProfileWrap .on {
     background-color: var(--main-color);
 }
