@@ -1,18 +1,18 @@
 import React from "react";
-import './Join.css';
+import './IdPwForm.css';
 
-function Join(){
+function IdPwForm(){
     return(
         <>
             <div>
-                <label for="loginEmail" id="checkEmail">이메일</label>
+                <label htmlFor="loginEmail" id="checkEmail">이메일</label>
                 <input type="email" name="loginEmail" id="loginEmail" placeholder="이메일 주소를 입력해주세요"/>
             </div>
             <div>
-                <label for="passwordEmail" id="checkPassword">비밀번호</label>
+                <label htmlFor="passwordEmail" id="checkPassword">비밀번호</label>
                 <input type="password" name="passwordEmail" id="passwordEmail" placeholder="비밀번호를 입력해주세요"/>
             </div>
         </>
         );
 }
-export default Join;
+export default IdPwForm;
