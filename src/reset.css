@@ -144,6 +144,12 @@ textarea:focus {
     outline: none;
     resize: none;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .ir {
     position: absolute;
     left: -10000px;
