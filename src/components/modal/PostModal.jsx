@@ -1,6 +1,6 @@
 import "./profileModal.css";
 
-export default function PostModal() {
+function PostModal() {
     return (
         <div className="ModalBtnWrap">
             <a href="/postdelete" className="ModalBtn">
@@ -12,3 +12,4 @@ export default function PostModal() {
         </div>
     );
 }
+export default PostModal;

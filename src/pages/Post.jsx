@@ -4,7 +4,7 @@ import PostComment from "../../components/feed/PostComment";
 import PostCommentInput from "../../components/feed/PostCommentInput";
 import "../pages/style/Post.css";
 
-export default function Post() {
+function Post() {
     return (
         <>
             <TopBasicNav />
@@ -18,3 +18,4 @@ export default function Post() {
         </>
     );
 }
+export default Post;

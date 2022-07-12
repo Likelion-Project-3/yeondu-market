@@ -2,7 +2,7 @@ import "./PostItem.css";
 import Like from "../Like";
 import BasicProfileImg from "../common/BasicProfileImg";
 
-export default function PostItem() {
+function PostItem() {
     return (
         <article className="postCard">
             <div className="postHeaderWrap">
@@ -32,3 +32,4 @@ export default function PostItem() {
         </article>
     );
 }
+export default PostItem;

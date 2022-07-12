@@ -1,6 +1,6 @@
 import "./UploadFileBtn.css";
 
-export default function UploadFileBtn(props) {
+function UploadFileBtn(props) {
     return (
         <>
             <label
@@ -16,3 +16,5 @@ export default function UploadFileBtn(props) {
         </>
     );
 }
+
+export default UploadFileBtn;

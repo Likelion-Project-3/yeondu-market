@@ -3,7 +3,7 @@ import ProductContainer from "../components/product/ProductContainer";
 import ProfileInfo from "../components/profile/ProfileInfo";
 import "../pages/style/MyProfile.css";
 
-export default function MyProfile() {
+function MyProfile() {
     return (
         <div className="profileWrap">
             <TopBasicNav />
@@ -12,3 +12,4 @@ export default function MyProfile() {
         </div>
     );
 }
+export default MyProfile;

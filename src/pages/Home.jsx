@@ -1,7 +1,7 @@
 import TapMenu from "../components/common/TapMenu";
 import "../pages/style/Home.css";
 
-export default function Home() {
+function Home() {
     return (
         <>
             <header className="topMainNav">
@@ -17,3 +17,4 @@ export default function Home() {
         </>
     );
 }
+export default Home;

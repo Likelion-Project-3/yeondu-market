@@ -1,7 +1,7 @@
 import "./PostComment.css";
 import writerImg from "../../assets/icon/Ellipse 4.svg";
 
-export default function PostComment() {
+function PostComment() {
     return (
         <div className="postCommentWrap">
             <img src={writerImg} alt="" />
@@ -14,3 +14,5 @@ export default function PostComment() {
         </div>
     );
 }
+
+export default PostComment;

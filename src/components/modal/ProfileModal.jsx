@@ -1,6 +1,6 @@
 import "./profileModal.css";
 
-export default function ProfileModal() {
+function ProfileModal() {
     return (
         <div className="ModalBtnWrap">
             <a href="/" className="ModalBtn">
@@ -12,3 +12,4 @@ export default function ProfileModal() {
         </div>
     );
 }
+export default ProfileModal;

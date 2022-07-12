@@ -2,7 +2,7 @@ import "../pages/style/Search.css";
 import TopSearchNav from "../components/feed/TopSearchNav";
 import TapMenu from "../components/common/TapMenu";
 
-export default function Search() {
+function Search() {
     return (
         <>
             <TopSearchNav />
@@ -11,3 +11,4 @@ export default function Search() {
         </>
     );
 }
+export default Search;

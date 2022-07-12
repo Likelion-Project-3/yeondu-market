@@ -1,7 +1,7 @@
 import "./TopChatNav.css";
 import { useHistory } from "react-router-dom";
 
-export default function TopChatNav(props) {
+function TopChatNav(props) {
     const history = useHistory();
 
     return (
@@ -12,3 +12,4 @@ export default function TopChatNav(props) {
         </nav>
     );
 }
+export default TopChatNav;

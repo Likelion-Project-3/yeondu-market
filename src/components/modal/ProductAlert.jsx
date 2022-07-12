@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import "./modalAlert.css";
-export default function ProductAlert() {
+function ProductAlert() {
     let history = useHistory();
     return (
         <div className="ModalAlert">
@@ -19,3 +19,4 @@ export default function ProductAlert() {
         </div>
     );
 }
+export default ProductAlert;

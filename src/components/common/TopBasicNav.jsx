@@ -1,6 +1,6 @@
 import "./TopBasicNav.css";
 
-export default function TopBasicNav() {
+function TopBasicNav() {
     return (
         <nav className="topBasicNav">
             <button className="prevBtn"></button>
@@ -8,3 +8,4 @@ export default function TopBasicNav() {
         </nav>
     );
 }
+export default TopBasicNav;

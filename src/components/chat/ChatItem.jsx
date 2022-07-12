@@ -1,6 +1,6 @@
 import "./ChatItem.css";
 
-export default function ChatItem(props) {
+function ChatItem(props) {
     return (
         <li className={`chatItem ${props.read}`}>
             <div className="chatItemImg"></div>
@@ -12,3 +12,5 @@ export default function ChatItem(props) {
         </li>
     );
 }
+
+export default ChatItem;

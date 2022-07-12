@@ -1,4 +1,4 @@
-export function ReportCommentModal() {
+function ReportCommentModal() {
     return (
         <div className="ModalBtnWrap">
             <a href="/commentreport" className="ModalBtn">
@@ -8,7 +8,7 @@ export function ReportCommentModal() {
     );
 }
 
-export function DeleteCommentModal() {
+function DeleteCommentModal() {
     return (
         <div className="ModalBtnWrap">
             <a href="/commentdelete" className="ModalBtn">
@@ -17,3 +17,4 @@ export function DeleteCommentModal() {
         </div>
     );
 }
+export default (DeleteCommentModal, ReportCommentModal);

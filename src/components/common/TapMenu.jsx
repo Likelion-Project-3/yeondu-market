@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./TapMenu.css";
 
-export default function TapMenu() {
+function TapMenu() {
     return (
         <nav className="tapMenu">
             <ul>
@@ -29,3 +29,4 @@ export default function TapMenu() {
         </nav>
     );
 }
+export default TapMenu;

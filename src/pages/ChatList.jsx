@@ -5,7 +5,7 @@ import TopBasicNav from "../components/common/TopBasicNav";
 import ChatItem from "../components/chat/ChatItem";
 import TapMenu from "../components/common/TapMenu";
 
-export default function ChatList() {
+function ChatList() {
     return (
         <div className="chatListPage">
             <TopBasicNav />
@@ -33,3 +33,4 @@ export default function ChatList() {
         </div>
     );
 }
+export default ChatList;

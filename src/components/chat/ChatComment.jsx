@@ -3,7 +3,7 @@ import UploadFileBtn from "../button/UploadFileBtn";
 
 import "./ChatComment.css";
 
-export default function ChatComment() {
+function ChatComment() {
     const [text, setText] = useState("");
     const sendBtn = document.querySelector(".sendBtn");
     const onChange = (e) => {
@@ -27,3 +27,5 @@ export default function ChatComment() {
         </form>
     );
 }
+
+export default ChatComment;

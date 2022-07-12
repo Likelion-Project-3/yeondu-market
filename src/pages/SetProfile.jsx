@@ -1,7 +1,7 @@
 import "../pages/style/SetProfile.css";
 import ProfileForm from "../components/profile/ProfileForm";
 
-export default function SetProfile() {
+function SetProfile() {
     return (
         <main className="setProfileWrap">
             <h1>프로필 설정</h1>
@@ -12,3 +12,4 @@ export default function SetProfile() {
         </main>
     );
 }
+export default SetProfile;

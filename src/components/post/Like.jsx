@@ -1,7 +1,7 @@
 import "./Like.css";
 import { useState } from "react";
 
-export default function Like() {
+function Like() {
     const [like, setLike] = useState(false);
 
     const likeSwitch = () => {
@@ -14,3 +14,4 @@ export default function Like() {
         </span>
     );
 }
+export default Like;

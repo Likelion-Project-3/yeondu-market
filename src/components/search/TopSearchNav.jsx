@@ -1,6 +1,6 @@
 import "./TopSearchNav.css";
 
-export default function TopSearchNav() {
+function TopSearchNav() {
     return(
         <nav className="topSearchNav">
             <button type="button" />
@@ -8,3 +8,4 @@ export default function TopSearchNav() {
         </nav>
     )
 }
+export default TopSearchNav;

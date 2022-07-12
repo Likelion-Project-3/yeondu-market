@@ -1,6 +1,6 @@
 import "./profileModal.css";
 
-export default function ProductModal() {
+function ProductModal() {
     return (
         <div className="ModalBtnWrap">
             <a href="/productdelete" className="ModalBtn">
@@ -15,3 +15,4 @@ export default function ProductModal() {
         </div>
     );
 }
+export default ProductModal;

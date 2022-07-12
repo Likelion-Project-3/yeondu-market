@@ -1,7 +1,7 @@
 import "./ProfileForm.css";
 import BasicProfileImg from "../common/BasicProfileImg";
 import UploadFileBtn from "../button/UploadFileBtn";
-export default function ProfileForm() {
+function ProfileForm() {
     return (
         <form className="profileForm">
             <div className="profileImgSetting">
@@ -48,3 +48,4 @@ export default function ProfileForm() {
         </form>
     );
 }
+export default ProfileForm;

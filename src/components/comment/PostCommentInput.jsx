@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./PostCommentInput.css";
 import BasicProfileImg from "../BasicProfileImg";
 
-export default function PostCommentInput() {
+function PostCommentInput() {
     const [text, setText] = useState("");
     const sendBtn = document.querySelector(".uploadBtn");
     const onChange = (e) => {
@@ -26,3 +26,4 @@ export default function PostCommentInput() {
         </form>
     );
 }
+export default PostCommentInput;

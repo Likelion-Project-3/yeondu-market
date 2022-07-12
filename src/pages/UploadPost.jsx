@@ -2,7 +2,7 @@ import { useState } from "react";
 import UploadFileBtn from "../components/button/UploadFileBtn";
 import "../pages/style/UploadPost.css";
 
-export default function UploadPost() {
+function UploadPost() {
     const [text, setText] = useState("");
     const uploadBtn = document.querySelector(".uploadBtn");
     const onChange = (e) => {
@@ -41,3 +41,4 @@ export default function UploadPost() {
         </>
     );
 }
+export default UploadPost;
