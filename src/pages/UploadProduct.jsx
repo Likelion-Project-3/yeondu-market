@@ -34,7 +34,7 @@ function ProductUpload() {
                             />
                         </div>
                         <div className="inputContainer">
-                            <label for="productName">상품명</label>
+                            <label htmlFor="productName">상품명</label>
                             <input
                                 type="text"
                                 className=""
@@ -43,7 +43,7 @@ function ProductUpload() {
                             />
                         </div>
                         <div className="inputContainer">
-                            <label for="productPrice">가격</label>
+                            <label htmlFor="productPrice">가격</label>
                             <input
                                 type="text"
                                 name=""
@@ -52,7 +52,7 @@ function ProductUpload() {
                             />
                         </div>
                         <div className="inputContainer">
-                            <label for="productLink">판매 링크</label>
+                            <label htmlFor="productLink">판매 링크</label>
                             <input
                                 type="text"
                                 name=""
