@@ -1,6 +1,6 @@
 import "./PostItem.css";
 import Like from "../Like";
-import BasicProfileImg from "../BasicProfileImg";
+import BasicProfileImg from "../common/BasicProfileImg";
 
 export default function PostItem() {
     return (

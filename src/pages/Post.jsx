@@ -2,7 +2,7 @@ import TopBasicNav from "../../components/TopBasicNav";
 import PostItem from "../../components/feed/PostItem";
 import PostComment from "../../components/feed/PostComment";
 import PostCommentInput from "../../components/feed/PostCommentInput";
-import "./Post.css";
+import "../pages/style/Post.css";
 
 export default function Post() {
     return (

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import UploadFileBtn from "../UploadFileBtn";
+import UploadFileBtn from "../button/UploadFileBtn";
+
 import "./ChatComment.css";
 
 export default function ChatComment() {
@@ -14,10 +15,7 @@ export default function ChatComment() {
 
     return (
         <form className="chatCommentForm">
-             <UploadFileBtn 
-             forAndId="file"
-             type="gray36"
-              />
+            <UploadFileBtn forAndId="file" type="gray36" />
             <input
                 type="text"
                 placeholder="메시지 입력하기..."

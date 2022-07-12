@@ -1,0 +1,34 @@
+input[type="file"] {
+    display: none;
+}
+
+.UploadFileLabel {
+    content: "";
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.UploadFileLabel.green36 {
+    width: 36px;
+    height: 36px;
+    background: url(../../assets/icon/icon-upload-image.svg) no-repeat
+        center/22px;
+    background-color: var(--main-color);
+}
+
+.UploadFileLabel.green50 {
+    width: 50px;
+    height: 50px;
+    background: url(../../assets/icon/icon-upload-image.svg) no-repeat
+        center/28px;
+    background-color: var(--main-color);
+    box-sizing: border-box;
+}
+
+.UploadFileLabel.gray36 {
+    width: 36px;
+    height: 36px;
+    background: url(../../assets/icon/icon-upload-image.svg) no-repeat
+        center/22px;
+    background-color: #c4c4c4;
+}

@@ -1,12 +1,12 @@
 .WraplikeBtn .likeBtn {
     width: 20px;
     height: 20px;
-    background: url(../assets/icon/icon-heart.svg) no-repeat;
+    background: url(../../assets/icon/icon-heart.svg) no-repeat;
     margin-right: 2px;
     vertical-align: -5px;
 }
 .WraplikeBtn .likeBtn.on {
-    background: url(../assets/icon/icon-heart-green.svg) no-repeat;
+    background: url(../../assets/icon/icon-heart-green.svg) no-repeat;
 }
 
 .WraplikeBtn > em {

@@ -16,7 +16,7 @@
 .topMainNav > button {
     width: 24px;
     height: 24px;
-    background: url(../assets/icon/icon-search.svg) no-repeat;
+    background: url(../../assets/icon/icon-search.svg) no-repeat;
 }
 
 .homeContentNonFeed {
@@ -30,7 +30,7 @@
 .homeContentNonFeed > div {
     width: 100px;
     height: 100px;
-    background: url(../assets/pea-nocolor.png) no-repeat center/100%;
+    background: url(../../assets/pea-nocolor.png) no-repeat center/100%;
 }
 .homeContentNonFeed > p {
     margin: 20px 0;

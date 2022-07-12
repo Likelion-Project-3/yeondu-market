@@ -1,14 +1,14 @@
+import React from "react";
 import TopBasicNav from "../../components/TopBasicNav";
-import "./MyProfile.css";
+import "../pages/style/Profile.css";
 import ProfileInfo from "../../components/profile/ProfileInfo";
-import ProductContainer from "../../components/product/ProductContainer";
-
-export default function MyProfile() {
+function Profile() {
     return (
         <div className="profileWrap">
             <TopBasicNav />
             <ProfileInfo />
-            <ProductContainer />
         </div>
     );
 }
+
+export default Profile;

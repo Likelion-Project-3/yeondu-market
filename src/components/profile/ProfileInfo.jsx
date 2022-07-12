@@ -1,7 +1,8 @@
 import React from "react";
+import BasicProfileImg from "../common/BasicProfileImg";
 import ProfileBtn from "./ProfileBtn";
 import "./ProfileInfo.css";
-import BasicProfileImg from "../BasicProfileImg";
+
 function ProfileInfo() {
     return (
         <div className="infoWrap">

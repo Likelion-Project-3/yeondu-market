@@ -1,7 +1,6 @@
-import "./EditProfile.css";
-import ProfileForm from "../components/ProfileForm";
+import "../pages/style/EditProfile.css";
 import { useHistory } from "react-router-dom";
-
+import ProfileForm from "../components/profile/ProfileForm";
 
 export default function EditProfile() {
     let history = useHistory();
@@ -14,8 +13,7 @@ export default function EditProfile() {
                     onClick={() => {
                         history.goBack();
                     }}
-                >
-                </button>
+                ></button>
                 <button className="saveBtn">저장</button>
             </nav>
             <main className="editProfileWrap">

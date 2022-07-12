@@ -1,7 +1,7 @@
-import TapMenu from "../components/TapMenu";
-import "./HomePage.css";
+import TapMenu from "../components/common/TapMenu";
+import "../pages/style/Home.css";
 
-export default function HomePage() {
+export default function Home() {
     return (
         <>
             <header className="topMainNav">

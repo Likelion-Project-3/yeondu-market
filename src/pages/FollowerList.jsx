@@ -1,4 +1,4 @@
-import "./FollowerList.css";
+import "../pages/style/FollowerList.css";
 import React from "react";
 import FollowHeader from "../../components/follow/FollowHeader";
 import FollowerContainer from "../../components/follow/FollowerContainer";
