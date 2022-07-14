@@ -12,7 +12,7 @@ function UploadFileBtn(props) {
                     position: `${props.position}`,
                 }}
             />
-            <input type="file" id={props.forAndId} />
+            <input type="file" id={props.forAndId} accept="image/*" />
         </>
     );
 }
