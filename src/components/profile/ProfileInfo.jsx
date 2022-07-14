@@ -1,28 +1,34 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import BasicProfileImg from "../common/BasicProfileImg";
 import ProfileBtn from "./ProfileBtn";
 import "./ProfileInfo.css";
 
-function ProfileInfo() {
+function ProfileInfo({ profileInfo }) {
+    const username = localStorage.getItem("username");
+    const followLink = `/${username}/follower`;
+    const folloingLink = `/${username}/folloing`;
     return (
         <div className="infoWrap">
             <div className="tempWrap">
-                <a href="/followerlist">
-                    <p className="followCount followers">2950</p>
+                <Link to={followLink}>
+                    <p className="followCount followers">
+                        {profileInfo.profile.followerCount}
+                    </p>
                     <p className="followName followers">followers</p>
-                </a>
+                </Link>
                 <BasicProfileImg size="lg" />
-                <a href="/">
-                    <p className="followCount following">128</p>
+                <Link to={folloingLink}>
+                    <p className="followCount following">
+                        {profileInfo.profile.followingCount}
+                    </p>
                     <p className="followName following">followings</p>
-                </a>
+                </Link>
             </div>
             <div className="">
-                <p className="userName">애월읍 위니브 감귤공장</p>
-                <p className="userID">@ weniv_Mandarin</p>
-                <p className="userIntro">
-                    애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장
-                </p>
+                <p className="userName">{profileInfo.profile.username}</p>
+                <p className="userID">@ {profileInfo.profile.accountname}</p>
+                <p className="userIntro">{profileInfo.profile.intro}</p>
             </div>
             <ProfileBtn />
         </div>
