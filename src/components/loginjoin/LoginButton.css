@@ -1,10 +1,15 @@
-#login{
+.loginBtn {
     background-color: var(--main-bg-color);
     width: 100%;
     line-height: 50px;
     border-radius: 45px;
     color: #ffffff;
-    font-size: 22px;
+    font-size: 18px;
     margin: 0 auto 30px;
     line-height: 55px;
+}
+
+.loginActiveBtn {
+    background-color: var(--main-color);
+    cursor: pointer;
 }

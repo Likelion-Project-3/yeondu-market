@@ -1,12 +1,23 @@
-#checkEmail, #checkPassword{
+#checkEmail, #checkPassword {
     display: block;
     margin-bottom: 20px;
     color: var(--sub-font-color);
 }
-#loginEmail, #passwordEmail{
-    border-bottom: 1px solid var(--main-color);
+#loginEmail, #passwordEmail {
+    border-bottom: 1px solid var(--main-border-color);
     margin-bottom: 40px;
     width: 100%;
     font-size: 16px;
     padding-bottom: 15px;
+}
+
+#loginEmail:focus, #passwordEmail:focus {
+    border-bottom: 1px solid var(--main-font-color);
+}
+
+#loginEmail::placeholder, #passwordEmail::placeholder {
+    color: var(--main-border-color);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
 }

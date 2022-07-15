@@ -4,7 +4,7 @@ import "./LoginButton.css";
 function LoginButton(props) {
     return (
         <>
-            <input type="submit" id="login" value={props.value} />
+            <input type="submit" id="login" className="loginBtn" disabled value={props.value} />
         </>
     );
 }
