@@ -83,8 +83,16 @@ function UploadPost() {
                     };
                 });
             };
-            setImgFile([...imgFile, res.data[0]["filename"]]);
-            imgPreview(imgInput);
+
+            if (res.data.message === "이미지 파일만 업로드가 가능합니다.") {
+                alert(
+                    "업로드 가능한 확장자명: *.jpg, *.gif, *.png, *.jpeg, *.bmp, *.tif, *.heic"
+                );
+                setImgFile([...imgFile]);
+            } else {
+                setImgFile([...imgFile, res.data[0]["filename"]]);
+                imgPreview(imgInput);
+            }
             console.log(res);
         } catch (err) {
             console.log(err);
