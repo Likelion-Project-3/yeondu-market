@@ -4,8 +4,7 @@ import "./TopSearchNav.css";
 function TopSearchNav() {
     return(
         <>
-            <TopMenuComponent topclassName="topSearchNav" rightclassName="unsettled"/>
-            <input type="text" placeholder="계정 검색" maxLength="30" autoFocus />
+            <TopMenuComponent topclassName="topSearchNav" rightclassName="unsettled" inputtype="text"/>
         </>
     )
 }

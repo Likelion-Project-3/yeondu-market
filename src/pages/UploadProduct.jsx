@@ -7,7 +7,7 @@ function ProductUpload() {
     let history = useHistory();
     return (
         <div>
-            <TopMenuComponent topclassName="topBasicNav" rightclassName="saveBtn" title="저장" type="submit"/>
+            <TopMenuComponent topclassName="topBasicNav" rightclassName="saveBtn" inputtype="notext" title="저장" type="submit"/>
             <main className="mainUpload">
                 <section className="container">
                     <h2 className="ir">상품등록페이지</h2>

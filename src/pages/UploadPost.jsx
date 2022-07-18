@@ -101,7 +101,7 @@ function UploadPost() {
 
     return (
         <>
-            <TopMenuComponent topclassName="uploadPostHeader" rightclassName="uploadBtn" title="업로드" type="submit"/>
+            <TopMenuComponent topclassName="uploadPostHeader" rightclassName="uploadBtn" inputtype="notext" title="업로드" type="submit"/>
             <main className="uploadPostMain">
                 <div className="myProfileImg"></div>
                 <form className="uploadForm">

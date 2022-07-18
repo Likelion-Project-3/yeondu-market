@@ -14,6 +14,9 @@
 .unsettled{
     display: none;
 }
+input[type=notext]{
+    display: none;
+}
 
 .topBasicNav, .uploadPostHeader, .topSearchNav, .topChatNav,.followerWrap .topMainNavFollow {
     display: flex;

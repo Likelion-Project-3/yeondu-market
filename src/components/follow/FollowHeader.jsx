@@ -3,7 +3,7 @@ import TopMenuComponent from "../common/TopMenuComponent";
 
 function FollowHeader() {
     return (
-        <TopMenuComponent topclassName="topMainNavFollow" h2title="Followers"/>
+        <TopMenuComponent topclassName="topMainNavFollow" h2title="Followers" rightclassName="unsettled" inputtype="notext"/>
     );
 }
 
