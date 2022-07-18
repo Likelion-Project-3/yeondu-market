@@ -14,10 +14,7 @@ function UploadPost() {
 
     return (
         <>
-            <nav className="uploadPostHeader">
-                <button className="prevBtn"></button>
-                <button className="uploadBtn disabled">업로드</button>
-            </nav>
+            <TopMenuComponent topclassName="uploadPostHeader" rightclassName="uploadBtn disabled" title="저장"/>
             <main className="uploadPostMain">
                 <div className="myProfileImg"></div>
                 <form className="uploadForm">

@@ -7,15 +7,7 @@ function EditProfile() {
 
     return (
         <>
-            <nav className="topBasicNav">
-                <button
-                    className="prevBtn"
-                    onClick={() => {
-                        history.goBack();
-                    }}
-                ></button>
-                <button className="saveBtn">저장</button>
-            </nav>
+        <TopMenuComponent topclassName="topBasicNav" rightclassName="saveBtn" title="저장"/>
             <main className="editProfileWrap">
                 <ProfileForm />
             </main>
