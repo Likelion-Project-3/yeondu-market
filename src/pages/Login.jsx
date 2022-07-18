@@ -25,7 +25,7 @@ function Login() {
 
     const [isActive, setIsActive] = useState(false);
     const isPassedLogin = () => {
-        return email.match(/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i) &&  password.length > 6
+        return email.match(/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/) &&  password.length > 6
             ? setIsActive(true)
             : setIsActive(false);
     };
