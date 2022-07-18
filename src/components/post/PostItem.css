@@ -1,5 +1,7 @@
 .postCard {
     padding: 20px 16px;
+    max-width: 390px;
+    margin: 0 auto;
 }
 
 .postHeaderWrap {
@@ -48,8 +50,15 @@
 }
 
 .postContentImg {
-    background: url(../../assets/icon/postImg.svg) no-repeat center/contain;
+    /* background: url(../../assets/icon/postImg.svg) no-repeat; */
+    /* height: 228px;
+    width: 340px; */
+}
+
+.postContentImg img {
     height: 228px;
+    width: 340px;
+    object-fit: cover;
 }
 
 .postContent .btnWrap {
