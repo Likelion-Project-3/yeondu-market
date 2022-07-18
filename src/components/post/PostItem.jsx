@@ -1,33 +1,61 @@
 import "./PostItem.css";
-import Like from "../Like";
+import Like from "./Like";
 import BasicProfileImg from "../common/BasicProfileImg";
+import { useEffect, useState } from "react";
 
-function PostItem() {
+function PostItem({ post }) {
+    const [postImg, setPostImg] = useState("");
+    const backgroundImage = `https://mandarin.api.weniv.co.kr/${postImg}`;
+    const pI = post.image;
+
+    useEffect(() => {
+        if (post.image !== undefined) {
+            console.log(pI);
+            // console.log(pI.includes(","));
+            console.log("##", pI.split(",")[0]);
+            setPostImg(pI.split(",")[0]);
+        }
+    }, []);
+    console.log(postImg);
+    // const str = "1657978440543.jpg, 1657978444277.jpg";
+    // console.log("##", postImg.split(","));
+    // console.log("##", postImg.split(",")[0]);
+
+    console.log("!!", post);
     return (
         <article className="postCard">
-            <div className="postHeaderWrap">
-                <div className="postWriter">
-                    <BasicProfileImg size="sm" />
-                    <div className="postWriterName">
-                        <strong>애월읍 위니브 감귤농장</strong>
-                        <small>@ weniv_Mandarin</small>
+            <div>
+                <div className="postHeaderWrap">
+                    <div className="postWriter">
+                        <BasicProfileImg size="sm" />
+                        <div className="postWriterName">
+                            <strong>{post.author.username}</strong>
+                            <small>@ {post.author.accountname}</small>
+                        </div>
                     </div>
+                    <button className="more"></button>
                 </div>
-                <button className="more"></button>
-            </div>
-            <div className="postContent">
-                <p className="postContentText">
-                    옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여,
-                    뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고,
-                    못할 넣는 풍부하게 뛰노는 인생의 힘있다.
-                </p>
-                <div className="postContentImg"></div>
-                <div className="btnWrap">
-                    <Like />
-                    <button type="button" className="commentBtn"></button>
-                    <span className="commentCount">12</span>
+                <div className="postContent">
+                    <p className="postContentText">{post.content}</p>
+                    <div
+                        className="postContentImg"
+                        // style={{
+                        //     background: `url(${backgroundImage}) no-repeat`,
+                        // }}
+                    >
+                        {post.image ? (
+                            <img src={backgroundImage} alt="" />
+                        ) : null}
+                    </div>
+                    <div className="btnWrap">
+                        <Like heartCount={post.heartCount} />
+                        <button type="button" className="commentBtn"></button>
+                        <span className="commentCount">
+                            {post.commentCount}
+                        </span>
+                    </div>
+                    <span className="created">{post.createdAt}</span>
                 </div>
-                <span className="created">2020년 10월 21일</span>
             </div>
         </article>
     );
