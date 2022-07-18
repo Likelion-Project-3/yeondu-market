@@ -98,7 +98,6 @@ function UploadPost() {
             console.log(err);
         }
     };
-
     return (
         <>
             <TopMenuComponent topclassName="uploadPostHeader" rightclassName="uploadBtn" inputtype="notext" title="업로드" type="submit"/>

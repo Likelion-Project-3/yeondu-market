@@ -14,10 +14,6 @@
 .unsettled{
     display: none;
 }
-input[type=notext]{
-    display: none;
-}
-
 .topBasicNav, .uploadPostHeader, .topSearchNav, .topChatNav,.followerWrap .topMainNavFollow {
     display: flex;
     justify-content: space-between;
@@ -40,4 +36,7 @@ input[type=notext]{
     padding: 8px 25px;
     font-size: 14px;
     width: fit-content;
+}
+input[type=notext]{
+    display: none;
 }

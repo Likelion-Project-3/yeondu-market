@@ -56,5 +56,4 @@ function ProductUpload() {
         </div>
     );
 }
-
 export default ProductUpload;
