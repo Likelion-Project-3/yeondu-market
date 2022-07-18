@@ -1,9 +1,9 @@
 
-.uploadPostHeader .uploadBtn.disabled {
-    pointer-events: none;
-    background-color: var(--main-bg-color);
-}
 
+.uploadBtn.disabled {
+    background-color: var(--main-bg-color);
+    pointer-events: none;
+}
 .uploadPostMain {
     display: flex;
     padding: 20px;
@@ -13,11 +13,16 @@
     height: 80vh;
 }
 
+.uploadForm {
+    min-width: 330px;
+}
+
 .uploadPostMain .myProfileImg {
     background: url("../../assets/icon/icon-ellipse-1.svg") no-repeat
         center/contain;
     width: 42px;
     height: 42px;
+    flex-shrink: 0;
 }
 
 .uploadPostMain textarea {
@@ -26,13 +31,30 @@
     padding: 10px;
 }
 
-.uploadPostMain input[type="file"] {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+.imgCont {
+    width: 340px;
+    height: 230px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.imgCont::-webkit-scrollbar {
+    height: 8px;
+    border-radius: 10px;
+}
+
+.imgCont::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+.imgCont::-webkit-scrollbar-track {
+    background-color: var(--main-bg-color);
+    box-shadow: inset 0px 0px 5px white;
+}
+
+.imgBox {
+    width: 100%;
+    height: 100%;
+    margin-right: 1rem;
+    border-radius: 10px;
 }

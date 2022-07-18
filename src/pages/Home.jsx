@@ -2,6 +2,8 @@ import TapMenu from "../components/common/TapMenu";
 import "../pages/style/Home.css";
 
 function Home() {
+    localStorage.getItem('token');
+
     return (
         <>
             <header className="topMainNav">
