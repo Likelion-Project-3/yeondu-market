@@ -64,6 +64,8 @@ function Login() {
                 localStorage.setItem('accountname', response.data.user.accountname);
                 const accountname = localStorage.getItem('accountname');
                 console.log(accountname);
+                localStorage.setItem('username', response.data.user.accountname);
+                const username = localStorage.getItem('username');
                 setSuccess(true);
             } else {
                 
