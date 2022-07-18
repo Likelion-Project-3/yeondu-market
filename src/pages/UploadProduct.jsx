@@ -1,23 +1,13 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import prevBtn from "../../assets/icon/icon-arrow-left.svg";
 import UploadFileBtn from "../../components/button/UploadFileBtn";
+import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
 function ProductUpload() {
     let history = useHistory();
     return (
         <div>
-            <nav className="topBasicNav">
-                <button
-                    className="prevBtn"
-                    onClick={() => {
-                        history.goBack();
-                    }}
-                >
-                    {/* <img src={prevBtn} alt="" /> */}
-                </button>
-                <button className="saveBtn">저장</button>
-            </nav>
+            <TopMenuComponent topclassName="topBasicNav" rightclassName="saveBtn" title="저장" type="submit"/>
             <main className="mainUpload">
                 <section className="container">
                     <h2 className="ir">상품등록페이지</h2>

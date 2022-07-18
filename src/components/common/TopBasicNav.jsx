@@ -3,7 +3,7 @@ import TopMenuComponent from "./TopMenuComponent";
 
 function TopBasicNav() {
     return (
-        <TopMenuComponent topclassName="topBasicNav" className="moreBtn"/>
+        <TopMenuComponent topclassName="topBasicNav" className="moreBtn" type="button"/>
     );
 }
 export default TopBasicNav;
