@@ -63,3 +63,25 @@
 .inputContainer input::placeholder {
     color: var(--main-border-color);
 }
+
+.ProductErrMessage {
+    color: red;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.ProductErrMessage.prodName {
+    display: none;
+}
+
+.ProductErrMessage.prodPrice {
+    display: none;
+}
+
+.ProductErrMessage.prodLink {
+    display: none;
+}
+
+.ProductErrMessage.disble {
+    display: block;
+}

@@ -5,7 +5,6 @@ import ProfileInfo from "../components/profile/ProfileInfo";
 import "../pages/style/MyProfile.css";
 import { BASE_URL } from "../components/constants/baseUrl";
 import axios from "axios";
-import PostItem from "../components/post/PostItem";
 import PostList from "../components/post/PostList";
 
 function MyProfile() {
@@ -15,6 +14,7 @@ function MyProfile() {
 
     const [profileInfo, setProfileInfo] = useState([]);
     const [postList, setPostList] = useState([]);
+    const [productList, setProductList] = useState([]);
 
     useEffect(() => {
         //내프로필 정보
@@ -46,9 +46,26 @@ function MyProfile() {
                 })
                 .catch((err) => console.log(err));
         };
+
+        //내가 등록한 상품 목록
+        const productList = () => {
+            axios
+                .get(BASE_URL + `/product/${accountname}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                })
+                .then((response) => {
+                    setProductList(response.data);
+                })
+                .catch((err) => console.log(err));
+        };
         getProfile();
         postList();
+        productList();
     }, []);
+    console.log("product", productList);
     return (
         <div className="profileWrap">
             <TopBasicNav />
