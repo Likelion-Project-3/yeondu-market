@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Join from "./pages/Join";
 import Login from "./pages/Login";
 import MyProfile from "./pages/MyProfile";
+import SetProfile from "./pages/SetProfile";
 import Splash from "./pages/Splash";
 import UploadPost from "./pages/UploadPost";
 
@@ -23,6 +24,7 @@ function App() {
                 <Route exact path="/myprofile" component={MyProfile} />
                 <Route exact path="/chat" component={ChatList} />
                 <Route exact path="/chat/:accountId" component={ChatRoom} />
+                <Route exact path="/setprofile" component={SetProfile} />
             </BrowserRouter>
         </div>
     );
