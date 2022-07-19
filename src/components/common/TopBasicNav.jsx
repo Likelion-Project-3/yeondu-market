@@ -1,11 +1,9 @@
 import "./TopBasicNav.css";
+import TopMenuComponent from "./TopMenuComponent";
 
 function TopBasicNav() {
     return (
-        <nav className="topBasicNav">
-            <button className="prevBtn"></button>
-            <button className="moreBtn"></button>
-        </nav>
+        <TopMenuComponent topclassName="topBasicNav" className="moreBtn"/>
     );
 }
 export default TopBasicNav;

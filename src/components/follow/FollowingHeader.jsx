@@ -1,18 +1,9 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import TopMenuComponent from "../common/TopMenuComponent";
 
 function FollowingHeader() {
-    let history = useHistory();
     return (
-        <header className="topMainNavFollow">
-            <button
-                className="prevBtn"
-                onClick={() => {
-                    history.goBack();
-                }}
-            ></button>
-            <p>Following</p>
-        </header>
+        <TopMenuComponent topclassName="topMainNavFollow" h2title="Following"/>
     );
 }
 

@@ -101,16 +101,7 @@ function UploadPost() {
 
     return (
         <>
-            <nav className="uploadPostHeader">
-                <button className="prevBtn" onClick={history.goBack}></button>
-                <button
-                    className="uploadBtn"
-                    type="submit"
-                    onClick={handleUpload}
-                >
-                    업로드
-                </button>
-            </nav>
+            <TopMenuComponent topclassName="uploadPostHeader" rightclassName="uploadBtn disabled" title="저장"/>
             <main className="uploadPostMain">
                 <div className="myProfileImg"></div>
                 <form className="uploadForm">
