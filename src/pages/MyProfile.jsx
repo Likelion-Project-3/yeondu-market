@@ -65,12 +65,12 @@ function MyProfile() {
         postList();
         productList();
     }, []);
-    console.log("product", productList);
+
     return (
         <div className="profileWrap">
             <TopBasicNav />
             <ProfileInfo profileInfo={profileInfo} />
-            <ProductContainer />
+            <ProductContainer productList={productList} />
             <PostList postList={postList} />
         </div>
     );
