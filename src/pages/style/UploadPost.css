@@ -1,14 +1,6 @@
 
-.uploadPostHeader .uploadBtn {
-    padding: 8px 25px;
-    border-radius: 32px;
-    background-color: var(--main-color);
-    color: #fff;
-    font-size: 14px;
-    width: fit-content;
-}
-
-.uploadBtn.disabled {
+.uploadPostHeader .uploadBtn.disabled {
+    pointer-events: none;
     background-color: var(--main-bg-color);
     pointer-events: none;
 }
