@@ -7,6 +7,7 @@ function EditProfile() {
     return (
         <>
         <TopMenuComponent topclassName="topBasicNav" rightclassName="saveBtn" inputtype="notext" title="저장" type="submit"/>
+
             <main className="editProfileWrap">
                 <ProfileForm />
             </main>
