@@ -10,18 +10,13 @@ function PostItem({ post }) {
 
     useEffect(() => {
         if (post.image !== undefined) {
-            console.log(pI);
-            // console.log(pI.includes(","));
-            console.log("##", pI.split(",")[0]);
+            // console.log(pI);
             setPostImg(pI.split(",")[0]);
         }
     }, []);
-    console.log(postImg);
-    // const str = "1657978440543.jpg, 1657978444277.jpg";
-    // console.log("##", postImg.split(","));
-    // console.log("##", postImg.split(",")[0]);
+    // console.log(postImg);
 
-    console.log("!!", post);
+    // console.log("!!", post);
     return (
         <article className="postCard">
             <div>
