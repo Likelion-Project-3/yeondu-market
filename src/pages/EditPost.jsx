@@ -1,16 +1,20 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { BASE_URL } from "../components/constants/baseUrl";
-// import UploadFileBtn from "../components/button/UploadFileBtn";
 import "../pages/style/UploadPost.css";
 
-function UploadPost() {
+function EditPost(props) {
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
+    // 기존에 있던 이미지
     const [imgSrc, setImgSrc] = useState([]);
+    // 새로운 이미지
+    const [newImgSrc, setNewImgSrc] = useState([]);
     const history = useHistory();
     const formData = new FormData();
+    const post_id = props.data.post.id;
+    const url = BASE_URL + `/post/${post_id}`;
 
     const onChange = (e) => {
         setText(e.target.value);
@@ -19,21 +23,42 @@ function UploadPost() {
     const postData = {
         post: {
             content: text,
-            image: imgFile.join(", "),
+            image: imgSrc.concat(imgFile).join(", "),
         },
     };
     const token = localStorage.getItem("token");
 
+    useEffect(() => {
+        // 기존 게시글 불러오기
+        const getPost = async () => {
+            axios
+                .get(url, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                })
+                .then((response) => {
+                    const postDetail = response.data.post;
+
+                    setText(postDetail.content);
+                    setImgSrc(postDetail.image.split(", "));
+                })
+                .catch((err) => console.log(err));
+        };
+
+        getPost();
+    }, []);
+
     // 텍스트와 이미지 POST 전송
     const handleUpload = async () => {
-        const url = BASE_URL + "/post";
         try {
             if (!text && imgFile.length === 0) {
                 alert("내용 또는 이미지를 입력해주세요.");
             }
 
             const res = await axios(url, {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-type": "application/json",
@@ -49,16 +74,14 @@ function UploadPost() {
 
     // 이미지 업로드
     const handleUploadImg = async (e) => {
-        e.preventDefault();
-
-        if (imgFile.length > 2) {
+        if (imgSrc.length + newImgSrc.length >= 3) {
             alert("3개 이하의 파일을 업로드 하세요.");
             return;
         }
 
         const imgInput = e.target.files[0];
-        setImgFile((imgFile) => [...imgFile, imgInput.name]);
         const url = BASE_URL + "/image/uploadfiles";
+
         formData.append("image", imgInput);
 
         try {
@@ -79,7 +102,7 @@ function UploadPost() {
                 reader.readAsDataURL(file);
                 return new Promise((resolve) => {
                     reader.onload = () => {
-                        setImgSrc([...imgSrc, reader.result]);
+                        setNewImgSrc([...newImgSrc, reader.result]);
                         resolve();
                     };
                 });
@@ -94,13 +117,10 @@ function UploadPost() {
                 setImgFile([...imgFile, res.data[0]["filename"]]);
                 imgPreview(imgInput);
             }
-            console.log(res.data[0]["originalname"]);
-            console.log(res);
         } catch (err) {
             console.log(err);
         }
     };
-
     return (
         <>
             <nav className="uploadPostHeader">
@@ -117,20 +137,31 @@ function UploadPost() {
                 <div className="myProfileImg"></div>
                 <form className="uploadForm">
                     <textarea
-                        placeholder="게시글 입력하기..."
                         cols="30"
                         rows="10"
                         onChange={onChange}
                         value={text}
                     />
                     <div className="imgCont">
-                        {imgSrc.map((img, index) => {
+                        {imgSrc
+                            ? imgSrc.map((img, index) => {
+                                  return (
+                                      <img
+                                          key={index}
+                                          src={`https://mandarin.api.weniv.co.kr/${img}`}
+                                          className="imgBox"
+                                          alt=""
+                                      />
+                                  );
+                              })
+                            : null}
+                        {newImgSrc.map((img, index) => {
                             return (
                                 <img
                                     key={index}
                                     src={img}
                                     className="imgBox"
-                                    alt="이미지 미리보기"
+                                    alt=""
                                 />
                             );
                         })}
@@ -155,4 +186,4 @@ function UploadPost() {
         </>
     );
 }
-export default UploadPost;
+export default EditPost;
