@@ -98,19 +98,9 @@ function UploadPost() {
             console.log(err);
         }
     };
-
     return (
         <>
-            <nav className="uploadPostHeader">
-                <button className="prevBtn" onClick={history.goBack}></button>
-                <button
-                    className="uploadBtn"
-                    type="submit"
-                    onClick={handleUpload}
-                >
-                    업로드
-                </button>
-            </nav>
+            <TopMenuComponent topclassName="uploadPostHeader" rightclassName="uploadBtn" inputtype="notext" title="업로드" type="submit"/>
             <main className="uploadPostMain">
                 <div className="myProfileImg"></div>
                 <form className="uploadForm">

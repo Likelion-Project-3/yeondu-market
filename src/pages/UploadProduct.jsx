@@ -1,6 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { useHistory } from "react-router-dom";
+import UploadFileBtn from "../../components/button/UploadFileBtn";
+import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
 import { BASE_URL } from "../components/constants/baseUrl";
 import { useState } from "react";
@@ -108,17 +110,8 @@ function UploadProduct() {
 
     return (
         <div>
-            <nav className="topBasicNav">
-                <button
-                    className="prevBtn"
-                    onClick={() => {
-                        history.goBack();
-                    }}
-                ></button>
-                <button className="saveBtn" onClick={handleSubmitProduct}>
-                    저장
-                </button>
-            </nav>
+            <TopMenuComponent topclassName="topBasicNav" rightclassName="saveBtn" inputtype="notext" title="저장" type="submit"/>
+
             <main className="mainUpload">
                 <section className="container">
                     <h2 className="ir">상품등록페이지</h2>
@@ -205,3 +198,4 @@ function UploadProduct() {
 }
 
 export default UploadProduct;
+

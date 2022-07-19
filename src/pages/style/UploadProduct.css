@@ -1,12 +1,3 @@
-.saveBtn {
-    width: 90px;
-    background-color: var(--main-bg-color);
-    border-radius: 30px;
-    padding: 7px 0px;
-    color: white;
-    font-weight: 500;
-}
-
 .mainUpload {
     display: flex;
 }

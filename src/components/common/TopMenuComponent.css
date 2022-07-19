@@ -1,0 +1,42 @@
+.prevBtn {
+    width: 22px;
+    height: 22px;
+    background: url("../../assets/icon/icon-arrow-left.svg");
+}
+.topChatNav .prevBtn{
+    margin-right: 10px;
+}
+.topChatNav .moreBtn, .moreBtn {
+    width: 22px;
+    height: 22px;
+    background: url("../../assets/icon/icon-\ more-vertical.svg");
+}
+.unsettled{
+    display: none;
+}
+.topBasicNav, .uploadPostHeader, .topSearchNav, .topChatNav,.followerWrap .topMainNavFollow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--main-border-color);
+}
+.uploadPostHeader .uploadBtn, .saveBtn{
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 3px;
+}
+.saveBtn {
+    width: 90px;
+    padding: 7px 0px;
+    font-weight: 500;
+}
+.uploadPostHeader .uploadBtn {
+    padding: 8px 25px;
+    font-size: 14px;
+    width: fit-content;
+}
+input[type=notext]{
+    display: none;
+}

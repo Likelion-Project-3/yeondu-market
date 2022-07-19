@@ -4,18 +4,10 @@ import ProfileForm from "../components/profile/ProfileForm";
 
 function EditProfile() {
     let history = useHistory();
-
     return (
         <>
-            <nav className="topBasicNav">
-                <button
-                    className="prevBtn"
-                    onClick={() => {
-                        history.goBack();
-                    }}
-                ></button>
-                <button className="saveBtn">저장</button>
-            </nav>
+        <TopMenuComponent topclassName="topBasicNav" rightclassName="saveBtn" inputtype="notext" title="저장" type="submit"/>
+
             <main className="editProfileWrap">
                 <ProfileForm />
             </main>

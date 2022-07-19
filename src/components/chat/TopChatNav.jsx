@@ -1,15 +1,10 @@
 import "./TopChatNav.css";
-import { useHistory } from "react-router-dom";
+import TopMenuComponent from "../common/TopMenuComponent";
 
-function TopChatNav(props) {
-    const history = useHistory();
-
+function TopChatNav() {
     return (
-        <nav className="topChatNav">
-            <button className="prevBtn" onClick={history.goBack}></button>
-            <h2 className="chatSender">애월읍 위니브 감귤농장</h2>
-            <button className="moreBtn"></button>
-        </nav>
+        <TopMenuComponent topclassName="topChatNav" h2className="chatSender" h2title="애월읍 위니브 감귤농장" inputtype="notext" rightclassName="moreBtn" type="button" />
+
     );
 }
 export default TopChatNav;
