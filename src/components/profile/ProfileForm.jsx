@@ -1,6 +1,6 @@
 import "./ProfileForm.css";
 import BasicProfileImg from "../common/BasicProfileImg";
-import UploadFileBtn from "../button/UploadFileBtn";
+// import UploadFileBtn from "../button/UploadFileBtn";
 import { useState, useEffect } from "react";
 import { BASE_URL } from "../../components/constants/baseUrl";
 import BasicProfile from "../../assets/basic-profile-img.svg";
@@ -84,7 +84,7 @@ function ProfileForm() {
         setFileName(response.data.filename);
 
         } catch (err) {
-            console.log(err);
+            console.error(err);
         }
     };
 
