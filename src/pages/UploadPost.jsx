@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { BASE_URL } from "../components/constants/baseUrl";
+import TopMenuComponent from "../components/common/TopMenuComponent";
 // import UploadFileBtn from "../components/button/UploadFileBtn";
 import "../pages/style/UploadPost.css";
 
@@ -41,7 +42,7 @@ function UploadPost() {
                 data: postData,
             });
             console.log(res);
-            // 게시글 상세 페이지로 이동
+            history.push("/myprofile");
         } catch (err) {
             console.log(err);
         }
@@ -102,7 +103,14 @@ function UploadPost() {
     };
     return (
         <>
-            <TopMenuComponent topclassName="uploadPostHeader" rightclassName="uploadBtn" inputtype="notext" title="업로드" type="submit"/>
+            <TopMenuComponent
+                topclassName="uploadPostHeader"
+                rightclassName="uploadBtn"
+                inputtype="notext"
+                title="업로드"
+                type="submit"
+                handlerRightBtn={handleUpload}
+            />
             <main className="uploadPostMain">
                 <div className="myProfileImg"></div>
                 <form className="uploadForm">

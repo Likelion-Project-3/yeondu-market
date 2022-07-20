@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import MyProfile from "./pages/MyProfile";
 import SetProfile from "./pages/SetProfile";
 import Splash from "./pages/Splash";
+import Post from "./pages/Post";
 import UploadPost from "./pages/UploadPost";
 import UploadProduct from "./pages/UploadProduct";
 import EditPost from "./pages/EditPost";
@@ -22,6 +23,7 @@ function App() {
                 <Route exact path="/join" component={Join} />
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/post/upload" component={UploadPost} />
+                <Route exact path="/post/:postId" component={Post} />
                 <Route exact path="/post/:postId/edit" component={EditPost} />
                 <Route exact path="/product/upload" component={UploadProduct} />
                 <Route exact path="/myprofile" component={MyProfile} />

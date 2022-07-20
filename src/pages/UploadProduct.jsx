@@ -148,7 +148,6 @@ function UploadProduct() {
                 inputtype="notext"
                 title="저장"
                 type="submit"
-                onClick={handleSubmitProduct}
             /> */}
 
             <main className="mainUpload">

@@ -1,6 +1,7 @@
 import "./PostItem.css";
 import Like from "./Like";
 import BasicProfileImg from "../common/BasicProfileImg";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function PostItem({ post }) {
@@ -14,7 +15,7 @@ function PostItem({ post }) {
             setPostImg(pI.split(",")[0]);
         }
     }, []);
-    // console.log(postImg);
+    console.log(postImg);
 
     // console.log("!!", post);
     return (
@@ -44,11 +45,19 @@ function PostItem({ post }) {
                     </div>
                     <div className="btnWrap">
                         <Like heartCount={post.heartCount} />
-                        <button type="button" className="commentBtn"></button>
-                        <span className="commentCount">
-                            {post.commentCount}
-                        </span>
+                        <Link to={`/post/${post.id}`}>
+                            <span className="wrapCommentBtn">
+                                <button
+                                    type="button"
+                                    className="commentBtn"
+                                ></button>
+                                <span className="commentCount">
+                                    {post.commentCount}
+                                </span>
+                            </span>
+                        </Link>
                     </div>
+
                     <span className="created">{post.createdAt}</span>
                 </div>
             </div>

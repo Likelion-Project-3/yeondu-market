@@ -67,6 +67,11 @@
     align-items: center;
 }
 
+.wrapCommentBtn {
+    display: flex;
+    align-items: center;
+}
+
 .btnWrap .commentBtn {
     background: url(../../assets/icon/icon-message-circle.svg) no-repeat
         center/contain;

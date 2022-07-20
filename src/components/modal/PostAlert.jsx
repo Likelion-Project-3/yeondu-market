@@ -4,6 +4,8 @@ import axios from "axios";
 import "./modalAlert.css";
 
 function PostAlert(props) {
+    const history = useHistory();
+
     const deletePost = async () => {
         // const url = BASE_URL + "/post/62d60b3a82fdcc712f4d4713";
         const post_id = props.data.post.id;
@@ -18,7 +20,7 @@ function PostAlert(props) {
                     "Content-type": "application/json",
                 },
             });
-            alert("삭제되었습니다.");
+            history.push("/myprofile");
             console.log(res);
         } catch (err) {
             // 404페이지로 이동
@@ -26,7 +28,6 @@ function PostAlert(props) {
         }
     };
 
-    let history = useHistory();
     return (
         <div className="ModalAlert">
             <span className="alertText">게시글을 삭제할까요?</span>
