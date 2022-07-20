@@ -2,9 +2,10 @@ import React from "react";
 import PostItem from "./PostItem";
 
 function PostList({ postList }) {
-    console.log("@@", postList);
+    // console.log("!!!postList", postList);
     const post = postList.post;
-    console.log("@aa", post);
+    // console.log("post", post);
+
     return (
         <div>
             {post && post.length > 0

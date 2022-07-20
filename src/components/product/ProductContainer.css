@@ -7,6 +7,22 @@
 .productSection {
     display: flex;
     flex-direction: row;
+    overflow: scroll;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+}
+/* 스크롤바 설정 */
+.productSection::-webkit-scrollbar {
+    height: 10px;
+}
+/* 뒷배경 설정 */
+.productSection::-webkit-scrollbar-track {
+    background: #b5d9ac;
+}
+/* 막대 설정 */
+.productSection::-webkit-scrollbar-thumb {
+    background: #83bd75;
+    border-radius: 20px;
 }
 
 .productOnSale {
