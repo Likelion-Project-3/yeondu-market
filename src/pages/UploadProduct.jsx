@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import UploadFileBtn from "../../components/button/UploadFileBtn";
+import UploadFileBtn from "../components/button/UploadFileBtn";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
 import { BASE_URL } from "../components/constants/baseUrl";
@@ -19,12 +19,12 @@ function UploadProduct() {
     const [block, setBlock] = useState(false);
     const [checkPrice, setCheckPrice] = useState(false);
 
+    const [imageSrc, setImageSrc] = useState(null);
+
     const handleItemName = (e) => {
         setItemName(e.target.value);
-        console.log(itemName.length);
     };
     const handlePrice = (e) => {
-        console.log("price:", typeof price);
         const value = e.target.value;
         const result = value.replace(/[^0-9]/g, "");
         setPrice(parseInt(result));
@@ -41,7 +41,7 @@ function UploadProduct() {
         } else {
             setBlock(false);
         }
-        console.log("block", block);
+        // console.log("block", block);
     };
 
     // 숫자 유효성검사
@@ -54,10 +54,21 @@ function UploadProduct() {
         } else {
             setCheckPrice(false);
         }
-        console.log("checkPrice", checkPrice);
+        // console.log("checkPrice", checkPrice);
     };
 
     const formData = new FormData();
+    // 이미지 미리보기
+    const imgPreview = (file) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        return new Promise((resolve) => {
+            reader.onload = () => {
+                setImageSrc(reader.result);
+                resolve();
+            };
+        });
+    };
     //이미지 전달
     const handelUploadImage = async (e) => {
         const productImage = e.target.files[0];
@@ -73,11 +84,21 @@ function UploadProduct() {
             });
             console.log(res);
             setItemImage(res.data.filename);
+
+            if (res.data.message === "이미지 파일만 업로드가 가능합니다.") {
+                alert(
+                    "업로드 가능한 확장자명: *.jpg, *.gif, *.png, *.jpeg, *.bmp, *.tif, *.heic"
+                );
+                setItemImage(itemImage);
+            } else {
+                setImageSrc(itemImage);
+                imgPreview(productImage);
+            }
         } catch (err) {
             console.log(err);
         }
+        // imgPreview(itemImage);
     };
-    console.log(itemImage);
 
     //데이터 전달
     const ProductData = {
@@ -110,7 +131,25 @@ function UploadProduct() {
 
     return (
         <div>
-            <TopMenuComponent topclassName="topBasicNav" rightclassName="saveBtn" inputtype="notext" title="저장" type="submit"/>
+            <nav className="topBasicNav">
+                <button
+                    className="prevBtn"
+                    onClick={() => {
+                        history.goBack();
+                    }}
+                ></button>
+                <button className="saveBtn" onClick={handleSubmitProduct}>
+                    저장
+                </button>
+            </nav>
+            {/* <TopMenuComponent
+                topclassName="topBasicNav"
+                rightclassName="saveBtn"
+                inputtype="notext"
+                title="저장"
+                type="submit"
+                onClick={handleSubmitProduct}
+            /> */}
 
             <main className="mainUpload">
                 <section className="container">
@@ -118,18 +157,19 @@ function UploadProduct() {
                     <form action="">
                         <div className="productImgRegister">
                             <h3 className="">이미지 등록</h3>
-                            {/* <div className="imagePriview" /> */}
-                            {/* <UploadFileBtn
-                                type="gray36"
-                                position="absolute"
-                                forAndId="productImg"
-                                right="12px"
-                                bottom="12px"
-                            /> */}
                             <label
                                 htmlFor="productImg"
                                 className="imagePriview"
-                            ></label>
+                            >
+                                {imageSrc && (
+                                    <img
+                                        src={imageSrc}
+                                        className="imagePriview"
+                                        name="img"
+                                        alt="미리보기"
+                                    ></img>
+                                )}
+                            </label>
                             <input
                                 type="file"
                                 id="productImg"
@@ -198,4 +238,3 @@ function UploadProduct() {
 }
 
 export default UploadProduct;
-
