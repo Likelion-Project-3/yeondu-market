@@ -1,5 +1,5 @@
 import { upload } from "@testing-library/user-event/dist/upload";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ChatList from "./pages/ChatList";
 import ChatRoom from "./pages/ChatRoom";
 import Home from "./pages/Home";
@@ -22,8 +22,10 @@ function App() {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/join" component={Join} />
                 <Route exact path="/home" component={Home} />
-                <Route exact path="/post/upload" component={UploadPost} />
-                <Route exact path="/post/:postId" component={Post} />
+                <Switch>
+                    <Route exact path="/post/upload" component={UploadPost} />
+                    <Route exact path="/post/:postId" component={Post} />
+                </Switch>
                 <Route exact path="/post/:postId/edit" component={EditPost} />
                 <Route exact path="/product/upload" component={UploadProduct} />
                 <Route exact path="/myprofile" component={MyProfile} />

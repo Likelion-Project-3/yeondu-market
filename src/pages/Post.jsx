@@ -6,13 +6,12 @@ import "../pages/style/Post.css";
 import { BASE_URL } from "../components/constants/baseUrl";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 function Post(props) {
     const token = localStorage.getItem("token");
-    const postId = props.postId;
-    // const postId = "62d76d4c17ae666581792572";
-    // const postId = "62d79d3117ae6665817b94ce";
     const [postData, setPostData] = useState("");
+    const { postId } = useParams();
 
     useEffect(() => {
         const getPostPage = async () => {

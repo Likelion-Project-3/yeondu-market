@@ -1,23 +1,22 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { BASE_URL } from "../components/constants/baseUrl";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadPost.css";
 
-function EditPost(props) {
+function EditPost() {
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
     // 기존에 있던 이미지
     const [imgSrc, setImgSrc] = useState([]);
     // 새로운 이미지
     const [newImgSrc, setNewImgSrc] = useState([]);
+
     const history = useHistory();
+    const { postId } = useParams();
     const formData = new FormData();
-    const post_id = props.data.post.id;
-    // const post_id = "62d76d4c17ae666581792572";
-    // const post_id = "62d76ee817ae6665817973c9";
-    const url = BASE_URL + `/post/${post_id}`;
+    const url = BASE_URL + `/post/${postId}`;
 
     const onChange = (e) => {
         setText(e.target.value);
