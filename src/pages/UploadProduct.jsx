@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import UploadFileBtn from "../../components/button/UploadFileBtn";
+import UploadFileBtn from "../components/button/UploadFileBtn";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
 import { BASE_URL } from "../components/constants/baseUrl";
@@ -110,7 +110,13 @@ function UploadProduct() {
 
     return (
         <div>
-            <TopMenuComponent topclassName="topBasicNav" rightclassName="saveBtn" inputtype="notext" title="저장" type="submit"/>
+            <TopMenuComponent
+                topclassName="topBasicNav"
+                rightclassName="saveBtn"
+                inputtype="notext"
+                title="저장"
+                type="submit"
+            />
 
             <main className="mainUpload">
                 <section className="container">
@@ -198,4 +204,3 @@ function UploadProduct() {
 }
 
 export default UploadProduct;
-

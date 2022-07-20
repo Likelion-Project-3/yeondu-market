@@ -1,16 +1,51 @@
-import TopBasicNav from "../../components/TopBasicNav";
-import PostItem from "../../components/feed/PostItem";
-import PostComment from "../../components/feed/PostComment";
-import PostCommentInput from "../../components/feed/PostCommentInput";
+import TopMenuComponent from "../components/common/TopMenuComponent";
+import PostItem from "../components/post/PostItem";
+import PostComment from "../components/comment/PostComment";
+import PostCommentInput from "../components/comment/PostCommentInput";
 import "../pages/style/Post.css";
+import { BASE_URL } from "../components/constants/baseUrl";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-function Post() {
+function Post(props) {
+    const token = localStorage.getItem("token");
+    const postId = props.postId;
+    // const postId = "62d76d4c17ae666581792572";
+    // const postId = "62d79d3117ae6665817b94ce";
+    const [postData, setPostData] = useState("");
+
+    useEffect(() => {
+        const getPostPage = async () => {
+            const url = BASE_URL + `/post/${postId}`;
+
+            try {
+                const res = await axios(url, {
+                    method: "GET",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                });
+                setPostData(res.data.post);
+                console.log(postData);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        getPostPage();
+    }, []);
+
     return (
         <>
-            <TopBasicNav />
+            <TopMenuComponent
+                topclassName="topBasicNav"
+                inputtype="notext"
+                rightclassName="moreBtn"
+                type="button"
+            />
             <div className="postWrap">
-                <PostItem />
-                {/* 이하 부분은 말풍선 아이콘 클릭시 나오는 부분 */}
+                <PostItem post={postData} />
                 <hr />
                 <PostComment />
             </div>

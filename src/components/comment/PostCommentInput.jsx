@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./PostCommentInput.css";
-import BasicProfileImg from "../BasicProfileImg";
+import BasicProfileImg from "../common/BasicProfileImg";
 
 function PostCommentInput() {
     const [text, setText] = useState("");

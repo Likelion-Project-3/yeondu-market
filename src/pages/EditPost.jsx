@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { BASE_URL } from "../components/constants/baseUrl";
+import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadPost.css";
 
 function EditPost(props) {
@@ -14,6 +15,8 @@ function EditPost(props) {
     const history = useHistory();
     const formData = new FormData();
     const post_id = props.data.post.id;
+    // const post_id = "62d76d4c17ae666581792572";
+    // const post_id = "62d76ee817ae6665817973c9";
     const url = BASE_URL + `/post/${post_id}`;
 
     const onChange = (e) => {
@@ -42,7 +45,9 @@ function EditPost(props) {
                     const postDetail = response.data.post;
 
                     setText(postDetail.content);
-                    setImgSrc(postDetail.image.split(", "));
+                    if (postDetail.image) {
+                        setImgSrc(postDetail.image.split(", "));
+                    }
                 })
                 .catch((err) => console.log(err));
         };
@@ -66,7 +71,7 @@ function EditPost(props) {
                 data: postData,
             });
             console.log(res);
-            // 게시글 상세 페이지로 이동
+            history.push("/myprofile");
         } catch (err) {
             console.log(err);
         }
@@ -123,16 +128,14 @@ function EditPost(props) {
     };
     return (
         <>
-            <nav className="uploadPostHeader">
-                <button className="prevBtn" onClick={history.goBack}></button>
-                <button
-                    className="uploadBtn"
-                    type="submit"
-                    onClick={handleUpload}
-                >
-                    업로드
-                </button>
-            </nav>
+            <TopMenuComponent
+                topclassName="uploadPostHeader"
+                rightclassName="uploadBtn"
+                inputtype="notext"
+                title="업로드"
+                type="submit"
+                handlerRightBtn={handleUpload}
+            />
             <main className="uploadPostMain">
                 <div className="myProfileImg"></div>
                 <form className="uploadForm">
