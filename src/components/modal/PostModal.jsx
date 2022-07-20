@@ -1,4 +1,5 @@
 import "./profileModal.css";
+import { Link } from "react-router-dom";
 
 function PostModal() {
     return (
@@ -6,9 +7,9 @@ function PostModal() {
             <a href="/postdelete" className="ModalBtn">
                 삭제
             </a>
-            <a href="/postmodify" className="ModalBtn">
+            <Link to="/:post_id/edit" className="ModalBtn">
                 수정
-            </a>
+            </Link>
         </div>
     );
 }
