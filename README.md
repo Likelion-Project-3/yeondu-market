@@ -37,6 +37,7 @@ npm start
 
 
 ## 역할 분담
+![image](https://user-images.githubusercontent.com/102905624/180312038-f86d5ef6-2580-4c80-9c1c-0760ed80a745.png)
 
 ## UI
 
