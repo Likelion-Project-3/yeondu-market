@@ -6,6 +6,11 @@ import "../pages/style/MyProfile.css";
 import { BASE_URL } from "../components/constants/baseUrl";
 import axios from "axios";
 import PostList from "../components/post/PostList";
+import postListOn from "../assets/icon/icon-post-list-on.png";
+import postListOff from "../assets/icon/icon-post-list-off.png";
+import postAlbumOn from "../assets/icon/icon-post-album-on.png";
+import postAlbumOff from "../assets/icon/icon-post-album-off.png";
+import PostAlbum from "../components/post/PostAlbum";
 
 function MyProfile() {
     const token = localStorage.getItem("token");
@@ -15,6 +20,19 @@ function MyProfile() {
     const [profileInfo, setProfileInfo] = useState([]);
     const [postList, setPostList] = useState([]);
     const [productList, setProductList] = useState([]);
+
+    const [listClick, setListClick] = useState(true);
+    const [albumClick, setAlbumClick] = useState(false);
+
+    const onClickList = () => {
+        setListClick(true);
+        setAlbumClick(false);
+    };
+
+    const onClickAlbum = () => {
+        setAlbumClick(true);
+        setListClick(false);
+    };
 
     useEffect(() => {
         //내프로필 정보
@@ -71,7 +89,35 @@ function MyProfile() {
             <TopBasicNav />
             <ProfileInfo profileInfo={profileInfo} />
             <ProductContainer productList={productList} />
-            <PostList postList={postList} />
+            <div className="postBtnWap">
+                <div className="btnContainer">
+                    <button
+                        className="profilePostBtn list"
+                        onClick={onClickList}
+                    >
+                        {listClick === false ? (
+                            <img src={postListOff} alt=""></img>
+                        ) : (
+                            <img src={postListOn} alt=""></img>
+                        )}
+                    </button>
+                    <button
+                        className="profilePostBtn album"
+                        onClick={onClickAlbum}
+                    >
+                        {albumClick === false ? (
+                            <img src={postAlbumOff} alt=""></img>
+                        ) : (
+                            <img src={postAlbumOn} alt=""></img>
+                        )}
+                    </button>
+                </div>
+            </div>
+            {listClick === true && albumClick === false ? (
+                <PostList postList={postList} />
+            ) : (
+                <PostAlbum postList={postList} />
+            )}
         </div>
     );
 }
