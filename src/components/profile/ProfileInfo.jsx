@@ -8,27 +8,29 @@ function ProfileInfo({ profileInfo }) {
     const username = localStorage.getItem("username");
     const followLink = `/${username}/follower`;
     const folloingLink = `/${username}/folloing`;
+    console.log("user", profileInfo.user);
+    const user = profileInfo.user;
     return (
         <div className="infoWrap">
             <div className="tempWrap">
                 <Link to={followLink}>
                     <p className="followCount followers">
-                        {profileInfo.profile.followerCount}
+                        {user.followerCount}
                     </p>
                     <p className="followName followers">followers</p>
                 </Link>
-                <BasicProfileImg size="lg" />
+                <BasicProfileImg size="lg" src={user.image} />
                 <Link to={folloingLink}>
                     <p className="followCount following">
-                        {profileInfo.profile.followingCount}
+                        {user.followingCount}
                     </p>
                     <p className="followName following">followings</p>
                 </Link>
             </div>
             <div className="">
-                <p className="userName">{profileInfo.profile.username}</p>
-                <p className="userID">@ {profileInfo.profile.accountname}</p>
-                <p className="userIntro">{profileInfo.profile.intro}</p>
+                <p className="userName">{user.username}</p>
+                <p className="userID">@ {user.accountname}</p>
+                <p className="userIntro">{user.intro}</p>
             </div>
             <ProfileBtn />
         </div>
