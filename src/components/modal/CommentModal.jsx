@@ -17,4 +17,4 @@ function DeleteCommentModal() {
         </div>
     );
 }
-export default (DeleteCommentModal, ReportCommentModal);
+export {DeleteCommentModal as default, ReportCommentModal};
