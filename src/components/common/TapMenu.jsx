@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./TapMenu.css";
 
 function TapMenu() {
@@ -6,24 +6,39 @@ function TapMenu() {
         <nav className="tapMenu">
             <ul>
                 <li>
-                    <Link to="/home" className="linkBtn homeBtn">
+                    <NavLink
+                        to="/home"
+                        className="linkBtn homeBtn"
+                        activeClassName="homeBtnActive"
+                        activeStyle={{ color: "var(--main-font-color)" }}
+                    >
                         홈
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/chat" className="linkBtn chatBtn">
+                    <NavLink
+                        to="/chat"
+                        className="linkBtn chatBtn"
+                        activeClassName="chatBtnActive"
+                        activeStyle={{ color: "var(--main-font-color)" }}
+                    >
                         채팅
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/post/upload" className="linkBtn postBtn">
+                    <NavLink to="/post/upload" className="linkBtn postBtn">
                         게시물 작성
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/myprofile" className="linkBtn profileBtn">
+                    <NavLink
+                        to="/myprofile"
+                        className="linkBtn profileBtn"
+                        activeClassName="profileBtnActive"
+                        activeStyle={{ color: "var(--main-font-color)" }}
+                    >
                         프로필
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
         </nav>

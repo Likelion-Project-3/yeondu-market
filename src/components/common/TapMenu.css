@@ -24,8 +24,10 @@
 }
 
 .homeBtn {
+    color: rebeccapurple;
     background: url(../../assets/icon/icon-home.svg) no-repeat 50% 24px/24px;
     background-position-y: 11px;
+
 }
 .chatBtn {
     background: url(../../assets/icon/icon-message-circle.svg) no-repeat 50%
@@ -38,5 +40,22 @@
 }
 .profileBtn {
     background: url(../../assets/icon/icon-user.svg) no-repeat 50% 24px/24px;
+    background-position-y: 11px;
+}
+
+.homeBtnActive {
+    color: red; 
+    background: url(../../assets/icon/icon-home-fill.svg) no-repeat 50% 24px/24px;
+    background-position-y: 11px;
+}
+.chatBtnActive {
+    color: red;
+
+    background: url(../../assets/icon/icon-message-circle-fill.svg) no-repeat 50%
+        24px/24px;
+    background-position-y: 11px;
+}
+.profileBtnActive {
+    background: url(../../assets/icon/icon-user-fill.svg) no-repeat 50% 24px/24px;
     background-position-y: 11px;
 }
