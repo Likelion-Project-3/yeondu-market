@@ -10,8 +10,10 @@ function UploadPost() {
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
     const [imgSrc, setImgSrc] = useState([]);
+    const [isActive, setIsActive] = useState(false);
     const history = useHistory();
     const formData = new FormData();
+    const token = localStorage.getItem("token");
 
     const onChange = (e) => {
         setText(e.target.value);
@@ -23,7 +25,14 @@ function UploadPost() {
             image: imgFile.join(", "),
         },
     };
-    const token = localStorage.getItem("token");
+
+    const upload = () => {
+        if (text && text.length > 0) {
+            setIsActive(true);
+        } else {
+            setIsActive(false);
+        }
+    };
 
     // 텍스트와 이미지 POST 전송
     const handleUpload = async () => {
@@ -50,17 +59,16 @@ function UploadPost() {
 
     // 이미지 업로드
     const handleUploadImg = async (e) => {
-        e.preventDefault();
+        const url = BASE_URL + "/image/uploadfiles";
+
+        const imgInput = e.target.files[0];
+        setImgFile((imgFile) => [...imgFile, imgInput.name]);
+        formData.append("image", imgInput);
 
         if (imgFile.length > 2) {
             alert("3개 이하의 파일을 업로드 하세요.");
             return;
         }
-
-        const imgInput = e.target.files[0];
-        setImgFile((imgFile) => [...imgFile, imgInput.name]);
-        const url = BASE_URL + "/image/uploadfiles";
-        formData.append("image", imgInput);
 
         try {
             const res = await axios(url, {
@@ -82,6 +90,7 @@ function UploadPost() {
                     reader.onload = () => {
                         setImgSrc([...imgSrc, reader.result]);
                         resolve();
+                        setIsActive(imgSrc.length + 1 > 0 ? true : false);
                     };
                 });
             };
@@ -95,6 +104,7 @@ function UploadPost() {
                 setImgFile([...imgFile, res.data[0]["filename"]]);
                 imgPreview(imgInput);
             }
+
             console.log(res.data[0]["originalname"]);
             console.log(res);
         } catch (err) {
@@ -105,7 +115,7 @@ function UploadPost() {
         <>
             <TopMenuComponent
                 topclassName="uploadPostHeader"
-                rightclassName="uploadBtn"
+                rightclassName={`uploadBtn ${!isActive ? "disabled" : ""}`}
                 inputtype="notext"
                 title="업로드"
                 type="submit"
@@ -119,6 +129,7 @@ function UploadPost() {
                         cols="30"
                         rows="10"
                         onChange={onChange}
+                        onKeyUp={upload}
                         value={text}
                     />
                     <div className="imgCont">

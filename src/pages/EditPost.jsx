@@ -6,8 +6,10 @@ import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadPost.css";
 
 function EditPost() {
+    const token = localStorage.getItem("token");
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
+    const [isActive, setIsActive] = useState(false);
     // 기존에 있던 이미지
     const [imgSrc, setImgSrc] = useState([]);
     // 새로운 이미지
@@ -17,6 +19,10 @@ function EditPost() {
     const { postId } = useParams();
     const formData = new FormData();
     const url = BASE_URL + `/post/${postId}`;
+
+    useEffect(() => {
+        setIsActive(true);
+    }, []);
 
     const onChange = (e) => {
         setText(e.target.value);
@@ -28,7 +34,16 @@ function EditPost() {
             image: imgSrc.concat(imgFile).join(", "),
         },
     };
-    const token = localStorage.getItem("token");
+
+    const upload = () => {
+        if (text && text.length > 0) {
+            console.log("text!!");
+            setIsActive(true);
+        } else {
+            console.log("no text");
+            setIsActive(false);
+        }
+    };
 
     useEffect(() => {
         // 기존 게시글 불러오기
@@ -108,6 +123,7 @@ function EditPost() {
                     reader.onload = () => {
                         setNewImgSrc([...newImgSrc, reader.result]);
                         resolve();
+                        setIsActive(imgSrc.length + 1 > 0 ? true : false);
                     };
                 });
             };
@@ -129,7 +145,7 @@ function EditPost() {
         <>
             <TopMenuComponent
                 topclassName="uploadPostHeader"
-                rightclassName="uploadBtn"
+                rightclassName={`uploadBtn ${isActive ? "" : "disabled"}`}
                 inputtype="notext"
                 title="업로드"
                 type="submit"
@@ -142,6 +158,7 @@ function EditPost() {
                         cols="30"
                         rows="10"
                         onChange={onChange}
+                        onKeyUp={upload}
                         value={text}
                     />
                     <div className="imgCont">
