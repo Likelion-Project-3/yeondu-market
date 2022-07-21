@@ -32,8 +32,8 @@ npm start
 ## 팀원
 | 이예은 | 임수진| 구나영 |  임수현 | 
 |--|--|--|--|
-|<img src="https://avatars.githubusercontent.com/leeyeun" height=180 width=180> | <img src="https://avatars.githubusercontent.com/etoile-j" height=180 width=180>  | <img src="https://avatars.githubusercontent.com/Nayoung-Gu" height=180 width=180> |  <img src="https://avatars.githubusercontent.com/hyuni97" height=180 width=180>|
-| <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/> | [GitHub](https://github.com/orgs/Likelion-Project-3/people/etoile-j) |  |  |
+|<img src="https://avatars.githubusercontent.com/leeyeun" height=180 width=180> | <img src="https://avatars.githubusercontent.com/etoile-j" height=180 width=180>  | <img src="https://avatars.githubusercontent.com/Nayoung-Gu" height=180 width=180> |  <img src="https://cdn.discordapp.com/attachments/984722096242434061/999668677567844392/1658409963741.jpg" height=180 width=180>|
+| <a href="https://github.com/leeyeun"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> | <a href="https://github.com/etoile-j"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> | <a href="https://github.com/Nayoung-Gu"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> <a href="https://velog.io/@mooongs"><img src="https://img.shields.io/badge/Velog-1FC392?style=flat&logo=Vimeo&logoColor=white&link=https://velog.io/@new_wisdom"/></a> | <a href="https://github.com/hyuni97"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 
 
 ## 역할 분담
