@@ -2,7 +2,6 @@ import ProfileModal from "../modal/ProfileModal";
 import "./TopBasicNav.css";
 import TopMenuComponent from "./TopMenuComponent";
 import React,{useState} from "react";
-import ProfileModal from "../modal/ProfileModal";
 
 function TopBasicNav() {
     const[isOpenModal, setIsOpenModal] = useState(false);
