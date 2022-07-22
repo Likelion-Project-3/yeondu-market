@@ -13,6 +13,9 @@ import UploadPost from "./pages/UploadPost";
 import UploadProduct from "./pages/UploadProduct";
 import EditPost from "./pages/EditPost";
 import "./reset.css";
+import FollowingContainer from "./components/follow/FollowingContainer";
+import FollowerList from "./pages/FollowerList";
+import FollowingList from "./pages/FollowingList";
 
 function App() {
     return (
@@ -32,6 +35,16 @@ function App() {
                 <Route exact path="/chat" component={ChatList} />
                 <Route exact path="/chat/:accountId" component={ChatRoom} />
                 <Route exact path="/setprofile" component={SetProfile} />
+                <Route
+                    exact
+                    path="/:username/follower"
+                    component={FollowerList}
+                />
+                <Route
+                    exact
+                    path="/:username/following"
+                    component={FollowingList}
+                />
             </BrowserRouter>
         </div>
     );
