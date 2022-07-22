@@ -7,8 +7,8 @@ import "./ProfileInfo.css";
 function ProfileInfo({ profileInfo }) {
     const username = localStorage.getItem("username");
     const followLink = `/${username}/follower`;
-    const folloingLink = `/${username}/folloing`;
-    console.log("user", profileInfo.user);
+    const folloingLink = `/${username}/following`;
+    // console.log("user", profileInfo.user);
     const user = profileInfo.user;
     return (
         <div className="infoWrap">

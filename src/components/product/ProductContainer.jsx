@@ -2,7 +2,7 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import "./ProductContainer.css";
 function ProductContainer({ productList }) {
-    console.log("!!!product", productList);
+    // console.log("!!!product", productList);
     const product = productList.product;
     return (
         <div className="productContainer">
