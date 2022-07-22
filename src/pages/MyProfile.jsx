@@ -15,7 +15,6 @@ import PostAlbum from "../components/post/PostAlbum";
 function MyProfile() {
     const token = localStorage.getItem("token");
     const accountname = localStorage.getItem("accountname");
-    const reqPath = `/profile/${accountname}`;
 
     const [profileInfo, setProfileInfo] = useState("");
     const [postList, setPostList] = useState([]);
@@ -33,62 +32,21 @@ function MyProfile() {
         setAlbumClick(true);
         setListClick(false);
     };
-
     useEffect(() => {
-        if (profileInfo !== undefined) {
-            console.log(profileInfo.user);
-        }
-        axios
-            .get(BASE_URL + "/user/myinfo", {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    "Content-type": "application/json",
-                },
-            })
-            .then((response) => {
-                setProfileInfo(response.data);
-            })
-            .catch((err) => console.log(err));
-    }, []);
-    // axios
-    //     .get(BASE_URL + "/user/myinfo", {
-    //         headers: {
-    //             Authorization: `Bearer ${token}`,
-    //             "Content-type": "application/json",
-    //         },
-    //     })
-    //     .then((response) => {
-    //         setProfileInfo(response.data);
-    //     })
-    //     .catch((err) => console.log(err));
-    useEffect(() => {
-        // const getProfile = () => {
-        //     axios
-        //         .get(BASE_URL + "/user/myinfo", {
-        //             headers: {
-        //                 Authorization: `Bearer ${token}`,
-        //                 "Content-type": "application/json",
-        //             },
-        //         })
-        //         .then((response) => {
-        //             setProfileInfo(response.data);
-        //         })
-        //         .catch((err) => console.log(err));
-        // };
         //내프로필 정보
-        // const getProfile = () => {
-        //     axios
-        //         .get(BASE_URL + `/profile/${accountname}`, {
-        //             headers: {
-        //                 Authorization: `Bearer ${token}`,
-        //                 "Content-type": "application/json",
-        //             },
-        //         })
-        //         .then((response) => {
-        //             setProfileInfo(response.data);
-        //         })
-        //         .catch((err) => console.log(err));
-        // };
+        const getProfile = () => {
+            axios
+                .get(BASE_URL + "/user/myinfo", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                })
+                .then((response) => {
+                    setProfileInfo(response.data);
+                })
+                .catch((err) => console.log(err));
+        };
         //내가 쓴 게시글 목록
         const postList = () => {
             axios
@@ -118,13 +76,12 @@ function MyProfile() {
                 })
                 .catch((err) => console.log(err));
         };
-        // getProfile();
+        getProfile();
         postList();
         productList();
     }, []);
-    console.log("###", profileInfo);
     if (!profileInfo) {
-        console.log(profileInfo);
+        // console.log(profileInfo);
         return <div>loading...</div>;
     } else {
         return (

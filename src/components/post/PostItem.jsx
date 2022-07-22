@@ -15,7 +15,7 @@ function PostItem({ post }) {
             setPostImg(pI.split(",")[0]);
         }
     }, []);
-    console.log(postImg);
+    // console.log(postImg);
 
     // console.log("!!", post);
     return (
@@ -23,7 +23,7 @@ function PostItem({ post }) {
             <div>
                 <div className="postHeaderWrap">
                     <div className="postWriter">
-                        <BasicProfileImg size="sm" />
+                        <BasicProfileImg size="sm" src={post.author.image} />
                         <div className="postWriterName">
                             <strong>{post.author.username}</strong>
                             <small>@ {post.author.accountname}</small>
