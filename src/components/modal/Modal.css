@@ -42,4 +42,5 @@ a {
 .ModalBtn {
     padding: 14px 26px;
     text-align: left;
+    cursor: pointer;
 }

@@ -1,19 +1,29 @@
 import React, { useState } from "react";
+import ProductAlert from "../modal/ProductAlert";
 import ProductModal from "../modal/ProductModal";
 // import productImg from "../../assets/product-img.svg";
 import "./ProductCard.css";
 function ProductCard({ product }) {
     // console.log("@@product", product);
     const productImg = `https://mandarin.api.weniv.co.kr/${product.itemImage}`;
-    const [isAlertModal, setIsAlertModal] = useState(false);
-    const alertOpen = () => {
-        setIsAlertModal(!isAlertModal);
-        console.log("open");
+    // const [onModal, setOnModal] = useState(false);
+    // function handleModal() {
+    //     setOnModal(!onModal);
+    // }
+    // function openModal() {
+    //     setOnModal(true);
+    // }
+    const [onModal, setModal] = useState(false);
+    const ModalOpen = () => {
+        setModal(!onModal);
+        // console.log("open");
     };
+
+    // console.log("isAlertModal", onModal);
     return (
         <>
-            <button type="button" onClick={alertOpen}>
-                <div className="productItem">
+            <div type="button">
+                <div className="productItem" onClick={ModalOpen}>
                     <img
                         src={productImg}
                         alt="상품사진"
@@ -22,8 +32,14 @@ function ProductCard({ product }) {
                     <p className="productName">{product.itemName}</p>
                     <p className="productPrice">{product.price}</p>
                 </div>
-                {isAlertModal && <ProductModal />}
-            </button>
+                {onModal && (
+                    <ProductModal
+                        productId={product.id}
+                        setModal={setModal}
+                        onModal={onModal}
+                    />
+                )}
+            </div>
         </>
     );
 }

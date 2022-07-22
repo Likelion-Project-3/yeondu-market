@@ -3,7 +3,7 @@ import PostAlbumItem from "./PostAlbumItem";
 import "./PostAlbum.css";
 import { useEffect } from "react";
 function PostAlbum({ postList }) {
-    console.log("!", postList);
+    // console.log("!", postList);
     const [imageList, setImageList] = useState([]);
     const post = postList.post;
     //image가 없는 post는 전달 x
@@ -11,9 +11,9 @@ function PostAlbum({ postList }) {
     useEffect(() => {
         const newList = post.filter((post) => post.image !== "");
         setImageList(newList);
-        console.log("newList", newList);
+        // console.log("newList", newList);
     }, []);
-    console.log("imageList", imageList);
+    // console.log("imageList", imageList);
 
     return (
         <div className="albumWrap">
