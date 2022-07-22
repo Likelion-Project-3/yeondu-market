@@ -14,7 +14,11 @@ function ProductCard({ product }) {
         <>
             <button type="button" onClick={alertOpen}>
                 <div className="productItem">
-                    <img src={productImg} alt="" className="productImg" />
+                    <img
+                        src={productImg}
+                        alt="상품사진"
+                        className="productImg"
+                    />
                     <p className="productName">{product.itemName}</p>
                     <p className="productPrice">{product.price}</p>
                 </div>
