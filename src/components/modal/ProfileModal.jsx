@@ -1,4 +1,4 @@
-import "./profileModal.css";
+import "./Modal.css";
 
 function ProfileModal() {
     return (

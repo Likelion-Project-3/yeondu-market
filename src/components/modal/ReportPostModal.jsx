@@ -1,6 +1,6 @@
 import { BASE_URL } from "../constants/baseUrl";
 import axios from "axios";
-import "./profileModal.css";
+import "./Modal.css";
 
 function ReportPostModal(props) {
     const token = localStorage.getItem("token");
