@@ -1,4 +1,4 @@
-import "./profileModal.css";
+import "./Modal.css";
 import { Link } from "react-router-dom";
 
 function PostModal() {

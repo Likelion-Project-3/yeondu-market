@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import "./modalAlert.css";
+import "./Alert.css";
 function Logout() {
     let history = useHistory();
     return (

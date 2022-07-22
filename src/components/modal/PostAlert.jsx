@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { BASE_URL } from "../constants/baseUrl";
 import axios from "axios";
-import "./modalAlert.css";
+import "./Alert.css";
 
 function PostAlert(props) {
     const history = useHistory();
