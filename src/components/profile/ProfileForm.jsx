@@ -6,15 +6,15 @@ import { BASE_URL } from "../../components/constants/baseUrl";
 import BasicProfile from "../../assets/basic-profile-img.svg";
 import axios from "axios";
 
-function ProfileForm() {
-    const initialInput = { username: '', accountname: '', intro: '' };
-    const [input, setInput] = useState(initialInput);
+function ProfileForm(props) {
+    const {input, setInput, success, setSuccess} = props;
     const [usernameError, setUsernameError] = useState('')
     const [accountnameError, setAccountnameError] = useState('');
-
+    const [passedUsername, setPassedUsername] = useState(false);
+    const [passedAccountname, setPassedAccountname] = useState(false);
     const [fileName, setFileName] = useState('');
 
-    const handleChange = (e) => {
+    const handleChangeInput = (e) => {
         const { value, name } = e.target;
         setInput({ ...input, [name]: value })
     };
@@ -30,10 +30,12 @@ function ProfileForm() {
     const handleBlurUsername = () => {
         if (!input.username) {
             setUsernameError("* 사용자 이름은 필수 입력사항 입니다.");
+            setPassedUsername(false);
         } else if (input.username.length < 2 || input.username.length > 10) {
             setUsernameError("* 사용자 이름은 2~10자 이내여야 합니다.");
+            setPassedUsername(false);
         } else {
-            setUsernameError();
+            setPassedUsername(true);
         }
     };
 
@@ -42,10 +44,13 @@ function ProfileForm() {
             const regex = /^(?=.*[a-z0-9])[a-z0-9]{2,16}$/; //수정 예정
 
             if (!input.accountname) {
-                return setAccountnameError("* 계정ID는 필수 입력사항 입니다.");
+                setAccountnameError("* 계정ID는 필수 입력사항 입니다.");
+                return setPassedAccountname(false);
             } else if (!regex.test(input.accountname)) {
-                return setAccountnameError("* 영문, 숫자, 밑줄, 마침표만 사용할 수 있습니다.")
+                setAccountnameError("* 영문, 숫자, 밑줄, 마침표만 사용할 수 있습니다.")
+                return setPassedAccountname(false);
             }
+
             const response = await axios.post(BASE_URL + '/user/accountnamevalid', {
                 "user": {
                     "accountname": input.accountname,
@@ -54,15 +59,18 @@ function ProfileForm() {
             console.log(response);
 
             if (response.data.message === "이미 가입된 계정ID 입니다.") {
-                setAccountnameError(`* ${response.data.message}`)
+                setAccountnameError(`* ${response.data.message}`);
+                setPassedAccountname(false);
             } else if (response.data.message === "사용 가능한 계정ID 입니다.") {
-                //success~!
+                setPassedAccountname(true);
             }
 
         } catch (err) {
             console.error(err);
         }
     };
+
+    input.profileImg = BASE_URL + '/' + fileName;
 
     const handleUploadProfileImg = async (e) => {
         e.preventDefault();
@@ -88,12 +96,17 @@ function ProfileForm() {
         }
     };
 
+    useEffect(() => {
+        passedUsername && passedAccountname ? setSuccess(true): setSuccess(false);  
+    },);
+
     return (
-        <form className="profileForm">
+        <>
+        {/* <form className="profileForm"> */}
             <div className="profileImgSetting">
                 <BasicProfileImg 
                 size="lg"
-                src={!fileName ? BasicProfile : BASE_URL + '/' + fileName}
+                src={!fileName ? BasicProfile : input.profileImg}
                  />
                 {/* <UploadFileBtn
                     forAndId="uploadProfile"
@@ -123,7 +136,8 @@ function ProfileForm() {
                     id=""
                     type="text"
                     name="username"
-                    onChange={handleChange}
+                    value={input.username}
+                    onChange={handleChangeInput}
                     onBlur={handleBlurUsername}
                     placeholder="2~10자 이내여야 합니다."
                 // maxLength="10"
@@ -139,7 +153,7 @@ function ProfileForm() {
                     type="text"
                     name="accountname"
                     value={input.accountname}
-                    onChange={handleChange}
+                    onChange={handleChangeInput}
                     onBlur={handleBlurAccountname}
                     placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."
                 />
@@ -152,11 +166,14 @@ function ProfileForm() {
                 <input
                     id=""
                     type="text"
-                    onChange={handleChange}
+                    name="intro"
+                    value={input.intro}
+                    onChange={handleChangeInput}
                     placeholder="자신과 판매할 상품에 대해 소개해 주세요!"
                 />
             </div>
-        </form>
+        {/* </form> */}
+        </>
     );
 }
 export default ProfileForm;

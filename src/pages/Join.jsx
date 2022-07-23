@@ -6,8 +6,7 @@ import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 
 function Join(props) {
-    const initialInput = { email: '', password: '' };
-    const [input, setInput] = useState(initialInput);
+    const {setNextPage, setInput, input} = props;
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [passedEmail, setPassedEmail] = useState(false);
@@ -19,11 +18,12 @@ function Join(props) {
         userRef.current.focus();
     }, [])
 
-    const handleChange = (e) => {
+    const handleChangeInput = (e) => {
         const { value, name } = e.target;
-        setInput({...input, [name]: value});
-
-    };
+        setInput({
+            ...input, [name] : value
+        })
+    }
 
     useEffect(() => {
         setEmailError();
@@ -35,15 +35,8 @@ function Join(props) {
 
     const handleEmailBlur = async () => {
         try {
-            const response = await axios.post(BASE_URL + '/user/emailvalid', {
-                "user": {
-                    "email": input.email,
-                },
-            });
-            console.log(response);
-
             const regex = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-            
+
             if(!input.email) {
                 setEmailError("* 필수 입력사항 입니다.");
                 setPassedEmail(false);
@@ -51,6 +44,13 @@ function Join(props) {
                 setEmailError("* 잘못된 이메일 형식입니다.");
                 setPassedEmail(false);
             } 
+
+            const response = await axios.post(BASE_URL + '/user/emailvalid', {
+                "user": {
+                    "email": input.email,
+                },
+            });
+            console.log(response);
 
             if (response.data.message === "이미 가입된 이메일 주소 입니다.") {
                 setEmailError(`* ${response.data.message}`);
@@ -95,7 +95,7 @@ function Join(props) {
                         placeholder="이메일 주소를 입력해주세요"
                         ref={userRef}
                         value={input.email}
-                        onChange={handleChange}
+                        onChange={handleChangeInput}
                         onBlur={handleEmailBlur}
                         // required
                     />
@@ -113,7 +113,7 @@ function Join(props) {
                         id="passwordEmail"
                         placeholder="비밀번호를 입력해주세요"
                         value={input.password}
-                        onChange={handleChange}
+                        onChange={handleChangeInput}
                         onBlur={handlePasswordBlur}
                     />
                 </div>
@@ -124,7 +124,9 @@ function Join(props) {
                     type="button"
                     id="login"
                     className={`loginBtn ${success ? 'loginBtnActive' : ''}`}
-                    onClick={() => {props.history.push("/setprofile")}}
+                    onClick={() => {
+                        setNextPage(true);
+                    }}
                     disabled={success ? false : true}
                     value="다음"
                 />

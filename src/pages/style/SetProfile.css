@@ -20,14 +20,18 @@
 
 .setProfileWrap .goFeedBtn {
     background-color: var(--main-bg-color);
+    display: block;
     width: 100%;
     padding: 13px 0;
     color: #ffffff;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
+    text-align: center;
     border-radius: 44px;
+    cursor: none;
 }
-.setProfileWrap .on {
+.goFeedBtn.on {
     background-color: var(--main-color);
+    cursor: pointer;
 }
