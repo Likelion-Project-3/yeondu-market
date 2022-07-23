@@ -1,4 +1,3 @@
-
 .uploadPostHeader .uploadBtn.disabled {
     pointer-events: none;
     background-color: var(--main-bg-color);
@@ -14,7 +13,8 @@
 }
 
 .uploadForm {
-    min-width: 330px;
+    min-width: 500px;
+    /* width: 80%; */
 }
 
 .uploadPostMain .myProfileImg {
@@ -32,10 +32,11 @@
 }
 
 .imgCont {
-    width: 340px;
+    width: 400px;
     height: 230px;
     display: flex;
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .imgCont::-webkit-scrollbar {
@@ -53,8 +54,20 @@
 }
 
 .imgBox {
-    width: 100%;
-    height: 100%;
     margin-right: 1rem;
+    position: relative;
+}
+
+.imgSrc {
+    height: 100%;
     border-radius: 10px;
+}
+
+.imgBox .closeBtn {
+    width: 25px;
+    height: 25px;
+    background: url(../../assets/icon/close.svg) no-repeat;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
