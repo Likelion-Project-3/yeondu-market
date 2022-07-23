@@ -1,6 +1,29 @@
 import { useHistory } from "react-router-dom";
 import "./Alert.css";
-function ProductAlert({ handleCancel }) {
+import axios from "axios";
+import { BASE_URL } from "../constants/baseUrl";
+
+function ProductAlert({ productId, handleCancel }) {
+    const token = localStorage.getItem("token");
+    console.log("tt");
+    const productDelete = async () => {
+        const url = BASE_URL + `/product/${productId}`;
+
+        try {
+            const res = await axios(url, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-type": "application/json",
+                },
+                // data: ProductData,
+            });
+            console.log(res);
+            return window.location.replace("/myprofile");
+        } catch (err) {
+            console.error(err);
+        }
+    };
     return (
         <div className="alertWrap">
             <div className="ModalAlert">
@@ -12,7 +35,12 @@ function ProductAlert({ handleCancel }) {
                     >
                         취소
                     </button>
-                    <button className="modalAlertBtn delete">삭제</button>
+                    <button
+                        className="modalAlertBtn delete"
+                        onClick={productDelete}
+                    >
+                        삭제
+                    </button>
                 </div>
             </div>
         </div>
