@@ -1,8 +1,8 @@
 import { React, useState } from "react";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { BASE_URL } from "../components/constants/baseUrl";
 import TopMenuComponent from "../components/common/TopMenuComponent";
+import axios from "axios";
 // import UploadFileBtn from "../components/button/UploadFileBtn";
 import "../pages/style/UploadPost.css";
 
@@ -60,8 +60,8 @@ function UploadPost() {
     // 이미지 업로드
     const handleUploadImg = async (e) => {
         const url = BASE_URL + "/image/uploadfiles";
-
         const imgInput = e.target.files[0];
+
         setImgFile((imgFile) => [...imgFile, imgInput.name]);
         formData.append("image", imgInput);
 
@@ -104,13 +104,30 @@ function UploadPost() {
                 setImgFile([...imgFile, res.data[0]["filename"]]);
                 imgPreview(imgInput);
             }
-
-            console.log(res.data[0]["originalname"]);
             console.log(res);
         } catch (err) {
             console.log(err);
         }
     };
+
+    const deleteImg = (e) => {
+        const index = e.target.parentElement.id;
+
+        // 미리보기 이미지 삭제
+        setImgSrc(
+            imgSrc.filter((el, i) => {
+                return i !== parseInt(index);
+            })
+        );
+
+        // POST 요청할 이미지 삭제
+        setImgFile(
+            imgFile.filter((el, i) => {
+                return i !== parseInt(index);
+            })
+        );
+    };
+
     return (
         <>
             <TopMenuComponent
@@ -135,12 +152,18 @@ function UploadPost() {
                     <div className="imgCont">
                         {imgSrc.map((img, index) => {
                             return (
-                                <img
-                                    key={index}
-                                    src={img}
-                                    className="imgBox"
-                                    alt="이미지 미리보기"
-                                />
+                                <div className="imgBox" key={index} id={index}>
+                                    <img
+                                        src={img}
+                                        className="imgSrc"
+                                        alt="이미지 미리보기"
+                                    />
+                                    <button
+                                        type="button"
+                                        className="closeBtn"
+                                        onClick={deleteImg}
+                                    ></button>
+                                </div>
                             );
                         })}
                     </div>
