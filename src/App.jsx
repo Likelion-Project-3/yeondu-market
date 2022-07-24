@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ChatList from "./pages/ChatList";
 import ChatRoom from "./pages/ChatRoom";
 import Home from "./pages/Home";
-import Join from "./pages/Join";
 import Login from "./pages/Login";
 import MyProfile from "./pages/MyProfile";
+import Register from "./pages/Register";
 import SetProfile from "./pages/SetProfile";
 import Splash from "./pages/Splash";
 import Post from "./pages/Post";
@@ -23,7 +23,7 @@ function App() {
             <BrowserRouter>
                 <Route exact path="/" component={Splash} />
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/join" component={Join} />
+                <Route exact path="/join" component={Register} />
                 <Route exact path="/home" component={Home} />
                 <Switch>
                     <Route exact path="/post/upload" component={UploadPost} />
