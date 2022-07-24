@@ -30,8 +30,10 @@
     text-align: center;
     border-radius: 44px;
     cursor: none;
+    pointer-events: none;
 }
 .goFeedBtn.on {
     background-color: var(--main-color);
+    pointer-events: auto;
     cursor: pointer;
 }
