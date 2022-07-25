@@ -10,10 +10,13 @@ function PostAlbumItem({ imageList }) {
             setPostImg(pI.split(",")[0]);
         }
     }, []);
+    const showDetail = () => {
+        window.location.href = `/post/${imageList.id}`;
+    };
     return (
         <article className="postAlbumCard">
             <div className="">
-                <div className="postAlbumImg">
+                <div className="postAlbumImg" onClick={showDetail}>
                     {imageList.image ? (
                         <img src={imageList.image} alt="" />
                     ) : null}

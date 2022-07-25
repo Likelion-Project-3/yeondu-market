@@ -5,4 +5,5 @@
 .postAlbumImg img {
     width: 114px;
     height: 114px;
+    cursor: pointer;
 }
