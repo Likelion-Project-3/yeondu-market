@@ -3,7 +3,6 @@ import ProductModal from "../modal/ProductModal";
 import "./ProductCard.css";
 
 function ProductCard({ product }) {
-    const productImg = `https://mandarin.api.weniv.co.kr/${product.itemImage}`;
     const [onModal, setModal] = useState(false);
     const ModalOpen = () => {
         setModal(!onModal);
@@ -17,7 +16,7 @@ function ProductCard({ product }) {
             <div type="button">
                 <div className="productItem" onClick={ModalOpen}>
                     <img
-                        src={productImg}
+                        src={product.itemImage}
                         alt="상품사진"
                         className="productImg"
                     />

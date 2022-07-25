@@ -105,7 +105,9 @@ function UploadProduct() {
                 data: formData,
             });
             console.log(res);
-            setItemImage(res.data.filename);
+            setItemImage(
+                "https://mandarin.api.weniv.co.kr/" + res.data.filename
+            );
 
             if (res.data.message === "이미지 파일만 업로드가 가능합니다.") {
                 alert(
@@ -130,7 +132,6 @@ function UploadProduct() {
             itemImage: itemImage,
         },
     };
-    console.log("~~!!", ProductData.product.price);
     //전달하기
     const handleSubmitProduct = async () => {
         onChangeCheckName();
