@@ -3,7 +3,6 @@ import "./PostAlbumItem.css";
 
 function PostAlbumItem({ imageList }) {
     const [postImg, setPostImg] = useState("");
-    const postsImage = `https://mandarin.api.weniv.co.kr/${postImg}`;
     const pI = imageList.image;
 
     useEffect(() => {
@@ -15,7 +14,9 @@ function PostAlbumItem({ imageList }) {
         <article className="postAlbumCard">
             <div className="">
                 <div className="postAlbumImg">
-                    {imageList.image ? <img src={postsImage} alt="" /> : null}
+                    {imageList.image ? (
+                        <img src={imageList.image} alt="" />
+                    ) : null}
                 </div>
             </div>
         </article>
