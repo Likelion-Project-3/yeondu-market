@@ -35,7 +35,7 @@
     width: 400px;
     height: 230px;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
 }
 
