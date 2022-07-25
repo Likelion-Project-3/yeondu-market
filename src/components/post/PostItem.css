@@ -43,21 +43,21 @@
 .postContent {
     padding-left: 50px;
 }
+
+.postClickWrap {
+    cursor: pointer;
+}
+
 .postContentText {
     margin-bottom: 16px;
     font-size: 14px;
     line-height: 18px;
 }
 
-.postContentImg {
-    /* background: url(../../assets/icon/postImg.svg) no-repeat; */
+.postContentImg img {
     /* height: 228px;
     width: 340px; */
-}
-
-.postContentImg img {
-    height: 228px;
-    width: 340px;
+    width: 100%;
     object-fit: cover;
 }
 
