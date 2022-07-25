@@ -43,6 +43,11 @@
 .postContent {
     padding-left: 50px;
 }
+
+.postClickWrap {
+    cursor: pointer;
+}
+
 .postContentText {
     margin-bottom: 16px;
     font-size: 14px;

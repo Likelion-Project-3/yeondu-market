@@ -16,6 +16,10 @@ function PostItem({ post }) {
         }
     }, []);
 
+    const showDetail = () => {
+        window.location.href = `/post/${post.id}`;
+    };
+
     return (
         <article className="postCard">
             <div>
@@ -30,16 +34,18 @@ function PostItem({ post }) {
                     <button className="more"></button>
                 </div>
                 <div className="postContent">
-                    <p className="postContentText">{post.content}</p>
-                    <div
-                        className="postContentImg"
-                        // style={{
-                        //     background: `url(${backgroundImage}) no-repeat`,
-                        // }}
-                    >
-                        {post.image ? (
-                            <img src={backgroundImage} alt="" />
-                        ) : null}
+                    <div className="postClickWrap" onClick={showDetail}>
+                        <p className="postContentText">{post.content}</p>
+                        <div
+                            className="postContentImg"
+                            // style={{
+                            //     background: `url(${backgroundImage}) no-repeat`,
+                            // }}
+                        >
+                            {post.image ? (
+                                <img src={backgroundImage} alt="" />
+                            ) : null}
+                        </div>
                     </div>
                     <div className="btnWrap">
                         <Like heartCount={post.heartCount} />
