@@ -69,11 +69,15 @@ function Login() {
             console.error(err);
         }
     };
-
+    
+    const goHome = () => {
+        window.location.href = "/home";
+    };
+    
     return (
         <>
             {success ? (
-                <Home />
+                goHome()
             ) : (
                 <div className="mainLogin">
                     <h1 className="singupTitle">로그인</h1>
