@@ -101,7 +101,11 @@ function UploadPost() {
                 );
                 setImgFile([...imgFile]);
             } else {
-                setImgFile([...imgFile, res.data[0]["filename"]]);
+                setImgFile([
+                    ...imgFile,
+                    "https://mandarin.api.weniv.co.kr/" +
+                        res.data[0]["filename"],
+                ]);
                 imgPreview(imgInput);
             }
             console.log(res);

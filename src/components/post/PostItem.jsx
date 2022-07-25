@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 function PostItem({ post }) {
     const [postImg, setPostImg] = useState("");
-    const backgroundImage = `https://mandarin.api.weniv.co.kr/${postImg}`;
+    const backgroundImage = postImg;
     const pI = post.image;
 
     useEffect(() => {
@@ -15,9 +15,7 @@ function PostItem({ post }) {
             setPostImg(pI.split(",")[0]);
         }
     }, []);
-    // console.log(postImg);
 
-    // console.log("!!", post);
     return (
         <article className="postCard">
             <div>
