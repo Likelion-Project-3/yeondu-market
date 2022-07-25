@@ -12,7 +12,7 @@ function UploadProduct() {
     const token = localStorage.getItem("token");
 
     const [itemName, setItemName] = useState("");
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState("");
     const [link, setLink] = useState("");
     const [itemImage, setItemImage] = useState("");
 
@@ -24,37 +24,59 @@ function UploadProduct() {
     const handleItemName = (e) => {
         setItemName(e.target.value);
     };
+    //숫자 1000단위 콤마
+    const priceFormat = (str) => {
+        const comma = (str) => {
+            str = String(str);
+            return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,");
+        };
+        const uncomma = (str) => {
+            str = String(str);
+            return str.replace(/[^\d]+/g, "");
+        };
+        return comma(uncomma(str));
+    };
+
     const handlePrice = (e) => {
         const value = e.target.value;
-        const result = value.replace(/[^0-9]/g, "");
-        setPrice(parseInt(result));
+        setPrice(priceFormat(value));
     };
+    //
+    const handlePrice2 = (event) => {
+        if (
+            (event.keyCode > 47 && event.keyCode < 58) ||
+            event.keyCode === 8 || //backspace
+            event.keyCode === 37 ||
+            event.keyCode === 39 || //방향키 →, ←
+            event.keyCode === 46 //delete키
+        ) {
+            return;
+        } else {
+            event.preventDefault();
+        }
+    };
+
     const handleLink = (e) => {
         setLink(e.target.value);
     };
 
     // 판매명 2~15자 확인
-    const onChangeCheckName = () => {
+    const onChangeCheckName = (e) => {
         if (itemName.length > 15 || itemName.length < 2) {
             setBlock(true);
             alert("2-15자 이내로 입력하세요.");
         } else {
             setBlock(false);
         }
-        // console.log("block", block);
     };
 
     // 숫자 유효성검사
     const onChangeCheckPrice = () => {
-        console.log(price);
-        console.log(typeof price);
         if (isNaN(price)) {
             setCheckPrice(true);
-            alert("숫자만 입력 가능합니다.");
         } else {
             setCheckPrice(false);
         }
-        // console.log("checkPrice", checkPrice);
     };
 
     const formData = new FormData();
@@ -97,22 +119,23 @@ function UploadProduct() {
         } catch (err) {
             console.log(err);
         }
-        // imgPreview(itemImage);
     };
-
     //데이터 전달
+    const replacePrice = parseInt(price.replaceAll(",", ""));
     const ProductData = {
         product: {
             itemName: itemName,
-            price: price,
+            price: replacePrice,
             link: link,
             itemImage: itemImage,
         },
     };
+    console.log("~~!!", ProductData.product.price);
     //전달하기
     const handleSubmitProduct = async () => {
         onChangeCheckName();
         onChangeCheckPrice();
+        console.log("~~", ProductData.product.price);
         const url = BASE_URL + "/product";
         try {
             const res = await axios(url, {
@@ -124,6 +147,7 @@ function UploadProduct() {
                 data: ProductData,
             });
             console.log("product:", res);
+            // window.location = "/myprofile";
         } catch (err) {
             console.error(err);
         }
@@ -200,10 +224,11 @@ function UploadProduct() {
                             <label htmlFor="productPrice">가격</label>
                             <input
                                 type="text"
-                                name=""
                                 id="productPrice"
+                                value={price}
                                 placeholder="숫자만 입력 가능합니다."
                                 onChange={handlePrice}
+                                onKeyDown={handlePrice2}
                             />
                             <strong
                                 onChange={onChangeCheckPrice}
