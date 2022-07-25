@@ -4,8 +4,6 @@
     margin: 0 auto;
 }
 
-.postWrap hr {
-    height: 1px;
-    background-color: var(--main-border-color);
-    border: none;
+.commentWrap {
+    border-top: 1px solid var(--main-border-color);
 }

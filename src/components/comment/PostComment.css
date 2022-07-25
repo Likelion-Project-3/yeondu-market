@@ -1,7 +1,9 @@
 .postCommentWrap {
     display: flex;
-    padding: 10px 16px;
+    padding: 18px 16px;
+    max-width: 390px;
     justify-content: space-between;
+    margin: 0 auto;
 }
 
 .comment {
@@ -27,7 +29,7 @@
 
 .comment p {
     font-size: 14px;
-    margin-top: 16px;
+    margin-top: 12px;
 }
 
 .postCommentWrap .showModal {

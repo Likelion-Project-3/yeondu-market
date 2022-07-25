@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-function Post(props) {
+function Post() {
     const token = localStorage.getItem("token");
     const [postData, setPostData] = useState("");
     const { postId } = useParams();
@@ -26,7 +26,6 @@ function Post(props) {
                     },
                 });
                 setPostData(res.data.post);
-                console.log(postData);
             } catch (err) {
                 console.log(err);
             }
@@ -34,6 +33,7 @@ function Post(props) {
 
         getPostPage();
     }, []);
+    console.log(postData);
 
     return (
         <>
@@ -44,8 +44,14 @@ function Post(props) {
                 type="button"
             />
             <div className="postWrap">
-                <PostItem post={postData} />
-                <hr />
+                {!postData ? (
+                    <div>loading...</div>
+                ) : (
+                    <PostItem post={postData} />
+                )}
+            </div>
+            <div className="commentWrap">
+                {/* {postData.comment ? <PostComment /> : null} 추후 댓글 불러올 예정*/}
                 <PostComment />
             </div>
             <PostCommentInput />
