@@ -45,17 +45,13 @@ function Login() {
                     "password": input.password
                 },
             });
-            
             console.log(response);
         
             if (response.data.status === 422) {
-                console.log("dngkgkgdngkg하하하하");
                 setIsActive(false);
                 setCautionMsg('* 이메일 또는 비밀번호가 일치하지 않습니다.');
-                // setInput({ 
-                //     email: "",
-                //     password: ""
-                // });   
+                input.password='';
+                // setInput({password: ''});   
             } else if (response.data.user.intro) {
                 localStorage.setItem('token', response.data.user.token);
                 const token = localStorage.getItem('token');
