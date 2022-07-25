@@ -14,7 +14,11 @@ function SetProfile(props) {
     });
 
     const [success, setSuccess] = useState(false);
-    
+    const [passedUsername, setPassedUsername] = useState(false);
+
+
+    const controlAccountname = true;
+
     console.log(input.profileImg);
     console.log(props.input.email);
 
@@ -41,10 +45,18 @@ function SetProfile(props) {
         <main className="setProfileWrap">
             <h1>프로필 설정</h1>
             <p>나중에 언제든지 변경할 수 있습니다.</p>
-            <form onSubmit={postUserData}>
-                <ProfileForm setInput={setInput} input={input} success={success} setSuccess={setSuccess} />
-                <Link to="/home" className={`goFeedBtn ${success ? 'on' : ''}`}>연두마켓 시작하기</Link>
-            </form>
+            {/* <form onSubmit={postUserData}> */}
+                <ProfileForm 
+                setInput={setInput} 
+                input={input} 
+                success={success} 
+                setSuccess={setSuccess}
+                controlAccountname={controlAccountname}
+                passedUsername={passedUsername} 
+                setPassedUsername={setPassedUsername}
+                 />
+                <Link to="/home" className={`goFeedBtn ${success ? 'on' : ''}`} onClick={postUserData}>연두마켓 시작하기</Link>
+            {/* </form> */}
         </main>
     );
 }
