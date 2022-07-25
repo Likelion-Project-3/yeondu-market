@@ -43,6 +43,7 @@ function Post() {
                 rightclassName="moreBtn"
                 type="button"
             />
+            <h2 className="ir">포스트 아이템</h2>
             <div className="postWrap">
                 {!postData ? (
                     <div>loading...</div>
@@ -50,6 +51,7 @@ function Post() {
                     <PostItem post={postData} />
                 )}
             </div>
+            <h2 className="ir">댓글 목록</h2>
             <div className="commentWrap">
                 {/* {postData.comment ? <PostComment /> : null} 추후 댓글 불러올 예정*/}
                 <PostComment />

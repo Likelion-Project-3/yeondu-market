@@ -7,6 +7,7 @@ import "../pages/style/UploadPost.css";
 
 function EditPost() {
     const token = localStorage.getItem("token");
+    const username = localStorage.getItem("username");
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
     const [isActive, setIsActive] = useState(false);
@@ -152,8 +153,11 @@ function EditPost() {
                 handlerRightBtn={handleUpload}
             />
             <main className="uploadPostMain">
+                <h2 className="ir">게시글 작성</h2>
+                <h4 className="ir">{username}님의 프로필 이미지</h4>
                 <div className="myProfileImg"></div>
                 <form className="uploadForm">
+                    <h3 className="ir">게시글 작성란</h3>
                     <textarea
                         cols="30"
                         rows="10"
@@ -161,6 +165,7 @@ function EditPost() {
                         onKeyUp={upload}
                         value={text}
                     />
+                    <h4 className="ir">추가된 사진</h4>
                     <div className="imgCont">
                         {imgSrc
                             ? imgSrc.map((img, index) => {
@@ -186,6 +191,7 @@ function EditPost() {
                         })}
                     </div>
                 </form>
+                <h3 className="ir">이미지 첨부 버튼</h3>
                 <label
                     htmlFor="file"
                     className="UploadFileLabel green50"

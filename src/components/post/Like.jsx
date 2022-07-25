@@ -10,6 +10,7 @@ function Like({ heartCount }) {
 
     return (
         <span className="WraplikeBtn">
+            <span className="ir">좋아요 버튼</span>
             <button
                 type="button"
                 className={like ? "likeBtn on" : "likeBtn"}

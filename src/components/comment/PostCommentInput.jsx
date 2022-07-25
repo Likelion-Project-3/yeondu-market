@@ -14,13 +14,18 @@ function PostCommentInput() {
 
     return (
         <form className="PostCommentForm">
+            <h2 className="ir">댓글 입력</h2>
             <BasicProfileImg size="xs" />
+            <label htmlFor="commentInput" className="ir">
+                댓글 입력창
+            </label>
             <input
                 type="text"
                 placeholder="댓글 입력하기..."
                 className="textInput"
                 onChange={onChange}
                 value={text}
+                id="commentInput"
             />
             <input type="submit" value="게시" className="uploadBtn disabled" />
         </form>

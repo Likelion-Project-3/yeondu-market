@@ -25,17 +25,22 @@ function PostItem({ post }) {
             <div>
                 <div className="postHeaderWrap">
                     <div className="postWriter">
+                        <h4 className="ir">포스트 글쓴이</h4>
                         <BasicProfileImg size="sm" src={post.author.image} />
                         <div className="postWriterName">
                             <strong>{post.author.username}</strong>
                             <small>@ {post.author.accountname}</small>
                         </div>
                     </div>
-                    <button className="more"></button>
+                    <button className="more">
+                        <span className="ir">더보기 버튼</span>
+                    </button>
                 </div>
                 <div className="postContent">
                     <div className="postClickWrap" onClick={showDetail}>
+                        <h4 className="ir">포스트 내용</h4>
                         <p className="postContentText">{post.content}</p>
+                        <h4 className="ir">포스트 첨부 이미지</h4>
                         <div
                             className="postContentImg"
                             // style={{
@@ -55,6 +60,7 @@ function PostItem({ post }) {
                                     type="button"
                                     className="commentBtn"
                                 ></button>
+                                <span className="ir">댓글 개수</span>
                                 <span className="commentCount">
                                     {post.commentCount}
                                 </span>

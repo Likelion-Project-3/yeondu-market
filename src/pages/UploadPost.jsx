@@ -14,6 +14,7 @@ function UploadPost() {
     const history = useHistory();
     const formData = new FormData();
     const token = localStorage.getItem("token");
+    const username = localStorage.getItem("username");
 
     const onChange = (e) => {
         setText(e.target.value);
@@ -143,8 +144,11 @@ function UploadPost() {
                 handlerRightBtn={handleUpload}
             />
             <main className="uploadPostMain">
+                <h2 className="ir">게시글 작성</h2>
+                <h4 className="ir">{username}님의 프로필 이미지</h4>
                 <div className="myProfileImg"></div>
                 <form className="uploadForm">
+                    <h3 className="ir">게시글 작성란</h3>
                     <textarea
                         placeholder="게시글 입력하기..."
                         cols="30"
@@ -153,6 +157,7 @@ function UploadPost() {
                         onKeyUp={upload}
                         value={text}
                     />
+                    <h4 className="ir">추가된 사진</h4>
                     <div className="imgCont">
                         {imgSrc.map((img, index) => {
                             return (
@@ -172,9 +177,10 @@ function UploadPost() {
                         })}
                     </div>
                 </form>
+                <h3 className="ir">이미지 첨부 버튼</h3>
                 <label
                     htmlFor="file"
-                    className="UploadFileLabel green50"
+                    className="UploadFileLabel green50 "
                     style={{
                         right: "1rem",
                         bottom: "1rem",
