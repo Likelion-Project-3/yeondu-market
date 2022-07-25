@@ -3,7 +3,6 @@ import "./PostAlbumItem.css";
 
 function PostAlbumItem({ imageList }) {
     const [postImg, setPostImg] = useState("");
-    const postsImage = `https://mandarin.api.weniv.co.kr/${postImg}`;
     const pI = imageList.image;
 
     useEffect(() => {
@@ -11,11 +10,16 @@ function PostAlbumItem({ imageList }) {
             setPostImg(pI.split(",")[0]);
         }
     }, []);
+    const showDetail = () => {
+        window.location.href = `/post/${imageList.id}`;
+    };
     return (
         <article className="postAlbumCard">
             <div className="">
-                <div className="postAlbumImg">
-                    {imageList.image ? <img src={postsImage} alt="" /> : null}
+                <div className="postAlbumImg" onClick={showDetail}>
+                    {imageList.image ? (
+                        <img src={imageList.image} alt="" />
+                    ) : null}
                 </div>
             </div>
         </article>

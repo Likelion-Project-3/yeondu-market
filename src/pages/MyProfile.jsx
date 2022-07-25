@@ -11,6 +11,7 @@ import postListOff from "../assets/icon/icon-post-list-off.png";
 import postAlbumOn from "../assets/icon/icon-post-album-on.png";
 import postAlbumOff from "../assets/icon/icon-post-album-off.png";
 import PostAlbum from "../components/post/PostAlbum";
+import TapMenu from "../components/common/TapMenu";
 
 function MyProfile() {
     const token = localStorage.getItem("token");
@@ -118,6 +119,7 @@ function MyProfile() {
                 ) : (
                     <PostAlbum postList={postList} />
                 )}
+                <TapMenu />
             </div>
         );
     }

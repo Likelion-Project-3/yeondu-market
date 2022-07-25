@@ -1,5 +1,6 @@
 import React from "react";
 import PostItem from "./PostItem";
+import "./postList.css";
 
 function PostList({ postList }) {
     // console.log("!!!postList", postList);
@@ -7,7 +8,7 @@ function PostList({ postList }) {
     // console.log("post", post);
 
     return (
-        <div>
+        <div className="postListWrap">
             {post && post.length > 0
                 ? post.map((post, id) => {
                       return (
