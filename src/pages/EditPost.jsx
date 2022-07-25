@@ -167,7 +167,7 @@ function EditPost() {
                                   return (
                                       <img
                                           key={index}
-                                          src={`https://mandarin.api.weniv.co.kr/${img}`}
+                                          src={img}
                                           className="imgBox"
                                           alt=""
                                       />
