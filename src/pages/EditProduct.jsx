@@ -1,14 +1,15 @@
-import axios from "axios";
 import React from "react";
-import { useHistory } from "react-router-dom";
+import axios from "axios";
+import { useHistory, useParams } from "react-router-dom";
 import UploadFileBtn from "../components/button/UploadFileBtn";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
 import { BASE_URL } from "../components/constants/baseUrl";
 import { useState } from "react";
+import { useEffect } from "react";
 
-function UploadProduct() {
-    let history = useHistory();
+function EditProduct() {
+    const { productId } = useParams();
     const token = localStorage.getItem("token");
 
     const [itemName, setItemName] = useState("");
@@ -18,8 +19,35 @@ function UploadProduct() {
 
     const [block, setBlock] = useState(false);
     const [checkPrice, setCheckPrice] = useState(false);
-
+    //기존이미지
     const [imageSrc, setImageSrc] = useState(null);
+    //새로운 이미지
+    const [newImgSrc, setNewImgSrc] = useState(null);
+
+    //기존 게시글 불러오기
+    useEffect(() => {
+        const productList = () => {
+            axios
+                .get(BASE_URL + `/product/detail/${productId}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                })
+                .then((response) => {
+                    const productDetial = response.data.product;
+                    setPrice(productDetial.price);
+                    setItemName(productDetial.itemName);
+                    setLink(productDetial.link);
+                    setItemImage(productDetial.itemImage);
+                    if (productDetial.itemImage) {
+                        setImageSrc(productDetial.itemImage);
+                    }
+                })
+                .catch((err) => console.log(err));
+        };
+        productList();
+    }, []);
 
     const handleItemName = (e) => {
         setItemName(e.target.value);
@@ -36,7 +64,7 @@ function UploadProduct() {
         };
         return comma(uncomma(str));
     };
-
+    const replacePrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     const handlePrice = (e) => {
         const value = e.target.value;
         setPrice(priceFormat(value));
@@ -86,11 +114,12 @@ function UploadProduct() {
         reader.readAsDataURL(file);
         return new Promise((resolve) => {
             reader.onload = () => {
-                setImageSrc(reader.result);
+                setNewImgSrc(reader.result);
                 resolve();
             };
         });
     };
+
     //이미지 전달
     const handelUploadImage = async (e) => {
         const productImage = e.target.files[0];
@@ -115,32 +144,33 @@ function UploadProduct() {
                 );
                 setItemImage(itemImage);
             } else {
-                setImageSrc(itemImage);
+                setNewImgSrc(itemImage);
                 imgPreview(productImage);
             }
         } catch (err) {
             console.log(err);
         }
     };
+
     //데이터 전달
-    const replacePrice = parseInt(price.replaceAll(",", ""));
+    const replacePrice2 = parseInt(replacePrice.replaceAll(",", ""));
     const ProductData = {
         product: {
             itemName: itemName,
-            price: replacePrice,
+            price: replacePrice2,
             link: link,
             itemImage: itemImage,
         },
     };
+
     //전달하기
     const handleSubmitProduct = async () => {
         onChangeCheckName();
         onChangeCheckPrice();
-        console.log("~~", ProductData.product.price);
-        const url = BASE_URL + "/product";
+        const url = BASE_URL + `/product/${productId}`;
         try {
             const res = await axios(url, {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-type": "application/json",
@@ -148,7 +178,7 @@ function UploadProduct() {
                 data: ProductData,
             });
             console.log("product:", res.data.product);
-            // window.location = "/myprofile";
+            window.location = "/myprofile";
         } catch (err) {
             console.error(err);
         }
@@ -156,17 +186,6 @@ function UploadProduct() {
 
     return (
         <div>
-            {/* <nav className="topBasicNav">
-                <button
-                    className="prevBtn"
-                    onClick={() => {
-                        history.goBack();
-                    }}
-                ></button>
-                <button className="saveBtn" onClick={handleSubmitProduct}>
-                    저장
-                </button>
-            </nav> */}
             <TopMenuComponent
                 topclassName="topBasicNav"
                 rightclassName="saveBtn"
@@ -186,9 +205,17 @@ function UploadProduct() {
                                 htmlFor="productImg"
                                 className="imagePriview"
                             >
-                                {imageSrc && (
+                                {imageSrc && !newImgSrc ? (
                                     <img
-                                        src={imageSrc}
+                                        src={itemImage}
+                                        className="imagePriview"
+                                        name="img"
+                                        alt="미리보기"
+                                    ></img>
+                                ) : null}
+                                {newImgSrc && (
+                                    <img
+                                        src={itemImage}
                                         className="imagePriview"
                                         name="img"
                                         alt="미리보기"
@@ -210,6 +237,7 @@ function UploadProduct() {
                                 id="productName"
                                 placeholder="2~15자 이내여야 합니다."
                                 onChange={handleItemName}
+                                value={itemName}
                             />
                             <strong
                                 onChange={onChangeCheckName}
@@ -227,10 +255,10 @@ function UploadProduct() {
                             <input
                                 type="text"
                                 id="productPrice"
-                                value={price}
                                 placeholder="숫자만 입력 가능합니다."
                                 onChange={handlePrice}
                                 onKeyDown={handlePrice2}
+                                value={replacePrice}
                             />
                             <strong
                                 onChange={onChangeCheckPrice}
@@ -251,6 +279,7 @@ function UploadProduct() {
                                 id="productLink"
                                 placeholder="URL을 입력해 주세요."
                                 onChange={handleLink}
+                                value={link}
                             />
                             <strong className="ProductErrMessage prodLink">
                                 *URL을 입력해 주세요.
@@ -262,5 +291,6 @@ function UploadProduct() {
         </div>
     );
 }
+// }
 
-export default UploadProduct;
+export default EditProduct;

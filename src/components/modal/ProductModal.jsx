@@ -25,7 +25,7 @@ function ProductModal({ productId, setModal, onModal }) {
                     <div type="button" className="ModalBtn" onClick={AlertOpen}>
                         삭제
                     </div>
-                    <a href="/productmodify" className="ModalBtn">
+                    <a href={`/product/${productId}/edit`} className="ModalBtn">
                         수정
                     </a>
                     <a href="/modify" className="ModalBtn">
