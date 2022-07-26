@@ -39,6 +39,10 @@
     line-height: 14px;
 }
 
+#accountname.disabled {
+    background-color: #F6F6F6;
+}
+
 .wrapInput .cautionText {
     display: block;
     padding-top: 6px;

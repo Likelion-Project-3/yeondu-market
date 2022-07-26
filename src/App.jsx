@@ -12,6 +12,7 @@ import Post from "./pages/Post";
 import UploadPost from "./pages/UploadPost";
 import UploadProduct from "./pages/UploadProduct";
 import EditPost from "./pages/EditPost";
+import EditProfile from "./pages/EditProfile";
 import "./reset.css";
 import FollowingContainer from "./components/follow/FollowingContainer";
 import FollowerList from "./pages/FollowerList";
@@ -35,6 +36,7 @@ function App() {
                 <Route exact path="/chat" component={ChatList} />
                 <Route exact path="/chat/:accountId" component={ChatRoom} />
                 <Route exact path="/setprofile" component={SetProfile} />
+                <Route exact path="/editprofile" component={EditProfile} />
                 <Route
                     exact
                     path="/:username/follower"
