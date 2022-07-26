@@ -17,7 +17,7 @@ function PostList({ postList }) {
                           </div>
                       );
                   })
-                : "없숩니다"}
+                : null}
         </div>
     );
 }

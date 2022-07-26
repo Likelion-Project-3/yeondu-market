@@ -25,7 +25,7 @@ function PostAlbum({ postList }) {
                           </div>
                       );
                   })
-                : "null"}
+                : null}
         </div>
     );
 }
