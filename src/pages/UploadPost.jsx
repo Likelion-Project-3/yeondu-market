@@ -168,13 +168,7 @@ function UploadPost() {
             <main className="uploadPostMain">
                 <h2 className="ir">게시글 작성</h2>
                 <h4 className="ir">{username}님의 프로필 이미지</h4>
-                {/* <div className="myProfileImg"></div> */}
-                <BasicProfileImg
-                    size="xs"
-                    src={
-                        profileImg || "../../assets/icon/basic-profile-img.png"
-                    }
-                />
+                <BasicProfileImg size="xs" src={profileImg} />
                 <form className="uploadForm">
                     <h3 className="ir">게시글 작성란</h3>
                     <textarea

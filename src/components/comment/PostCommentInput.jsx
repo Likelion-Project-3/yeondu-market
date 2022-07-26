@@ -40,10 +40,7 @@ function PostCommentInput() {
     return (
         <form className="PostCommentForm">
             <h2 className="ir">댓글 입력</h2>
-            <BasicProfileImg
-                size="xs"
-                src={profileImg || "../../assets/icon/basic-profile-img.png"}
-            />
+            <BasicProfileImg size="xs" src={profileImg} />
             <label htmlFor="commentInput" className="ir">
                 댓글 입력창
             </label>
