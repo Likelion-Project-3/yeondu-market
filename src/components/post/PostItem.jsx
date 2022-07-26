@@ -20,6 +20,13 @@ function PostItem({ post }) {
         window.location.href = `/post/${post.id}`;
     };
 
+    const formatDate = (date) => {
+        const year = date.slice(0, 10).split("-")[0];
+        const month = date.slice(0, 10).split("-")[1];
+        const day = date.slice(0, 10).split("-")[2];
+        return `${year}년 ${month}월 ${day}일`;
+    };
+
     return (
         <article className="postCard">
             <div>
@@ -41,15 +48,19 @@ function PostItem({ post }) {
                         <h4 className="ir">포스트 내용</h4>
                         <p className="postContentText">{post.content}</p>
                         <h4 className="ir">포스트 첨부 이미지</h4>
-                        <div
-                            className="postContentImg"
-                            // style={{
-                            //     background: `url(${backgroundImage}) no-repeat`,
-                            // }}
-                        >
-                            {post.image ? (
-                                <img src={backgroundImage} alt="" />
-                            ) : null}
+                        <div className="postContentImg">
+                            {post.image
+                                ? post.image.split(", ").map((src, index) => {
+                                      return (
+                                          <div className="imgBox" key={index}>
+                                              <img
+                                                  src={src}
+                                                  className="imgSrc"
+                                              />
+                                          </div>
+                                      );
+                                  })
+                                : null}
                         </div>
                     </div>
                     <div className="btnWrap">
@@ -68,7 +79,9 @@ function PostItem({ post }) {
                         </Link>
                     </div>
 
-                    <span className="created">{post.createdAt}</span>
+                    <span className="created">
+                        {formatDate(post.createdAt)}
+                    </span>
                 </div>
             </div>
         </article>
