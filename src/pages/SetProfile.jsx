@@ -36,6 +36,7 @@ function SetProfile(props) {
                 },
             });
             console.log(response);
+            window.location.replace("/login");
         } catch (err) {
             console.error(err);
         }
@@ -45,7 +46,7 @@ function SetProfile(props) {
         <main className="setProfileWrap">
             <h1>프로필 설정</h1>
             <p>나중에 언제든지 변경할 수 있습니다.</p>
-            {/* <form onSubmit={postUserData}> */}
+            <form onSubmit={postUserData}>
                 <ProfileForm 
                 setInput={setInput} 
                 input={input} 
@@ -55,8 +56,8 @@ function SetProfile(props) {
                 passedUsername={passedUsername} 
                 setPassedUsername={setPassedUsername}
                  />
-                <Link to="/home" className={`goFeedBtn ${success ? 'on' : ''}`} onClick={postUserData}>연두마켓 시작하기</Link>
-            {/* </form> */}
+                <button className={`goFeedBtn ${success ? 'on' : ''}`}>연두마켓 시작하기</button>
+            </form>
         </main>
     );
 }

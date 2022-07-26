@@ -105,7 +105,7 @@ import axios from "axios";
 
      return (
          <>
-         <form className="profileForm">
+         {/* <form className="profileForm"> */}
              <div className="profileImgSetting">
                  <BasicProfileImg 
                  size="lg"
@@ -177,7 +177,7 @@ import axios from "axios";
                      placeholder="자신과 판매할 상품에 대해 소개해 주세요!"
                  />
              </div>
-         </form>
+         {/* </form> */}
          </>
      );
  }
