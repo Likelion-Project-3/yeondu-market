@@ -54,11 +54,34 @@
     line-height: 18px;
 }
 
-.postContentImg img {
-    /* height: 228px;
-    width: 340px; */
-    width: 100%;
-    object-fit: cover;
+.postContentImg {
+    width: 304px;
+    display: flex;
+    overflow: auto;
+    overflow-y: hidden;
+    gap: 8px;
+}
+
+.postContentImg::-webkit-scrollbar {
+    height: 8px;
+    border-radius: 10px;
+}
+
+.postContentImg::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+.postContentImg::-webkit-scrollbar-track {
+    background-color: var(--main-bg-color);
+    box-shadow: inset 0px 0px 5px white;
+}
+
+.postContentImg .imgBox {
+    padding-bottom: 1rem;
+}
+
+.postContentImg .imgBox img {
+    width: 285px;
 }
 
 .postContent .btnWrap {
