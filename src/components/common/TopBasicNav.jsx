@@ -5,6 +5,9 @@ import React,{useState} from "react";
 
 function TopBasicNav() {
     const[isOpenModal, setIsOpenModal] = useState(false);
+    const ModalOpen = () =>{
+        setIsOpenModal(!isOpenModal);
+    }
     const handleOpenModal = () => {
         setIsOpenModal(true);
     }
@@ -12,8 +15,8 @@ function TopBasicNav() {
         setIsOpenModal(false);
     }
     return (<>
-        <TopMenuComponent topclassName="topBasicNav" inputtype="notext" className="moreBtn" type="button" handlerRightBtn={handleOpenModal}/>
-        {isOpenModal && (<ProfileModal onCilck={handleCloseModal}/>)}
+        <TopMenuComponent topclassName="topBasicNav" inputtype="notext" rightclassName="moreBtn" type="button" handlerRightBtn={ModalOpen}/>
+        {isOpenModal && (<ProfileModal onCilck={ModalOpen}/>)}
         </>
     );
 }
