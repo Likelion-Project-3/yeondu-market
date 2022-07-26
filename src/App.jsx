@@ -17,6 +17,7 @@ import "./reset.css";
 import FollowingContainer from "./components/follow/FollowingContainer";
 import FollowerList from "./pages/FollowerList";
 import FollowingList from "./pages/FollowingList";
+import EditProduct from "./pages/EditProduct";
 
 function App() {
     return (
@@ -37,6 +38,11 @@ function App() {
                 </Switch>
                 <Route exact path="/post/:postId/edit" component={EditPost} />
                 <Route exact path="/product/upload" component={UploadProduct} />
+                <Route
+                    exact
+                    path="/product/:productId/edit"
+                    component={EditProduct}
+                />
                 <Route exact path="/myprofile" component={MyProfile} />
                 <Route exact path="/chat" component={ChatList} />
                 <Route exact path="/chat/:accountId" component={ChatRoom} />

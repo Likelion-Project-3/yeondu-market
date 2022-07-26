@@ -17,7 +17,7 @@
 }
 /* 뒷배경 설정 */
 .productSection::-webkit-scrollbar-track {
-    background: #b5d9ac;
+    /* background: #b5d9ac; */
 }
 /* 막대 설정 */
 .productSection::-webkit-scrollbar-thumb {
