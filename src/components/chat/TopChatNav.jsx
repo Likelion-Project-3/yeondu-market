@@ -6,7 +6,7 @@ import LeaveChatModal from "./LeaveChatModal";
 function TopChatNav() {
     const[isOpenModal, setIsOpenModal] = useState(false);
     const handleOpenModal = () =>{
-        setIsOpenModal(true);
+        setIsOpenModal(!isOpenModal);
     }
     const handleCloseModal =() =>{
         setIsOpenModal(false);

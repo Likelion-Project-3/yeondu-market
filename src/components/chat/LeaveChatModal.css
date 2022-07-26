@@ -1,11 +1,17 @@
 .leaveChatModal {
-    border: 1px solid black;
     border-radius: 25px 25px 0 0;
     padding: 36px 26px 24px;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ffffff;
+    bottom: 0;
+    z-index: 9999;
 }
 
 .leaveChatModal button {
     font-size: 14px;
+    text-align: left;
 }
 
 .leaveChatModal::before {
