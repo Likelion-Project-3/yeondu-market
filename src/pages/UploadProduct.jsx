@@ -18,6 +18,7 @@ function UploadProduct() {
 
     const [block, setBlock] = useState(false);
     const [checkPrice, setCheckPrice] = useState(false);
+    const [productPull, setProductPull] = useState(false);
 
     const [imageSrc, setImageSrc] = useState(null);
 
@@ -122,6 +123,7 @@ function UploadProduct() {
             console.log(err);
         }
     };
+
     //데이터 전달
     const replacePrice = parseInt(price.replaceAll(",", ""));
     const ProductData = {
@@ -131,6 +133,19 @@ function UploadProduct() {
             link: link,
             itemImage: itemImage,
         },
+    };
+    console.log(itemImage);
+    const inputDatapull = () => {
+        if (
+            itemImage !== "" &&
+            itemName !== "" &&
+            price !== "" &&
+            link !== ""
+        ) {
+            setProductPull(true);
+        } else {
+            setProductPull(false);
+        }
     };
     //전달하기
     const handleSubmitProduct = async () => {
@@ -148,7 +163,7 @@ function UploadProduct() {
                 data: ProductData,
             });
             console.log("product:", res.data.product);
-            // window.location = "/myprofile";
+            window.location = "/myprofile";
         } catch (err) {
             console.error(err);
         }
@@ -156,20 +171,9 @@ function UploadProduct() {
 
     return (
         <div>
-            {/* <nav className="topBasicNav">
-                <button
-                    className="prevBtn"
-                    onClick={() => {
-                        history.goBack();
-                    }}
-                ></button>
-                <button className="saveBtn" onClick={handleSubmitProduct}>
-                    저장
-                </button>
-            </nav> */}
             <TopMenuComponent
                 topclassName="topBasicNav"
-                rightclassName="saveBtn"
+                rightclassName={`saveBtn ${productPull ? "on" : ""}`}
                 inputtype="notext"
                 title="저장"
                 type="submit"
@@ -180,11 +184,15 @@ function UploadProduct() {
                 <section className="container">
                     <h2 className="ir">상품등록페이지</h2>
                     <form action="">
-                        <div className="productImgRegister">
+                        <div
+                            className="productImgRegister"
+                            onKeyUp={inputDatapull}
+                        >
                             <h3 className="">이미지 등록</h3>
                             <label
                                 htmlFor="productImg"
                                 className="imagePriview"
+                                onKeyUp={inputDatapull}
                             >
                                 {imageSrc && (
                                     <img
@@ -192,6 +200,7 @@ function UploadProduct() {
                                         className="imagePriview"
                                         name="img"
                                         alt="미리보기"
+                                        onKeyUp={inputDatapull}
                                     ></img>
                                 )}
                             </label>
@@ -200,6 +209,7 @@ function UploadProduct() {
                                 id="productImg"
                                 className="ir"
                                 onChange={handelUploadImage}
+                                onKeyUp={inputDatapull}
                             />
                         </div>
                         <div className="inputContainer">
@@ -210,6 +220,7 @@ function UploadProduct() {
                                 id="productName"
                                 placeholder="2~15자 이내여야 합니다."
                                 onChange={handleItemName}
+                                onKeyUp={inputDatapull}
                             />
                             <strong
                                 onChange={onChangeCheckName}
@@ -231,6 +242,7 @@ function UploadProduct() {
                                 placeholder="숫자만 입력 가능합니다."
                                 onChange={handlePrice}
                                 onKeyDown={handlePrice2}
+                                onKeyUp={inputDatapull}
                             />
                             <strong
                                 onChange={onChangeCheckPrice}
@@ -251,6 +263,7 @@ function UploadProduct() {
                                 id="productLink"
                                 placeholder="URL을 입력해 주세요."
                                 onChange={handleLink}
+                                onKeyUp={inputDatapull}
                             />
                             <strong className="ProductErrMessage prodLink">
                                 *URL을 입력해 주세요.
