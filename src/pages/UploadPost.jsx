@@ -16,12 +16,11 @@ function UploadPost() {
     const history = useHistory();
     const formData = new FormData();
     const token = localStorage.getItem("token");
-    const accountname = localStorage.getItem("accountname");
     const username = localStorage.getItem("username");
 
     useEffect(() => {
         const getUserProfile = async () => {
-            const url = BASE_URL + `/profile/${accountname}`;
+            const url = BASE_URL + "/user/myinfo";
 
             try {
                 const res = await axios(url, {
@@ -31,13 +30,11 @@ function UploadPost() {
                         "Content-type": "application/json",
                     },
                 });
-                console.log(res.data.profile.image);
-                setProfileImg(res.data.profile.image);
+                setProfileImg(res.data.user.image);
             } catch (err) {
                 console.log(err);
             }
         };
-
         getUserProfile();
     }, []);
 

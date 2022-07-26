@@ -7,7 +7,6 @@ import "./PostCommentInput.css";
 function PostCommentInput() {
     const [text, setText] = useState("");
     const [profileImg, setProfileImg] = useState("");
-    const accountname = localStorage.getItem("accountname");
     const token = localStorage.getItem("token");
     const sendBtn = document.querySelector(".uploadBtn");
     const onChange = (e) => {
@@ -19,7 +18,7 @@ function PostCommentInput() {
 
     useEffect(() => {
         const getUserProfile = async () => {
-            const url = BASE_URL + `/profile/${accountname}`;
+            const url = BASE_URL + "/user/myinfo";
 
             try {
                 const res = await axios(url, {
@@ -29,8 +28,7 @@ function PostCommentInput() {
                         "Content-type": "application/json",
                     },
                 });
-                console.log(res.data.profile.image);
-                setProfileImg(res.data.profile.image);
+                setProfileImg(res.data.user.image);
             } catch (err) {
                 console.log(err);
             }

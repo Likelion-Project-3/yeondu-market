@@ -9,7 +9,6 @@ import "../pages/style/UploadPost.css";
 function EditPost() {
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("username");
-    const accountname = localStorage.getItem("accountname");
     const [profileImg, setProfileImg] = useState("");
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
@@ -27,7 +26,7 @@ function EditPost() {
     useEffect(() => {
         setIsActive(true);
         const getUserProfile = async () => {
-            const url = BASE_URL + `/profile/${accountname}`;
+            const url = BASE_URL + "/user/myinfo";
 
             try {
                 const res = await axios(url, {
@@ -37,8 +36,7 @@ function EditPost() {
                         "Content-type": "application/json",
                     },
                 });
-                console.log(res.data.profile.image);
-                setProfileImg(res.data.profile.image);
+                setProfileImg(res.data.user.image);
             } catch (err) {
                 console.log(err);
             }
