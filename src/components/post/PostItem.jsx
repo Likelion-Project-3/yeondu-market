@@ -3,11 +3,17 @@ import Like from "./Like";
 import BasicProfileImg from "../common/BasicProfileImg";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import PostModal from "../modal/PostModal";
 
 function PostItem({ post }) {
     const [postImg, setPostImg] = useState("");
     const backgroundImage = postImg;
     const pI = post.image;
+    
+    const [isOpenModal, setIsOpenModal] = useState(false);
+    const ModalOn = () =>{
+        setIsOpenModal(!isOpenModal);
+    }
 
     useEffect(() => {
         if (post.image !== undefined) {
@@ -32,7 +38,7 @@ function PostItem({ post }) {
                             <small>@ {post.author.accountname}</small>
                         </div>
                     </div>
-                    <button className="more">
+                    <button className="more" onClick={ModalOn}>{isOpenModal && (<PostModal/>)}
                         <span className="ir">더보기 버튼</span>
                     </button>
                 </div>
