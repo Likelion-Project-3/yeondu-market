@@ -36,6 +36,7 @@
     background-color: var(--main-color);
     color: #fff;
     border-radius: 31px;
+    position: relative;
 }
 
 .saveBtn {

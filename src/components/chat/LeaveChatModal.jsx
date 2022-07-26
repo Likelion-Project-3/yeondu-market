@@ -3,8 +3,10 @@ import "./LeaveChatModal.css";
 
 function LeaveChatModal() {
     return (
-        <div className="leaveChatModal">
-            <button>채팅방 나가기</button>
+        <div className="alertWrap">
+            <div className="leaveChatModal">
+                <button>채팅방 나가기</button>
+            </div>
         </div>
     );
 }
