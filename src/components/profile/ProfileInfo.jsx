@@ -29,7 +29,7 @@ function ProfileInfo({ profileInfo }) {
             </div>
             <div className="">
                 <p className="userName">{user.username}</p>
-                <p className="userID">@ {user.accountname}</p>
+                <p className="userID">@{user.accountname}</p>
                 <p className="userIntro">{user.intro}</p>
             </div>
             <ProfileBtn />
