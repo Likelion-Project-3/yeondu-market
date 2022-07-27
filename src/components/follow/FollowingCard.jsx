@@ -5,7 +5,7 @@ function FollowingCard({ followingList }) {
     return (
         <li className="followItem">
             <a href="" className="followLink">
-                <img src={BasicImg} alt="" className="followerImg" />
+                <img src={followingList.image} alt="" className="followerImg" />
                 <div className="followInfo">
                     <p className="followerName">{followingList.username}</p>
                     <p className="followerIntro">{followingList.accountname}</p>
