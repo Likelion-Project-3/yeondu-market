@@ -7,19 +7,17 @@ function FollowingContainer({ followingList }) {
         <main className="followerMain">
             <section className="followContainer">
                 <ul className="followList">
-                    {followingList && followingList.length > 0 ? (
-                        followingList.map((followingList, id) => {
-                            return (
-                                <div key={id}>
-                                    <FollowingCard
-                                        followingList={followingList}
-                                    />
-                                </div>
-                            );
-                        })
-                    ) : (
-                        <div>없다!</div>
-                    )}
+                    {followingList && followingList.length > 0
+                        ? followingList.map((followingList, id) => {
+                              return (
+                                  <div key={id}>
+                                      <FollowingCard
+                                          followingList={followingList}
+                                      />
+                                  </div>
+                              );
+                          })
+                        : null}
                 </ul>
             </section>
         </main>

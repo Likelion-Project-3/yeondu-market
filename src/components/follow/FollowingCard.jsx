@@ -8,7 +8,7 @@ function FollowingCard({ followingList }) {
                 <img src={followingList.image} alt="" className="followerImg" />
                 <div className="followInfo">
                     <p className="followerName">{followingList.username}</p>
-                    <p className="followerIntro">{followingList.accountname}</p>
+                    <p className="followerIntro">{followingList.intro}</p>
                 </div>
             </a>
             {/* <button className="followBtn">팔로우</button> */}
