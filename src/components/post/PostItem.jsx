@@ -9,11 +9,11 @@ function PostItem({ post }) {
     const [postImg, setPostImg] = useState("");
     const backgroundImage = postImg;
     const pI = post.image;
-    
+
     const [isOpenModal, setIsOpenModal] = useState(false);
-    const ModalOn = () =>{
+    const ModalOn = () => {
         setIsOpenModal(!isOpenModal);
-    }
+    };
 
     useEffect(() => {
         if (post.image !== undefined) {
@@ -45,7 +45,8 @@ function PostItem({ post }) {
                             <small>@ {post.author.accountname}</small>
                         </div>
                     </div>
-                    <button className="more" onClick={ModalOn}>{isOpenModal && (<PostModal/>)}
+                    <button className="more" onClick={ModalOn}>
+                        {isOpenModal && <PostModal />}
                         <span className="ir">더보기 버튼</span>
                     </button>
                 </div>
@@ -56,7 +57,7 @@ function PostItem({ post }) {
                         <h4 className="ir">포스트 첨부 이미지</h4>
                         <div className="postContentImg">
                             {post.image
-                                ? post.image.split(", ").map((src, index) => {
+                                ? post.image.split(",").map((src, index) => {
                                       return (
                                           <div className="imgBox" key={index}>
                                               <img

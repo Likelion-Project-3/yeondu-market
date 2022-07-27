@@ -25,6 +25,7 @@ function MyProfile() {
     const [listClick, setListClick] = useState(true);
     const [albumClick, setAlbumClick] = useState(false);
 
+    const { accountName } = useParams();
     const onClickList = () => {
         setListClick(true);
         setAlbumClick(false);
@@ -38,7 +39,7 @@ function MyProfile() {
         //내프로필 정보
         const getProfile = () => {
             axios
-                .get(BASE_URL + "/user/myinfo", {
+                .get(BASE_URL + `/profile/${accountName}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         "Content-type": "application/json",
@@ -52,7 +53,7 @@ function MyProfile() {
         //내가 쓴 게시글 목록
         const postList = () => {
             axios
-                .get(BASE_URL + `/post/${accountname}/userpost`, {
+                .get(BASE_URL + `/post/${accountName}/userpost`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         "Content-type": "application/json",
@@ -67,7 +68,7 @@ function MyProfile() {
         //내가 등록한 상품 목록
         const productList = () => {
             axios
-                .get(BASE_URL + `/product/${accountname}`, {
+                .get(BASE_URL + `/product/${accountName}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         "Content-type": "application/json",

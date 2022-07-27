@@ -1,5 +1,5 @@
 import { upload } from "@testing-library/user-event/dist/upload";
-import { BrowserRouter, Route, Switch, Redirect  } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import ChatList from "./pages/ChatList";
 import ChatRoom from "./pages/ChatRoom";
 import Home from "./pages/Home";
@@ -24,10 +24,15 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <Route
-                    exact path="/"
-                    render={() => (
-                        localStorage.getItem('token') ? <Redirect to="/home" /> : <Splash />
-                    )}
+                    exact
+                    path="/"
+                    render={() =>
+                        localStorage.getItem("token") ? (
+                            <Redirect to="/home" />
+                        ) : (
+                            <Splash />
+                        )
+                    }
                 />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/join" component={Register} />
@@ -43,7 +48,16 @@ function App() {
                     path="/product/:productId/edit"
                     component={EditProduct}
                 />
-                <Route exact path="/myprofile" component={MyProfile} />
+                <Route
+                    exact
+                    path="/myprofile/:accountName"
+                    component={MyProfile}
+                />
+                <Route
+                    exact
+                    path="/profile/:accountName"
+                    component={MyProfile}
+                />
                 <Route exact path="/chat" component={ChatList} />
                 <Route exact path="/chat/:accountId" component={ChatRoom} />
                 <Route exact path="/setprofile" component={SetProfile} />
