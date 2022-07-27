@@ -1,13 +1,15 @@
 import { React, useState, useEffect } from "react";
-import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
 import { BASE_URL } from "../components/constants/baseUrl";
+import BasicProfileImg from "../components/common/BasicProfileImg";
 import TopMenuComponent from "../components/common/TopMenuComponent";
+import axios from "axios";
 import "../pages/style/UploadPost.css";
 
 function EditPost() {
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("username");
+    const [profileImg, setProfileImg] = useState("");
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
     const [isActive, setIsActive] = useState(false);
@@ -23,6 +25,24 @@ function EditPost() {
 
     useEffect(() => {
         setIsActive(true);
+        const getUserProfile = async () => {
+            const url = BASE_URL + "/user/myinfo";
+
+            try {
+                const res = await axios(url, {
+                    method: "GET",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                });
+                setProfileImg(res.data.user.image);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        getUserProfile();
     }, []);
 
     const onChange = (e) => {
@@ -155,7 +175,7 @@ function EditPost() {
             <main className="uploadPostMain">
                 <h2 className="ir">게시글 작성</h2>
                 <h4 className="ir">{username}님의 프로필 이미지</h4>
-                <div className="myProfileImg"></div>
+                <BasicProfileImg size="xs" src={profileImg} />
                 <form className="uploadForm">
                     <h3 className="ir">게시글 작성란</h3>
                     <textarea
