@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./TapMenu.css";
 
 function TapMenu() {
+    const accountName = localStorage.getItem("accountname");
     return (
         <nav className="tapMenu">
             <ul>
@@ -32,7 +33,7 @@ function TapMenu() {
                 </li>
                 <li>
                     <NavLink
-                        to="/myprofile"
+                        to={`/myprofile/${accountName}`}
                         className="linkBtn profileBtn"
                         activeClassName="profileBtnActive"
                         activeStyle={{ color: "var(--main-font-color)" }}

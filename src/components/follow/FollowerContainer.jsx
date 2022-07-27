@@ -1,12 +1,23 @@
 import React from "react";
 import FollowerCard from "./FollowerCard";
 
-function FollowerContainer() {
+function FollowerContainer({ followerList }) {
+    console.log(followerList);
     return (
         <main className="followerMain">
             <section className="followContainer">
                 <ul className="followList">
-                    <FollowerCard />
+                    {followerList && followerList.length > 0
+                        ? followerList.map((followerList, id) => {
+                              return (
+                                  <div key={id}>
+                                      <FollowerCard
+                                          followerList={followerList}
+                                      />
+                                  </div>
+                              );
+                          })
+                        : null}
                 </ul>
             </section>
         </main>
