@@ -1,15 +1,17 @@
 import React from "react";
-import BasicImg from "../../assets/basic-profile-img.svg";
-function FollowerCard() {
+import { Link } from "react-router-dom";
+
+function FollowerCard({ followerList }) {
+    const userUrl = `/profile/${followerList.accountname}`;
     return (
         <li className="followItem">
-            <a href="" className="followLink">
-                <img src={BasicImg} alt="" className="followerImg" />
+            <Link to={userUrl} className="followLink">
+                <img src={followerList.image} alt="" className="followerImg" />
                 <div className="followInfo">
-                    <p className="followerName">애월읍 한라봉 최고 맛집</p>
-                    <p className="followerIntro">정성을 다해 농사짓는 한라봉</p>
+                    <p className="followerName">{followerList.username}</p>
+                    <p className="followerIntro">{followerList.intro}</p>
                 </div>
-            </a>
+            </Link>
             <button className="followBtn">팔로우</button>
             {/* <button className="cancelBtn">취소</button> */}
         </li>
