@@ -5,7 +5,7 @@ import PostAlert from "./PostAlert";
 
 function PostModal({ setIsOpenModal, isOpenModal }) {
     const [cancelAlert, setCancelAlert] = useState(false);
-    const AlertCancel = () => {
+    const handleCancelAlert = () => {
         setCancelAlert(!cancelAlert);
     };
     const handleCancel = () => {
@@ -22,7 +22,7 @@ function PostModal({ setIsOpenModal, isOpenModal }) {
                     className="ModalBtnWrap"
                     onClick={(e) => e.stopPropagation()}
                 >
-                    <button className="ModalBtn" onClick={AlertCancel}>
+                    <button className="ModalBtn" onClick={handleCancelAlert}>
                         삭제
                     </button>
 

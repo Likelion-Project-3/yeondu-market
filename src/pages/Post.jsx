@@ -15,7 +15,7 @@ function Post() {
     const { postId } = useParams();
 
     // 댓글 업데이트 반영하기
-    const getComments = useCallback(async () => {
+    const handleGetComments = useCallback(async () => {
         const url = BASE_URL + `/post/${postId}/comments`;
 
         try {
@@ -52,7 +52,7 @@ function Post() {
         };
 
         getPostPage();
-        getComments();
+        handleGetComments();
     }, []);
 
     return (
@@ -79,7 +79,10 @@ function Post() {
                       })
                     : null}
             </div>
-            <PostCommentInput postId={postId} handleSubmit={getComments} />
+            <PostCommentInput
+                postId={postId}
+                handleSubmit={handleGetComments}
+            />
         </>
     );
 }

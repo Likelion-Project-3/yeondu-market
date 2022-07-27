@@ -6,7 +6,7 @@ import "./Alert.css";
 function PostAlert({ props, handleCancel }) {
     const history = useHistory();
 
-    const deletePost = async () => {
+    const handleDeletePost = async () => {
         // const url = BASE_URL + "/post/62d60b3a82fdcc712f4d4713";
         const post_id = props.data.post.id;
         const url = BASE_URL + `/post/${post_id}`;
@@ -41,7 +41,7 @@ function PostAlert({ props, handleCancel }) {
                     </button>
                     <button
                         className="modalAlertBtn delete"
-                        onClick={deletePost}
+                        onClick={handleDeletePost}
                     >
                         삭제
                     </button>

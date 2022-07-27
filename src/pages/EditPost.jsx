@@ -11,10 +11,8 @@ function EditPost() {
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
     const [isActive, setIsActive] = useState(false);
-    // 기존에 있던 이미지
     const [imgSrc, setImgSrc] = useState([]);
-    // 새로운 이미지
-    const [newImgSrc, setNewImgSrc] = useState([]);
+    const accountname = localStorage.getItem("accountname");
 
     const history = useHistory();
     const { postId } = useParams();
@@ -25,7 +23,7 @@ function EditPost() {
         setIsActive(true);
     }, []);
 
-    const onChange = (e) => {
+    const handleOnChange = (e) => {
         setText(e.target.value);
     };
 
@@ -36,7 +34,8 @@ function EditPost() {
         },
     };
 
-    const upload = () => {
+    // 텍스트, 이미지 입력 여부에 따라 버튼 활성화하기
+    const handleActivate = () => {
         if (text && text.length > 0) {
             setIsActive(true);
         } else {
@@ -84,7 +83,7 @@ function EditPost() {
                 data: postData,
             });
             console.log(res);
-            history.push("/myprofile");
+            history.push(`/myprofile/${accountname}`);
         } catch (err) {
             console.log(err);
         }
@@ -146,7 +145,7 @@ function EditPost() {
         }
     };
 
-    const deleteImg = (e) => {
+    const handleDeleteImg = (e) => {
         const index = e.target.parentElement.id;
 
         // 미리보기 이미지 삭제
@@ -183,8 +182,8 @@ function EditPost() {
                     <textarea
                         cols="30"
                         rows="10"
-                        onChange={onChange}
-                        onKeyUp={upload}
+                        onChange={handleOnChange}
+                        onKeyUp={handleActivate}
                         value={text}
                     />
                     <h4 className="ir">추가된 사진</h4>
@@ -205,7 +204,7 @@ function EditPost() {
                                           <button
                                               type="button"
                                               className="closeBtn"
-                                              onClick={deleteImg}
+                                              onClick={handleDeleteImg}
                                           ></button>
                                       </div>
                                   );
