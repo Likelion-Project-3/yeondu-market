@@ -12,6 +12,7 @@ import postAlbumOn from "../assets/icon/icon-post-album-on.png";
 import postAlbumOff from "../assets/icon/icon-post-album-off.png";
 import PostAlbum from "../components/post/PostAlbum";
 import TapMenu from "../components/common/TapMenu";
+import { useParams } from "react-router-dom";
 
 function MyProfile() {
     const token = localStorage.getItem("token");
@@ -81,8 +82,11 @@ function MyProfile() {
         postList();
         productList();
     }, []);
-    if (!profileInfo) {
+    console.log(profileInfo);
+    if (token === null) {
+        window.location = "/";
         // console.log(profileInfo);
+    } else if (!profileInfo) {
         return <div>loading...</div>;
     } else {
         return (
