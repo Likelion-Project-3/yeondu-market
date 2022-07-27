@@ -1,15 +1,13 @@
 import { React, useState, useEffect } from "react";
+import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
 import { BASE_URL } from "../components/constants/baseUrl";
-import BasicProfileImg from "../components/common/BasicProfileImg";
 import TopMenuComponent from "../components/common/TopMenuComponent";
-import axios from "axios";
 import "../pages/style/UploadPost.css";
 
 function EditPost() {
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("username");
-    const [profileImg, setProfileImg] = useState("");
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
     const [isActive, setIsActive] = useState(false);
@@ -25,24 +23,6 @@ function EditPost() {
 
     useEffect(() => {
         setIsActive(true);
-        const getUserProfile = async () => {
-            const url = BASE_URL + "/user/myinfo";
-
-            try {
-                const res = await axios(url, {
-                    method: "GET",
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                        "Content-type": "application/json",
-                    },
-                });
-                setProfileImg(res.data.user.image);
-            } catch (err) {
-                console.log(err);
-            }
-        };
-
-        getUserProfile();
     }, []);
 
     const onChange = (e) => {
@@ -52,16 +32,14 @@ function EditPost() {
     const postData = {
         post: {
             content: text,
-            image: imgSrc.concat(imgFile).join(", "),
+            image: imgFile.join(", "),
         },
     };
 
     const upload = () => {
         if (text && text.length > 0) {
-            console.log("text!!");
             setIsActive(true);
         } else {
-            console.log("no text");
             setIsActive(false);
         }
     };
@@ -114,7 +92,7 @@ function EditPost() {
 
     // 이미지 업로드
     const handleUploadImg = async (e) => {
-        if (imgSrc.length + newImgSrc.length >= 3) {
+        if (imgSrc.length >= 3) {
             alert("3개 이하의 파일을 업로드 하세요.");
             return;
         }
@@ -136,13 +114,11 @@ function EditPost() {
             // 이미지 미리보기
             const imgPreview = (file) => {
                 const reader = new FileReader();
-                const imgBox = document.createElement("img");
-
-                imgBox.className = "imgBox";
                 reader.readAsDataURL(file);
+
                 return new Promise((resolve) => {
                     reader.onload = () => {
-                        setNewImgSrc([...newImgSrc, reader.result]);
+                        setImgSrc([...imgSrc, reader.result]);
                         resolve();
                         setIsActive(imgSrc.length + 1 > 0 ? true : false);
                     };
@@ -155,13 +131,39 @@ function EditPost() {
                 );
                 setImgFile([...imgFile]);
             } else {
-                setImgFile([...imgFile, res.data[0]["filename"]]);
+                setImgFile([
+                    ...imgFile,
+                    "https://mandarin.api.weniv.co.kr/" +
+                        res.data[0]["filename"],
+                ]);
+                console.log("updated imgfile: ", imgFile);
+                console.log("updated imgsrc: ", imgSrc);
+
                 imgPreview(imgInput);
             }
         } catch (err) {
             console.log(err);
         }
     };
+
+    const deleteImg = (e) => {
+        const index = e.target.parentElement.id;
+
+        // 미리보기 이미지 삭제
+        setImgSrc(
+            imgSrc.filter((el, i) => {
+                return i !== parseInt(index);
+            })
+        );
+
+        // POST 요청할 이미지 삭제
+        setImgFile(
+            imgFile.filter((el, i) => {
+                return i !== parseInt(index);
+            })
+        );
+    };
+
     return (
         <>
             <TopMenuComponent
@@ -175,7 +177,7 @@ function EditPost() {
             <main className="uploadPostMain">
                 <h2 className="ir">게시글 작성</h2>
                 <h4 className="ir">{username}님의 프로필 이미지</h4>
-                <BasicProfileImg size="xs" src={profileImg} />
+                <div className="myProfileImg"></div>
                 <form className="uploadForm">
                     <h3 className="ir">게시글 작성란</h3>
                     <textarea
@@ -190,25 +192,25 @@ function EditPost() {
                         {imgSrc
                             ? imgSrc.map((img, index) => {
                                   return (
-                                      <img
-                                          key={index}
-                                          src={img}
+                                      <div
                                           className="imgBox"
-                                          alt=""
-                                      />
+                                          key={index}
+                                          id={index}
+                                      >
+                                          <img
+                                              src={img}
+                                              className="imgSrc"
+                                              alt=""
+                                          />
+                                          <button
+                                              type="button"
+                                              className="closeBtn"
+                                              onClick={deleteImg}
+                                          ></button>
+                                      </div>
                                   );
                               })
                             : null}
-                        {newImgSrc.map((img, index) => {
-                            return (
-                                <img
-                                    key={index}
-                                    src={img}
-                                    className="imgBox"
-                                    alt=""
-                                />
-                            );
-                        })}
                     </div>
                 </form>
                 <h3 className="ir">이미지 첨부 버튼</h3>
