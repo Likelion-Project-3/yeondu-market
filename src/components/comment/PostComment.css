@@ -11,6 +11,13 @@
     margin-left: 12px;
 }
 
+.commentWriterImg {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
 .comment strong {
     font-size: 14px;
     font-weight: bold;
@@ -29,7 +36,7 @@
 
 .comment p {
     font-size: 14px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .postCommentWrap .showModal {
