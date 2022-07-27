@@ -1,13 +1,14 @@
 import React from "react";
 import BasicImg from "../../assets/basic-profile-img.svg";
-function FollowingCard() {
+function FollowingCard({ followingList }) {
+    console.log("card", followingList);
     return (
         <li className="followItem">
             <a href="" className="followLink">
-                <img src={BasicImg} alt="" className="followerImg" />
+                <img src={followingList.image} alt="" className="followerImg" />
                 <div className="followInfo">
-                    <p className="followerName">애월읍 한라봉 최고 맛집</p>
-                    <p className="followerIntro">정성을 다해 농사짓는 한라봉</p>
+                    <p className="followerName">{followingList.username}</p>
+                    <p className="followerIntro">{followingList.intro}</p>
                 </div>
             </a>
             {/* <button className="followBtn">팔로우</button> */}
