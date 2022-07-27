@@ -45,10 +45,15 @@ function PostItem({ post }) {
                             <small>@ {post.author.accountname}</small>
                         </div>
                     </div>
-                    <button className="more" onClick={ModalOn}>
-                        {isOpenModal && <PostModal />}
+                    <div type="button" className="more" onClick={ModalOn}>
                         <span className="ir">더보기 버튼</span>
-                    </button>
+                    </div>
+                    {isOpenModal && (
+                        <PostModal
+                            setIsOpenModal={setIsOpenModal}
+                            isOpenModal={isOpenModal}
+                        />
+                    )}
                 </div>
                 <div className="postContent">
                     <div className="postClickWrap" onClick={showDetail}>
@@ -63,6 +68,7 @@ function PostItem({ post }) {
                                               <img
                                                   src={src}
                                                   className="imgSrc"
+                                                  alt=""
                                               />
                                           </div>
                                       );

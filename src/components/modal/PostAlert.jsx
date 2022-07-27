@@ -3,7 +3,7 @@ import { BASE_URL } from "../constants/baseUrl";
 import axios from "axios";
 import "./Alert.css";
 
-function PostAlert(props) {
+function PostAlert({ props, handleCancel }) {
     const history = useHistory();
 
     const deletePost = async () => {
@@ -35,13 +35,14 @@ function PostAlert(props) {
                 <div className="wrapAlert">
                     <button
                         className="modalAlertBtn cancel"
-                        onClick={() => {
-                            history.goBack();
-                        }}
+                        onClick={handleCancel}
                     >
                         취소
                     </button>
-                    <button className="modalAlertBtn delete" onClick={deletePost}>
+                    <button
+                        className="modalAlertBtn delete"
+                        onClick={deletePost}
+                    >
                         삭제
                     </button>
                 </div>
