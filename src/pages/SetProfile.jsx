@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "../pages/style/SetProfile.css";
 import ProfileForm from "../components/profile/ProfileForm";
 import axios from "axios";
@@ -15,12 +14,11 @@ function SetProfile(props) {
 
     const [success, setSuccess] = useState(false);
     const [passedUsername, setPassedUsername] = useState(false);
-
+    const [fileImage, setFileImage] = useState('');
 
     const controlAccountname = true;
 
-    console.log(input.profileImg);
-    console.log(props.input.email);
+    const userImage = fileImage ? BASE_URL + '/' + fileImage : input.profileImg
 
     const postUserData = async (e) => {
         e.preventDefault();
@@ -32,7 +30,7 @@ function SetProfile(props) {
                     "password": props.input.password,
                     "accountname": input.accountname,
                     "intro": input.intro,
-                    "image": input.profileImg
+                    "image": userImage
                 },
             });
             console.log(response);
@@ -41,6 +39,8 @@ function SetProfile(props) {
             console.error(err);
         }
     };
+    console.log(input.profileImg);
+
 
     return (
         <main className="setProfileWrap">
@@ -55,6 +55,8 @@ function SetProfile(props) {
                 controlAccountname={controlAccountname}
                 passedUsername={passedUsername} 
                 setPassedUsername={setPassedUsername}
+                fileImage={fileImage}
+                setFileImage={setFileImage}
                  />
                 <button className={`goFeedBtn ${success ? 'on' : ''}`}>연두마켓 시작하기</button>
             </form>

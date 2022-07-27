@@ -1,16 +1,12 @@
 import "../pages/style/EditProfile.css";
-// import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import ProfileForm from "../components/profile/ProfileForm";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import axios from "axios";
-// import BasicProfile from "../../assets/basic-profile-img.svg";
 import { BASE_URL } from "../components/constants/baseUrl";
 import { useEffect } from "react";
 
 function EditProfile(props) {
-    // let history = useHistory();
-
     const [input, setInput] = useState({
         username: "",
         accountname: "",
@@ -20,6 +16,7 @@ function EditProfile(props) {
 
     const [success, setSuccess] = useState(false);
     const [passedUsername, setPassedUsername] = useState(false);
+    const [fileImage, setFileImage] = useState('');
 
     const controlAccountname = false;
 
@@ -35,7 +32,6 @@ function EditProfile(props) {
                     },
                 });
                 console.log(response);
-                console.log(response.data.user.image);
 
                 const getData = response.data.user;
                 
@@ -52,6 +48,9 @@ function EditProfile(props) {
         getUserInfo();
     }, [])
 
+    const userImage = fileImage ? BASE_URL + '/' + fileImage : input.profileImg
+    console.log(userImage)
+
     const handelEditProfile = async(e) => {
         e.preventDefault();
         const userInfo = {
@@ -59,7 +58,7 @@ function EditProfile(props) {
                 "username": input.username,
                 "accountname": input.accountname,
                 "intro": input.intro,
-                "image": input.profileImg
+                "image": userImage
             }
         };
         try {
@@ -75,29 +74,30 @@ function EditProfile(props) {
         }
     };
 
-    console.log(passedUsername);
-    console.log(input.profileImg);
-
     return (
         <>
         <TopMenuComponent 
         topclassName="topBasicNav"
         handlerRightBtn={handelEditProfile} 
-        disabled={passedUsername? false : true}
+        // disabled={passedUsername? false : true}
         type="submit"
-        rightclassName={`saveBtn ${passedUsername ? 'on' : ''}`}
-        inputtype="notext" title="저장" 
+        rightclassName="saveBtn on"
+        inputtype="notext" 
+        title="저장" 
          />
             <main className="editProfileWrap">
+                <form className="profileForm">
                     <ProfileForm 
                     setInput={setInput} 
                     input={input} 
-                    // success={success} 
                     setSuccess={setSuccess} 
                     controlAccountname={controlAccountname}
                     passedUsername={passedUsername}
                     setPassedUsername={setPassedUsername}
+                    fileImage={fileImage}
+                    setFileImage={setFileImage}
                      />
+                </form>
             </main>
         </>
     );
