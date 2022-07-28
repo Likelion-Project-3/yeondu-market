@@ -63,3 +63,19 @@
 input[type=notext] {
     display: none;
 }
+
+.topSearchNav > input {
+    background: #F2F2F2;
+    width: 100%;
+    padding: 7px 16px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 32px;
+}
+
+.topSearchNav > input::placeholder {
+    color: #C4C4C4;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
