@@ -50,6 +50,7 @@ function PostItem({ post }) {
                     </div>
                     {isOpenModal && (
                         <PostModal
+                            postId={post.id}
                             setIsOpenModal={setIsOpenModal}
                             isOpenModal={isOpenModal}
                         />
