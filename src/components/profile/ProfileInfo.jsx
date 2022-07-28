@@ -1,18 +1,11 @@
 import React from "react";
-import { createContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import BasicProfileImg from "../common/BasicProfileImg";
 import ProfileBtn from "./ProfileBtn";
 import "./ProfileInfo.css";
 
 function ProfileInfo({ profileInfo }) {
-    const username = localStorage.getItem("username");
     const { accountName } = useParams();
-    console.log("~~", accountName);
-    const followLink = `/${accountName}/follower`;
-    const folloingLink = `/${accountName}/following`;
-
-    const accountContext = createContext(accountName);
 
     const profile = profileInfo.profile;
     return (
@@ -20,14 +13,24 @@ function ProfileInfo({ profileInfo }) {
             {profile ? (
                 <>
                     <div className="tempWrap">
-                        <Link to={followLink}>
+                        <Link
+                            to={{
+                                pathname: `/${accountName}/follower`,
+                                state: { accountName: accountName },
+                            }}
+                        >
                             <p className="followCount followers">
                                 {profile.followerCount}
                             </p>
                             <p className="followName followers">followers</p>
                         </Link>
                         <BasicProfileImg size="lg" src={profile.image} />
-                        <Link to={folloingLink}>
+                        <Link
+                            to={{
+                                pathname: `/${accountName}/following`,
+                                state: { accountName: accountName },
+                            }}
+                        >
                             <p className="followCount following">
                                 {profile.followingCount}
                             </p>

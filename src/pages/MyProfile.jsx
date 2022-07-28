@@ -83,7 +83,7 @@ function MyProfile() {
         postList();
         productList();
     }, []);
-    console.log(profileInfo);
+    // console.log(profileInfo);
     if (token === null) {
         window.location = "/";
         // console.log(profileInfo);
