@@ -75,7 +75,14 @@ function Post() {
             <div className="commentWrap">
                 {comments.length > 0
                     ? comments.map((comment, index) => {
-                          return <PostComment comment={comment} key={index} />;
+                          return (
+                              <PostComment
+                                  comment={comment}
+                                  key={index}
+                                  postId={postId}
+                                  handleDelete={handleGetComments}
+                              />
+                          );
                       })
                     : null}
             </div>

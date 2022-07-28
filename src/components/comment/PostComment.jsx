@@ -1,12 +1,12 @@
 import "./PostComment.css";
 import writerImg from "../../assets/icon/Ellipse 4.svg";
 import React, { useState } from "react";
-import { ReportCommentModal } from "../modal/CommentModal";
+import CommentModal from "../modal/CommentModal";
 
-function PostComment({ comment }) {
+function PostComment({ comment, postId, handleDelete }) {
     const [isOpenModal, setIsOpenModal] = useState(false);
-    const handleOpenModal = () => {
-        setIsOpenModal(true);
+    const handleModalOn = () => {
+        setIsOpenModal(!isOpenModal);
     };
     const handleCloseModal = () => {
         setIsOpenModal(false);
@@ -24,11 +24,21 @@ function PostComment({ comment }) {
                     <span>5분 전</span>
                     <p>{comment.content}</p>
                 </div>
-                <button className="showModal" onClick={handleOpenModal}>
+                <button className="showModal" onClick={handleModalOn}>
                     <span className="ir">더보기 버튼</span>
                 </button>
             </div>
-            {isOpenModal && <ReportCommentModal onClick={handleCloseModal} />}
+            {isOpenModal && (
+                <CommentModal
+                    onClick={handleCloseModal}
+                    isOpenModal={isOpenModal}
+                    setIsOpenModal={setIsOpenModal}
+                    commentAuthorName={comment.author.accountname}
+                    commentId={comment.id}
+                    postId={postId}
+                    handleDelete={handleDelete}
+                />
+            )}
         </>
     );
 }
