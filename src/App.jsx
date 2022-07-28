@@ -18,70 +18,81 @@ import FollowingContainer from "./components/follow/FollowingContainer";
 import FollowerList from "./pages/FollowerList";
 import FollowingList from "./pages/FollowingList";
 import EditProduct from "./pages/EditProduct";
+import NotFound from "./pages/NotFound";
 
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Route
-                    exact
-                    path="/"
-                    render={() =>
-                        localStorage.getItem("token") ? (
-                            <Redirect to="/home" />
-                        ) : (
-                            <Splash />
-                        )
-                    }
-                />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/join" component={Register} />
-                <Route
-                    exact
-                    path="/home"
-                    render={() =>
-                        localStorage.getItem("token") === null ? (
-                            <Redirect to="/" />
-                        ) : (
-                            <Home />
-                        )
-                    }
-                />
                 <Switch>
+                    <Route
+                        exact
+                        path="/"
+                        render={() =>
+                            localStorage.getItem("token") ? (
+                                <Redirect to="/home" />
+                            ) : (
+                                <Splash />
+                            )
+                        }
+                    />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/join" component={Register} />
+                    <Route
+                        exact
+                        path="/home"
+                        render={() =>
+                            localStorage.getItem("token") === null ? (
+                                <Redirect to="/" />
+                            ) : (
+                                <Home />
+                            )
+                        }
+                    />
                     <Route exact path="/post/upload" component={UploadPost} />
                     <Route exact path="/post/:postId" component={Post} />
+
+                    <Route
+                        exact
+                        path="/post/:postId/edit"
+                        component={EditPost}
+                    />
+                    <Route
+                        exact
+                        path="/product/upload"
+                        component={UploadProduct}
+                    />
+                    <Route
+                        exact
+                        path="/product/:productId/edit"
+                        component={EditProduct}
+                    />
+                    <Route
+                        exact
+                        path="/myprofile/:accountName"
+                        component={MyProfile}
+                    />
+                    <Route
+                        exact
+                        path="/profile/:accountName"
+                        component={MyProfile}
+                    />
+                    <Route exact path="/chat" component={ChatList} />
+                    <Route exact path="/chat/:accountId" component={ChatRoom} />
+                    <Route exact path="/setprofile" component={SetProfile} />
+                    <Route exact path="/editprofile" component={EditProfile} />
+                    <Route
+                        exact
+                        path="/:username/follower"
+                        component={FollowerList}
+                    />
+                    <Route
+                        exact
+                        path="/:username/following"
+                        component={FollowingList}
+                    />
+                    <Route path="/*" component={NotFound} />
                 </Switch>
-                <Route exact path="/post/:postId/edit" component={EditPost} />
-                <Route exact path="/product/upload" component={UploadProduct} />
-                <Route
-                    exact
-                    path="/product/:productId/edit"
-                    component={EditProduct}
-                />
-                <Route
-                    exact
-                    path="/myprofile/:accountName"
-                    component={MyProfile}
-                />
-                <Route
-                    exact
-                    path="/profile/:accountName"
-                    component={MyProfile}
-                />
-                <Route exact path="/chat" component={ChatList} />
-                <Route exact path="/chat/:accountId" component={ChatRoom} />
-                <Route exact path="/setprofile" component={SetProfile} />
-                <Route exact path="/editprofile" component={EditProfile} />
-                <Route
-                    exact
-                    path="/:accountname/follower"
-                    component={FollowerList}
-                />
-                <Route
-                    exact
-                    path="/:accountname/following"
-                    component={FollowingList}
-                />
             </BrowserRouter>
         </div>
     );
