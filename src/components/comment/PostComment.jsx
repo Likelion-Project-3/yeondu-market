@@ -11,6 +11,24 @@ function PostComment({ comment, postId, handleDelete }) {
     const handleCloseModal = () => {
         setIsOpenModal(false);
     };
+
+    const getTimeGap = (time) => {
+        const ms = Date.parse(time);
+        const now = Date.now();
+        const gap = (now - ms) / 1000;
+        if (gap < 60) {
+            return `${Math.ceil(gap)}초 전`;
+        } else if (gap < 3600) {
+            return `${Math.floor(gap / 60)}분 전`;
+        } else if (gap < 86400) {
+            return `${Math.floor(gap / 3600)}시간 전`;
+        } else if (gap < 2592000) {
+            return `${Math.floor(gap / 86400)}일 전`;
+        } else {
+            return `${Math.floor(gap / 2592000)}달 전`;
+        }
+    };
+
     return (
         <>
             <div className="postCommentWrap">
@@ -21,7 +39,7 @@ function PostComment({ comment, postId, handleDelete }) {
                 />
                 <div className="comment">
                     <strong>{comment.author.username}</strong>
-                    <span>5분 전</span>
+                    <span>{getTimeGap(comment.createdAt)}</span>
                     <p>{comment.content}</p>
                 </div>
                 <button className="showModal" onClick={handleModalOn}>
