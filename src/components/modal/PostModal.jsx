@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import PostAlert from "./PostAlert";
 
-function PostModal({ setIsOpenModal, isOpenModal }) {
+function PostModal({ postId, setIsOpenModal, isOpenModal }) {
     const [cancelAlert, setCancelAlert] = useState(false);
     const handleCancelAlert = () => {
         setCancelAlert(!cancelAlert);
@@ -26,12 +26,14 @@ function PostModal({ setIsOpenModal, isOpenModal }) {
                         삭제
                     </button>
 
-                    <Link to="/:post_id/edit" className="ModalBtn">
+                    <Link to={`/post/${postId}/edit`} className="ModalBtn">
                         수정
                     </Link>
                 </div>
             </div>
-            {cancelAlert && <PostAlert handleCancel={handleCancel} />}
+            {cancelAlert && (
+                <PostAlert handleCancel={handleCancel} postId={postId} />
+            )}
         </>
     );
 }

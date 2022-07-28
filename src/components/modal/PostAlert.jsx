@@ -1,15 +1,14 @@
-import { useHistory } from "react-router-dom";
 import { BASE_URL } from "../constants/baseUrl";
 import axios from "axios";
 import "./Alert.css";
 
-function PostAlert({ props, handleCancel }) {
-    const history = useHistory();
+function PostAlert({ postId, handleCancel }) {
+    const accountname = localStorage.getItem("accountname");
+
 
     const handleDeletePost = async () => {
-        // const url = BASE_URL + "/post/62d60b3a82fdcc712f4d4713";
-        const post_id = props.data.post.id;
-        const url = BASE_URL + `/post/${post_id}`;
+        const url = BASE_URL + `/post/${postId}`;
+
         const token = localStorage.getItem("token");
 
         try {
@@ -20,7 +19,7 @@ function PostAlert({ props, handleCancel }) {
                     "Content-type": "application/json",
                 },
             });
-            history.push("/myprofile");
+            window.location = `/myprofile/${accountname}`;
             console.log(res);
         } catch (err) {
             // 404페이지로 이동
