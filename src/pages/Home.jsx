@@ -10,7 +10,7 @@ function Home() {
     const goSearch = () => {
         setSearch(true);
     };
- 
+
     return (
         <>
             {search ? (
@@ -24,7 +24,13 @@ function Home() {
                     <main className="homeContentNonFeed">
                         <div></div>
                         <p>유저를 검색해 팔로우 해보세요!</p>
-                        <button type="button" className="searchBtn" onClick={goSearch}>검색하기</button>
+                        <button
+                            type="button"
+                            className="searchBtn"
+                            onClick={goSearch}
+                        >
+                            검색하기
+                        </button>
                     </main>
                     <TapMenu />
                 </>

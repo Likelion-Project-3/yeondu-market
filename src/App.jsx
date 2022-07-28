@@ -13,29 +13,19 @@ import UploadPost from "./pages/UploadPost";
 import UploadProduct from "./pages/UploadProduct";
 import EditPost from "./pages/EditPost";
 import EditProfile from "./pages/EditProfile";
-import "./reset.css";
 import FollowingContainer from "./components/follow/FollowingContainer";
 import FollowerList from "./pages/FollowerList";
 import FollowingList from "./pages/FollowingList";
 import EditProduct from "./pages/EditProduct";
 import NotFound from "./pages/NotFound";
+import "./reset.css";
 
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
                 <Switch>
-                    <Route
-                        exact
-                        path="/"
-                        render={() =>
-                            localStorage.getItem("token") ? (
-                                <Redirect to="/home" />
-                            ) : (
-                                <Splash />
-                            )
-                        }
-                    />
+                    <Route exact path="/" component={Splash} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/join" component={Register} />
                     <Route
@@ -51,7 +41,6 @@ function App() {
                     />
                     <Route exact path="/post/upload" component={UploadPost} />
                     <Route exact path="/post/:postId" component={Post} />
-
                     <Route
                         exact
                         path="/post/:postId/edit"
