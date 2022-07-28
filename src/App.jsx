@@ -36,7 +36,11 @@ function App() {
                 />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/join" component={Register} />
-                <Route exact path="/home" component={Home} />
+                <Route exact path="/home"
+                    render={() => (
+                    localStorage.getItem('token') === null ? <Redirect to="/" /> : <Home />
+                )}
+                />
                 <Switch>
                     <Route exact path="/post/upload" component={UploadPost} />
                     <Route exact path="/post/:postId" component={Post} />
