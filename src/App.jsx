@@ -23,23 +23,19 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Route
-                    exact
-                    path="/"
-                    render={() =>
-                        localStorage.getItem("token") ? (
-                            <Redirect to="/home" />
-                        ) : (
-                            <Splash />
-                        )
-                    }
-                />
+                <Route exact path="/" component={Splash} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/join" component={Register} />
-                <Route exact path="/home"
-                    render={() => (
-                    localStorage.getItem('token') === null ? <Redirect to="/" /> : <Home />
-                )}
+                <Route
+                    exact
+                    path="/home"
+                    render={() =>
+                        localStorage.getItem("token") === null ? (
+                            <Redirect to="/" />
+                        ) : (
+                            <Home />
+                        )
+                    }
                 />
                 <Switch>
                     <Route exact path="/post/upload" component={UploadPost} />
