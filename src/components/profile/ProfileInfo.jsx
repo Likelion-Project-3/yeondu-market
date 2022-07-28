@@ -1,13 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { createContext } from "react";
+import { Link, useParams } from "react-router-dom";
 import BasicProfileImg from "../common/BasicProfileImg";
 import ProfileBtn from "./ProfileBtn";
 import "./ProfileInfo.css";
 
 function ProfileInfo({ profileInfo }) {
     const username = localStorage.getItem("username");
-    const followLink = `/${username}/follower`;
-    const folloingLink = `/${username}/following`;
+    const { accountName } = useParams();
+    console.log("~~", accountName);
+    const followLink = `/${accountName}/follower`;
+    const folloingLink = `/${accountName}/following`;
+
+    const accountContext = createContext(accountName);
 
     const profile = profileInfo.profile;
     return (

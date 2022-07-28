@@ -30,3 +30,12 @@
     padding: 8px 0px;
     margin: 0px 10px;
 }
+
+.profileUnFollowBtn {
+    color: var(--main-font-color);
+    width: 120px;
+    border: 1px solid var(--main-font-color);
+    border-radius: 30px;
+    padding: 8px 0px;
+    margin: 0px 10px;
+}
