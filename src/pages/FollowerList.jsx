@@ -5,16 +5,16 @@ import FollowerContainer from "../components/follow/FollowerContainer";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import TapMenu from "../components/common/TapMenu";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function FollowerList() {
     const [followerList, setFollowerList] = useState([]);
     const token = localStorage.getItem("token");
-    const accountname = localStorage.getItem("accountname");
-    const { accountName } = useParams();
 
-    console.log("!!", accountName);
-    const url = BASE_URL + `/profile/${accountname}/follower`;
+    const location = useLocation();
+    const accountName = location.state.accountName;
+
+    const url = BASE_URL + `/profile/${accountName}/follower`;
     const getFollowerList = () => {
         axios
             .get(url, {
