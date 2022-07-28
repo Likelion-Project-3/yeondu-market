@@ -1,3 +1,4 @@
 .searchMain {
     height: calc(100vh - 108px);
+    padding: 20px 16px 0;
 }

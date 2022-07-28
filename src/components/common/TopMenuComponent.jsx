@@ -1,14 +1,31 @@
-import './TopMenuComponent.css'
+import "./TopMenuComponent.css";
 import { useHistory } from "react-router-dom";
 
-function TopMenuComponent(props){
+function TopMenuComponent(props) {
     const history = useHistory();
-    return(
+    return (
         <nav className={props.topclassName}>
-            <button type="button" className="prevBtn" onClick={history.goBack}></button>
+            <button
+                type="button"
+                className="prevBtn"
+                onClick={history.goBack}
+            />
             <h2 className={props.h2className}>{props.h2title}</h2>
-            <input type={props.inputtype} placeholder="계정 검색" maxLength="30" autoFocus />
-            <button type={props.type} className={props.rightclassName} onClick={props.handlerRightBtn} disabled={props.disabled}>{props.title}</button>
+            <input
+                type={props.inputtype}
+                onChange={props.onChange}
+                placeholder="계정 검색"
+                maxLength="30"
+                autoFocus
+            />
+            <button
+                type={props.type}
+                className={props.rightclassName}
+                onClick={props.handlerRightBtn}
+                disabled={props.disabled}
+            >
+                {props.title}
+            </button>
         </nav>
     );
 }
