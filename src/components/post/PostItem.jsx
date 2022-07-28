@@ -6,23 +6,21 @@ import { useEffect, useState } from "react";
 import PostModal from "../modal/PostModal";
 
 function PostItem({ post }) {
-    const [postImg, setPostImg] = useState("");
-    const backgroundImage = postImg;
-    const pI = post.image;
+    // const [postImg, setPostImg] = useState("");
+    // const pI = post.image;
 
     const [isOpenModal, setIsOpenModal] = useState(false);
-    const ModalOn = () => {
+    const handleModalOn = () => {
         setIsOpenModal(!isOpenModal);
     };
 
-    useEffect(() => {
-        if (post.image !== undefined) {
-            // console.log(pI);
-            setPostImg(pI.split(",")[0]);
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (post.image !== undefined) {
+    //         setPostImg(pI.split(",")[0]);
+    //     }
+    // }, []);
 
-    const showDetail = () => {
+    const handleShowDetail = () => {
         window.location.href = `/post/${post.id}`;
     };
 
@@ -45,7 +43,7 @@ function PostItem({ post }) {
                             <small>@ {post.author.accountname}</small>
                         </div>
                     </div>
-                    <div type="button" className="more" onClick={ModalOn}>
+                    <div type="button" className="more" onClick={handleModalOn}>
                         <span className="ir">더보기 버튼</span>
                     </div>
                     {isOpenModal && (
@@ -57,7 +55,7 @@ function PostItem({ post }) {
                     )}
                 </div>
                 <div className="postContent">
-                    <div className="postClickWrap" onClick={showDetail}>
+                    <div className="postClickWrap" onClick={handleShowDetail}>
                         <h4 className="ir">포스트 내용</h4>
                         <p className="postContentText">{post.content}</p>
                         <h4 className="ir">포스트 첨부 이미지</h4>

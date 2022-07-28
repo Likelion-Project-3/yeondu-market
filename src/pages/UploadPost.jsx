@@ -17,6 +17,7 @@ function UploadPost() {
     const formData = new FormData();
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("username");
+    const accountname = localStorage.getItem("accountname");
 
     useEffect(() => {
         const getUserProfile = async () => {
@@ -38,7 +39,7 @@ function UploadPost() {
         getUserProfile();
     }, []);
 
-    const onChange = (e) => {
+    const handleOnChange = (e) => {
         setText(e.target.value);
     };
 
@@ -49,7 +50,8 @@ function UploadPost() {
         },
     };
 
-    const upload = () => {
+    // 텍스트, 이미지 입력 여부에 따라 버튼 활성화하기
+    const handleActivate = () => {
         if (text && text.length > 0) {
             setIsActive(true);
         } else {
@@ -73,8 +75,7 @@ function UploadPost() {
                 },
                 data: postData,
             });
-            console.log(res);
-            history.push("/myprofile");
+            history.push(`/myprofile/${accountname}`);
         } catch (err) {
             console.log(err);
         }
@@ -137,7 +138,7 @@ function UploadPost() {
         }
     };
 
-    const deleteImg = (e) => {
+    const handleDeleteImg = (e) => {
         const index = e.target.parentElement.id;
 
         // 미리보기 이미지 삭제
@@ -175,8 +176,8 @@ function UploadPost() {
                         placeholder="게시글 입력하기..."
                         cols="30"
                         rows="10"
-                        onChange={onChange}
-                        onKeyUp={upload}
+                        onChange={handleOnChange}
+                        onKeyUp={handleActivate}
                         value={text}
                     />
                     <h4 className="ir">추가된 사진</h4>
@@ -192,7 +193,7 @@ function UploadPost() {
                                     <button
                                         type="button"
                                         className="closeBtn"
-                                        onClick={deleteImg}
+                                        onClick={handleDeleteImg}
                                     ></button>
                                 </div>
                             );

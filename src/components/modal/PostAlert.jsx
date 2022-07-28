@@ -5,8 +5,10 @@ import "./Alert.css";
 function PostAlert({ postId, handleCancel }) {
     const accountname = localStorage.getItem("accountname");
 
-    const deletePost = async () => {
+
+    const handleDeletePost = async () => {
         const url = BASE_URL + `/post/${postId}`;
+
         const token = localStorage.getItem("token");
 
         try {
@@ -38,7 +40,7 @@ function PostAlert({ postId, handleCancel }) {
                     </button>
                     <button
                         className="modalAlertBtn delete"
-                        onClick={deletePost}
+                        onClick={handleDeletePost}
                     >
                         삭제
                     </button>

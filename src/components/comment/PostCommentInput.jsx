@@ -9,20 +9,19 @@ function PostCommentInput(props) {
     const [profileImg, setProfileImg] = useState("");
     const [isActive, setIsActive] = useState(false);
     const token = localStorage.getItem("token");
-    const sendBtn = document.querySelector(".uploadBtn");
 
-    const onChange = (e) => {
+    // 댓글 input 값 실시간으로 받아오기
+    const handleChange = (e) => {
         setText(e.target.value);
-        if (text.length !== 0) {
-            sendBtn.classList.remove("disabled");
-        }
     };
 
-    const onKeyUp = () => {
+    // 댓글 input 길이에 따라 버튼 활성화하기
+    const handleKeyUp = () => {
         setIsActive(text.length > 0 ? true : false);
     };
 
-    const onSubmit = async (e) => {
+    // 댓글 POST 요청하기
+    const handleWriteComment = async (e) => {
         e.preventDefault();
 
         const url = BASE_URL + `/post/${props.postId}/comments`;
@@ -71,7 +70,7 @@ function PostCommentInput(props) {
     }, []);
 
     return (
-        <form className="PostCommentForm" onSubmit={onSubmit}>
+        <form className="PostCommentForm" onSubmit={handleWriteComment}>
             <h2 className="ir">댓글 입력</h2>
             <BasicProfileImg size="xs" src={profileImg} />
             <label htmlFor="commentInput" className="ir">
@@ -81,8 +80,8 @@ function PostCommentInput(props) {
                 type="text"
                 placeholder="댓글 입력하기..."
                 className="textInput"
-                onChange={onChange}
-                onKeyUp={onKeyUp}
+                onChange={handleChange}
+                onKeyUp={handleKeyUp}
                 value={text}
                 id="commentInput"
             />
