@@ -36,10 +36,16 @@ function App() {
                 />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/join" component={Register} />
-                <Route exact path="/home"
-                    render={() => (
-                    localStorage.getItem('token') === null ? <Redirect to="/" /> : <Home />
-                )}
+                <Route
+                    exact
+                    path="/home"
+                    render={() =>
+                        localStorage.getItem("token") === null ? (
+                            <Redirect to="/" />
+                        ) : (
+                            <Home />
+                        )
+                    }
                 />
                 <Switch>
                     <Route exact path="/post/upload" component={UploadPost} />
@@ -68,12 +74,12 @@ function App() {
                 <Route exact path="/editprofile" component={EditProfile} />
                 <Route
                     exact
-                    path="/:username/follower"
+                    path="/:accountname/follower"
                     component={FollowerList}
                 />
                 <Route
                     exact
-                    path="/:username/following"
+                    path="/:accountname/following"
                     component={FollowingList}
                 />
             </BrowserRouter>
