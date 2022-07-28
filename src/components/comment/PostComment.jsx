@@ -17,7 +17,7 @@ function PostComment({ comment, postId, handleDelete }) {
         const now = Date.now();
         const gap = (now - ms) / 1000;
         if (gap < 60) {
-            return `${Math.ceil(gap)}초 전`;
+            return "방금 전";
         } else if (gap < 3600) {
             return `${Math.floor(gap / 60)}분 전`;
         } else if (gap < 86400) {
