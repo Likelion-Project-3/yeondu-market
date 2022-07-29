@@ -14,7 +14,7 @@ function FollowingList() {
     const location = useLocation();
     const accountName = location.state.accountName;
 
-    const url = BASE_URL + `/profile/${accountName}/following`;
+    const url = BASE_URL + `/profile/${accountName}/following?limit=100`;
     const getFollowingList = () => {
         axios
             .get(url, {
