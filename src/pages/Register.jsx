@@ -5,15 +5,24 @@ import SetProfile from "./SetProfile";
 function Register() {
     const [nextPage, setNextPage] = useState(false);
     const [input, setInput] = useState({
-        email : '',
-        password : ''
+        email: "",
+        password: "",
+        passwordCheck: "",
     });
 
-    console.log('저장된 input : ', input);
+    console.log("저장된 input : ", input);
 
     return (
         <>
-            {nextPage ? <SetProfile input={input}/> : <Join setNextPage={setNextPage} setInput={setInput} input={input}/>}
+            {nextPage ? (
+                <SetProfile input={input} />
+            ) : (
+                <Join
+                    setNextPage={setNextPage}
+                    setInput={setInput}
+                    input={input}
+                />
+            )}
         </>
     );
 }
