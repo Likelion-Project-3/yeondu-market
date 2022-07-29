@@ -6,4 +6,5 @@
 
 .commentWrap {
     border-top: 1px solid var(--main-border-color);
+    padding-bottom: 60px;
 }
