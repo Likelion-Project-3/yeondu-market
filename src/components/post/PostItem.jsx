@@ -1,9 +1,9 @@
-import "./PostItem.css";
-import Like from "./Like";
-import BasicProfileImg from "../common/BasicProfileImg";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import BasicProfileImg from "../common/BasicProfileImg";
+import Like from "./Like";
 import PostModal from "../modal/PostModal";
+import "./PostItem.css";
 
 function PostItem({ post }) {
     // const [postImg, setPostImg] = useState("");
@@ -51,6 +51,7 @@ function PostItem({ post }) {
                             postId={post.id}
                             setIsOpenModal={setIsOpenModal}
                             isOpenModal={isOpenModal}
+                            postAuthor={post.author.accountname}
                         />
                     )}
                 </div>
