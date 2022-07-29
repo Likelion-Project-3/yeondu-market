@@ -39,7 +39,7 @@ function ProfileInfo({ profileInfo }) {
                     </div>
                     <div className="profileInfoWrap">
                         <p className="userName">{profile.username}</p>
-                        <p className="userID">@{profile.accountname}</p>
+                        <p className="userID">@ {profile.accountname}</p>
                         <p className="userIntro">{profile.intro}</p>
                     </div>
                 </>
