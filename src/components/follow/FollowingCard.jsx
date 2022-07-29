@@ -3,6 +3,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function FollowingCard({ followingList }) {
+    const [isfollow, setIsFollow] = useState(false);
+
+    const handleFollowBtn = () => {
+        setIsFollow(!isfollow);
+    };
     console.log("card", followingList);
     // if(followingList.username === )
     const userUrl = `/profile/${followingList.accountname}`;
@@ -11,7 +16,11 @@ function FollowingCard({ followingList }) {
         <li className="followItem">
             <Link to={userUrl} className="followLink">
                 <div className="followerImg">
-                    <img src={followingList.image} alt="" />
+                    <img
+                        src={followingList.image}
+                        alt=""
+                        // className="followerImg"
+                    />
                 </div>
                 <div className="followInfo">
                     <p className="followerName">{followingList.username}</p>
@@ -19,8 +28,15 @@ function FollowingCard({ followingList }) {
                 </div>
             </Link>
             {/* 팔로우를 하고 있을 땐 취소, 하지 않을땐 팔로우,, */}
-            {/* <button className="followBtn">팔로우</button> */}
-            <button className="cancelBtn">취소</button>
+            {isfollow === true ? (
+                <button className="cancelBtn" onClick={handleFollowBtn}>
+                    취소
+                </button>
+            ) : (
+                <button className="followBtn" onClick={handleFollowBtn}>
+                    팔로우
+                </button>
+            )}
         </li>
     );
 }

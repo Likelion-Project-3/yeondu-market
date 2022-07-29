@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function FollowerCard({ followerList }) {
+    const [isfollow, setIsFollow] = useState(false);
+
+    const handleFollowBtn = () => {
+        setIsFollow(!isfollow);
+    };
     const userUrl = `/profile/${followerList.accountname}`;
     return (
         <li className="followItem">
@@ -14,8 +19,15 @@ function FollowerCard({ followerList }) {
                     <p className="followerIntro">{followerList.intro}</p>
                 </div>
             </Link>
-            <button className="followBtn">팔로우</button>
-            {/* <button className="cancelBtn">취소</button> */}
+            {isfollow === true ? (
+                <button className="cancelBtn" onClick={handleFollowBtn}>
+                    취소
+                </button>
+            ) : (
+                <button className="followBtn" onClick={handleFollowBtn}>
+                    팔로우
+                </button>
+            )}
         </li>
     );
 }
