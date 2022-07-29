@@ -33,7 +33,7 @@
 .topBasicNav,
 .uploadPostHeader,
 .topSearchNav,
-.topChatNav{
+.topChatNav {
     justify-content: space-between;
 }
 
@@ -50,6 +50,8 @@
     padding: 7px 0px;
     color: #fff;
     font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
     border-radius: 31px;
     cursor: none;
 }
@@ -65,12 +67,12 @@
     width: fit-content;
 }
 
-input[type=notext] {
+input[type="notext"] {
     display: none;
 }
 
 .topSearchNav > input {
-    background: #F2F2F2;
+    background: #f2f2f2;
     width: 100%;
     padding: 7px 16px;
     margin-left: 20px;
@@ -79,7 +81,7 @@ input[type=notext] {
 }
 
 .topSearchNav > input::placeholder {
-    color: #C4C4C4;
+    color: #c4c4c4;
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;

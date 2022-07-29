@@ -1,7 +1,7 @@
 import "./UserList.css";
 
 const moveProfile = () => {
-    window.location.href = "/myprofile/:accountName";
+    window.location.href = "/myprofile/:accountname";
 };
 
 function UserList(props) {

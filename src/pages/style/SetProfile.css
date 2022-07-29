@@ -1,5 +1,10 @@
+.setProfileMain {
+    width: 390px;
+    margin: 0 auto;
+}
+
 .setProfileWrap {
-    padding: 30px 34px 0;
+    margin: 45px 34px 10px;
 }
 
 .setProfileWrap > h1 {
