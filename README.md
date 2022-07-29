@@ -62,16 +62,18 @@
 ### [이슈 관리]
 - 버전 관리 및 진행 상황 공유: 🔗[GitHub](https://github.com/Likelion-Project-3/yeondu-market), 🔗[GitHub Issues](https://github.com/Likelion-Project-3/yeondu-market/issues), 🔗[GitHub Project](https://github.com/Likelion-Project-3/yeondu-market/projects/1)
 - 회의록: 🔗 [GitHub Wiki](https://github.com/Likelion-Project-3/yeondu-market/wiki)
+![image](https://user-images.githubusercontent.com/80025366/181721644-fbfd7782-3d57-4454-b849-8ef2a829c6e5.png)
 
 ### [Git Flow]
 
-프로젝트 규모가 크지 않아 세 가지의 브랜치를 사용하는 전략을 선택했습니다.
+빠른 개발 작업을 병렬적으로 처리하기 위해 Git Flow를 도입하였으며, <br/>
+프로젝트 규모가 크지 않아 세 가지의 브랜치를 사용하는 전략을 선택했습니다. ([관련 Wiki](https://github.com/Likelion-Project-3/yeondu-market/wiki/Git-Flow-%EC%A0%95%EB%A6%AC))
 - main: 정식 배포된 버전을 담고 있는 브랜치
 - develop: 다음 버전 출시를 위한 최신 코드를 담고 있는 브랜치
 - feature: 기능 개발을 위한 브랜치로 기능 구현이 완료되면 삭제되는 브랜치
 
 ### [컨벤션] 
-버전 관리의 통일성과 효율적인 이슈 트래킹을 위해 컨벤션을 지정하여 commit, PR 시에 사용하였습니다.
+버전 관리의 통일성과 효율적인 이슈 트래킹을 위해 컨벤션을 지정하여 commit, PR 시에 사용하였습니다. ([관련 Wiki](https://github.com/Likelion-Project-3/yeondu-market/wiki/6%EC%9B%94-25%EC%9D%BC-%ED%9A%8C%EC%9D%98))
 
  `Feat`: 새로운 기능을 추가할 경우 <br/>
 `Fix`: 버그를 고친 경우 <br/>
@@ -103,7 +105,6 @@ npm start
 
 
 ## UI
-<br/>
 
 ###  1) 홈
 
@@ -115,6 +116,7 @@ npm start
 
 
 ###  4) 판매 상품
+<br/>
 
 ## 핵심코드
 ```js
