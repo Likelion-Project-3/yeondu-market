@@ -13,22 +13,30 @@ function PostContainer({
     console.log(postList);
     return (
         <div className="postBtnWap">
-            <div className="btnContainer">
-                <button className="profilePostBtn list" onClick={onClickList}>
-                    {listClick === false ? (
-                        <img src={postListOff} alt=""></img>
-                    ) : (
-                        <img src={postListOn} alt=""></img>
-                    )}
-                </button>
-                <button className="profilePostBtn album" onClick={onClickAlbum}>
-                    {albumClick === false ? (
-                        <img src={postAlbumOff} alt=""></img>
-                    ) : (
-                        <img src={postAlbumOn} alt=""></img>
-                    )}
-                </button>
-            </div>
+            {postList.post && postList.post.length > 0 ? (
+                <div className="btnContainer">
+                    <button
+                        className="profilePostBtn list"
+                        onClick={onClickList}
+                    >
+                        {listClick === false ? (
+                            <img src={postListOff} alt=""></img>
+                        ) : (
+                            <img src={postListOn} alt=""></img>
+                        )}
+                    </button>
+                    <button
+                        className="profilePostBtn album"
+                        onClick={onClickAlbum}
+                    >
+                        {albumClick === false ? (
+                            <img src={postAlbumOff} alt=""></img>
+                        ) : (
+                            <img src={postAlbumOn} alt=""></img>
+                        )}
+                    </button>
+                </div>
+            ) : null}
         </div>
     );
 }
