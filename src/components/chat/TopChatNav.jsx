@@ -13,7 +13,7 @@ function TopChatNav() {
             <TopMenuComponent
                 topclassName="topChatNav"
                 h2className="chatSender"
-                h2title="애월읍 위니브 감귤농장"
+                h2title="냠냐미"
                 inputtype="notext"
                 rightclassName="moreBtn"
                 type="button"

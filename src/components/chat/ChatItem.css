@@ -18,6 +18,14 @@
     position: relative;
 }
 
+.chatItem:nth-child(2) .chatItemImg {
+    background: url(../../assets/chat-profile.svg) no-repeat center/contain;
+}
+
+.chatItem:nth-child(3) .chatItemImg {
+    background: url(../../assets/pea-color.svg) no-repeat center/contain;
+}
+
 .chatItem.false .chatItemImg::after {
     content: "";
     width: 12px;
