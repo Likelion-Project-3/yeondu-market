@@ -9,8 +9,10 @@ function Join(props) {
     const { setNextPage, setInput, input } = props;
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
+    const [passwordCheckError, setPasswordCheckError] = useState("");
     const [passedEmail, setPassedEmail] = useState(false);
     const [passedPassword, setPassedPassword] = useState(false);
+    const [passedPasswordCheck, setPassedPasswordCheck] = useState(false);
     const [success, setSuccess] = useState(false);
 
     const userRef = useRef();
@@ -34,12 +36,16 @@ function Join(props) {
         setPasswordError();
     }, [input.password]);
 
+    useEffect(() => {
+        setPasswordCheckError();
+    }, [input.passwordCheck]);
+
     const handleEmailBlur = async () => {
         try {
             const regex = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
             if (!input.email) {
-                setEmailError("* 필수 입력사항 입니다.");
+                setEmailError("* 이메일은 필수 입력사항 입니다.");
                 setPassedEmail(false);
             } else if (!regex.test(input.email)) {
                 setEmailError("* 잘못된 이메일 형식입니다.");
@@ -68,9 +74,21 @@ function Join(props) {
     const handlePasswordBlur = () => {
         if (!input.password) {
             setPasswordError("* 비밀번호는 필수 입력사항 입니다.");
-            setPassedPassword(false);
+            setPassedPasswordCheck(false);
         } else if (input.password.length < 6) {
             setPasswordError("* 비밀번호는 6자 이상이어야 합니다.");
+            setPassedPasswordCheck(false);
+        } else {
+            setPassedPasswordCheck(true);
+        }
+    };
+
+    const handlePasswordCheckBlur = () => {
+        if (!input.passwordCheck) {
+            setPasswordCheckError("* 비밀번호 확인은 필수 입력사항 입니다.");
+            setPassedPassword(false);
+        } else if (input.passwordCheck !== input.password) {
+            setPasswordCheckError("* 비밀번호가 일치하지 않습니다.");
             setPassedPassword(false);
         } else {
             setPassedPassword(true);
@@ -78,12 +96,14 @@ function Join(props) {
     };
 
     useEffect(() => {
-        passedEmail && passedPassword ? setSuccess(true) : setSuccess(false);
+        passedEmail && passedPassword && passedPasswordCheck
+            ? setSuccess(true)
+            : setSuccess(false);
     });
 
     return (
         <div className="loginWrap">
-            <section className="loginSection">
+            <section className="loginPart">
                 <h1 className="singupTitle">이메일로 회원가입</h1>
                 <form>
                     <div>
@@ -119,6 +139,23 @@ function Join(props) {
                     </div>
                     <strong className="cautionText none">
                         {passwordError}
+                    </strong>
+                    <div>
+                        <label htmlFor="passwordEmail" id="checkPassword">
+                            비밀번호 확인
+                        </label>
+                        <input
+                            type="password"
+                            name="passwordCheck"
+                            id="passwordEmail"
+                            placeholder="비밀번호를 입력해주세요"
+                            value={input.passwordCheck}
+                            onChange={handleChangeInput}
+                            onBlur={handlePasswordCheckBlur}
+                        />
+                    </div>
+                    <strong className="cautionText none">
+                        {passwordCheckError}
                     </strong>
                     <input
                         type="button"
