@@ -6,13 +6,10 @@ import "../pages/style/MyProfile.css";
 import { BASE_URL } from "../components/constants/baseUrl";
 import axios from "axios";
 import PostList from "../components/post/PostList";
-import postListOn from "../assets/icon/icon-post-list-on.svg";
-import postListOff from "../assets/icon/icon-post-list-off.svg";
-import postAlbumOn from "../assets/icon/icon-post-album-on.svg";
-import postAlbumOff from "../assets/icon/icon-post-album-off.svg";
 import PostAlbum from "../components/post/PostAlbum";
 import TapMenu from "../components/common/TapMenu";
 import { useParams } from "react-router-dom";
+import PostContainer from "../components/post/PostContainer";
 
 function MyProfile() {
     const token = localStorage.getItem("token");
@@ -113,30 +110,13 @@ function MyProfile() {
                 <TopBasicNav />
                 <ProfileInfo profileInfo={profileInfo} />
                 <ProductContainer productList={productList} />
-                <div className="postBtnWap">
-                    <div className="btnContainer">
-                        <button
-                            className="profilePostBtn list"
-                            onClick={onClickList}
-                        >
-                            {listClick === false ? (
-                                <img src={postListOff} alt=""></img>
-                            ) : (
-                                <img src={postListOn} alt=""></img>
-                            )}
-                        </button>
-                        <button
-                            className="profilePostBtn album"
-                            onClick={onClickAlbum}
-                        >
-                            {albumClick === false ? (
-                                <img src={postAlbumOff} alt=""></img>
-                            ) : (
-                                <img src={postAlbumOn} alt=""></img>
-                            )}
-                        </button>
-                    </div>
-                </div>
+                <PostContainer
+                    postList={postList}
+                    listClick={listClick}
+                    albumClick={albumClick}
+                    onClickList={onClickList}
+                    onClickAlbum={onClickAlbum}
+                />
                 {listClick === true && albumClick === false ? (
                     <PostList postList={postList} />
                 ) : (
