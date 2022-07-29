@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function FollowerCard({ followerList }) {
@@ -6,7 +6,9 @@ function FollowerCard({ followerList }) {
     return (
         <li className="followItem">
             <Link to={userUrl} className="followLink">
-                <img src={followerList.image} alt="" className="followerImg" />
+                <div className="followerImg">
+                    <img src={followerList.image} alt="" />
+                </div>
                 <div className="followInfo">
                     <p className="followerName">{followerList.username}</p>
                     <p className="followerIntro">{followerList.intro}</p>

@@ -1,13 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function FollowingCard({ followingList }) {
     console.log("card", followingList);
+    // if(followingList.username === )
     const userUrl = `/profile/${followingList.accountname}`;
+
     return (
         <li className="followItem">
             <Link to={userUrl} className="followLink">
-                <img src={followingList.image} alt="" className="followerImg" />
+                <div className="followerImg">
+                    <img src={followingList.image} alt="" />
+                </div>
                 <div className="followInfo">
                     <p className="followerName">{followingList.username}</p>
                     <p className="followerIntro">{followingList.intro}</p>
