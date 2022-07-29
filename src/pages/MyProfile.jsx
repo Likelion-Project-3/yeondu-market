@@ -6,10 +6,10 @@ import "../pages/style/MyProfile.css";
 import { BASE_URL } from "../components/constants/baseUrl";
 import axios from "axios";
 import PostList from "../components/post/PostList";
-import postListOn from "../assets/icon/icon-post-list-on.png";
-import postListOff from "../assets/icon/icon-post-list-off.png";
-import postAlbumOn from "../assets/icon/icon-post-album-on.png";
-import postAlbumOff from "../assets/icon/icon-post-album-off.png";
+import postListOn from "../assets/icon/icon-post-list-on.svg";
+import postListOff from "../assets/icon/icon-post-list-off.svg";
+import postAlbumOn from "../assets/icon/icon-post-album-on.svg";
+import postAlbumOff from "../assets/icon/icon-post-album-off.svg";
 import PostAlbum from "../components/post/PostAlbum";
 import TapMenu from "../components/common/TapMenu";
 import { useParams } from "react-router-dom";
@@ -19,6 +19,7 @@ function MyProfile() {
     const accountname = localStorage.getItem("accountname");
 
     const [profileInfo, setProfileInfo] = useState("");
+    const [myprofileInfo, setMyProfileInfo] = useState("");
     const [postList, setPostList] = useState([]);
     const [productList, setProductList] = useState([]);
 
@@ -26,6 +27,7 @@ function MyProfile() {
     const [albumClick, setAlbumClick] = useState(false);
 
     const { accountName } = useParams();
+
     const onClickList = () => {
         setListClick(true);
         setAlbumClick(false);
@@ -37,6 +39,20 @@ function MyProfile() {
     };
     useEffect(() => {
         //내프로필 정보
+        const getMyProfile = () => {
+            axios
+                .get(BASE_URL + "/user/myinfo", {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                })
+                .then((response) => {
+                    setMyProfileInfo(response.data);
+                })
+                .catch((err) => console.log(err));
+        };
+        //유저 프로필 정보
         const getProfile = () => {
             axios
                 .get(BASE_URL + `/profile/${accountName}`, {
@@ -50,7 +66,7 @@ function MyProfile() {
                 })
                 .catch((err) => console.log(err));
         };
-        //내가 쓴 게시글 목록
+        //게시글 목록
         const postList = () => {
             axios
                 .get(BASE_URL + `/post/${accountName}/userpost`, {
@@ -65,7 +81,7 @@ function MyProfile() {
                 .catch((err) => console.log(err));
         };
 
-        //내가 등록한 상품 목록
+        //등록한 상품 목록
         const productList = () => {
             axios
                 .get(BASE_URL + `/product/${accountName}`, {
@@ -79,11 +95,13 @@ function MyProfile() {
                 })
                 .catch((err) => console.log(err));
         };
+        getMyProfile();
         getProfile();
         postList();
         productList();
     }, []);
     // console.log(profileInfo);
+    // console.log("my", myprofileInfo);
     if (token === null) {
         window.location = "/";
         // console.log(profileInfo);
