@@ -11,6 +11,7 @@ import { useEffect } from "react";
 function EditProduct() {
     const { productId } = useParams();
     const token = localStorage.getItem("token");
+    const accountname = localStorage.getItem("accountname");
 
     const [itemName, setItemName] = useState("");
     const [price, setPrice] = useState("");
@@ -178,7 +179,7 @@ function EditProduct() {
                 data: ProductData,
             });
             console.log("product:", res.data.product);
-            window.location = "/myprofile";
+            window.location = `/myprofile/${accountname}`;
         } catch (err) {
             console.error(err);
         }
