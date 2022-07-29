@@ -1,15 +1,25 @@
-.mainLogin{
-    padding: 50px;
+.loginWrap {
+    width: 390px;
+    margin: 45px auto 0;
 }
-.singupTitle{
-    text-align: center;
-    font-size: 28px;
-    padding-bottom: 60px;
+
+.loginSection {
+    margin: 45px 34px 10px;
+}
+
+.singupTitle {
+    padding-bottom: 40px;
     color: var(--main-font-color);
-}
-.nextPage{
-    color: var(--sub-font-color);
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
     text-align: center;
-    text-decoration: none;
+}
+
+.nextPage {
+    color: var(--sub-font-color);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
 }

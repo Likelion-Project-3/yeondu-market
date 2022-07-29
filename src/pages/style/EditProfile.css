@@ -1,3 +1,8 @@
+.editProfileMain {
+    width: 390px;
+    margin: 0 auto;
+}
+
 .editProfileWrap {
-    padding: 30px 34px 0;
+    margin: 30px 34px 0;
 }

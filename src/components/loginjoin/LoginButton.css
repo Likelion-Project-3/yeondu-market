@@ -1,12 +1,13 @@
 .loginBtn {
     background-color: var(--main-bg-color);
     width: 100%;
-    line-height: 50px;
-    border-radius: 45px;
+    padding: 13px 0;
+    margin: 30px auto 20px;
     color: #ffffff;
-    font-size: 18px;
-    margin: 40px auto 30px;
-    line-height: 55px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 44px;
 }
 
 .loginBtn.loginBtnActive {

@@ -1,30 +1,39 @@
-#checkEmail, #checkPassword {
+#checkEmail,
+#checkPassword {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: var(--sub-font-color);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
 }
 
 #checkPassword {
     margin-top: 16px;
 }
 
-#loginEmail, #passwordEmail {
-    border-bottom: 1px solid var(--main-border-color);
+#loginEmail,
+#passwordEmail {
     width: 100%;
-    font-size: 16px;
     padding-bottom: 15px;
     margin-bottom: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    border-bottom: 1px solid var(--main-border-color);
 }
 
-#loginEmail:focus, #passwordEmail:focus {
+#loginEmail:focus,
+#passwordEmail:focus {
     border-bottom: 1px solid var(--main-font-color);
 }
 
-#loginEmail::placeholder, #passwordEmail::placeholder {
+#loginEmail::placeholder,
+#passwordEmail::placeholder {
     color: var(--main-border-color);
     font-weight: 400;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 14px;
 }
 
 .cautionText {
