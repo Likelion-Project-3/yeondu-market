@@ -1,8 +1,11 @@
 .topMainNav {
+    background-color: #ffffff;
     display: flex;
+    position: fixed;
     justify-content: space-between;
     align-items: center;
     height: 48px;
+    width: 100%;
     padding: 0 16px;
     border-bottom: 1px solid var(--main-border-color);
     box-sizing: border-box;
@@ -26,6 +29,7 @@
     justify-content: center;
     align-items: center;
     height: calc(100vh - 108px);
+    padding-top: 48px;
 }
 
 .homeContentNonFeed > div {

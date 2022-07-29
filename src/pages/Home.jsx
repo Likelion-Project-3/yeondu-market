@@ -22,7 +22,7 @@ function Home() {
                         <button type="button" onClick={goSearch} />
                     </header>
                     <main className="homeContentNonFeed">
-                        <div></div>
+                        <div />
                         <p>유저를 검색해 팔로우 해보세요!</p>
                         <button
                             type="button"
