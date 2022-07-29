@@ -54,4 +54,8 @@
     color: var(--sub-font-color);
     font-size: 14px;
     line-height: 18px;
+    max-width: 390px;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    text-align: center;
 }
