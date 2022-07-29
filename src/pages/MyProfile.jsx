@@ -34,6 +34,7 @@ function MyProfile() {
         setAlbumClick(true);
         setListClick(false);
     };
+
     useEffect(() => {
         //내프로필 정보
         const getMyProfile = () => {
@@ -96,12 +97,10 @@ function MyProfile() {
         getProfile();
         postList();
         productList();
-    }, []);
-    // console.log(profileInfo);
-    // console.log("my", myprofileInfo);
+    }, [accountName]);
+
     if (token === null) {
         window.location = "/";
-        // console.log(profileInfo);
     } else if (!profileInfo) {
         return <div>loading...</div>;
     } else {
