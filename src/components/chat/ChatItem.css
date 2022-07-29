@@ -32,21 +32,32 @@
 }
 
 .chatContent strong {
+    width: 300px;
     font-size: 14px;
     font-weight: 600;
     text-align: left;
+    margin-bottom: 0.3rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .chatContent p {
+    width: 300px;
     font-size: 12px;
     color: var(--sub-font-color);
     margin-top: 4px;
     text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .chatItem .chatDate {
     color: var(--main-border-color);
     font-size: 10px;
     align-self: flex-end;
+    padding-bottom: 6px;
     flex-shrink: 0;
 }
