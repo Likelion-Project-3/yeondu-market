@@ -188,7 +188,7 @@ function EditProduct() {
         <div>
             <TopMenuComponent
                 topclassName="topBasicNav"
-                rightclassName="saveBtn"
+                rightclassName="saveBtn on"
                 inputtype="notext"
                 title="저장"
                 type="submit"
