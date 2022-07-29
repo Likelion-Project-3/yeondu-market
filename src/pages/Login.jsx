@@ -8,7 +8,6 @@ import "../components/loginjoin/LoginButton.css";
 // import LoginButton from "../components/loginjoin/LoginButton";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
-import Home from "./Home";
 
 function Login() {
     const url = BASE_URL + "/user/login";
@@ -83,7 +82,7 @@ function Login() {
                 goHome()
             ) : (
                 <div className="loginWrap">
-                    <section className="loginSection">
+                    <section className="loginPart">
                         <h1 className="singupTitle">로그인</h1>
                         <form onSubmit={handleSubmit}>
                             <div>
