@@ -37,7 +37,7 @@ function ProfileInfo({ profileInfo }) {
                             <p className="followName following">followings</p>
                         </Link>
                     </div>
-                    <div className="">
+                    <div className="profileInfoWrap">
                         <p className="userName">{profile.username}</p>
                         <p className="userID">@{profile.accountname}</p>
                         <p className="userIntro">{profile.intro}</p>

@@ -27,14 +27,22 @@
     color: var(--sub-font-color);
 }
 
-.profileWrap .userName {
+.profileInfoWrap {
+    width: 390px;
+    margin: 0 auto;
+}
+
+.profileInfoWrap .userName {
     font-weight: 700;
     padding-bottom: 6px;
     text-align: center;
     line-height: 20px;
 }
 
-.profileWrap .userID {
+.profileInfoWrap .userID {
+    margin: 0 auto;
+    max-width: 390px;
+    overflow-wrap: break-word;
     color: var(--sub-font-color);
     padding-bottom: 16px;
     font-size: 12px;
@@ -42,7 +50,7 @@
     text-align: center;
 }
 
-.profileWrap .userIntro {
+.profileInfoWrap .userIntro {
     color: var(--sub-font-color);
     font-size: 14px;
     line-height: 18px;
