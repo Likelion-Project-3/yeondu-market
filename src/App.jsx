@@ -81,6 +81,7 @@ function App() {
                         component={FollowingList}
                     />
                     <Route path="/*" component={NotFound} />
+                    <Route path="/404" component={NotFound} />
                 </Switch>
             </BrowserRouter>
         </div>
