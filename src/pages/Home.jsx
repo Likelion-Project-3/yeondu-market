@@ -1,12 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
+import PostItem from "../components/post/PostItem";
+import Search from "./Search";
 import TapMenu from "../components/common/TapMenu";
 import "../pages/style/Home.css";
-import { useState } from "react";
-import Search from "./Search";
-// import PostList from "../components/post/PostList";
-import PostItem from "../components/post/PostItem";
 
 function Home() {
     const token = localStorage.getItem("token");
@@ -37,32 +35,28 @@ function Home() {
 
     return (
         <>
-            {/* {search ? (
-                <Search />
-            ) : ( */}
-            <>
-                <header className="topMainNav">
-                    <h1>연두마켓 피드</h1>
-                    <button type="button" />
-                </header>
-                {/* <main className="homeContentNonFeed">
-                    <div />
-                    <p>유저를 검색해 팔로우 해보세요!</p>
-                    <button type="button" className="searchBtn">
-                        검색하기
-                    </button>
-                </main> */}
-                <TapMenu />
-
-                {post.map((post, id) => {
+            <header className="topMainNav">
+                <h1>연두마켓 피드</h1>
+                <button type="button" />
+            </header>
+            {post.length !== 0 ? (
+                post.map((post, id) => {
                     return (
                         <div key={id}>
                             <PostItem post={post} />
                         </div>
                     );
-                })}
-            </>
-            {/* )} */}
+                })
+            ) : (
+                <main className="homeContentNonFeed">
+                    <div />
+                    <p>유저를 검색해 팔로우 해보세요!</p>
+                    <button type="button" className="searchBtn">
+                        검색하기
+                    </button>
+                </main>
+            )}
+            <TapMenu />
         </>
     );
 }
