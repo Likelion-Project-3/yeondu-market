@@ -1,12 +1,13 @@
-import TopMenuComponent from "../components/common/TopMenuComponent";
+import { useEffect, useState, useCallback } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL } from "../components/constants/baseUrl";
+import Loading from "./loading";
 import PostItem from "../components/post/PostItem";
 import PostComment from "../components/comment/PostComment";
 import PostCommentInput from "../components/comment/PostCommentInput";
+import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/Post.css";
-import { BASE_URL } from "../components/constants/baseUrl";
-import { useEffect, useState, useCallback } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
 
 function Post() {
     const token = localStorage.getItem("token");
@@ -55,42 +56,41 @@ function Post() {
         handleGetComments();
     }, []);
 
-    return (
-        <>
-            <TopMenuComponent
-                topclassName="topBasicNav"
-                inputtype="notext"
-                rightclassName="moreBtn"
-                type="button"
-            />
-            <h2 className="ir">포스트 아이템</h2>
-            <div className="postWrap">
-                {!postData ? (
-                    <div>loading...</div>
-                ) : (
+    if (!postData) return <Loading />;
+    else {
+        return (
+            <>
+                <TopMenuComponent
+                    topclassName="topBasicNav"
+                    inputtype="notext"
+                    rightclassName="moreBtn"
+                    type="button"
+                />
+                <h2 className="ir">포스트 아이템</h2>
+                <div className="postWrap">
                     <PostItem post={postData} />
-                )}
-            </div>
-            <h2 className="ir">댓글 목록</h2>
-            <div className="commentWrap">
-                {comments.length > 0
-                    ? comments.map((comment, index) => {
-                          return (
-                              <PostComment
-                                  comment={comment}
-                                  key={index}
-                                  postId={postId}
-                                  handleDelete={handleGetComments}
-                              />
-                          );
-                      })
-                    : null}
-            </div>
-            <PostCommentInput
-                postId={postId}
-                handleSubmit={handleGetComments}
-            />
-        </>
-    );
+                </div>
+                <h2 className="ir">댓글 목록</h2>
+                <div className="commentWrap">
+                    {comments.length > 0
+                        ? comments.map((comment, index) => {
+                              return (
+                                  <PostComment
+                                      comment={comment}
+                                      key={index}
+                                      postId={postId}
+                                      handleDelete={handleGetComments}
+                                  />
+                              );
+                          })
+                        : null}
+                </div>
+                <PostCommentInput
+                    postId={postId}
+                    handleSubmit={handleGetComments}
+                />
+            </>
+        );
+    }
 }
 export default Post;
