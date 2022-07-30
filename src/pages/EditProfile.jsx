@@ -1,10 +1,10 @@
-import "../pages/style/EditProfile.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 import ProfileForm from "../components/profile/ProfileForm";
 import TopMenuComponent from "../components/common/TopMenuComponent";
-import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
-import { useEffect } from "react";
+import "../pages/style/EditProfile.css";
 
 function EditProfile(props) {
     const [input, setInput] = useState({
@@ -17,6 +17,7 @@ function EditProfile(props) {
     const [success, setSuccess] = useState(false);
     const [passedUsername, setPassedUsername] = useState(false);
     const [fileImage, setFileImage] = useState("");
+    const history = useHistory();
 
     const controlAccountname = false;
 
@@ -68,6 +69,7 @@ function EditProfile(props) {
                 },
             });
             console.log(response);
+            history.push(`/myprofile/${input.accountname}`);
         } catch (err) {
             console.error(err);
         }
