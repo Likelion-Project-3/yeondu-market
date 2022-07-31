@@ -13,4 +13,14 @@
 .loginBtn.loginBtnActive {
     background-color: var(--main-color);
     cursor: pointer;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.6;
+    }
+    to {
+        opacity: 1;
+    }
 }
