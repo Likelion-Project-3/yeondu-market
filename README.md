@@ -1,6 +1,6 @@
 
 # <span id="top">건강한 레시피, 연두마켓 🌿 </span>
-- 🔗 **배포 URL**
+- 🔗 **[배포 URL](https://yeondu-market.netlify.app)**
 - 🔒 **서비스 이용을 위한 계정**
 	- ID: **[yeondu@market.com](mailto:yeondu@market.com)**
 	- PW: yeondu
@@ -42,9 +42,10 @@
 
 | 구나영| 이예은| 임수진|  임수현 | 
 |--|--|--|--|
-|<img src="https://avatars.githubusercontent.com/Nayoung-Gu" height=180 width=180> | <img src="https://avatars.githubusercontent.com/leeyeun" height=180 width=180>  | <img src="https://avatars.githubusercontent.com/etoile-j" height=180 width=180>  |  <img src="https://cdn.discordapp.com/attachments/984722096242434061/999668677567844392/1658409963741.jpg" height=180 width=180>|
+|<img src="https://user-images.githubusercontent.com/80025366/182018095-d769c767-6e96-43b1-9f45-c713f3654f8f.jpg" height=180 width=180> | <img src="https://avatars.githubusercontent.com/leeyeun" height=180 width=180>  | <img src="https://avatars.githubusercontent.com/etoile-j" height=180 width=180>  |  <img src="https://cdn.discordapp.com/attachments/984722096242434061/999668677567844392/1658409963741.jpg" height=180 width=180>|
 | 🔗 [GitHub](https://github.com/Nayoung-Gu), 계획 리더 | 🔗 [GitHub](https://github.com/leeyeun), 개발 리더 | 🔗 [GitHub](https://github.com/etoile-j), 정리 리더 | 🔗 [GitHub](https://github.com/hyuni97), 회고 리더 |
 <br/>
+
 
 ## 역할 분담
 ![image](https://user-images.githubusercontent.com/80025366/181719008-3d5a3186-78da-4885-b9cd-4344b8e45f88.png)
@@ -111,47 +112,47 @@ npm start
 
 |                             0. Splash                              |                            1. 회원가입                             |
 | :---------------------------------------------------------------: | :---------------------------------------------------------------: |
-| <img src="asset/images/gif/splash.gif" width="230" height="400"/> | <img src="asset/images/gif/signUp.gif" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
 
 |                             2. 로그인                             |                               3. 프로필 설정                                |
 | :--------------------------------------------------------------: | :------------------------------------------------------------------------: |
-| <img src="asset/images/gif/logIn.gif" width="230" height="400"/> | <img src="asset/images/gif/registerProfile.gif" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
 
 |                              4. 검색                              |                           5. 홈 피드                            |
 | :---------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="asset/images/gif/search.gif" width="230" height="400"/> | <img src="asset/images/gif/home.gif" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
 
 
 |                           6. 게시물 등록                            |                             7. 게시글 수정                             |
 | :-------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| <img src="asset/images/gif/addPosting.gif" width="230" height="400"/> | <img src="asset/images/gif/deletePosting.gif" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
 
 |                         8. 게시물 삭제                         |                           9. 게시글 댓글 등록                           |
 | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: |
-| <img src="asset/images/gif/deletReply.gif" width="230" height="400"/> | <img src="asset/images/gif/addProduct.gif" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
 
 |                         10. 게시물 댓글 신고                         |                           11. 내 프로필                           |
 | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: |
-| <img src="asset/images/gif/deletReply.gif" width="230" height="400"/> | <img src="asset/images/gif/addProduct.gif" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
 
 
 
 |                        12. 사용자 프로필 수정                        |                          13. 타 유저 프로필                          |
 | :--------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="asset/images/gif/editProfile.gif" width="230" height="400"/> | <img src="asset/images/gif/yourProfile.gif" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
 
 |                           14. 팔로우                            |                              15. 로그아웃                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="asset/images/gif/logout.gif" width="230" height="400"/> | <img src="asset/images/gif/loadding.gif" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
 
 
 |                      16. 판매 상품 등록                       |                              17. 판매 상품 수정                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="asset/images/gif/follow.gif" width="230" height="400"/> | <img src="asset/images/gif/chatgif.gif" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
 
 |                      18. 채팅방                      |                              19. 로딩중                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="asset/images/gif/follow.gif" width="230" height="400"/> | <img src="asset/images/gif/chatgif.gif" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
 
 <p align="right"><a href="#top">(🔼 Top)</a></p>
 <br/>
