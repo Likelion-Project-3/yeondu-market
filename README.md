@@ -237,12 +237,15 @@ const imgPreview = (file) => {
 	
 - 유저프로필에서 프로필로 넘어가지 않는 이슈 <br/>
 	: 유저프로필에서 tapmenu에 있는 프로필버튼을 클릭하면 myprofile로 가지 않는 현상이 발생했었습니다. useEffect에서 `deps`에 `accountname`을 넣어주어 accountname이 변경될때 다시 렌더링 될 수 있게 바꾸었습니다.
+	
+- 이미지 주소 전달 <br />
+	: 이미지 주소를 api에 전달하는 과정에서 이미지 이름만 전달을 했었습니다. 저희 로컬에서는 잘 돌아갔지만 1기분들 서버에서는 저희가 올린 이미지가 보이지 않는 현상들을 발견했었습니다. 이미지 정보를 전달할 때 만다린주소 (https://mandarin.api.weniv.co.kr/)를 넣어주지 않아 발생하는 문제들이였습니다. 
 
 - 💡 레슨런: useLocation 사용 <br/>
-	:데이터를 전달해주어야 하는데 props로 전달해줄수가 없는 상황이 되어서 useLocation에 정보를 담아 사용해주어서 link를 통해 전달을 해주었습니다.
+	: 데이터를 전달해주어야 하는데 props로 전달해줄수가 없는 상황이 되어서 useLocation에 정보를 담아 사용해주어서 link를 통해 전달을 해주었습니다.
 ### 👩🏻 수진
 ### 👩🏻 수현
-<p align="right"><a href="#top">(🔼 Top)</a></p>
+
 <br/>
 
 ## 폴더 구조
@@ -272,3 +275,4 @@ const imgPreview = (file) => {
  ┗ 📃reset.css
 
 ```
+<p align="right"><a href="#top">(🔼 Top)</a></p>
