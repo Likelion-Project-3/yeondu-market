@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
 .pea {
-    background-image: url(../../assets/pea-nocolor.png);
+    background-image: url(../../assets/pea-white.png);
     background-repeat: no-repeat;
     background-size: contain;
     text-indent: -9999px;
@@ -8,11 +8,13 @@
     height: 200px;
     margin: 150px auto;
 }
+
 .loginMain {
     background-color: var(--main-color);
     position: relative;
     height: 100vh;
 }
+
 .centerWebLogin {
     position: absolute;
     bottom: 0;
@@ -24,11 +26,14 @@
     margin-top: 70px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    animation: slideIn 0.7s;
 }
+
 .bottomLogin a {
     text-decoration: none;
     font-size: 12px;
 }
+
 button {
     width: 100%;
 }
@@ -55,13 +60,25 @@ button {
     border: 1px solid #2d9cdb;
     background-image: url(../../assets/facebook.png);
 }
+
 .bottomLogin {
     text-align: center;
     margin: 20px auto;
 }
+
 #email {
     margin-right: 20px;
 }
+
 #singup {
     margin-left: 20px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
 }
