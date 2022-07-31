@@ -162,7 +162,7 @@ npm start
 ### 1. map()
 - 파일명: `<PostAlbum.jsx>` 등 다수
 - 선정 이유: 게시글, 상품, 팔로워 등 다양한 곳에서 데이터를 순회하며 요소를 하나씩 렌더링 할 때 자주 사용되는 메서드이기 때문에 사용 빈도가 높다고 판단했습니다.
-- 중요 포인트: 요소에는 고유한 키 값이 필수적으로 요구되며 지켜지지 않을 시에 경고 문구가 출력됩니다.
+- 코드 설명: 이미지 리스트의 아이템이 하나 이상이라면, 아이템을 하나씩 순회하며 `PostAlbumItem` 컴포넌트를 리턴하며 props로 이미지 아이템에 대한 정보를 내려줍니다. 이때, 각각의 요소에는 고유한 키 값이 필수적으로 요구되며 지켜지지 않을 시에 경고 문구가 출력됩니다.
 ```js
 {imageList && imageList.length > 0 
 	? imageList.map((imageList, id) => { 
@@ -176,8 +176,8 @@ npm start
 ```
 ### 2. axios GET 요청
 - 파일명: `<Search.jsx>` 등 다수
-- 코드 설명: 키워드가 변경될 때마다 검색 결과를 동적으로 받아오기 위해 `useEffect` Hook을 사용했으며 비동기적으로 GET 요청에 대한 응답을 받아오기 위해 `async/await` 문법과 `axios` 라이브러리를 사용했습니다.
 - 선정 이유: 동적으로 받아온 결과를 뿌려주는 기능은 이번 프로젝트 뿐 아니라 여러 서비스에서 사용되고 있는 만큼 중요도가 높다고 판단했습니다.
+- 코드 설명: 키워드가 변경될 때마다 검색 결과를 동적으로 받아오기 위해 `useEffect` Hook을 사용했으며 비동기적으로 GET 요청에 대한 응답을 받아오기 위해 `async/await` 문법과 `axios` 라이브러리를 사용했습니다.
 ```js
 useEffect(()  =>  {
 	if (keyword) {
@@ -203,7 +203,7 @@ useEffect(()  =>  {
 ### 3. 이미지 미리보기
 - 파일명: `<UploadPost.jsx>`
 - 선정 이유: 처음 해당 기능을 구현할 때 `FileReader` 객체와 	`readAsDataURL` 메서드가 생소했지만, 비동기적으로 파일의 내용을 읽어올 때 자주 사용되는 API인 만큼 중요도가 높다고 판단했습니다.
-- 중요 포인트: `FileReader` 인스터스의 로딩이 완료되면 미리보기될 `img` 태그의 기존 imgSrc 배열을 받아오면서 result 값을 3개까지 연이어 담아주기 위해 `useState` Hook을 사용하였습니다. 
+- 코드 설명: `FileReader` 인스터스의 로딩이 완료되면 미리보기될 `img` 태그의 기존 imgSrc 배열을 받아오면서 result 값을 3개까지 연이어 담아주기 위해 `useState` Hook을 사용하였습니다. 
 ```js
 const imgPreview = (file) => { 
 	const reader = new FileReader(); 
