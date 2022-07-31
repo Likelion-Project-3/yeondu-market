@@ -66,6 +66,7 @@
 - 회의록: 🔗 [GitHub Wiki](https://github.com/Likelion-Project-3/yeondu-market/wiki)
 ![image](https://user-images.githubusercontent.com/80025366/181721644-fbfd7782-3d57-4454-b849-8ef2a829c6e5.png)
 
+
 ### [Git Flow]
 
 빠른 개발 작업을 병렬적으로 처리하기 위해 Git Flow를 도입하였으며, <br/>
@@ -106,17 +107,18 @@ npm start
 
 
 
+
 ## UI
 
 
 
 |                             0. Splash                              |                            1. 회원가입                             |
 | :---------------------------------------------------------------: | :---------------------------------------------------------------: |
-| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182039714-ef5c17f7-f94b-47ee-8823-a304d66eba8b.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182039735-55d6c1f2-b749-4107-8ebd-092bad5f47b1.gif" width="230" height="370"/> |
 
-|                             2. 로그인                             |                               3. 프로필 설정                                |
+|                             2. 프로필 설정                             |                               3. 로그인                                |
 | :--------------------------------------------------------------: | :------------------------------------------------------------------------: |
-| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182039812-98ae4287-e443-4c96-885a-1b30fe1700d6.gif" width="230" height="370"/> | <img src="" width="230" height="400"/> |
 
 |                              4. 검색                              |                           5. 홈 피드                            |
 | :---------------------------------------------------------------: | :-------------------------------------------------------------: |
@@ -143,7 +145,7 @@ npm start
 
 |                           14. 팔로우                            |                              15. 로그아웃                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
+| <img src="" width="230" height="400"/> | <img src="https://user-images.githubusercontent.com/102905624/182040149-ad4c9304-c8fd-41ca-b707-e09fb45519ff.gif" width="230" height="370"/> |
 
 
 |                      16. 판매 상품 등록                       |                              17. 판매 상품 수정                               |
@@ -152,7 +154,7 @@ npm start
 
 |                      18. 채팅방                      |                              19. 로딩중                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="" width="230" height="400"/> | <img src="https://user-images.githubusercontent.com/80025366/182030627-9f3e9a65-6063-4c03-b322-6d50b4917b70.png" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182040336-6e41ab6e-a8c1-4c79-a8cc-8c39186e7424.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/80025366/182030627-9f3e9a65-6063-4c03-b322-6d50b4917b70.png" width="230" height="400"/> |
 
 
 <p align="right"><a href="#top">(🔼 Top)</a></p>
