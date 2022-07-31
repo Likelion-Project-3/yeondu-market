@@ -43,7 +43,7 @@
 | 구나영| 이예은| 임수진|  임수현 | 
 |--|--|--|--|
 |<img src="https://user-images.githubusercontent.com/80025366/182018095-d769c767-6e96-43b1-9f45-c713f3654f8f.jpg" height=180 width=180> | <img src="https://avatars.githubusercontent.com/leeyeun" height=180 width=180>  | <img src="https://avatars.githubusercontent.com/etoile-j" height=180 width=180>  |  <img src="https://cdn.discordapp.com/attachments/984722096242434061/999668677567844392/1658409963741.jpg" height=180 width=180>|
-| 🔗 [GitHub](https://github.com/Nayoung-Gu), 계획 리더 | 🔗 [GitHub](https://github.com/leeyeun), 개발 리더 | 🔗 [GitHub](https://github.com/etoile-j), 정리 리더 | 🔗 [GitHub](https://github.com/hyuni97), 회고 리더 |
+| 🔗 [GitHub](https://github.com/Nayoung-Gu), 계획 리더 | 🔗 [GitHub](https://github.com/leeyeun), 개발 리더 | 🔗 [GitHub](https://github.com/etoile-j), 기록 리더 | 🔗 [GitHub](https://github.com/hyuni97), 회고 리더 |
 <br/>
 
 
