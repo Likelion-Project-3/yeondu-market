@@ -37,13 +37,15 @@ function Home() {
                 <button type="button" onClick={goSearch} />
             </header>
             {post.length !== 0 ? (
-                post.map((post, id) => {
-                    return (
-                        <div key={id}>
-                            <PostItem post={post} />
-                        </div>
-                    );
-                })
+                <main className="homeContentFeed">
+                    {post.map((post, id) => {
+                        return (
+                            <div key={id}>
+                                <PostItem post={post} />
+                            </div>
+                        );
+                    })}
+                </main>
             ) : (
                 <main className="homeContentNonFeed">
                     <div />
