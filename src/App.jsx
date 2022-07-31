@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import MyProfile from "./pages/MyProfile";
 import Register from "./pages/Register";
+import Search from "./pages/Search";
 import SetProfile from "./pages/SetProfile";
 import Splash from "./pages/Splash";
 import Post from "./pages/Post";
@@ -68,6 +69,7 @@ function App() {
                     />
                     <Route exact path="/chat" component={ChatList} />
                     <Route exact path="/chat/:accountId" component={ChatRoom} />
+                    <Route exact path="/search" component={Search} />
                     <Route exact path="/setprofile" component={SetProfile} />
                     <Route exact path="/editprofile" component={EditProfile} />
                     <Route
