@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Intro from "../pages/Intro";
-import "../pages/style/Splash.css";
-import "../reset.css";
 import axios from "axios";
+import Intro from "../pages/Intro";
 import { BASE_URL } from "../components/constants/baseUrl";
+import "../pages/style/Splash.css";
 
 function Splash() {
     let [alert, alertSet] = useState(true);
@@ -48,13 +47,13 @@ function Splash() {
     }
 
     return alert === true ? (
-        <>
+        <div className="splashWrap">
             <h1 className="headTitle">화면 로딩중</h1>
-            <section>
+            <section className="splashSection">
                 <p className="colorPea">완두콩</p>
-                <h2 className="mainMarket">연두 마켓</h2>
+                <h2 className="mainMarket" />
             </section>
-        </>
+        </div>
     ) : (
         <Intro />
     );
