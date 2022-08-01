@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import NotFound from "../../pages/NotFound";
 import ProductModal from "../modal/ProductModal";
 import "./ProductCard.css";
 
 function ProductCard({ product }) {
+    const accountname = localStorage.getItem("accountname");
+    const userAccountName = useParams();
+    console.log("accountname", accountname);
+    console.log("userAccountName", userAccountName.accountName);
     const [onModal, setModal] = useState(false);
     const ModalOpen = () => {
         setModal(!onModal);
@@ -24,11 +30,17 @@ function ProductCard({ product }) {
                     <p className="productPrice">{replacePrice}원</p>
                 </div>
                 {onModal && (
-                    <ProductModal
-                        productId={product.id}
-                        setModal={setModal}
-                        onModal={onModal}
-                    />
+                    <>
+                        {accountname === userAccountName.accountName ? (
+                            <ProductModal
+                                productId={product.id}
+                                setModal={setModal}
+                                onModal={onModal}
+                            />
+                        ) : (
+                            (window.location = "/404")
+                        )}
+                    </>
                 )}
             </div>
         </>

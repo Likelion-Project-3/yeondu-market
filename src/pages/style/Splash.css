@@ -1,7 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"); */
+
 .headTitle {
     text-indent: -9999px;
 }
+
+.splashSection {
+    margin: 0 auto;
+}
+
 .colorPea {
     background-image: url(../../assets/pea-color.png);
     background-repeat: no-repeat;
@@ -9,11 +15,13 @@
     text-indent: -9999px;
     width: 200px;
     height: 200px;
-    margin: 25% auto 0;
+    margin: 25% auto 7%;
 }
+
 .mainMarket {
-    text-align: center;
-    color: #83bd75;
-    font-family: "Gamja Flower", cursive;
-    font-size: 48px;
+    background-image: url(../../assets/yeondumarket.png);
+    width: 180px;
+    height: 50px;
+    margin: 0 auto;
+    /* font-family: "Gamja Flower", cursive; */
 }

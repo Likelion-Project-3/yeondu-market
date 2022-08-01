@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import TopBasicNav from "../components/common/TopBasicNav";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL } from "../components/constants/baseUrl";
+import Loading from "./loading";
+import PostAlbum from "../components/post/PostAlbum";
+import PostContainer from "../components/post/PostContainer";
+import PostList from "../components/post/PostList";
 import ProductContainer from "../components/product/ProductContainer";
 import ProfileInfo from "../components/profile/ProfileInfo";
-import "../pages/style/MyProfile.css";
-import { BASE_URL } from "../components/constants/baseUrl";
-import axios from "axios";
-import PostList from "../components/post/PostList";
-import PostAlbum from "../components/post/PostAlbum";
 import TapMenu from "../components/common/TapMenu";
-import { useParams } from "react-router-dom";
-import PostContainer from "../components/post/PostContainer";
+import TopBasicNav from "../components/common/TopBasicNav";
+import "../pages/style/MyProfile.css";
 
 function MyProfile() {
     const token = localStorage.getItem("token");
@@ -34,6 +35,7 @@ function MyProfile() {
         setAlbumClick(true);
         setListClick(false);
     };
+
     useEffect(() => {
         //내프로필 정보
         const getMyProfile = () => {
@@ -96,14 +98,13 @@ function MyProfile() {
         getProfile();
         postList();
         productList();
-    }, []);
-    // console.log(profileInfo);
-    // console.log("my", myprofileInfo);
+    }, [accountName]);
+
     if (token === null) {
         window.location = "/";
-        // console.log(profileInfo);
     } else if (!profileInfo) {
-        return <div>loading...</div>;
+        // return <div>loading...</div>;
+        return <Loading />;
     } else {
         return (
             <div className="profileWrap">

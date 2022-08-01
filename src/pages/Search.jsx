@@ -1,10 +1,11 @@
-import "../pages/style/Search.css";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL } from "../components/constants/baseUrl";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import TapMenu from "../components/common/TapMenu";
-import { BASE_URL } from "../components/constants/baseUrl";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import UserList from "../components/search/UserList";
+import "../pages/style/Search.css";
 
 function Search() {
     const token = localStorage.getItem("token");
@@ -26,7 +27,6 @@ function Search() {
                     );
                     console.log(response);
                     setSearchUser(response.data);
-                    // setSearchUser();
                 } catch (err) {
                     console.error(err);
                 }
@@ -50,6 +50,7 @@ function Search() {
                 {searchUser.map((user) => {
                     return (
                         <UserList
+                            searchUser={searchUser}
                             key={user._id}
                             image={user.image}
                             username={user.username}
@@ -58,6 +59,7 @@ function Search() {
                         />
                     );
                 })}
+                {/* <UserList searchUser={searchUser} /> */}
             </main>
             <TapMenu />
         </>

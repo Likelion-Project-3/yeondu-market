@@ -1,18 +1,24 @@
+import { Link } from "react-router-dom";
 import "./UserList.css";
 
-const moveProfile = () => {
-    window.location.href = "/myprofile/:accountname";
-};
-
 function UserList(props) {
+    const searchUser = props;
+    const userId = searchUser.accountname.slice(2);
+
     return (
-        <li className="userList" key={props.key} onClick={moveProfile}>
-            <img src={props.image} alt={props.alt} className="userProfileImg" />
-            <div className="userInfo">
-                <p className="username">{props.username}</p>
-                <p className="accountname">{props.accountname}</p>
-            </div>
-        </li>
+        <Link to={`/myprofile/${userId}`}>
+            <li className="userList" key={props.key}>
+                <img
+                    src={props.image}
+                    alt={props.alt}
+                    className="userProfileImg"
+                />
+                <div className="userInfo">
+                    <p className="username">{props.username}</p>
+                    <p className="accountname">{props.accountname}</p>
+                </div>
+            </li>
+        </Link>
     );
 }
 export default UserList;
