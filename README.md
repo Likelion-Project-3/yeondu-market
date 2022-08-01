@@ -101,13 +101,6 @@ npm start
 ```
 <br>
 
-![타유저프로필]()
-
-![판매상품수정]()
-
-
-![판매상품등록](https://user-images.githubusercontent.com/102905624/182073425-e5426e2d-b9a5-4cc0-a35a-d2fc4230db2f.gif)
-
 
 
 
