@@ -108,6 +108,7 @@ npm start
 
 
 
+
 ## UI
 
 
@@ -118,34 +119,34 @@ npm start
 
 |                             2. 프로필 설정                             |                               3. 로그인                                |
 | :--------------------------------------------------------------: | :------------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182039812-98ae4287-e443-4c96-885a-1b30fe1700d6.gif" width="230" height="370"/> | <img src="" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182039812-98ae4287-e443-4c96-885a-1b30fe1700d6.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182061172-5017d2f3-7193-4dfd-82b6-53bb37ada1dc.gif" width="230" height="370"/> |
 
 |                              4. 검색                              |                           5. 홈 피드                            |
 | :---------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182061293-946cb0a1-3e48-4777-b10f-d1fa7e2fe151.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182061306-d95d09d9-d1b5-4382-8f81-f978151e19a6.gif" width="230" height="370"/> |
 
 
 |                           6. 게시물 등록                            |                             7. 게시글 수정                             |
 | :-------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182061392-0ad8bccb-5422-4764-b547-fe7db49e7c11.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182061410-435d065c-6a84-43f3-8eb2-8e82277ea58f.gif" width="230" height="370"/> |
 
 |                         8. 게시물 삭제                         |                           9. 게시글 댓글 등록                           |
 | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: |
-| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182061398-6187a191-1e6b-40d4-a680-0971f0556e73.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182061576-ebbfb387-591a-4f74-b6b3-b930787650a8.gif" width="230" height="370"/> |
 
 |                         10. 게시물 댓글 신고                         |                           11. 내 프로필                           |
 | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: |
-| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182061588-c8a8bb41-7309-40cb-8e20-6e10faa785e0.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182061694-d24ba366-d350-4e4d-9740-00564ce0db15.gif" width="230" height="370"/> |
 
 
 
 |                        12. 사용자 프로필 수정                        |                          13. 타 유저 프로필                          |
 | :--------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="" width="230" height="400"/> | <img src="" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182061761-0d848d9f-94ad-48d9-b896-47e1a927b84d.gif" width="230" height="370"/> | <img src="" width="230" height="400"/> |
 
 |                           14. 팔로우                            |                              15. 로그아웃                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="" width="230" height="400"/> | <img src="https://user-images.githubusercontent.com/102905624/182040149-ad4c9304-c8fd-41ca-b707-e09fb45519ff.gif" width="230" height="370"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182061802-5546f33d-54b7-4060-9ae6-17aba7db8013.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182040149-ad4c9304-c8fd-41ca-b707-e09fb45519ff.gif" width="230" height="370"/> |
 
 
 |                      16. 판매 상품 등록                       |                              17. 판매 상품 수정                               |
@@ -155,6 +156,7 @@ npm start
 |                      18. 채팅방                      |                              19. 로딩중                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
 | <img src="https://user-images.githubusercontent.com/102905624/182040336-6e41ab6e-a8c1-4c79-a8cc-8c39186e7424.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/80025366/182053809-50ea7a59-63c2-4410-99ae-e72a6ced9537.png" width="230" height="400"/> |
+
 
 
 <p align="right"><a href="#top">(🔼 Top)</a></p>
