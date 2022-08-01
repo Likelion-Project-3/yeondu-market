@@ -154,7 +154,7 @@ npm start
 
 |                      18. 채팅방                      |                              19. 로딩중                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182040336-6e41ab6e-a8c1-4c79-a8cc-8c39186e7424.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/80025366/182030627-9f3e9a65-6063-4c03-b322-6d50b4917b70.png" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/182040336-6e41ab6e-a8c1-4c79-a8cc-8c39186e7424.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/80025366/182053809-50ea7a59-63c2-4410-99ae-e72a6ced9537.png" width="230" height="400"/> |
 
 
 <p align="right"><a href="#top">(🔼 Top)</a></p>
