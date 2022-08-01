@@ -1,10 +1,10 @@
-import "../pages/style/EditProfile.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 import ProfileForm from "../components/profile/ProfileForm";
 import TopMenuComponent from "../components/common/TopMenuComponent";
-import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
-import { useEffect } from "react";
+import "../pages/style/EditProfile.css";
 
 function EditProfile(props) {
     const [input, setInput] = useState({
@@ -17,6 +17,8 @@ function EditProfile(props) {
     const [success, setSuccess] = useState(false);
     const [passedUsername, setPassedUsername] = useState(false);
     const [fileImage, setFileImage] = useState("");
+    const [saveCheck, setSaveCheck] = useState(false);
+    const history = useHistory();
 
     const controlAccountname = false;
 
@@ -52,6 +54,11 @@ function EditProfile(props) {
 
     const handelEditProfile = async (e) => {
         e.preventDefault();
+        setSaveCheck(true);
+        // if (!passedUsername) {
+        //     return;
+        // }
+        console.log(passedUsername);
         const userInfo = {
             user: {
                 username: input.username,
@@ -68,6 +75,12 @@ function EditProfile(props) {
                 },
             });
             console.log(response);
+            // if (passedUsername === false) {
+            //     return;
+            // } else {
+            //     history.push(`/myprofile/${input.accountname}`);
+            // }
+            history.push(`/myprofile/${input.accountname}`);
         } catch (err) {
             console.error(err);
         }
@@ -78,7 +91,7 @@ function EditProfile(props) {
             <TopMenuComponent
                 topclassName="topBasicNav"
                 handlerRightBtn={handelEditProfile}
-                // disabled={passedUsername? false : true}
+                // disabled={passedUsername ? false : true}
                 type="submit"
                 rightclassName="saveBtn on"
                 inputtype="notext"
@@ -96,6 +109,7 @@ function EditProfile(props) {
                             setPassedUsername={setPassedUsername}
                             fileImage={fileImage}
                             setFileImage={setFileImage}
+                            saveCheck={saveCheck}
                         />
                     </form>
                 </div>
