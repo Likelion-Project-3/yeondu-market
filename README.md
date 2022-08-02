@@ -5,9 +5,27 @@
 	- ID: **[yeondu@market.com](mailto:yeondu@market.com)**
 	- PW: yeondu
 
+
+![연두마켓](https://user-images.githubusercontent.com/80025366/182310385-50830a7c-4fe6-41aa-bc51-578a3d91b472.png)
+
+<details>
+<summary>목차</summary>
+
+1. [프로젝트 소개](#intro)
+2. [요구사항](#requirements)
+3. [팀원 소개](#members)
+4. [역할 분담](#roles)
+5. [개발 환경](#env)
+6. [프로젝트 설치 및 실행 방법](#install)
+7. [UI](#ui)
+8. [핵심 코드](#code)
+9. [트러블 슈팅 및 레슨런](#lessons)
+10. [폴더 구조](#tree)
+
+</details>
 <br>
 
-## 프로젝트 소개
+## 1. <span id="intro">프로젝트 소개</span>
 
 👩 연두마켓은 배달음식에 지친 1인 가구를 위한 온라인 플랫폼입니다.
 
@@ -21,7 +39,7 @@
 <br>
 <br/>
 
-## 요구사항
+## <span id="requirements">2. 요구사항</span>
 - **인증** : 로그인, 회원가입, 프로필 설정, 유효성 평가
 
 - **게시글** : 게시글 등록/수정/삭제/신고, 다중 이미지 파일 업로드/수정/미리보기
@@ -38,7 +56,7 @@
 <br>
 <p align="right"><a href="#top">(🔼 Top)</a></p>
 
-## 팀원 소개
+## <span id="members">3. 팀원 소개</span>
 
 | 구나영| 이예은| 임수진|  임수현 | 
 |--|--|--|--|
@@ -47,11 +65,11 @@
 <br/>
 
 
-## 역할 분담
+## <span id="roles">4. 역할 분담</span>
 ![image](https://user-images.githubusercontent.com/80025366/181719008-3d5a3186-78da-4885-b9cd-4344b8e45f88.png)
 <p align="right"><a href="#top">(🔼 Top)</a></p>
 
-## 개발 환경
+## <span id="env">5. 개발 환경</span>
 ### [개발 기간] 2022.6.27 ~ 2022.7.30 (진행중)
 ### [기술] 
 - FrontEnd: React, React-router, Hooks
@@ -94,7 +112,7 @@
 <p align="right"><a href="#top">(🔼 Top)</a></p>
 <br>
 
-## 프로젝트 설치 및 실행 방법
+## <span id="install">6. 프로젝트 설치 및 실행 방법</span>
 ```
 npm install
 npm start
@@ -105,7 +123,7 @@ npm start
 
 
 
-## UI
+## <span id="ui">7. UI</span>
 
 
 
@@ -158,7 +176,7 @@ npm start
 <p align="right"><a href="#top">(🔼 Top)</a></p>
 <br/>
 
-## 핵심코드
+## <span id="code">8. 핵심코드</span>
 ### 1. map()
 - 파일명: `<PostAlbum.jsx>` 등 다수
 - 선정 이유: 게시글, 상품, 팔로워 등 다양한 곳에서 데이터를 순회하며 요소를 하나씩 렌더링 할 때 자주 사용되는 메서드이기 때문에 사용 빈도가 높다고 판단했습니다.
@@ -219,7 +237,7 @@ const imgPreview = (file) => {
 <p align="right"><a href="#top">(🔼 Top)</a></p>
 <br/>
 
-## 트러블 슈팅 및 레슨런
+## <span id="lessons">9. 트러블 슈팅 및 레슨런</span>
 ### 👩🏻 나영
 - 게시글 업로드 페이지 중복 렌더링 이슈 ([블로그](https://velog.io/@mooongs/React-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%9D%B4%EC%8A%88-%ED%95%B4%EA%B2%B0-%EB%A1%9C%EA%B7%B8-6zjy5yo2))<br/>
 	:  상세페이지를 렌더링하기 위해  `/:postId` 를 사용해 동적으로 인자를 받아오고 있었는데, 리액트 라우터 입장에서 `/upload` 또한 인자로 인식해 중복 렌더링되는 문제가 있었습니다. `exact` 속성은 이와 관련없이 정확히 해당되는 컴포넌트라면 모두 렌더링해주므로 가장 먼저 일치하는 컴포넌트를 렌더링 해주는 `Switch` 를 사용해 해결했습니다.
@@ -260,7 +278,7 @@ const imgPreview = (file) => {
 	코드에 문제가 생긴다면 팀원분들의 코드부터 확인하는 것이 도움이 된다였습니다.같은 부분을 고민한다는 것을 알게 되고 서로의 힘이 된다는 것을 많이 깨달았습니다.
 <br/>
 
-## 폴더 구조
+## <span id="tree">10. 폴더 구조</span>
 ```
 📦public
  ┣ 📃index.html
