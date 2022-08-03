@@ -50,6 +50,7 @@ function Home() {
                 <main className="homeContentNonFeed">
                     <div />
                     <p>유저를 검색해 팔로우 해보세요!</p>
+                    {/* <a href="https://www.flaticon.com/kr/free-icons/" title=" 아이콘"> 아이콘  제작자: Freepik - Flaticon</a> */}
                     <button
                         type="button"
                         className="searchBtn"

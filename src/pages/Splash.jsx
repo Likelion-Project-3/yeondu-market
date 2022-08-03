@@ -51,6 +51,7 @@ function Splash() {
             <h1 className="headTitle">화면 로딩중</h1>
             <section className="splashSection">
                 <p className="colorPea">완두콩</p>
+                {/* <a href="https://www.flaticon.com/kr/free-icons/" title="완두콩 아이콘">완두콩 아이콘  제작자: Freepik - Flaticon</a> */}
                 <h2 className="mainMarket" />
             </section>
         </div>
