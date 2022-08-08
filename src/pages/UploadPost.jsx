@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { BASE_URL } from "../components/constants/baseUrl";
-import TopMenuComponent from "../components/common/TopMenuComponent";
-import BasicProfileImg from "../components/common/BasicProfileImg";
 import axios from "axios";
+import { BASE_URL } from "../components/constants/baseUrl";
+import BasicProfileImg from "../components/common/BasicProfileImg";
+import TopMenuComponent from "../components/common/TopMenuComponent";
 // import UploadFileBtn from "../components/button/UploadFileBtn";
 import "../pages/style/UploadPost.css";
 
@@ -175,7 +175,7 @@ function UploadPost() {
                     <textarea
                         placeholder="게시글 입력하기..."
                         cols="30"
-                        rows="10"
+                        rows="5"
                         onChange={handleOnChange}
                         onKeyUp={handleActivate}
                         value={text}
@@ -204,11 +204,11 @@ function UploadPost() {
                 <label
                     htmlFor="file"
                     className="UploadFileLabel green50 "
-                    style={{
-                        right: "1rem",
-                        bottom: "1rem",
-                        position: "fixed",
-                    }}
+                    // style={{
+                    //     right: "30%",
+                    //     bottom: "30%",
+                    //     position: "fixed",
+                    // }}
                 />
                 <input
                     type="file"

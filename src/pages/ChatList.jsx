@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import ChatRoom from "./ChatRoom";
-import "../pages/style/ChatList.css";
-import TopBasicNav from "../components/common/TopBasicNav";
 import ChatItem from "../components/chat/ChatItem";
+import ChatRoom from "./ChatRoom";
 import TapMenu from "../components/common/TapMenu";
+import TopBasicNav from "../components/common/TopBasicNav";
 
 function ChatList() {
     return (
