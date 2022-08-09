@@ -1,11 +1,12 @@
-import "./PostItem.css";
-import Like from "./Like";
-import BasicProfileImg from "../common/BasicProfileImg";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import BasicProfileImg from "../common/BasicProfileImg";
+import Like from "./Like";
 import PostModal from "../modal/PostModal";
+import "./PostItem.css";
 
 function PostItem({ post }) {
+    const accountname = localStorage.getItem("accountname");
     // const [postImg, setPostImg] = useState("");
     // const pI = post.image;
 
@@ -35,14 +36,25 @@ function PostItem({ post }) {
         <article className="postCard">
             <div>
                 <div className="postHeaderWrap">
-                    <div className="postWriter">
-                        <h4 className="ir">포스트 글쓴이</h4>
-                        <BasicProfileImg size="sm" src={post.author.image} />
-                        <div className="postWriterName">
-                            <strong>{post.author.username}</strong>
-                            <small>@ {post.author.accountname}</small>
+                    <Link
+                        to={
+                            accountname === post.author.accountname
+                                ? `/myprofile/${accountname}`
+                                : `/profile/${post.author.accountname}`
+                        }
+                    >
+                        <div className="postWriter">
+                            <h4 className="ir">포스트 글쓴이</h4>
+                            <BasicProfileImg
+                                size="sm"
+                                src={post.author.image}
+                            />
+                            <div className="postWriterName">
+                                <strong>{post.author.username}</strong>
+                                <small>@ {post.author.accountname}</small>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                     <div type="button" className="more" onClick={handleModalOn}>
                         <span className="ir">더보기 버튼</span>
                     </div>
@@ -51,6 +63,7 @@ function PostItem({ post }) {
                             postId={post.id}
                             setIsOpenModal={setIsOpenModal}
                             isOpenModal={isOpenModal}
+                            postAuthor={post.author.accountname}
                         />
                     )}
                 </div>

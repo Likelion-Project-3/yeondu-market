@@ -1,7 +1,12 @@
-a {
-    text-decoration: none;
-    color: black;
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
 }
+
 .alertWrap {
     position: fixed;
     top: 0;
@@ -25,6 +30,7 @@ a {
     bottom: 0;
     z-index: 999;
     background-color: white;
+    animation: slideIn 0.3s;
 }
 
 .ModalBtnWrap::before {

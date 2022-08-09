@@ -1,9 +1,14 @@
-import "./PostComment.css";
-import writerImg from "../../assets/icon/Ellipse 4.svg";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import CommentModal from "../modal/CommentModal";
+import "./PostComment.css";
 
 function PostComment({ comment, postId, handleDelete }) {
+    const accountname = localStorage.getItem("accountname");
+    const path =
+        accountname === comment.author.accountname
+            ? `/myprofile/${accountname}`
+            : `/profile/${comment.author.accountname}`;
     const [isOpenModal, setIsOpenModal] = useState(false);
     const handleModalOn = () => {
         setIsOpenModal(!isOpenModal);
@@ -32,13 +37,17 @@ function PostComment({ comment, postId, handleDelete }) {
     return (
         <>
             <div className="postCommentWrap">
-                <img
-                    src={comment.author.image}
-                    alt=""
-                    className="commentWriterImg"
-                />
+                <Link to={path}>
+                    <img
+                        src={comment.author.image}
+                        alt=""
+                        className="commentWriterImg"
+                    />
+                </Link>
                 <div className="comment">
-                    <strong>{comment.author.username}</strong>
+                    <Link to={path}>
+                        <strong>{comment.author.username}</strong>
+                    </Link>
                     <span>{getTimeGap(comment.createdAt)}</span>
                     <p>{comment.content}</p>
                 </div>

@@ -10,6 +10,7 @@ import { useState } from "react";
 function UploadProduct() {
     let history = useHistory();
     const token = localStorage.getItem("token");
+    const accountname = localStorage.getItem("accountname");
 
     const [itemName, setItemName] = useState("");
     const [price, setPrice] = useState("");
@@ -134,7 +135,7 @@ function UploadProduct() {
             itemImage: itemImage,
         },
     };
-    console.log(itemImage);
+
     const inputDatapull = () => {
         if (
             itemImage !== "" &&
@@ -147,11 +148,12 @@ function UploadProduct() {
             setProductPull(false);
         }
     };
+
     //전달하기
     const handleSubmitProduct = async () => {
         onChangeCheckName();
         onChangeCheckPrice();
-        console.log("~~", ProductData.product.price);
+
         const url = BASE_URL + "/product";
         try {
             const res = await axios(url, {
@@ -163,7 +165,7 @@ function UploadProduct() {
                 data: ProductData,
             });
             console.log("product:", res.data.product);
-            window.location = "/myprofile";
+            window.location = `/myprofile/${accountname}`;
         } catch (err) {
             console.error(err);
         }
