@@ -19,7 +19,7 @@ function FollowerCard({ followerList }) {
                     <p className="followerIntro">{followerList.intro}</p>
                 </div>
             </Link>
-            {isfollow === true ? (
+            {followerList.isfollow === true ? (
                 <button className="cancelBtn" onClick={handleFollowBtn}>
                     취소
                 </button>
