@@ -1,20 +1,22 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
+import { FollowContext } from "../../pages/FollowerList";
 import { BASE_URL } from "../constants/baseUrl";
 
 function FollowerCard({ followerList }) {
+    const [follow, setFollow] = useState(followerList.isfollow);
     const token = localStorage.getItem("token");
 
     const handleFollowBtn = () => {
-        if (followerList.isfollow === true) {
+        if (follow === true) {
             handleSubmitUnFollow();
-            console.log(followerList.isfollow);
         } else {
             handleSubmitFollow();
         }
     };
 
+    //팔로우
     const handleSubmitFollow = async () => {
         try {
             const res = await axios(
@@ -28,7 +30,7 @@ function FollowerCard({ followerList }) {
                 }
             );
             console.log("팔로우", res);
-            console.log(res.data.profile.isfollow);
+            setFollow(res.data.profile.isfollow);
         } catch (err) {
             console.log(err);
         }
@@ -48,7 +50,7 @@ function FollowerCard({ followerList }) {
                 }
             );
             console.log("언팔로우", res);
-            console.log(res.data.profile.isfollow);
+            setFollow(res.data.profile.isfollow);
         } catch (err) {
             console.log(err);
         }
@@ -66,7 +68,7 @@ function FollowerCard({ followerList }) {
                     <p className="followerIntro">{followerList.intro}</p>
                 </div>
             </Link>
-            {followerList.isfollow === true ? (
+            {follow === true ? (
                 <button className="cancelBtn" onClick={handleFollowBtn}>
                     취소
                 </button>
