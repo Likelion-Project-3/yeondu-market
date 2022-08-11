@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
-import Loading from "./loading";
+import PageLoading from "./PageLoading";
 import PostAlbum from "../components/post/PostAlbum";
 import PostContainer from "../components/post/PostContainer";
 import PostList from "../components/post/PostList";
@@ -103,8 +103,7 @@ function MyProfile() {
     if (token === null) {
         window.location = "/";
     } else if (!profileInfo) {
-        // return <div>loading...</div>;
-        return <Loading />;
+        return <PageLoading />;
     } else {
         return (
             <div className="profileWrap">

@@ -1,7 +1,7 @@
 import loadingImg from "../assets/pea-color.svg";
 import "./style/404loading.css";
 
-function Loading() {
+function PageLoading() {
     return (
         <div className="loadingCont">
             <img src={loadingImg} alt="로딩 이미지" />
@@ -11,4 +11,4 @@ function Loading() {
     );
 }
 
-export default Loading;
+export default PageLoading;
