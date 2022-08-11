@@ -11,10 +11,12 @@ import ProfileInfo from "../components/profile/ProfileInfo";
 import TapMenu from "../components/common/TapMenu";
 import TopBasicNav from "../components/common/TopBasicNav";
 import "../pages/style/MyProfile.css";
+import { createContext } from "react";
+
+export const AppContext = createContext();
 
 function MyProfile() {
     const token = localStorage.getItem("token");
-    const accountname = localStorage.getItem("accountname");
 
     const [profileInfo, setProfileInfo] = useState("");
     const [myprofileInfo, setMyProfileInfo] = useState("");
@@ -35,6 +37,51 @@ function MyProfile() {
         setAlbumClick(true);
         setListClick(false);
     };
+    console.log("22", profileInfo);
+    console.log("profileInfo", profileInfo.profile);
+    // console.log(profileInfo.profile.isfollow);
+
+    //팔로우
+    // const handleSubmitFollow = async () => {
+    //     try {
+    //         const res = await axios(
+    //             BASE_URL + `/profile/${accountName}/follow`,
+    //             {
+    //                 method: "POST",
+    //                 headers: {
+    //                     Authorization: `Bearer ${token}`,
+    //                     "Content-type": "application/json",
+    //                 },
+    //             }
+    //         );
+    //         console.log("팔로우", res);
+    //         console.log("isfollow", res.data.profile.isfollow);
+    //         // setFollowData(res.data.profile.isfollow);
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
+
+    //언팔로우
+    // const handleSubmitUnFollow = async () => {
+    //     try {
+    //         const res = await axios(
+    //             BASE_URL + `/profile/${accountName}/unfollow`,
+    //             {
+    //                 method: "DELETE",
+    //                 headers: {
+    //                     Authorization: `Bearer ${token}`,
+    //                     "Content-type": "application/json",
+    //                 },
+    //             }
+    //         );
+    //         console.log("언팔로우", res);
+    //         console.log("isfollow", res.data.profile.isfollow);
+    //         // setFollowData(res.data.profile.isfollow);
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
 
     useEffect(() => {
         //내프로필 정보
@@ -52,7 +99,8 @@ function MyProfile() {
                 .catch((err) => console.log(err));
         };
         //유저 프로필 정보
-        const getProfile = () => {
+        const getProfile = (e) => {
+            // e.preventDefault();
             axios
                 .get(BASE_URL + `/profile/${accountName}`, {
                     headers: {
@@ -62,9 +110,11 @@ function MyProfile() {
                 })
                 .then((response) => {
                     setProfileInfo(response.data);
+                    // profileInfo.handleSubmit(); // 댓글 작성 후 댓글 리스트 새로고침
                 })
                 .catch((err) => console.log(err));
         };
+
         //게시글 목록
         const postList = () => {
             axios
@@ -94,12 +144,17 @@ function MyProfile() {
                 })
                 .catch((err) => console.log(err));
         };
+
+        // console.log(profileInfo.profile.isfollow);
         getMyProfile();
         getProfile();
         postList();
         productList();
-    }, [accountName]);
-
+    }, [accountName, token]);
+    console.log("11", profileInfo);
+    console.log("12", profileInfo.profile);
+    // console.log("13", profileInfo.profile.isfollow);
+    // const [followdata, setFollowData] = useState(profileInfo.profile.isfollow);
     if (token === null) {
         window.location = "/";
     } else if (!profileInfo) {
@@ -108,7 +163,16 @@ function MyProfile() {
         return (
             <div className="profileWrap">
                 <TopBasicNav />
-                <ProfileInfo profileInfo={profileInfo} />
+                <AppContext.Provider
+                    value={{
+                        profileInfo,
+                        // handleSubmitFollow,
+                        // handleSubmitUnFollow,
+                    }}
+                >
+                    <ProfileInfo />
+                </AppContext.Provider>
+
                 <ProductContainer productList={productList} />
                 <PostContainer
                     postList={postList}

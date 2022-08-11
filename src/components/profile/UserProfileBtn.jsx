@@ -7,14 +7,15 @@ import "./UserProfileBtn.css";
 import { BASE_URL } from "../constants/baseUrl";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { useContext } from "react";
+import { AppContext } from "../../pages/MyProfile";
 function UserProfileBtn() {
+    const { profileInfo } = useContext(AppContext);
     const token = localStorage.getItem("token");
-    const accountname = localStorage.getItem("accountname");
-
     const { accountName } = useParams();
 
-    const [follow, setFollow] = useState(false);
-    const [unfollow, setUnFollow] = useState(false);
+    const [followdata, setFollowData] = useState(profileInfo.profile.isfollow);
+    console.log("followdata", followdata);
 
     //팔로우
     const handleSubmitFollow = async () => {
@@ -29,7 +30,9 @@ function UserProfileBtn() {
                     },
                 }
             );
-            console.log(res);
+            console.log("팔로우", res);
+            console.log("isfollow", res.data.profile.isfollow);
+            setFollowData(res.data.profile.isfollow);
         } catch (err) {
             console.log(err);
         }
@@ -48,41 +51,38 @@ function UserProfileBtn() {
                     },
                 }
             );
-            console.log(res);
+            console.log("언팔로우", res);
+            console.log("isfollow", res.data.profile.isfollow);
+            setFollowData(res.data.profile.isfollow);
         } catch (err) {
             console.log(err);
         }
     };
 
-    const handleFollow = () => {
-        handleSubmitFollow();
-        setFollow(!follow);
-        setUnFollow(true);
+    const handleFollowBtn = () => {
+        console.log("22followdata", followdata);
+        if (followdata === true) {
+            handleSubmitUnFollow();
+        } else {
+            handleSubmitFollow();
+        }
     };
 
-    const handleUnFollow = () => {
-        setFollow(!follow);
-        setUnFollow(false);
-        handleSubmitUnFollow();
-    };
-
-    console.log("follow", follow);
-    console.log("unfollow", unfollow);
     return (
         <div className="InfoBtn">
             <button className="profileCircleBtn chat">
                 <img src={messageImg} alt="" className="messageImg" />
             </button>
-            {/* <button className="profileFollowBtn" onClick={handleFollow}>
-                팔로우
-            </button> */}
-            {follow === true && unfollow === false ? (
-                <button className="profileFollowBtn" onClick={handleFollow}>
-                    팔로우
+            {followdata === true ? (
+                <button
+                    className="profileUnFollowBtn"
+                    onClick={handleFollowBtn}
+                >
+                    언팔로우
                 </button>
             ) : (
-                <button className="profileUnFollowBtn" onClick={handleUnFollow}>
-                    언팔로우
+                <button className="profileFollowBtn" onClick={handleFollowBtn}>
+                    팔로우
                 </button>
             )}
 
