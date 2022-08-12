@@ -5,17 +5,15 @@ import { Link } from "react-router-dom";
 import { BASE_URL } from "../constants/baseUrl";
 
 function FollowingCard({ followingList }) {
+    const [follow, setFollow] = useState(followingList.isfollow);
     const token = localStorage.getItem("token");
-
+    const accountname = localStorage.getItem("accountname");
     const handleFollowBtn = () => {
-        handleSubmitUnFollow();
-        // console.log(followingList.isfollow);
-        // if (followingList.isfollow === true) {
-        //     handleSubmitUnFollow();
-        //     console.log(followingList.isfollow);
-        // } else {
-        //     handleSubmitFollow();
-        // }
+        if (follow === true) {
+            handleSubmitUnFollow();
+        } else {
+            handleSubmitFollow();
+        }
     };
 
     //언팔로우
@@ -33,6 +31,7 @@ function FollowingCard({ followingList }) {
             );
             console.log("언팔로우", res);
             console.log(res.data.profile.isfollow);
+            setFollow(res.data.profile.isfollow);
         } catch (err) {
             console.log(err);
         }
@@ -53,6 +52,7 @@ function FollowingCard({ followingList }) {
             );
             console.log("팔로우", res);
             console.log(res.data.profile.isfollow);
+            setFollow(res.data.profile.isfollow);
         } catch (err) {
             console.log(err);
         }
@@ -64,18 +64,15 @@ function FollowingCard({ followingList }) {
         <li className="followItem">
             <Link to={userUrl} className="followLink">
                 <div className="followerImg">
-                    <img
-                        src={followingList.image}
-                        alt=""
-                        // className="followerImg"
-                    />
+                    <img src={followingList.image} alt="" />
                 </div>
                 <div className="followInfo">
                     <p className="followerName">{followingList.username}</p>
                     <p className="followerIntro">{followingList.intro}</p>
                 </div>
             </Link>
-            {followingList.isfollow === true ? (
+            {accountname === followingList.accountname ? null : follow ===
+              true ? (
                 <button className="cancelBtn" onClick={handleFollowBtn}>
                     취소
                 </button>
