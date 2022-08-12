@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { BASE_URL } from "../../components/constants/baseUrl";
 import BasicProfileImg from "../common/BasicProfileImg";
 // import UploadFileBtn from "../button/UploadFileBtn";
-import { BASE_URL } from "../../components/constants/baseUrl";
 import "./ProfileForm.css";
 
 function ProfileForm(props) {
@@ -16,13 +16,10 @@ function ProfileForm(props) {
         setPassedUsername,
         fileImage,
         setFileImage,
-        saveCheck,
     } = props;
     const [usernameError, setUsernameError] = useState("");
     const [accountnameError, setAccountnameError] = useState("");
     const [passedAccountname, setPassedAccountname] = useState(false);
-
-    // console.log(controlAccountname);
 
     const handleChangeInput = (e) => {
         const { value, name } = e.target;
@@ -38,7 +35,6 @@ function ProfileForm(props) {
     }, [input.accountname]);
 
     const handleUsername = () => {
-        console.log("검사해볼게");
         if (!input.username) {
             setUsernameError("* 사용자 이름은 필수 입력사항 입니다.");
             return setPassedUsername(false);
@@ -49,12 +45,6 @@ function ProfileForm(props) {
             setPassedUsername(true);
         }
     };
-
-    useEffect(() => {
-        if (saveCheck === true) {
-            handleUsername();
-        }
-    }, [saveCheck]);
 
     const handleAccountname = async () => {
         try {
@@ -78,7 +68,6 @@ function ProfileForm(props) {
                     },
                 }
             );
-            console.log(response);
 
             if (response.data.message === "이미 가입된 계정ID 입니다.") {
                 setAccountnameError(`* ${response.data.message}`);
@@ -106,7 +95,6 @@ function ProfileForm(props) {
                 },
                 data: formData,
             });
-            console.log(response);
             setFileImage(response.data.filename);
         } catch (err) {
             console.error(err);
