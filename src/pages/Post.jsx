@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
-import Loading from "./loading";
+import PageLoading from "./PageLoading";
 import PostItem from "../components/post/PostItem";
 import PostComment from "../components/comment/PostComment";
 import PostCommentInput from "../components/comment/PostCommentInput";
@@ -56,7 +56,7 @@ function Post() {
         handleGetComments();
     }, []);
 
-    if (!postData) return <Loading />;
+    if (!postData) return <PageLoading />;
     else {
         return (
             <>
