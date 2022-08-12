@@ -5,10 +5,15 @@ import { Link } from "react-router-dom";
 import { BASE_URL } from "../constants/baseUrl";
 
 function FollowingCard({ followingList }) {
+    const [follow, setFollow] = useState(followingList.isfollow);
     const token = localStorage.getItem("token");
     const accountname = localStorage.getItem("accountname");
     const handleFollowBtn = () => {
-        handleSubmitUnFollow();
+        if (follow === true) {
+            handleSubmitUnFollow();
+        } else {
+            handleSubmitFollow();
+        }
     };
 
     //언팔로우
@@ -26,6 +31,7 @@ function FollowingCard({ followingList }) {
             );
             console.log("언팔로우", res);
             console.log(res.data.profile.isfollow);
+            setFollow(res.data.profile.isfollow);
         } catch (err) {
             console.log(err);
         }
@@ -46,6 +52,7 @@ function FollowingCard({ followingList }) {
             );
             console.log("팔로우", res);
             console.log(res.data.profile.isfollow);
+            setFollow(res.data.profile.isfollow);
         } catch (err) {
             console.log(err);
         }
@@ -64,8 +71,7 @@ function FollowingCard({ followingList }) {
                     <p className="followerIntro">{followingList.intro}</p>
                 </div>
             </Link>
-            {accountname ===
-            followingList.accountname ? null : followingList.isfollow ===
+            {accountname === followingList.accountname ? null : follow ===
               true ? (
                 <button className="cancelBtn" onClick={handleFollowBtn}>
                     취소
