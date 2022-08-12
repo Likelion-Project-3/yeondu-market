@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
@@ -11,9 +11,6 @@ import ProfileInfo from "../components/profile/ProfileInfo";
 import TapMenu from "../components/common/TapMenu";
 import TopBasicNav from "../components/common/TopBasicNav";
 import "../pages/style/MyProfile.css";
-import { createContext } from "react";
-
-export const AppContext = createContext();
 
 function MyProfile() {
     const token = localStorage.getItem("token");
@@ -192,3 +189,4 @@ function MyProfile() {
     }
 }
 export default MyProfile;
+export const AppContext = createContext();

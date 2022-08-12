@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import { AppContext } from "../../pages/MyProfile";
 import BasicProfileImg from "../common/BasicProfileImg";
 import ProfileBtn from "./ProfileBtn";
 import "./ProfileInfo.css";
 
-function ProfileInfo({ profileInfo }) {
+function ProfileInfo() {
     const { accountName } = useParams();
-
+    const { profileInfo } = useContext(AppContext);
     const profile = profileInfo.profile;
     return (
         <div className="infoWrap">
