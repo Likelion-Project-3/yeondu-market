@@ -6,16 +6,9 @@ import { BASE_URL } from "../constants/baseUrl";
 
 function FollowingCard({ followingList }) {
     const token = localStorage.getItem("token");
-
+    const accountname = localStorage.getItem("accountname");
     const handleFollowBtn = () => {
         handleSubmitUnFollow();
-        // console.log(followingList.isfollow);
-        // if (followingList.isfollow === true) {
-        //     handleSubmitUnFollow();
-        //     console.log(followingList.isfollow);
-        // } else {
-        //     handleSubmitFollow();
-        // }
     };
 
     //언팔로우
@@ -64,18 +57,16 @@ function FollowingCard({ followingList }) {
         <li className="followItem">
             <Link to={userUrl} className="followLink">
                 <div className="followerImg">
-                    <img
-                        src={followingList.image}
-                        alt=""
-                        // className="followerImg"
-                    />
+                    <img src={followingList.image} alt="" />
                 </div>
                 <div className="followInfo">
                     <p className="followerName">{followingList.username}</p>
                     <p className="followerIntro">{followingList.intro}</p>
                 </div>
             </Link>
-            {followingList.isfollow === true ? (
+            {accountname ===
+            followingList.accountname ? null : followingList.isfollow ===
+              true ? (
                 <button className="cancelBtn" onClick={handleFollowBtn}>
                     취소
                 </button>

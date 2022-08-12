@@ -7,7 +7,7 @@ import { BASE_URL } from "../constants/baseUrl";
 function FollowerCard({ followerList }) {
     const [follow, setFollow] = useState(followerList.isfollow);
     const token = localStorage.getItem("token");
-
+    const accountname = localStorage.getItem("accountname");
     const handleFollowBtn = () => {
         if (follow === true) {
             handleSubmitUnFollow();
@@ -68,7 +68,8 @@ function FollowerCard({ followerList }) {
                     <p className="followerIntro">{followerList.intro}</p>
                 </div>
             </Link>
-            {follow === true ? (
+            {accountname === followerList.accountname ? null : follow ===
+              true ? (
                 <button className="cancelBtn" onClick={handleFollowBtn}>
                     취소
                 </button>
