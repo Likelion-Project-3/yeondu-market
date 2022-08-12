@@ -1,4 +1,4 @@
-import { useEffect, useState, createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
@@ -13,17 +13,17 @@ import TopBasicNav from "../components/common/TopBasicNav";
 import "../pages/style/MyProfile.css";
 
 function MyProfile() {
-    const token = localStorage.getItem("token");
-
+    const [listClick, setListClick] = useState(true);
+    const [albumClick, setAlbumClick] = useState(false);
     const [profileInfo, setProfileInfo] = useState("");
     const [myprofileInfo, setMyProfileInfo] = useState("");
     const [postList, setPostList] = useState([]);
     const [productList, setProductList] = useState([]);
-
-    const [listClick, setListClick] = useState(true);
-    const [albumClick, setAlbumClick] = useState(false);
+    const [followerCountData, setFollowerCountData] = useState("");
 
     const { accountName } = useParams();
+    const token = localStorage.getItem("token");
+    const accountname = localStorage.getItem("accountname");
 
     const onClickList = () => {
         setListClick(true);
@@ -34,51 +34,6 @@ function MyProfile() {
         setAlbumClick(true);
         setListClick(false);
     };
-    console.log("22", profileInfo);
-    console.log("profileInfo", profileInfo.profile);
-    // console.log(profileInfo.profile.isfollow);
-
-    //팔로우
-    // const handleSubmitFollow = async () => {
-    //     try {
-    //         const res = await axios(
-    //             BASE_URL + `/profile/${accountName}/follow`,
-    //             {
-    //                 method: "POST",
-    //                 headers: {
-    //                     Authorization: `Bearer ${token}`,
-    //                     "Content-type": "application/json",
-    //                 },
-    //             }
-    //         );
-    //         console.log("팔로우", res);
-    //         console.log("isfollow", res.data.profile.isfollow);
-    //         // setFollowData(res.data.profile.isfollow);
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // };
-
-    //언팔로우
-    // const handleSubmitUnFollow = async () => {
-    //     try {
-    //         const res = await axios(
-    //             BASE_URL + `/profile/${accountName}/unfollow`,
-    //             {
-    //                 method: "DELETE",
-    //                 headers: {
-    //                     Authorization: `Bearer ${token}`,
-    //                     "Content-type": "application/json",
-    //                 },
-    //             }
-    //         );
-    //         console.log("언팔로우", res);
-    //         console.log("isfollow", res.data.profile.isfollow);
-    //         // setFollowData(res.data.profile.isfollow);
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // };
 
     useEffect(() => {
         //내프로필 정보
@@ -107,7 +62,7 @@ function MyProfile() {
                 })
                 .then((response) => {
                     setProfileInfo(response.data);
-                    // profileInfo.handleSubmit(); // 댓글 작성 후 댓글 리스트 새로고침
+                    setFollowerCountData(response.data.profile.followerCount);
                 })
                 .catch((err) => console.log(err));
         };
@@ -141,17 +96,12 @@ function MyProfile() {
                 })
                 .catch((err) => console.log(err));
         };
-
-        // console.log(profileInfo.profile.isfollow);
         getMyProfile();
         getProfile();
         postList();
         productList();
     }, [accountName, token]);
-    console.log("11", profileInfo);
-    console.log("12", profileInfo.profile);
-    // console.log("13", profileInfo.profile.isfollow);
-    // const [followdata, setFollowData] = useState(profileInfo.profile.isfollow);
+
     if (token === null) {
         window.location = "/";
     } else if (!profileInfo) {
@@ -163,8 +113,9 @@ function MyProfile() {
                 <AppContext.Provider
                     value={{
                         profileInfo,
-                        // handleSubmitFollow,
-                        // handleSubmitUnFollow,
+                        followerCountData,
+                        token,
+                        accountname,
                     }}
                 >
                     <ProfileInfo />

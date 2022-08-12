@@ -1,14 +1,60 @@
-import React, { useContext } from "react";
+import axios from "axios";
+import React, { createContext, useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { AppContext } from "../../pages/MyProfile";
 import BasicProfileImg from "../common/BasicProfileImg";
+import { BASE_URL } from "../constants/baseUrl";
 import ProfileBtn from "./ProfileBtn";
 import "./ProfileInfo.css";
 
 function ProfileInfo() {
+    const { profileInfo, followerCountData, token, accountname } =
+        useContext(AppContext);
+    const [followdata, setFollowData] = useState(profileInfo.profile.isfollow);
+    const [followerCount, setFollowerCount] = useState("");
     const { accountName } = useParams();
-    const { profileInfo } = useContext(AppContext);
     const profile = profileInfo.profile;
+
+    //팔로우
+    const handleSubmitFollow = async () => {
+        try {
+            const res = await axios(
+                BASE_URL + `/profile/${accountName}/follow`,
+                {
+                    method: "POST",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                }
+            );
+            setFollowData(res.data.profile.isfollow);
+            setFollowerCount(res.data.profile.followerCount);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    //언팔로우
+    const handleSubmitUnFollow = async () => {
+        try {
+            const res = await axios(
+                BASE_URL + `/profile/${accountName}/unfollow`,
+                {
+                    method: "DELETE",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                }
+            );
+            setFollowData(res.data.profile.isfollow);
+            setFollowerCount(res.data.profile.followerCount);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
         <div className="infoWrap">
             {profile ? (
@@ -21,7 +67,11 @@ function ProfileInfo() {
                             }}
                         >
                             <p className="followCount followers">
-                                {profile.followerCount}
+                                {accountName === accountname
+                                    ? followerCountData
+                                    : followerCount === ""
+                                    ? followerCountData
+                                    : followerCount}
                             </p>
                             <p className="followName followers">followers</p>
                         </Link>
@@ -45,9 +95,19 @@ function ProfileInfo() {
                     </div>
                 </>
             ) : null}
-            <ProfileBtn />
+            <FollowContext.Provider
+                value={{
+                    handleSubmitFollow,
+                    handleSubmitUnFollow,
+                    followerCount,
+                    followdata,
+                }}
+            >
+                <ProfileBtn />
+            </FollowContext.Provider>
         </div>
     );
 }
 
 export default ProfileInfo;
+export const FollowContext = createContext();
