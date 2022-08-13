@@ -1,5 +1,5 @@
-import "./TopMenuComponent.css";
 import { useHistory } from "react-router-dom";
+import "./TopMenuComponent.css";
 
 function TopMenuComponent(props) {
     const history = useHistory();
