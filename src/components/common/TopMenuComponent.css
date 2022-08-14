@@ -53,7 +53,7 @@
     font-size: 14px;
     line-height: 18px;
     border-radius: 31px;
-    cursor: none;
+    cursor: default;
 }
 
 .saveBtn.on {

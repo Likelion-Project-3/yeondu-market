@@ -79,7 +79,7 @@ function EditProfile(props) {
                 handlerRightBtn={handelEditProfile}
                 disabled={passedUsername ? false : true}
                 type="submit"
-                rightclassName="saveBtn on"
+                rightclassName={`saveBtn ${passedUsername ? "on" : ""}`}
                 inputtype="notext"
                 title="저장"
             />
