@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
+
+.peaWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 342px);
+}
+
 .pea {
     background-image: url(../../assets/pea-white.png);
     background-repeat: no-repeat;
@@ -6,7 +15,6 @@
     text-indent: -9999px;
     width: 200px;
     height: 200px;
-    margin: 150px auto;
 }
 
 .loginMain {
@@ -23,7 +31,6 @@
     box-sizing: border-box;
     background-color: #ffffff;
     padding: 50px 34px;
-    margin-top: 70px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     animation: slideIn 0.7s;
