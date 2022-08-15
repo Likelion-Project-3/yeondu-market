@@ -70,13 +70,13 @@ button {
 }
 
 .bottomLogin {
-    position: relative;
     margin: 20px auto;
     color: var(--sub-font-color);
     text-align: center;
 }
 
 #email {
+    position: relative;
     margin-right: 28px;
 }
 #email::after {
@@ -85,7 +85,7 @@ button {
     background-color: var(--main-border-color);
     height: 13px;
     width: 1px;
-    right: 199px;
+    right: -15px;
     bottom: 1px;
 }
 
