@@ -37,6 +37,7 @@
 button {
     width: 100%;
 }
+
 .kakao,
 .google,
 .facebook {
@@ -62,12 +63,23 @@ button {
 }
 
 .bottomLogin {
-    text-align: center;
+    position: relative;
     margin: 20px auto;
+    color: var(--sub-font-color);
+    text-align: center;
 }
 
 #email {
-    margin-right: 20px;
+    margin-right: 28px;
+}
+#email::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-border-color);
+    height: 13px;
+    width: 1px;
+    right: 199px;
+    bottom: 1px;
 }
 
 #singup {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../pages/style/Intro.css";
 
 function Intro() {
@@ -19,12 +20,12 @@ function Intro() {
                         페이스북 계정으로 로그인
                     </button>
                     <p className="bottomLogin">
-                        <a id="email" href="/Login">
+                        <Link id="email" to="/Login">
                             이메일로 로그인
-                        </a>
-                        <a id="signup" href="/join">
+                        </Link>
+                        <Link id="signup" to="/join">
                             회원가입
-                        </a>
+                        </Link>
                     </p>
                 </article>
             </section>
