@@ -4,6 +4,7 @@ import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import BasicProfileImg from "../components/common/BasicProfileImg";
 import TopMenuComponent from "../components/common/TopMenuComponent";
+import UploadFileBtn from "../components/button/UploadFileBtn";
 import "../pages/style/UploadPost.css";
 
 function EditPost() {
@@ -233,19 +234,9 @@ function EditPost() {
                     </div>
                 </form>
                 <h3 className="ir">이미지 첨부 버튼</h3>
-                <label
-                    htmlFor="file"
-                    className="UploadFileLabel green50"
-                    // style={{
-                    //     right: "1rem",
-                    //     bottom: "1rem",
-                    //     position: "fixed",
-                    // }}
-                />
-                <input
-                    type="file"
-                    id="file"
-                    accept="image/*"
+                <UploadFileBtn
+                    type="green50"
+                    forAndId="file"
                     onChange={handleUploadImg}
                 />
             </main>
