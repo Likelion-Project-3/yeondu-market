@@ -3,7 +3,11 @@
 }
 
 .splashSection {
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
 }
 
 .colorPea {
@@ -13,12 +17,12 @@
     text-indent: -9999px;
     width: 200px;
     height: 200px;
-    margin: 25% auto 7%;
+    margin-bottom: 25px;
 }
 
 .mainMarket {
     background-image: url(../../assets/yeondumarket.png);
-    width: 180px;
-    height: 50px;
-    margin: 0 auto;
+    background-size: contain;
+    width: 160px;
+    height: 44px;
 }
