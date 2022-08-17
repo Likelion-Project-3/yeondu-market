@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../components/constants/baseUrl";
 import BasicProfileImg from "../common/BasicProfileImg";
-// import UploadFileBtn from "../button/UploadFileBtn";
+import UploadFileBtn from "../button/UploadFileBtn";
 import "./ProfileForm.css";
 
 function ProfileForm(props) {
@@ -121,40 +121,25 @@ function ProfileForm(props) {
                             : "http://146.56.183.55:5050/Ellipse.png")
                     }
                 />
-                {/* <UploadFileBtn
+                <UploadFileBtn
                     forAndId="uploadProfile"
                     type="green36"
                     position="absolute"
                     bottom="58px"
                     right="5px"
-                /> */}
-                <label
-                    htmlFor="uploadProfile"
-                    className="UploadFileLabel green36"
-                    style={{
-                        right: "5px",
-                        bottom: "58px",
-                        position: "absolute",
-                    }}
-                />
-                <input
-                    type="file"
-                    id="uploadProfile"
-                    accept="image/*"
                     onChange={handleUploadProfileImg}
                 />
             </div>
             <div className="wrapInput">
-                <label htmlFor="">사용자 이름</label>
+                <label htmlFor="username">사용자 이름</label>
                 <input
-                    id=""
+                    id="username"
                     type="text"
                     name="username"
                     value={input.username}
                     onChange={handleChangeInput}
                     onBlur={handleUsername}
                     placeholder="2~10자 이내여야 합니다."
-                    // maxLength="10"
                 />
                 <strong className="cautionText">{usernameError}</strong>
             </div>
@@ -174,9 +159,9 @@ function ProfileForm(props) {
                 <strong className="cautionText">{accountnameError}</strong>
             </div>
             <div className="wrapInput">
-                <label htmlFor="">소개</label>
+                <label htmlFor="intro">소개</label>
                 <input
-                    id=""
+                    id="intro"
                     type="text"
                     name="intro"
                     value={input.intro}

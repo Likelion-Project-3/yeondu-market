@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-// import IdPwForm from "../components/loginjoin/IdPwForm";
-// import LoginButton from "../components/loginjoin/LoginButton";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
+import IdPwForm from "../components/loginjoin/IdPwForm";
+import LoginButton from "../components/loginjoin/LoginButton";
 
 function Join(props) {
     const { setNextPage, setInput, input } = props;
@@ -62,8 +62,7 @@ function Join(props) {
             if (response.data.message === "이미 가입된 이메일 주소 입니다.") {
                 setEmailError(`* ${response.data.message}`);
                 setPassedEmail(false);
-            }
-            if (response.data.message === "사용 가능한 이메일 입니다.") {
+            } else if (response.data.message === "사용 가능한 이메일 입니다.") {
                 setPassedEmail(true);
             }
         } catch (err) {
@@ -106,40 +105,17 @@ function Join(props) {
             <section className="loginPart">
                 <h1 className="singupTitle">이메일로 회원가입</h1>
                 <form>
-                    <div>
-                        <label htmlFor="loginEmail" id="checkEmail">
-                            이메일
-                        </label>
-                        <input
-                            type="email"
-                            name="email"
-                            id="loginEmail"
-                            placeholder="이메일 주소를 입력해주세요"
-                            ref={userRef}
-                            value={input.email}
-                            onChange={handleChangeInput}
-                            onBlur={handleEmailBlur}
-                            // required
-                        />
-                    </div>
-                    <strong className="cautionText none">{emailError}</strong>
-                    <div>
-                        <label htmlFor="passwordEmail" id="checkPassword">
-                            비밀번호
-                        </label>
-                        <input
-                            type="password"
-                            name="password"
-                            id="passwordEmail"
-                            placeholder="비밀번호를 입력해주세요"
-                            value={input.password}
-                            onChange={handleChangeInput}
-                            onBlur={handlePasswordBlur}
-                        />
-                    </div>
-                    <strong className="cautionText none">
-                        {passwordError}
-                    </strong>
+                    <IdPwForm
+                        eValue={input.email}
+                        onChange={handleChangeInput}
+                        eOnBlur={handleEmailBlur}
+                        useRef={userRef}
+                        cautionMsgClassName="cautionText none"
+                        eCautionMsg={emailError}
+                        pValue={input.password}
+                        pOnBlur={handlePasswordBlur}
+                        pCautionMsg={passwordError}
+                    />
                     <div>
                         <label htmlFor="passwordEmail" id="checkPassword">
                             비밀번호 확인
@@ -157,9 +133,8 @@ function Join(props) {
                     <strong className="cautionText none">
                         {passwordCheckError}
                     </strong>
-                    <input
+                    <LoginButton
                         type="button"
-                        id="login"
                         className={`loginBtn ${
                             success ? "loginBtnActive" : ""
                         }`}
