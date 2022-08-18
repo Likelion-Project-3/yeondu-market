@@ -1,13 +1,15 @@
-import { React, useState, useEffect } from "react";
+import { React, useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import BasicProfileImg from "../components/common/BasicProfileImg";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import UploadFileBtn from "../components/button/UploadFileBtn";
+import { UserContext } from "../context/UserContext";
 import "../pages/style/UploadPost.css";
 
 function UploadPost() {
+    const { accountname, token, username } = useContext(UserContext);
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
     const [imgSrc, setImgSrc] = useState([]);
@@ -15,9 +17,6 @@ function UploadPost() {
     const [profileImg, setProfileImg] = useState("");
     const history = useHistory();
     const formData = new FormData();
-    const token = localStorage.getItem("token");
-    const username = localStorage.getItem("username");
-    const accountname = localStorage.getItem("accountname");
 
     useEffect(() => {
         const getUserProfile = async () => {

@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useContext, useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
@@ -6,11 +6,12 @@ import PageLoading from "./PageLoading";
 import PostItem from "../components/post/PostItem";
 import PostComment from "../components/comment/PostComment";
 import PostCommentInput from "../components/comment/PostCommentInput";
+import { UserContext } from "../context/UserContext";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/Post.css";
 
 function Post() {
-    const token = localStorage.getItem("token");
+    const { token } = useContext(UserContext);
     const [postData, setPostData] = useState("");
     const [comments, setComments] = useState([]);
     const { postId } = useParams();

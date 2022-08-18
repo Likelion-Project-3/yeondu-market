@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import CommentModal from "../modal/CommentModal";
+import { UserContext } from "../../context/UserContext";
 import "./PostComment.css";
 
 function PostComment({ comment, postId, handleDelete }) {
-    const accountname = localStorage.getItem("accountname");
+    const { accountname } = useContext(UserContext);
     const path =
         accountname === comment.author.accountname
             ? `/myprofile/${accountname}`
             : `/profile/${comment.author.accountname}`;
     const [isOpenModal, setIsOpenModal] = useState(false);
+
     const handleModalOn = () => {
         setIsOpenModal(!isOpenModal);
     };
+
     const handleCloseModal = () => {
         setIsOpenModal(false);
     };

@@ -1,21 +1,20 @@
-import { React, useState, useEffect } from "react";
+import { React, useContext, useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import BasicProfileImg from "../components/common/BasicProfileImg";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import UploadFileBtn from "../components/button/UploadFileBtn";
+import { UserContext } from "../context/UserContext";
 import "../pages/style/UploadPost.css";
 
 function EditPost() {
-    const token = localStorage.getItem("token");
-    const username = localStorage.getItem("username");
+    const { accountname, token, username } = useContext(UserContext);
     const [text, setText] = useState("");
     const [imgFile, setImgFile] = useState([]);
     const [isActive, setIsActive] = useState(false);
     const [imgSrc, setImgSrc] = useState([]);
     const [profileImg, setProfileImg] = useState("");
-    const accountname = localStorage.getItem("accountname");
 
     const history = useHistory();
     const { postId } = useParams();
