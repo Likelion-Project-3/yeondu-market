@@ -70,7 +70,7 @@
 <p align="right"><a href="#top">(🔼 Top)</a></p>
 
 ## <span id="env">5. 개발 환경</span>
-### [개발 기간] 2022.6.27 ~ 2022.7.30 (진행중)
+### [개발 기간] 2022.6.27 ~ 2022.8.12
 ### [기술] 
 - FrontEnd: React, React-router, Hooks
 - BackEnd: 제공된 API 사용
