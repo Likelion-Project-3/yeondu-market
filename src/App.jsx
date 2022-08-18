@@ -1,10 +1,15 @@
-import { upload } from "@testing-library/user-event/dist/upload";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import ChatList from "./pages/ChatList";
 import ChatRoom from "./pages/ChatRoom";
+import EditPost from "./pages/EditPost";
+import EditProduct from "./pages/EditProduct";
+import EditProfile from "./pages/EditProfile";
+import FollowerList from "./pages/FollowerList";
+import FollowingList from "./pages/FollowingList";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import MyProfile from "./pages/MyProfile";
+import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
 import Search from "./pages/Search";
 import SetProfile from "./pages/SetProfile";
@@ -12,13 +17,6 @@ import Splash from "./pages/Splash";
 import Post from "./pages/Post";
 import UploadPost from "./pages/UploadPost";
 import UploadProduct from "./pages/UploadProduct";
-import EditPost from "./pages/EditPost";
-import EditProfile from "./pages/EditProfile";
-import FollowingContainer from "./components/follow/FollowingContainer";
-import FollowerList from "./pages/FollowerList";
-import FollowingList from "./pages/FollowingList";
-import EditProduct from "./pages/EditProduct";
-import NotFound from "./pages/NotFound";
 import "./reset.css";
 
 function App() {

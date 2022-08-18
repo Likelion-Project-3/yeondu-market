@@ -1,7 +1,8 @@
 import React from "react";
+import ProfileInfo from "../../components/profile/ProfileInfo";
 import TopBasicNav from "../../components/TopBasicNav";
 import "../pages/style/Profile.css";
-import ProfileInfo from "../../components/profile/ProfileInfo";
+
 function Profile() {
     return (
         <div className="profileWrap">

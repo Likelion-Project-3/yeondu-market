@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import TopMenuComponent from "../components/common/TopMenuComponent";
-import TapMenu from "../components/common/TapMenu";
 import UserList from "../components/search/UserList";
 import "../pages/style/Search.css";
 

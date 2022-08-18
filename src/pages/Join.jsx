@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import IdPwForm from "../components/loginjoin/IdPwForm";

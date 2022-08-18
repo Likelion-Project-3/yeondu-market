@@ -1,7 +1,6 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import React, { useCallback, useContext, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
-import { FollowContext } from "../../pages/FollowerList";
 import { BASE_URL } from "../constants/baseUrl";
 
 function FollowerCard({ followerList }) {

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PostAlbumItem from "./PostAlbumItem";
 import "./PostAlbum.css";
-import { useEffect } from "react";
+
 function PostAlbum({ postList }) {
-    // console.log("!", postList);
     const [imageList, setImageList] = useState([]);
     const post = postList.post;
     //image가 없는 post는 전달 x

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Intro from "../pages/Intro";
 import { BASE_URL } from "../components/constants/baseUrl";
+import Intro from "../pages/Intro";
 import "../pages/style/Splash.css";
 
 function Splash() {

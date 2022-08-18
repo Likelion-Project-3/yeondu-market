@@ -1,7 +1,7 @@
-import "./TopChatNav.css";
-import TopMenuComponent from "../common/TopMenuComponent";
 import React, { useState } from "react";
 import LeaveChatModal from "./LeaveChatModal";
+import TopMenuComponent from "../common/TopMenuComponent";
+import "./TopChatNav.css";
 
 function TopChatNav() {
     const [isOpenModal, setIsOpenModal] = useState(false);

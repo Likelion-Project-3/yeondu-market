@@ -1,10 +1,10 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import TapMenu from "../components/common/TapMenu";
+import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import FollowingContainer from "../components/follow/FollowingContainer";
 import FollowingHeader from "../components/follow/FollowingHeader";
+import TapMenu from "../components/common/TapMenu";
 import "../pages/style/FollowerList.css";
 
 function FollowingList() {

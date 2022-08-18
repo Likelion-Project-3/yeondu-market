@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import "./Modal.css";
-import LogoutModal from "./LogoutModal";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import LogoutModal from "./LogoutModal";
+import "./Modal.css";
 
 function ProfileModal({ setIsOpenModal }) {
     const [onAlert, setOnAlert] = useState(false);
