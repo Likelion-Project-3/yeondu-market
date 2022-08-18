@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { BASE_URL } from "../components/constants/baseUrl";
 import ProfileForm from "../components/profile/ProfileForm";
 import TopMenuComponent from "../components/common/TopMenuComponent";
-import { BASE_URL } from "../components/constants/baseUrl";
 import "../pages/style/EditProfile.css";
 
 function EditProfile(props) {
@@ -15,9 +15,8 @@ function EditProfile(props) {
     });
 
     const [success, setSuccess] = useState(false);
-    const [passedUsername, setPassedUsername] = useState(false);
+    const [passedUsername, setPassedUsername] = useState(true);
     const [fileImage, setFileImage] = useState("");
-    const [saveCheck, setSaveCheck] = useState(false);
     const history = useHistory();
 
     const controlAccountname = false;
@@ -32,7 +31,6 @@ function EditProfile(props) {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                console.log(response);
 
                 const getData = response.data.user;
 
@@ -50,15 +48,9 @@ function EditProfile(props) {
     }, []);
 
     const userImage = fileImage ? BASE_URL + "/" + fileImage : input.profileImg;
-    console.log(userImage);
 
     const handelEditProfile = async (e) => {
         e.preventDefault();
-        setSaveCheck(true);
-        // if (!passedUsername) {
-        //     return;
-        // }
-        console.log(passedUsername);
         const userInfo = {
             user: {
                 username: input.username,
@@ -74,12 +66,6 @@ function EditProfile(props) {
                     "Content-type": "application/json",
                 },
             });
-            console.log(response);
-            // if (passedUsername === false) {
-            //     return;
-            // } else {
-            //     history.push(`/myprofile/${input.accountname}`);
-            // }
             history.push(`/myprofile/${input.accountname}`);
         } catch (err) {
             console.error(err);
@@ -91,9 +77,9 @@ function EditProfile(props) {
             <TopMenuComponent
                 topclassName="topBasicNav"
                 handlerRightBtn={handelEditProfile}
-                // disabled={passedUsername ? false : true}
+                disabled={passedUsername ? false : true}
                 type="submit"
-                rightclassName="saveBtn on"
+                rightclassName={`saveBtn ${passedUsername ? "on" : ""}`}
                 inputtype="notext"
                 title="저장"
             />
@@ -109,7 +95,6 @@ function EditProfile(props) {
                             setPassedUsername={setPassedUsername}
                             fileImage={fileImage}
                             setFileImage={setFileImage}
-                            saveCheck={saveCheck}
                         />
                     </form>
                 </div>

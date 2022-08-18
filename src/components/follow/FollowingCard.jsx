@@ -1,34 +1,78 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../constants/baseUrl";
 
 function FollowingCard({ followingList }) {
-    const [isfollow, setIsFollow] = useState(false);
-
+    const [follow, setFollow] = useState(followingList.isfollow);
+    const token = localStorage.getItem("token");
+    const accountname = localStorage.getItem("accountname");
     const handleFollowBtn = () => {
-        setIsFollow(!isfollow);
+        if (follow === true) {
+            handleSubmitUnFollow();
+        } else {
+            handleSubmitFollow();
+        }
     };
-    console.log("card", followingList);
-    // if(followingList.username === )
+
+    //언팔로우
+    const handleSubmitUnFollow = async () => {
+        try {
+            const res = await axios(
+                BASE_URL + `/profile/${followingList.accountname}/unfollow`,
+                {
+                    method: "DELETE",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                }
+            );
+            console.log("언팔로우", res);
+            console.log(res.data.profile.isfollow);
+            setFollow(res.data.profile.isfollow);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    //팔로우
+    const handleSubmitFollow = async () => {
+        try {
+            const res = await axios(
+                BASE_URL + `/profile/${followingList.accountname}/follow`,
+                {
+                    method: "POST",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-type": "application/json",
+                    },
+                }
+            );
+            console.log("팔로우", res);
+            console.log(res.data.profile.isfollow);
+            setFollow(res.data.profile.isfollow);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     const userUrl = `/profile/${followingList.accountname}`;
 
     return (
         <li className="followItem">
             <Link to={userUrl} className="followLink">
                 <div className="followerImg">
-                    <img
-                        src={followingList.image}
-                        alt=""
-                        // className="followerImg"
-                    />
+                    <img src={followingList.image} alt="" />
                 </div>
                 <div className="followInfo">
                     <p className="followerName">{followingList.username}</p>
                     <p className="followerIntro">{followingList.intro}</p>
                 </div>
             </Link>
-            {/* 팔로우를 하고 있을 땐 취소, 하지 않을땐 팔로우,, */}
-            {isfollow === true ? (
+            {accountname === followingList.accountname ? null : follow ===
+              true ? (
                 <button className="cancelBtn" onClick={handleFollowBtn}>
                     취소
                 </button>

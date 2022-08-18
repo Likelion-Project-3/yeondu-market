@@ -1,13 +1,11 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import "./style/Login.css";
-import "../components/loginjoin/IdPwForm.css";
-import "../components/loginjoin/LoginButton.css";
-// import IdPwForm from "../components/loginjoin/IdPwForm";
-// import LoginButton from "../components/loginjoin/LoginButton";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
+import IdPwForm from "../components/loginjoin/IdPwForm";
+import LoginButton from "../components/loginjoin/LoginButton";
+import "./style/Login.css";
 
 function Login() {
     const url = BASE_URL + "/user/login";
@@ -51,7 +49,6 @@ function Login() {
                 setIsActive(false);
                 setCautionMsg("* 이메일 또는 비밀번호가 일치하지 않습니다.");
                 input.password = "";
-                // setInput({password: ''});
             } else if (response.data.user.intro) {
                 localStorage.setItem("token", response.data.user.token);
                 const token = localStorage.getItem("token");
@@ -85,51 +82,21 @@ function Login() {
                     <section className="loginPart">
                         <h1 className="singupTitle">로그인</h1>
                         <form onSubmit={handleSubmit}>
-                            <div>
-                                <label htmlFor="loginEmail" id="checkEmail">
-                                    이메일
-                                </label>
-                                <input
-                                    onChange={handleChange}
-                                    onKeyUp={isPassedLogin}
-                                    ref={userRef}
-                                    type="email"
-                                    name="email"
-                                    id="loginEmail"
-                                    placeholder="이메일 주소를 입력해주세요"
-                                    value={input.email}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label
-                                    htmlFor="passwordEmail"
-                                    id="checkPassword"
-                                >
-                                    비밀번호
-                                </label>
-                                <input
-                                    onChange={handleChange}
-                                    onKeyUp={isPassedLogin}
-                                    type="password"
-                                    name="password"
-                                    id="passwordEmail"
-                                    placeholder="비밀번호를 입력해주세요"
-                                    value={input.password}
-                                />
-                                <strong
-                                    className={
-                                        setIsActive
-                                            ? "cautionText none"
-                                            : "cautionText"
-                                    }
-                                >
-                                    {cautionMsg}
-                                </strong>
-                            </div>
-                            <input
+                            <IdPwForm
+                                eValue={input.email}
+                                onChange={handleChange}
+                                onKeyUp={isPassedLogin}
+                                useRef={userRef}
+                                pValue={input.password}
+                                cautionMsgClassName={
+                                    setIsActive
+                                        ? "cautionText none"
+                                        : "cautionText"
+                                }
+                                pCautionMsg={cautionMsg}
+                            />
+                            <LoginButton
                                 type="submit"
-                                id="login"
                                 className={`loginBtn ${
                                     isActive ? "loginBtnActive" : ""
                                 }`}

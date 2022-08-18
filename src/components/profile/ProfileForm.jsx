@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import BasicProfileImg from "../common/BasicProfileImg";
-// import UploadFileBtn from "../button/UploadFileBtn";
 import { BASE_URL } from "../../components/constants/baseUrl";
+import BasicProfileImg from "../common/BasicProfileImg";
+import UploadFileBtn from "../button/UploadFileBtn";
 import "./ProfileForm.css";
 
 function ProfileForm(props) {
@@ -16,13 +16,10 @@ function ProfileForm(props) {
         setPassedUsername,
         fileImage,
         setFileImage,
-        saveCheck,
     } = props;
     const [usernameError, setUsernameError] = useState("");
     const [accountnameError, setAccountnameError] = useState("");
     const [passedAccountname, setPassedAccountname] = useState(false);
-
-    // console.log(controlAccountname);
 
     const handleChangeInput = (e) => {
         const { value, name } = e.target;
@@ -38,7 +35,6 @@ function ProfileForm(props) {
     }, [input.accountname]);
 
     const handleUsername = () => {
-        console.log("검사해볼게");
         if (!input.username) {
             setUsernameError("* 사용자 이름은 필수 입력사항 입니다.");
             return setPassedUsername(false);
@@ -49,12 +45,6 @@ function ProfileForm(props) {
             setPassedUsername(true);
         }
     };
-
-    useEffect(() => {
-        if (saveCheck === true) {
-            handleUsername();
-        }
-    }, [saveCheck]);
 
     const handleAccountname = async () => {
         try {
@@ -78,7 +68,6 @@ function ProfileForm(props) {
                     },
                 }
             );
-            console.log(response);
 
             if (response.data.message === "이미 가입된 계정ID 입니다.") {
                 setAccountnameError(`* ${response.data.message}`);
@@ -106,7 +95,6 @@ function ProfileForm(props) {
                 },
                 data: formData,
             });
-            console.log(response);
             setFileImage(response.data.filename);
         } catch (err) {
             console.error(err);
@@ -133,40 +121,25 @@ function ProfileForm(props) {
                             : "http://146.56.183.55:5050/Ellipse.png")
                     }
                 />
-                {/* <UploadFileBtn
+                <UploadFileBtn
                     forAndId="uploadProfile"
                     type="green36"
                     position="absolute"
                     bottom="58px"
                     right="5px"
-                /> */}
-                <label
-                    htmlFor="uploadProfile"
-                    className="UploadFileLabel green36"
-                    style={{
-                        right: "5px",
-                        bottom: "58px",
-                        position: "absolute",
-                    }}
-                />
-                <input
-                    type="file"
-                    id="uploadProfile"
-                    accept="image/*"
                     onChange={handleUploadProfileImg}
                 />
             </div>
             <div className="wrapInput">
-                <label htmlFor="">사용자 이름</label>
+                <label htmlFor="username">사용자 이름</label>
                 <input
-                    id=""
+                    id="username"
                     type="text"
                     name="username"
                     value={input.username}
                     onChange={handleChangeInput}
                     onBlur={handleUsername}
                     placeholder="2~10자 이내여야 합니다."
-                    // maxLength="10"
                 />
                 <strong className="cautionText">{usernameError}</strong>
             </div>
@@ -186,9 +159,9 @@ function ProfileForm(props) {
                 <strong className="cautionText">{accountnameError}</strong>
             </div>
             <div className="wrapInput">
-                <label htmlFor="">소개</label>
+                <label htmlFor="intro">소개</label>
                 <input
-                    id=""
+                    id="intro"
                     type="text"
                     name="intro"
                     value={input.intro}

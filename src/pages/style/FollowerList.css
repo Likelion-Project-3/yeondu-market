@@ -2,9 +2,27 @@
     width: 100%;
 }
 
+.followContainer {
+    padding-bottom: 60px;
+}
+
 .topMainNavFollow p {
     margin-left: 8px;
     font-size: 14px;
+}
+
+.topMainNavFollow .prevBtn {
+    margin-right: 10px;
+}
+
+.topMainNavFollow h2 {
+    /* font-weight: bold; */
+    /* font-size: 18px; */
+    /* vertical-align: top; */
+    /* line-height: 50px; */
+    /* text-align: center; */
+    /* vertical-align: -10px; */
+    /* line-height: 50%; */
 }
 
 .followerMain .followContainer {

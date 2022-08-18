@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from "react";
-import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
+import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
-import TopMenuComponent from "../components/common/TopMenuComponent";
 import BasicProfileImg from "../components/common/BasicProfileImg";
+import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadPost.css";
 
 function EditPost() {
@@ -201,7 +201,7 @@ function EditPost() {
                     <h3 className="ir">게시글 작성란</h3>
                     <textarea
                         cols="30"
-                        rows="10"
+                        rows="5"
                         onChange={handleOnChange}
                         onKeyUp={handleActivate}
                         value={text}
@@ -236,11 +236,11 @@ function EditPost() {
                 <label
                     htmlFor="file"
                     className="UploadFileLabel green50"
-                    style={{
-                        right: "1rem",
-                        bottom: "1rem",
-                        position: "fixed",
-                    }}
+                    // style={{
+                    //     right: "1rem",
+                    //     bottom: "1rem",
+                    //     position: "fixed",
+                    // }}
                 />
                 <input
                     type="file"

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import TopMenuComponent from "../components/common/TopMenuComponent";
@@ -59,9 +58,7 @@ function Search() {
                         />
                     );
                 })}
-                {/* <UserList searchUser={searchUser} /> */}
             </main>
-            <TapMenu />
         </>
     );
 }

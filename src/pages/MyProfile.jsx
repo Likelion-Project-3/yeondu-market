@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
-import Loading from "./loading";
+import PageLoading from "./PageLoading";
 import PostAlbum from "../components/post/PostAlbum";
 import PostContainer from "../components/post/PostContainer";
 import PostList from "../components/post/PostList";
@@ -13,18 +13,17 @@ import TopBasicNav from "../components/common/TopBasicNav";
 import "../pages/style/MyProfile.css";
 
 function MyProfile() {
-    const token = localStorage.getItem("token");
-    const accountname = localStorage.getItem("accountname");
-
+    const [listClick, setListClick] = useState(true);
+    const [albumClick, setAlbumClick] = useState(false);
     const [profileInfo, setProfileInfo] = useState("");
     const [myprofileInfo, setMyProfileInfo] = useState("");
     const [postList, setPostList] = useState([]);
     const [productList, setProductList] = useState([]);
-
-    const [listClick, setListClick] = useState(true);
-    const [albumClick, setAlbumClick] = useState(false);
+    const [followerCountData, setFollowerCountData] = useState("");
 
     const { accountName } = useParams();
+    const token = localStorage.getItem("token");
+    const accountname = localStorage.getItem("accountname");
 
     const onClickList = () => {
         setListClick(true);
@@ -52,7 +51,8 @@ function MyProfile() {
                 .catch((err) => console.log(err));
         };
         //유저 프로필 정보
-        const getProfile = () => {
+        const getProfile = (e) => {
+            // e.preventDefault();
             axios
                 .get(BASE_URL + `/profile/${accountName}`, {
                     headers: {
@@ -62,9 +62,11 @@ function MyProfile() {
                 })
                 .then((response) => {
                     setProfileInfo(response.data);
+                    setFollowerCountData(response.data.profile.followerCount);
                 })
                 .catch((err) => console.log(err));
         };
+
         //게시글 목록
         const postList = () => {
             axios
@@ -98,18 +100,27 @@ function MyProfile() {
         getProfile();
         postList();
         productList();
-    }, [accountName]);
+    }, [accountName, token]);
 
     if (token === null) {
         window.location = "/";
     } else if (!profileInfo) {
-        // return <div>loading...</div>;
-        return <Loading />;
+        return <PageLoading />;
     } else {
         return (
             <div className="profileWrap">
                 <TopBasicNav />
-                <ProfileInfo profileInfo={profileInfo} />
+                <AppContext.Provider
+                    value={{
+                        profileInfo,
+                        followerCountData,
+                        token,
+                        accountname,
+                    }}
+                >
+                    <ProfileInfo />
+                </AppContext.Provider>
+
                 <ProductContainer productList={productList} />
                 <PostContainer
                     postList={postList}
@@ -129,3 +140,4 @@ function MyProfile() {
     }
 }
 export default MyProfile;
+export const AppContext = createContext();

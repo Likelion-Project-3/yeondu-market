@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
+
+.peaWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 342px);
+}
+
 .pea {
     background-image: url(../../assets/pea-white.png);
     background-repeat: no-repeat;
@@ -6,7 +15,6 @@
     text-indent: -9999px;
     width: 200px;
     height: 200px;
-    margin: 150px auto;
 }
 
 .loginMain {
@@ -23,7 +31,6 @@
     box-sizing: border-box;
     background-color: #ffffff;
     padding: 50px 34px;
-    margin-top: 70px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     animation: slideIn 0.7s;
@@ -37,6 +44,7 @@
 button {
     width: 100%;
 }
+
 .kakao,
 .google,
 .facebook {
@@ -62,12 +70,23 @@ button {
 }
 
 .bottomLogin {
-    text-align: center;
     margin: 20px auto;
+    color: var(--sub-font-color);
+    text-align: center;
 }
 
 #email {
-    margin-right: 20px;
+    position: relative;
+    margin-right: 28px;
+}
+#email::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-border-color);
+    height: 13px;
+    width: 1px;
+    right: -15px;
+    bottom: 1px;
 }
 
 #singup {
