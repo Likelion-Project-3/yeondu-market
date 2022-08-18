@@ -66,7 +66,7 @@
 
 
 ## <span id="roles">4. 역할 분담</span>
-![image](https://user-images.githubusercontent.com/84389307/185295745-b35b46b2-76d0-4071-9830-f3daaaadce11.png)
+![image](https://user-images.githubusercontent.com/80025366/185334029-1552fad4-977f-426d-9da3-e19ddfba9888.png)
 <p align="right"><a href="#top">(🔼 Top)</a></p>
 
 ## <span id="env">5. 개발 환경</span>
