@@ -1,7 +1,6 @@
-import { useHistory } from "react-router-dom";
-import "./Alert.css";
 import axios from "axios";
 import { BASE_URL } from "../constants/baseUrl";
+import "./Alert.css";
 
 function ProductAlert({ productId, handleCancel }) {
     const token = localStorage.getItem("token");

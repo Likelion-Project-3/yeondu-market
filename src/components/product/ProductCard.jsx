@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import NotFound from "../../pages/NotFound";
 import ProductModal from "../modal/ProductModal";
 import "./ProductCard.css";
 

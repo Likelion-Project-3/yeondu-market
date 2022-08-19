@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useHistory, useParams } from "react-router-dom";
-import UploadFileBtn from "../components/button/UploadFileBtn";
+import { BASE_URL } from "../components/constants/baseUrl";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
-import { BASE_URL } from "../components/constants/baseUrl";
-import { useState } from "react";
-import { useEffect } from "react";
+// import UploadFileBtn from "../components/button/UploadFileBtn";
 
 function EditProduct() {
     const { productId } = useParams();

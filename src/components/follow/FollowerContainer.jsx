@@ -1,6 +1,6 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 import { BASE_URL } from "../constants/baseUrl";
 import FollowerCard from "./FollowerCard";
 

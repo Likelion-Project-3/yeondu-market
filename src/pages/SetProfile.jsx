@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "../pages/style/SetProfile.css";
-import ProfileForm from "../components/profile/ProfileForm";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
+import ProfileForm from "../components/profile/ProfileForm";
+import "../pages/style/SetProfile.css";
 
 function SetProfile(props) {
     const [input, setInput] = useState({

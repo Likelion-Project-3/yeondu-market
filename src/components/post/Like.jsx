@@ -1,5 +1,5 @@
-import "./Like.css";
 import { useState } from "react";
+import "./Like.css";
 
 function Like({ heartCount }) {
     const [like, setLike] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
-import UploadProduct from "../../pages/UploadProduct";
 import "./MyProfileBtn.css";
+
 function MyProfileBtn() {
     const uploadProduct = () => {
         window.location.href = "/product/upload";

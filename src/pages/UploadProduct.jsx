@@ -1,11 +1,10 @@
-import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import UploadFileBtn from "../components/button/UploadFileBtn";
+import axios from "axios";
+import { BASE_URL } from "../components/constants/baseUrl";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
-import { BASE_URL } from "../components/constants/baseUrl";
-import { useState } from "react";
+// import UploadFileBtn from "../components/button/UploadFileBtn";
 
 function UploadProduct() {
     let history = useHistory();

@@ -1,9 +1,9 @@
-import axios from "axios";
 import React, { createContext, useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { AppContext } from "../../pages/MyProfile";
-import BasicProfileImg from "../common/BasicProfileImg";
+import axios from "axios";
 import { BASE_URL } from "../constants/baseUrl";
+import BasicProfileImg from "../common/BasicProfileImg";
+import { AppContext } from "../../pages/MyProfile";
 import ProfileBtn from "./ProfileBtn";
 import "./ProfileInfo.css";
 
