@@ -17,8 +17,8 @@ import Splash from "./pages/Splash";
 import Post from "./pages/Post";
 import UploadPost from "./pages/UploadPost";
 import UploadProduct from "./pages/UploadProduct";
-import "./reset.css";
 import { UserContextProvider } from "./context/UserContext";
+import "./reset.css";
 
 function App() {
     return (
