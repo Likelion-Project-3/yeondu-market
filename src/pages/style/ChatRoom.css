@@ -61,10 +61,11 @@
     display: inline-block;
     width: 42px;
     height: 42px;
-    background: url(../../assets/Ellipse-1.png) no-repeat center/contain;
+    background: url(../../assets/basic-profile-pea.png) no-repeat center/contain;
     position: absolute;
     top: 0;
     left: -50px;
+    border-radius: 50%;
 }
 
 .chatRoomMain .chat.right {
