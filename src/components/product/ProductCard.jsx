@@ -7,8 +7,6 @@ import "./ProductCard.css";
 function ProductCard({ product }) {
     const { accountname } = useContext(UserContext);
     const userAccountName = useParams();
-    console.log("accountname", accountname);
-    console.log("userAccountName", userAccountName.accountName);
     const [onModal, setModal] = useState(false);
     const ModalOpen = () => {
         setModal(!onModal);

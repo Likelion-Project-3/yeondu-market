@@ -5,8 +5,6 @@ import { UserContext } from "../context/UserContext";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
 
-// import UploadFileBtn from "../components/button/UploadFileBtn";
-
 function UploadProduct() {
     const { token } = useContext(UserContext);
     const { accountname } = useContext(UserContext);
