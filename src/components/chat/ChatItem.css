@@ -9,7 +9,7 @@
 .chatItem .chatItemImg {
     width: 42px;
     height: 42px;
-    background: url(../../assets/basic-profile-img.png) no-repeat center;
+    background: url(../../assets/basic-profile-pea.png) no-repeat center;
     background-size: cover;
     border: 0.5px solid var(--main-border-color);
     border-radius: 50%;
