@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
 import { BASE_URL } from "../components/constants/baseUrl";
+import { UserContext } from "../context/UserContext";
 
 function EditProduct() {
     const { productId } = useParams();
-    const token = localStorage.getItem("token");
-    const accountname = localStorage.getItem("accountname");
+    const { token } = useContext(UserContext);
+    const { accountname } = useContext(UserContext);
 
     const [itemName, setItemName] = useState("");
     const [price, setPrice] = useState("");

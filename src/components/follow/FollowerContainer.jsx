@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../constants/baseUrl";
+import { UserContext } from "../../context/UserContext";
 import FollowerCard from "./FollowerCard";
 
 function FollowerContainer() {
     const [followerList, setFollowerList] = useState([]);
-    const token = localStorage.getItem("token");
+    const { token } = useContext(UserContext);
 
     const location = useLocation();
     const accountName = location.state.accountName;
