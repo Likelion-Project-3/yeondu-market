@@ -6,8 +6,7 @@ import { UserContext } from "../../context/UserContext";
 
 function FollowerCard({ followerList }) {
     const [follow, setFollow] = useState(followerList.isfollow);
-    const { token } = useContext(UserContext);
-    const { accountname } = useContext(UserContext);
+    const { token, accountname } = useContext(UserContext);
     const handleFollowBtn = () => {
         if (follow === true) {
             handleSubmitUnFollow();

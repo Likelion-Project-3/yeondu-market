@@ -6,8 +6,7 @@ import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
 
 function UploadProduct() {
-    const { token } = useContext(UserContext);
-    const { accountname } = useContext(UserContext);
+    const { token, accountname } = useContext(UserContext);
     const [itemName, setItemName] = useState("");
     const [price, setPrice] = useState("");
     const [link, setLink] = useState("");

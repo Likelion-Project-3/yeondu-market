@@ -23,8 +23,7 @@ function MyProfile() {
     const [followerCountData, setFollowerCountData] = useState("");
 
     const { accountName } = useParams();
-    const { token } = useContext(UserContext);
-    const { accountname } = useContext(UserContext);
+    const { token, accountname } = useContext(UserContext);
 
     const onClickList = () => {
         setListClick(true);
@@ -115,8 +114,6 @@ function MyProfile() {
                     value={{
                         profileInfo,
                         followerCountData,
-                        token,
-                        accountname,
                     }}
                 >
                     <ProfileInfo />

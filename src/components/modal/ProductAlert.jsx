@@ -6,7 +6,7 @@ import "./Alert.css";
 
 function ProductAlert({ productId, handleCancel }) {
     const { token } = useContext(UserContext);
-    console.log("tt");
+
     const productDelete = async () => {
         const url = BASE_URL + `/product/${productId}`;
 

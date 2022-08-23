@@ -8,8 +8,7 @@ import { UserContext } from "../context/UserContext";
 
 function EditProduct() {
     const { productId } = useParams();
-    const { token } = useContext(UserContext);
-    const { accountname } = useContext(UserContext);
+    const { token, accountname } = useContext(UserContext);
 
     const [itemName, setItemName] = useState("");
     const [price, setPrice] = useState("");
