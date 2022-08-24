@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 import ProductModal from "../modal/ProductModal";
 import "./ProductCard.css";
 
 function ProductCard({ product }) {
-    const accountname = localStorage.getItem("accountname");
+    const { accountname } = useContext(UserContext);
     const userAccountName = useParams();
-    console.log("accountname", accountname);
-    console.log("userAccountName", userAccountName.accountName);
     const [onModal, setModal] = useState(false);
     const ModalOpen = () => {
         setModal(!onModal);

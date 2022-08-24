@@ -2,7 +2,6 @@ import React from "react";
 import FollowingCard from "./FollowingCard";
 
 function FollowingContainer({ followingList }) {
-    console.log(followingList);
     return (
         <main className="followerMain">
             <section className="followContainer">

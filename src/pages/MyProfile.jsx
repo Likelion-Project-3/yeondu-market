@@ -1,7 +1,8 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
+import { UserContext } from "../context/UserContext";
 import PageLoading from "./PageLoading";
 import PostAlbum from "../components/post/PostAlbum";
 import PostContainer from "../components/post/PostContainer";
@@ -22,8 +23,7 @@ function MyProfile() {
     const [followerCountData, setFollowerCountData] = useState("");
 
     const { accountName } = useParams();
-    const token = localStorage.getItem("token");
-    const accountname = localStorage.getItem("accountname");
+    const { token, accountname } = useContext(UserContext);
 
     const onClickList = () => {
         setListClick(true);
@@ -114,8 +114,6 @@ function MyProfile() {
                     value={{
                         profileInfo,
                         followerCountData,
-                        token,
-                        accountname,
                     }}
                 >
                     <ProfileInfo />

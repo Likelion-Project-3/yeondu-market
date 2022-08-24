@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 import MyProfileBtn from "./MyProfileBtn";
 import UserProfileBtn from "./UserProfileBtn";
 
 function ProfileBtn() {
     const { accountName } = useParams();
-    const name = localStorage.getItem("accountname");
-    return accountName === name ? <MyProfileBtn /> : <UserProfileBtn />;
+    const { accountname } = useContext(UserContext);
+    return accountName === accountname ? <MyProfileBtn /> : <UserProfileBtn />;
 }
 
 export default ProfileBtn;

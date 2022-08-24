@@ -1,10 +1,12 @@
 import axios from "axios";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import { BASE_URL } from "../constants/baseUrl";
 import "./Alert.css";
 
 function ProductAlert({ productId, handleCancel }) {
-    const token = localStorage.getItem("token");
-    console.log("tt");
+    const { token } = useContext(UserContext);
+
     const productDelete = async () => {
         const url = BASE_URL + `/product/${productId}`;
 
