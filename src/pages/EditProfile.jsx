@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import ProfileForm from "../components/profile/ProfileForm";
 import TopMenuComponent from "../components/common/TopMenuComponent";
+import { UserContext } from "../context/UserContext";
 import "../pages/style/EditProfile.css";
 
 function EditProfile(props) {
@@ -20,8 +21,7 @@ function EditProfile(props) {
     const history = useHistory();
 
     const controlAccountname = false;
-
-    const token = localStorage.getItem("token");
+    const { token } = useContext(UserContext);
 
     useEffect(() => {
         const getUserInfo = async () => {

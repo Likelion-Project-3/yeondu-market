@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import TopMenuComponent from "../components/common/TopMenuComponent";
+import { UserContext } from "../context/UserContext";
 import UserList from "../components/search/UserList";
 import "../pages/style/Search.css";
 
 function Search() {
-    const token = localStorage.getItem("token");
-
+    const { token } = useContext(UserContext);
     const [searchUser, setSearchUser] = useState([]);
     const [keyword, setKeyword] = useState("");
 
