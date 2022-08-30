@@ -11,7 +11,7 @@ function UploadFileBtn(props) {
                     bottom: `${props.bottom}`,
                     position: `${props.position}`,
                 }}
-            />
+            ><span className="ir">이미지 파일 업로드 버튼</span></label>
             <input
                 type="file"
                 id={props.forAndId}

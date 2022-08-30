@@ -36,6 +36,7 @@ function Search() {
 
     return (
         <>
+        <h2 className="ir">사용자 검색</h2>
             <TopMenuComponent
                 topclassName="topSearchNav"
                 rightclassName="unsettled"
@@ -45,6 +46,7 @@ function Search() {
                 }}
             />
             <main className="searchMain">
+                <h3 className="ir">검색어와 일치하는 사용자 목록</h3>
                 {searchUser.map((user) => {
                     return (
                         <UserList

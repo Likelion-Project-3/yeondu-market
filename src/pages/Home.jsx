@@ -35,7 +35,9 @@ function Home() {
         <>
             <header className="topMainNav">
                 <h1>연두마켓 피드</h1>
-                <button type="button" onClick={goSearch} />
+                <button type="button" onClick={goSearch} >
+                    <span className="ir">계정 검색하기 버튼</span>
+                </button>
             </header>
             {post.length !== 0 ? (
                 <main className="homeContentFeed">

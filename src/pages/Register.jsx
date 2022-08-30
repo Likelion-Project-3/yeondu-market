@@ -10,8 +10,6 @@ function Register() {
         passwordCheck: "",
     });
 
-    console.log("저장된 input : ", input);
-
     return (
         <>
             {nextPage ? (
