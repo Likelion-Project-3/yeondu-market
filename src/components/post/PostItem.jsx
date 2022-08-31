@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import BasicProfileImg from "../common/BasicProfileImg";
+import { UserContext } from "../../context/UserContext";
 import Like from "./Like";
 import PostModal from "../modal/PostModal";
-import { UserContext } from "../../context/UserContext";
 import "./PostItem.css";
 
 function PostItem({ post }) {
@@ -81,7 +81,11 @@ function PostItem({ post }) {
                         </div>
                     </div>
                     <div className="btnWrap">
-                        <Like heartCount={post.heartCount} />
+                        <Like
+                            heartCount={post.heartCount}
+                            postId={post.id}
+                            hearted={post.hearted}
+                        />
                         <Link to={`/post/${post.id}`}>
                             <span className="wrapCommentBtn">
                                 <button
