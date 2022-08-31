@@ -1,7 +1,7 @@
 .prevBtn {
     width: 22px;
     height: 22px;
-    background: url("../../assets/icon/icon-arrow-left.svg");
+    background: url('../../assets/icon/icon-arrow-left.svg');
 }
 
 .topChatNav .prevBtn {
@@ -12,7 +12,7 @@
 .moreBtn {
     width: 22px;
     height: 22px;
-    background: url("../../assets/icon/icon-\ more-vertical.svg");
+    background: url('../../assets/icon/icon-\ more-vertical.svg');
 }
 
 .unsettled {
@@ -67,7 +67,7 @@
     width: fit-content;
 }
 
-input[type="notext"] {
+input[type='notext'] {
     display: none;
 }
 
@@ -81,10 +81,12 @@ input[type="notext"] {
 .topSearchNav > input {
     background: #f2f2f2;
     width: 100%;
-    padding: 7px 16px;
+    padding: 6px 16px;
     margin: 0 30px 0 20px;
-    border: none;
+    border: 1.5px solid #f2f2f2;
     border-radius: 32px;
+    font-size: 14px;
+    line-height: 18px;
 }
 
 .topSearchNav > input::placeholder {
@@ -92,4 +94,8 @@ input[type="notext"] {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
+}
+.topSearchNav > input:focus {
+    border: 1.5px solid var(--main-font-color);
+    padding: 7px 16px;
 }
