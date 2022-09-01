@@ -1,22 +1,22 @@
-import { useContext, useEffect, useState } from "react";
-import axios from "axios";
-import { BASE_URL } from "../components/constants/baseUrl";
-import TopMenuComponent from "../components/common/TopMenuComponent";
-import { UserContext } from "../context/UserContext";
-import UserList from "../components/search/UserList";
-import "../pages/style/Search.css";
+import { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import { BASE_URL } from '../components/constants/baseUrl';
+import TopMenuComponent from '../components/common/TopMenuComponent';
+import { UserContext } from '../context/UserContext';
+import UserList from '../components/search/UserList';
+import '../pages/style/Search.css';
 
 function Search() {
     const { token } = useContext(UserContext);
     const [searchUser, setSearchUser] = useState([]);
-    const [keyword, setKeyword] = useState("");
+    const [keyword, setKeyword] = useState('');
 
     useEffect(() => {
         if (keyword) {
             const handleGetUserInfo = async () => {
                 try {
                     const response = await axios.get(
-                        BASE_URL + "/user/searchuser/?keyword=" + keyword,
+                        BASE_URL + '/user/searchuser/?keyword=' + keyword,
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -32,7 +32,6 @@ function Search() {
             handleGetUserInfo();
         }
     }, [keyword]);
-    console.log(searchUser.username);
 
     return (
         <>
@@ -51,6 +50,7 @@ function Search() {
                     return (
                         <UserList
                             searchUser={searchUser}
+                            keyword={keyword}
                             key={user._id}
                             image={user.image}
                             username={user.username}
