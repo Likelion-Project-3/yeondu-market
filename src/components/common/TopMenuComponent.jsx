@@ -9,9 +9,11 @@ function TopMenuComponent(props) {
                 type="button"
                 className="prevBtn"
                 onClick={history.goBack}
-            />
+            ><span className="ir">뒤로가기 버튼</span></button>
             <h2 className={props.h2className}>{props.h2title}</h2>
+            <label htmlFor="searchUser" className="ir"></label>
             <input
+                id="searchUser"
                 type={props.inputtype}
                 onChange={props.onChange}
                 placeholder="계정 검색"
