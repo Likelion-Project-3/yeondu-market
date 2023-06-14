@@ -139,7 +139,7 @@ function EditProduct() {
             });
             console.log(res);
             setItemImage(
-                "https://mandarin.api.weniv.co.kr/" + res.data.filename
+                "https://api.mandarin.weniv.co.kr/" + res.data.filename
             );
 
             if (res.data.message === "이미지 파일만 업로드가 가능합니다.") {

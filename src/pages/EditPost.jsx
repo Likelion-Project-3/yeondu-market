@@ -152,7 +152,7 @@ function EditPost() {
             } else {
                 setImgFile([
                     ...imgFile,
-                    "https://mandarin.api.weniv.co.kr/" +
+                    "https://api.mandarin.weniv.co.kr/" +
                         res.data[0]["filename"],
                 ]);
                 console.log("updated imgfile: ", imgFile);
