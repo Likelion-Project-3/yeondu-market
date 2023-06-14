@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
+import axios from "axios";
 import { BASE_URL } from "../constants/baseUrl";
 import BasicProfileImg from "../common/BasicProfileImg";
-import axios from "axios";
+import { UserContext } from "../../context/UserContext";
 import "./PostCommentInput.css";
 
 function PostCommentInput(props) {
+    const { token } = useContext(UserContext);
     const [text, setText] = useState("");
     const [profileImg, setProfileImg] = useState("");
     const [isActive, setIsActive] = useState(false);
-    const token = localStorage.getItem("token");
 
     // 댓글 input 값 실시간으로 받아오기
     const handleChange = (e) => {

@@ -1,25 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import BasicProfileImg from "../common/BasicProfileImg";
+import { UserContext } from "../../context/UserContext";
 import Like from "./Like";
 import PostModal from "../modal/PostModal";
 import "./PostItem.css";
 
 function PostItem({ post }) {
-    const accountname = localStorage.getItem("accountname");
-    // const [postImg, setPostImg] = useState("");
-    // const pI = post.image;
-
+    const { accountname } = useContext(UserContext);
     const [isOpenModal, setIsOpenModal] = useState(false);
     const handleModalOn = () => {
         setIsOpenModal(!isOpenModal);
     };
-
-    // useEffect(() => {
-    //     if (post.image !== undefined) {
-    //         setPostImg(pI.split(",")[0]);
-    //     }
-    // }, []);
 
     const handleShowDetail = () => {
         window.location.href = `/post/${post.id}`;
@@ -89,7 +81,11 @@ function PostItem({ post }) {
                         </div>
                     </div>
                     <div className="btnWrap">
-                        <Like heartCount={post.heartCount} />
+                        <Like
+                            heartCount={post.heartCount}
+                            postId={post.id}
+                            hearted={post.hearted}
+                        />
                         <Link to={`/post/${post.id}`}>
                             <span className="wrapCommentBtn">
                                 <button

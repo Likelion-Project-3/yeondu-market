@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
-import "./style/404loading.css";
 import NotFoundImg from "../assets/icon/404.svg";
+import "./style/404loading.css";
 
 function NotFound() {
     const history = useHistory();

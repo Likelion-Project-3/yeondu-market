@@ -1,15 +1,16 @@
-import axios from "axios";
 import React, { createContext, useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { AppContext } from "../../pages/MyProfile";
-import BasicProfileImg from "../common/BasicProfileImg";
+import axios from "axios";
 import { BASE_URL } from "../constants/baseUrl";
+import BasicProfileImg from "../common/BasicProfileImg";
+import { AppContext } from "../../pages/MyProfile";
 import ProfileBtn from "./ProfileBtn";
 import "./ProfileInfo.css";
+import { UserContext } from "../../context/UserContext";
 
 function ProfileInfo() {
-    const { profileInfo, followerCountData, token, accountname } =
-        useContext(AppContext);
+    const { profileInfo, followerCountData } = useContext(AppContext);
+    const { token, accountname } = useContext(UserContext);
     const [followdata, setFollowData] = useState(profileInfo.profile.isfollow);
     const [followerCount, setFollowerCount] = useState("");
     const { accountName } = useParams();

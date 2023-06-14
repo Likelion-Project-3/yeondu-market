@@ -1,30 +1,53 @@
+import React, { useContext, useState } from "react";
 import axios from "axios";
-import React from "react";
-import { useHistory } from "react-router-dom";
-import UploadFileBtn from "../components/button/UploadFileBtn";
+import { BASE_URL } from "../components/constants/baseUrl";
+import { UserContext } from "../context/UserContext";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
-import { BASE_URL } from "../components/constants/baseUrl";
-import { useState } from "react";
 
 function UploadProduct() {
-    let history = useHistory();
-    const token = localStorage.getItem("token");
-    const accountname = localStorage.getItem("accountname");
-
+    const { token, accountname } = useContext(UserContext);
     const [itemName, setItemName] = useState("");
     const [price, setPrice] = useState("");
     const [link, setLink] = useState("");
     const [itemImage, setItemImage] = useState("");
-
     const [block, setBlock] = useState(false);
     const [checkPrice, setCheckPrice] = useState(false);
     const [productPull, setProductPull] = useState(false);
-
     const [imageSrc, setImageSrc] = useState(null);
+    const [isActive, setisActive] = useState(true);
+
+    //저장 버튼 disabled
+    const saveActive = () => {
+        if (
+            itemName.length > 1 &&
+            itemName.length < 16 &&
+            price.length > 0 &&
+            link.length > 0 &&
+            itemImage.length > 0
+        ) {
+            setisActive(false);
+            setProductPull(true);
+        } else {
+            setisActive(true);
+            setProductPull(false);
+        }
+        return itemName.length > 1 && itemName.length < 16
+            ? setBlock(false)
+            : setBlock(true);
+    };
 
     const handleItemName = (e) => {
         setItemName(e.target.value);
+    };
+
+    const handlePrice = (e) => {
+        const value = e.target.value;
+        setPrice(priceFormat(value));
+    };
+
+    const handleLink = (e) => {
+        setLink(e.target.value);
     };
     //숫자 1000단위 콤마
     const priceFormat = (str) => {
@@ -39,10 +62,6 @@ function UploadProduct() {
         return comma(uncomma(str));
     };
 
-    const handlePrice = (e) => {
-        const value = e.target.value;
-        setPrice(priceFormat(value));
-    };
     //
     const handlePrice2 = (event) => {
         if (
@@ -55,20 +74,6 @@ function UploadProduct() {
             return;
         } else {
             event.preventDefault();
-        }
-    };
-
-    const handleLink = (e) => {
-        setLink(e.target.value);
-    };
-
-    // 판매명 2~15자 확인
-    const onChangeCheckName = (e) => {
-        if (itemName.length > 15 || itemName.length < 2) {
-            setBlock(true);
-            alert("2-15자 이내로 입력하세요.");
-        } else {
-            setBlock(false);
         }
     };
 
@@ -108,7 +113,7 @@ function UploadProduct() {
             });
             console.log(res);
             setItemImage(
-                "https://mandarin.api.weniv.co.kr/" + res.data.filename
+                "https://api.mandarin.weniv.co.kr/" + res.data.filename
             );
 
             if (res.data.message === "이미지 파일만 업로드가 가능합니다.") {
@@ -136,22 +141,8 @@ function UploadProduct() {
         },
     };
 
-    const inputDatapull = () => {
-        if (
-            itemImage !== "" &&
-            itemName !== "" &&
-            price !== "" &&
-            link !== ""
-        ) {
-            setProductPull(true);
-        } else {
-            setProductPull(false);
-        }
-    };
-
     //전달하기
     const handleSubmitProduct = async () => {
-        onChangeCheckName();
         onChangeCheckPrice();
 
         const url = BASE_URL + "/product";
@@ -179,6 +170,7 @@ function UploadProduct() {
                 inputtype="notext"
                 title="저장"
                 type="submit"
+                disabled={isActive}
                 handlerRightBtn={handleSubmitProduct}
             />
 
@@ -188,13 +180,13 @@ function UploadProduct() {
                     <form action="">
                         <div
                             className="productImgRegister"
-                            onKeyUp={inputDatapull}
+                            onKeyUp={saveActive}
                         >
                             <h3 className="">이미지 등록</h3>
                             <label
                                 htmlFor="productImg"
                                 className="imagePriview"
-                                onKeyUp={inputDatapull}
+                                onKeyUp={saveActive}
                             >
                                 {imageSrc && (
                                     <img
@@ -202,7 +194,7 @@ function UploadProduct() {
                                         className="imagePriview"
                                         name="img"
                                         alt="미리보기"
-                                        onKeyUp={inputDatapull}
+                                        onKeyUp={saveActive}
                                     ></img>
                                 )}
                             </label>
@@ -211,25 +203,24 @@ function UploadProduct() {
                                 id="productImg"
                                 className="ir"
                                 onChange={handelUploadImage}
-                                onKeyUp={inputDatapull}
+                                onKeyUp={saveActive}
                             />
                         </div>
                         <div className="inputContainer">
                             <label htmlFor="productName">상품명</label>
                             <input
                                 type="text"
-                                className=""
                                 id="productName"
-                                placeholder="2~15자 이내여야 합니다."
+                                placeholWder="2~15자 이내여야 합니다."
                                 onChange={handleItemName}
-                                onKeyUp={inputDatapull}
+                                onKeyUp={saveActive}
                             />
                             <strong
-                                onChange={onChangeCheckName}
+                                // onChange={onChangeCheckName}
                                 className={
                                     block
-                                        ? "ProductErrMessage disble"
-                                        : "ProductErrMessage prodName"
+                                        ? "ProductErrMessage block"
+                                        : "ProductErrMessage disabled"
                                 }
                             >
                                 *2~15자 이내여야 합니다.
@@ -244,14 +235,14 @@ function UploadProduct() {
                                 placeholder="숫자만 입력 가능합니다."
                                 onChange={handlePrice}
                                 onKeyDown={handlePrice2}
-                                onKeyUp={inputDatapull}
+                                onKeyUp={saveActive}
                             />
                             <strong
                                 onChange={onChangeCheckPrice}
                                 className={
                                     checkPrice
-                                        ? "ProductErrMessage disble"
-                                        : "ProductErrMessage prodPrice"
+                                        ? "ProductErrMessage block"
+                                        : "ProductErrMessage disabled"
                                 }
                             >
                                 *숫자만 입력 가능합니다.
@@ -265,7 +256,7 @@ function UploadProduct() {
                                 id="productLink"
                                 placeholder="URL을 입력해 주세요."
                                 onChange={handleLink}
-                                onKeyUp={inputDatapull}
+                                onKeyUp={saveActive}
                             />
                             <strong className="ProductErrMessage prodLink">
                                 *URL을 입력해 주세요.

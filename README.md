@@ -52,7 +52,7 @@
 
 - **팔로우** : 유저 팔로우/언팔로우
 
-- **좋아요** : 게시물 좋아요 / 취소 (구현 예정)
+- **좋아요** : 게시물 좋아요 / 취소
 <br>
 <p align="right"><a href="#top">(🔼 Top)</a></p>
 
@@ -66,11 +66,11 @@
 
 
 ## <span id="roles">4. 역할 분담</span>
-![image](https://user-images.githubusercontent.com/80025366/181719008-3d5a3186-78da-4885-b9cd-4344b8e45f88.png)
+![image](https://user-images.githubusercontent.com/102905624/191427259-cbde32a7-40b4-4f14-8733-992f9eab2ba6.png)
 <p align="right"><a href="#top">(🔼 Top)</a></p>
 
 ## <span id="env">5. 개발 환경</span>
-### [개발 기간] 2022.6.27 ~ 2022.7.30 (진행중)
+### [개발 기간] 2022.6.27 ~ 2022.8.12
 ### [기술] 
 - FrontEnd: React, React-router, Hooks
 - BackEnd: 제공된 API 사용
@@ -123,53 +123,57 @@ npm start
 
 
 
+
+
 ## <span id="ui">7. UI</span>
 
 
 
 |                             0. Splash                              |                            1. 회원가입                             |
 | :---------------------------------------------------------------: | :---------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182039714-ef5c17f7-f94b-47ee-8823-a304d66eba8b.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182039735-55d6c1f2-b749-4107-8ebd-092bad5f47b1.gif" width="230" height="370"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/191419440-1265bfc9-fedb-420f-bbe2-42ab8cf81d7d.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/191419860-190a89e7-736d-45e2-8fbe-66e41aa17469.gif" width="230" height="370"/> |
 
 |                             2. 프로필 설정                             |                               3. 로그인                                |
 | :--------------------------------------------------------------: | :------------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182039812-98ae4287-e443-4c96-885a-1b30fe1700d6.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182061172-5017d2f3-7193-4dfd-82b6-53bb37ada1dc.gif" width="230" height="370"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/191417838-689da365-0b9f-4830-8612-523e2b8fa708.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/191420159-8b44aa9b-3262-464f-b53a-cb501e07c7e4.gif" width="230" height="370"/> |
 
 |                              4. 검색                              |                           5. 홈 피드                            |
 | :---------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182061293-946cb0a1-3e48-4777-b10f-d1fa7e2fe151.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182061306-d95d09d9-d1b5-4382-8f81-f978151e19a6.gif" width="230" height="370"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/191418903-22f18629-d60b-40ec-91f7-30d9717baeae.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/191420836-50d497c5-4e7e-4ff8-8a2c-9ec0908ca1b3.gif" width="230" height="370"/> |
 
 
 |                           6. 게시물 등록                            |                             7. 게시글 수정                             |
 | :-------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182061392-0ad8bccb-5422-4764-b547-fe7db49e7c11.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182061410-435d065c-6a84-43f3-8eb2-8e82277ea58f.gif" width="230" height="370"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/191420824-dd0190c9-036b-45f4-b97a-cc28f3483b6b.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/191420820-32219b75-03fb-4edd-baa1-4ba1265f7e23.gif" width="230" height="370"/> |
 
 |                         8. 게시물 삭제                         |                           9. 게시글 댓글 등록                           |
 | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182061398-6187a191-1e6b-40d4-a680-0971f0556e73.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182061576-ebbfb387-591a-4f74-b6b3-b930787650a8.gif" width="230" height="370"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/191423462-2cd81179-472c-4c8f-b33d-2b7fb6defa1b.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/191423478-7bea529a-3efe-4eac-84a9-b0c355ce15f3.gif" width="230" height="370"/> |
 
 |                         10. 게시물 댓글 신고                         |                           11. 내 프로필                           |
 | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182061588-c8a8bb41-7309-40cb-8e20-6e10faa785e0.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182061694-d24ba366-d350-4e4d-9740-00564ce0db15.gif" width="230" height="370"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/191423370-a6326827-7d1c-4077-92ac-211c9d3b5f56.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/191423334-704ff31a-9f2a-4a1d-b1f3-4d5a766f26d7.gif" width="230" height="370"/> |
 
 
 
 |                        12. 사용자 프로필 수정                        |                          13. 타 유저 프로필                          |
 | :--------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182061761-0d848d9f-94ad-48d9-b896-47e1a927b84d.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182073419-2f4c24bb-142a-4404-94ac-9e936970aeae.gif" width="230" height="370"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/191424485-2537f030-437d-4401-a060-72eb2e9866ba.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/191424499-0867cc1b-c69f-4388-91a7-9659a2dd96bb.gif" width="230" height="370"/> |
 
 |                           14. 팔로우                            |                              15. 로그아웃                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182061802-5546f33d-54b7-4060-9ae6-17aba7db8013.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182040149-ad4c9304-c8fd-41ca-b707-e09fb45519ff.gif" width="230" height="370"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/191424120-319192bd-7316-4fea-9a75-1459f1bec8e6.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/191424487-02ab27c9-8bc5-43b6-8cb8-70f5545e1370.gif" width="230" height="370"/> |
 
 
 |                      16. 판매 상품 등록                       |                              17. 판매 상품 수정                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182073425-e5426e2d-b9a5-4cc0-a35a-d2fc4230db2f.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/182073427-a9f1fcc5-e59f-4cef-9319-6002b82d2f41.gif" width="230" height="370"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/191424125-2bee6e1c-bc11-4a3a-a878-2727ec84de50.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/191424129-db3c0f60-c338-439b-9866-a337c48bb1e6.gif" width="230" height="370"/> |
 
-|                      18. 채팅방                      |                              19. 로딩중                               |
+|                      18. 채팅방                      |                              19. 좋아요                               |
 | :---------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/102905624/182040336-6e41ab6e-a8c1-4c79-a8cc-8c39186e7424.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/80025366/182053809-50ea7a59-63c2-4410-99ae-e72a6ced9537.png" width="230" height="400"/> |
+| <img src="https://user-images.githubusercontent.com/102905624/191422498-734ec0c2-79d1-4d4f-bfad-e46105ead750.gif" width="230" height="370"/> | <img src="https://user-images.githubusercontent.com/102905624/191422523-c403d57d-c471-44a8-8b86-f4d515b5d090.gif" width="230" height="370"/> |
+
+
 
 
 
@@ -270,7 +274,7 @@ const imgPreview = (file) => {
 : 프로필 설정과 수정 부분에 중복되는 코드를 컴포넌트화 했습니다. 그래서 자식 컴포넌트의 데이터를 부모에게 전달해야 했는데 그 과정에서 자식의 데이터를 부모로 끌어올리는 방법을 사용했습니다. 
 
 - 빈 문자열과 null <br/>
-: 여느 때처럼 속성값으로 삼항연산자를 쓰며 참이면 함수 실행, 거짓이라면 실행하지 않겠다는 의미로 ’’을 넣어주었습니다. 그런데 자꾸 함수가 아니라는 에러가 발생했고 애꿎은 함수만 고치고 있었습니다. 그러나 문제는 함수가 아닌 ‘’ 였습니다. 거짓 부분에 null을 넣으니 바로 해결이 되었고, 두 개 다 값이 없는걸 의미 하는 거 아닌가? 하면서 찾아보니 ```null```은 값이 없다는 것을 의도적으로 명시할 때 사용하는 것이었습니다. 그제서야 ‘’는 타입이 없는 자바스크립트에서 문자열을 넣을 변수를 미리 초기화할 때 사용하던 것이 떠올랐습니다. 빈 문자열과 null의 다름을 확실히 인지하게 되었습니다.
+: 속성값으로 삼항연산자를 쓰며 참이면 함수 실행, 거짓이라면 실행하지 않겠다는 의미로 ’’을 넣어주었습니다. 그런데 자꾸 함수가 아니라는 에러가 발생했고 애꿎은 함수만 고치고 있었습니다. 그러나 문제는 함수가 아닌 ‘’ 였습니다. 거짓 부분에 null을 넣으니 바로 해결이 되었고, 두 개 다 값이 없는걸 의미 하는 거 아닌가? 하면서 찾아보니 ```null```은 값이 없다는 것을 의도적으로 명시할 때 사용하는 것이었습니다. 그제서야 ‘’는 타입이 없는 자바스크립트에서 문자열을 넣을 변수를 미리 초기화할 때 사용하던 것이 떠올랐습니다. 빈 문자열과 null의 다름을 확실히 인지하게 되었습니다.
 ### 👩🏻 수현
 - 💡 레슨런: 팀원의 코드에 집중 <br/>
 	: 본인의 코드만 집중하게 되고 작성을 하게 되었을 때 모달창 외부를 클릭하면 알림창이 뜨지 않고 꺼지는 현상이 있다는 것을 알게된후 수정 방법을 위해 

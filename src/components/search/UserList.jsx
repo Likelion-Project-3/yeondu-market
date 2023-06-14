@@ -1,27 +1,41 @@
-import { Link } from "react-router-dom";
-import defaultProfile from "../../assets/basic-profile-pea.png";
-import "./UserList.css";
+import { Link } from 'react-router-dom';
+import BasicProfileImg from '../common/BasicProfileImg';
+import './UserList.css';
 
 function UserList(props) {
     const searchUser = props;
     const userId = searchUser.accountname.slice(2);
-
-    const onErrorImg = (e) => {
-        e.target.src = defaultProfile;
-    };
+    const { keyword, key, image, username, accountname } = props;
 
     return (
-        <Link to={`/myprofile/${userId}`}>
-            <li className="userList" key={props.key}>
-                <img
-                    src={props.image}
-                    alt={props.alt}
-                    onError={onErrorImg}
-                    className="userProfileImg"
-                />
+        <Link to={`/profile/${userId}`}>
+            <li className="userList" key={key}>
+                <BasicProfileImg size="md" src={image} />
                 <div className="userInfo">
-                    <p className="username">{props.username}</p>
-                    <p className="accountname">{props.accountname}</p>
+                    {username.includes(keyword) ? (
+                        <p className="username">
+                            {username.split(keyword)[0]}
+                            <span className="keyword">{keyword}</span>
+                            {username.replace(
+                                username.split(keyword)[0] + keyword,
+                                ''
+                            )}
+                        </p>
+                    ) : (
+                        <p className="username">{username}</p>
+                    )}
+                    {accountname.includes(keyword) ? (
+                        <p className="accountname">
+                            {accountname.split(keyword)[0]}
+                            <span className="keyword">{keyword}</span>
+                            {accountname.replace(
+                                accountname.split(keyword)[0] + keyword,
+                                ''
+                            )}
+                        </p>
+                    ) : (
+                        <p className="accountname">{accountname}</p>
+                    )}
                 </div>
             </li>
         </Link>

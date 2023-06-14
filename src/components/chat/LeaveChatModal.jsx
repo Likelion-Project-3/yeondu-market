@@ -1,4 +1,3 @@
-import { useNavigate } from "react";
 import "./LeaveChatModal.css";
 
 function LeaveChatModal({ setIsOpenModal }) {

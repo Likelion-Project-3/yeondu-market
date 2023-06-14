@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useHistory, useParams } from "react-router-dom";
-import UploadFileBtn from "../components/button/UploadFileBtn";
 import TopMenuComponent from "../components/common/TopMenuComponent";
 import "../pages/style/UploadProduct.css";
 import { BASE_URL } from "../components/constants/baseUrl";
-import { useState } from "react";
-import { useEffect } from "react";
+import { UserContext } from "../context/UserContext";
 
 function EditProduct() {
     const { productId } = useParams();
-    const token = localStorage.getItem("token");
-    const accountname = localStorage.getItem("accountname");
+    const { token, accountname } = useContext(UserContext);
 
     const [itemName, setItemName] = useState("");
     const [price, setPrice] = useState("");
@@ -24,6 +21,22 @@ function EditProduct() {
     const [imageSrc, setImageSrc] = useState(null);
     //새로운 이미지
     const [newImgSrc, setNewImgSrc] = useState(null);
+
+    const [isActive, setisActive] = useState(false);
+    const [productPull, setProductPull] = useState(true);
+
+    const saveActive = () => {
+        if (itemName.length > 1 && itemName.length < 16) {
+            setisActive(false);
+            setProductPull(true);
+        } else {
+            setProductPull(false);
+            setisActive(true);
+        }
+        return itemName.length > 1 && itemName.length < 16
+            ? setBlock(false)
+            : setBlock(true);
+    };
 
     //기존 게시글 불러오기
     useEffect(() => {
@@ -89,16 +102,6 @@ function EditProduct() {
         setLink(e.target.value);
     };
 
-    // 판매명 2~15자 확인
-    const onChangeCheckName = (e) => {
-        if (itemName.length > 15 || itemName.length < 2) {
-            setBlock(true);
-            alert("2-15자 이내로 입력하세요.");
-        } else {
-            setBlock(false);
-        }
-    };
-
     // 숫자 유효성검사
     const onChangeCheckPrice = () => {
         if (isNaN(price)) {
@@ -136,7 +139,7 @@ function EditProduct() {
             });
             console.log(res);
             setItemImage(
-                "https://mandarin.api.weniv.co.kr/" + res.data.filename
+                "https://api.mandarin.weniv.co.kr/" + res.data.filename
             );
 
             if (res.data.message === "이미지 파일만 업로드가 가능합니다.") {
@@ -166,7 +169,6 @@ function EditProduct() {
 
     //전달하기
     const handleSubmitProduct = async () => {
-        onChangeCheckName();
         onChangeCheckPrice();
         const url = BASE_URL + `/product/${productId}`;
         try {
@@ -189,10 +191,11 @@ function EditProduct() {
         <div>
             <TopMenuComponent
                 topclassName="topBasicNav"
-                rightclassName="saveBtn on"
+                rightclassName={`saveBtn ${productPull ? "on" : ""}`}
                 inputtype="notext"
                 title="저장"
                 type="submit"
+                disabled={isActive}
                 handlerRightBtn={handleSubmitProduct}
             />
 
@@ -200,11 +203,15 @@ function EditProduct() {
                 <section className="container">
                     <h2 className="ir">상품등록페이지</h2>
                     <form action="">
-                        <div className="productImgRegister">
+                        <div
+                            className="productImgRegister"
+                            onKeyUp={saveActive}
+                        >
                             <h3 className="">이미지 등록</h3>
                             <label
                                 htmlFor="productImg"
                                 className="imagePriview"
+                                onKeyUp={saveActive}
                             >
                                 {imageSrc && !newImgSrc ? (
                                     <img
@@ -212,6 +219,7 @@ function EditProduct() {
                                         className="imagePriview"
                                         name="img"
                                         alt="미리보기"
+                                        onKeyUp={saveActive}
                                     ></img>
                                 ) : null}
                                 {newImgSrc && (
@@ -228,6 +236,7 @@ function EditProduct() {
                                 id="productImg"
                                 className="ir"
                                 onChange={handelUploadImage}
+                                onKeyUp={saveActive}
                             />
                         </div>
                         <div className="inputContainer">
@@ -239,13 +248,13 @@ function EditProduct() {
                                 placeholder="2~15자 이내여야 합니다."
                                 onChange={handleItemName}
                                 value={itemName}
+                                onKeyUp={saveActive}
                             />
                             <strong
-                                onChange={onChangeCheckName}
                                 className={
                                     block
-                                        ? "ProductErrMessage disble"
-                                        : "ProductErrMessage prodName"
+                                        ? "ProductErrMessage block"
+                                        : "ProductErrMessage disabled"
                                 }
                             >
                                 *2~15자 이내여야 합니다.
@@ -260,13 +269,14 @@ function EditProduct() {
                                 onChange={handlePrice}
                                 onKeyDown={handlePrice2}
                                 value={replacePrice}
+                                onKeyUp={saveActive}
                             />
                             <strong
                                 onChange={onChangeCheckPrice}
                                 className={
                                     checkPrice
-                                        ? "ProductErrMessage disble"
-                                        : "ProductErrMessage prodPrice"
+                                        ? "ProductErrMessage block"
+                                        : "ProductErrMessage disabled"
                                 }
                             >
                                 *숫자만 입력 가능합니다.
@@ -281,6 +291,7 @@ function EditProduct() {
                                 placeholder="URL을 입력해 주세요."
                                 onChange={handleLink}
                                 value={link}
+                                onKeyUp={saveActive}
                             />
                             <strong className="ProductErrMessage prodLink">
                                 *URL을 입력해 주세요.

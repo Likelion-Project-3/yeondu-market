@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../components/constants/baseUrl";
 import PostItem from "../components/post/PostItem";
 import TapMenu from "../components/common/TapMenu";
+import { UserContext } from "../context/UserContext";
 import "../pages/style/Home.css";
 
 function Home() {
-    const token = localStorage.getItem("token");
+    const { token } = useContext(UserContext);
     const [post, setPost] = useState([]);
 
     const goSearch = () => {
@@ -34,7 +35,9 @@ function Home() {
         <>
             <header className="topMainNav">
                 <h1>연두마켓 피드</h1>
-                <button type="button" onClick={goSearch} />
+                <button type="button" onClick={goSearch} >
+                    <span className="ir">계정 검색하기 버튼</span>
+                </button>
             </header>
             {post.length !== 0 ? (
                 <main className="homeContentFeed">

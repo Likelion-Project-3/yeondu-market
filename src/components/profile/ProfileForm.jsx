@@ -118,15 +118,15 @@ function ProfileForm(props) {
                             : input.profileImg) ||
                         (input.profileImg
                             ? input.profileImg
-                            : "http://146.56.183.55:5050/Ellipse.png")
+                            : BASE_URL + '/1660974156300')
                     }
                 />
                 <UploadFileBtn
                     forAndId="uploadProfile"
                     type="green36"
                     position="absolute"
-                    bottom="58px"
-                    right="5px"
+                    bottom="60px"
+                    right="-5px"
                     onChange={handleUploadProfileImg}
                 />
             </div>

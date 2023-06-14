@@ -1,5 +1,5 @@
-import { BASE_URL } from "../constants/baseUrl";
 import axios from "axios";
+import { BASE_URL } from "../constants/baseUrl";
 import "./Modal.css";
 
 function ReportPostModal(props) {

@@ -1,13 +1,12 @@
-import axios from "axios";
-import React from "react";
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { BASE_URL } from "../constants/baseUrl";
+import { UserContext } from "../../context/UserContext";
 
 function FollowingCard({ followingList }) {
     const [follow, setFollow] = useState(followingList.isfollow);
-    const token = localStorage.getItem("token");
-    const accountname = localStorage.getItem("accountname");
+    const { token, accountname } = useContext(UserContext);
     const handleFollowBtn = () => {
         if (follow === true) {
             handleSubmitUnFollow();

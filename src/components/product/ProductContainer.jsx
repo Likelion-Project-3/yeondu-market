@@ -1,11 +1,10 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 import "./ProductContainer.css";
+
 function ProductContainer({ productList }) {
-    // console.log("!!!product", productList);
     const product = productList.product;
-    // console.log(product);
-    // console.log(product.length);
+
     return (
         <div className="productContainer">
             {product && product.length > 0 ? (

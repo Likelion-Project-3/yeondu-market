@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import Intro from "../pages/Intro";
 import { BASE_URL } from "../components/constants/baseUrl";
+import Intro from "../pages/Intro";
+import { UserContext } from "../context/UserContext";
 import "../pages/style/Splash.css";
 
 function Splash() {
@@ -16,7 +17,7 @@ function Splash() {
     }, []);
 
     const [isValid, setIsValid] = useState();
-    const token = localStorage.getItem("token");
+    const { token } = useContext(UserContext);
 
     const goHome = () => {
         window.location.href = "/home";

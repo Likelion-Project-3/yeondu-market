@@ -25,7 +25,6 @@
     width: 100%;
     display: block;
     border-radius: 10px;
-    /* border: 0.5px solid var(--main-border-color); */
     height: 204px;
     background-color: #f2f2f2;
 }
@@ -46,7 +45,6 @@
 
 .inputContainer input {
     width: 100%;
-    /* color: #dbdbdb; */
     border-bottom: 1px solid var(--main-border-color);
     padding-bottom: 5px;
 }
@@ -65,20 +63,12 @@
     font-weight: bold;
 }
 
-.ProductErrMessage.prodName {
-    display: none;
-}
-
-.ProductErrMessage.prodPrice {
-    display: none;
-}
-
-.ProductErrMessage.prodLink {
-    display: none;
-}
-
-.ProductErrMessage.disble {
+.ProductErrMessage.block {
     display: block;
+}
+
+.ProductErrMessage.disabled {
+    display: none;
 }
 
 .UploadFileLabel.green36 {

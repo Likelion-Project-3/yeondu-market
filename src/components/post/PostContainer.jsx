@@ -3,6 +3,7 @@ import postListOn from "../../assets/icon/icon-post-list-on.svg";
 import postListOff from "../../assets/icon/icon-post-list-off.svg";
 import postAlbumOn from "../../assets/icon/icon-post-album-on.svg";
 import postAlbumOff from "../../assets/icon/icon-post-album-off.svg";
+
 function PostContainer({
     postList,
     onClickList,

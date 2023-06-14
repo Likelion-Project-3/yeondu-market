@@ -9,7 +9,6 @@ function UserProfileBtn() {
         useContext(FollowContext);
 
     const handleFollowBtn = () => {
-        console.log("22followdata", followdata);
         if (followdata === true) {
             handleSubmitUnFollow();
         } else {
